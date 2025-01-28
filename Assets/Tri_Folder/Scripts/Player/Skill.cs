@@ -33,7 +33,7 @@ public abstract class Skill : MonoBehaviour
         // Delay before use skill
         float timer = 0;
         BeforeSkill();
-        if (timer < _skillStat.skillDelay)
+        while (timer < _skillStat.skillDelay)
         {
             timer += Time.deltaTime;
             yield return null;
@@ -41,17 +41,17 @@ public abstract class Skill : MonoBehaviour
 
         // Using skill
         timer = 0;
-        if (timer < _skillStat.skillDuration)
+        do
         {
             DuringSkill();
             timer += Time.deltaTime;
             yield return null;
-        }
+        } while (timer < _skillStat.skillDuration);
         AfterSkill();
 
         // Cool down
         timer = 0;
-        if (timer < _skillStat.skillCD)
+        while (timer < _skillStat.skillCD)
         {
             timer += Time.deltaTime;
             yield return null;
@@ -61,7 +61,7 @@ public abstract class Skill : MonoBehaviour
     protected IEnumerator SkillCoolDownCoroutine()
     {
         float timer = 0;
-        if (timer < _skillStat.skillCD)
+        while (timer < _skillStat.skillCD)
         {
             timer += Time.deltaTime;
             yield return null;

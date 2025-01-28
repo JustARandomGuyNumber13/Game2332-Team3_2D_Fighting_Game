@@ -17,13 +17,14 @@ public class PlayerInputHandler : MonoBehaviour
     public UnityEvent OnDefendEvent;
     public UnityEvent OnCrouchEvent;
 
+    public bool isCanMove;
+    public bool isCrouching;
+    public bool isDefending;
+
     private Transform _transform;
     private Rigidbody2D _rb;
-    private bool _isCanMove;
     private bool _isOnGround;
     private bool _isCanJump;
-    private bool _isCrouching;
-    private bool _isDefending;
     private float _moveInput;
     private float _moveSpeed;
     #endregion
@@ -44,7 +45,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Update()
     {
-        Debug.DrawLine(_transform.position, _transform.position + Vector3.down * _charStat.groundCheckDistance, Color.yellow);
+        //Debug.DrawLine(_transform.position, _transform.position + Vector3.down * _charStat.groundCheckDistance, Color.yellow);    // Display ground check ray
         Move();
     }
     private void OnCollisionEnter2D(Collision2D collision)
