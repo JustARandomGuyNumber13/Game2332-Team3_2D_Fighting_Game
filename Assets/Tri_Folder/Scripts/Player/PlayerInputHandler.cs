@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -26,6 +27,7 @@ public class PlayerInputHandler : MonoBehaviour
     private float _moveInput;
     private float _moveSpeed;
     #endregion
+
 
     #region ~~ Monobehavior handlers ~~
     private void Awake()
@@ -126,9 +128,23 @@ public class PlayerInputHandler : MonoBehaviour
     }
     #endregion
 
+
+    #region ~~ Other handlers ~~
+    public IEnumerator NoMoveCoroutine(float duration)
+    {
+        _isCanMove = false;
+        float timer = 0;
+        if (timer < duration)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        _isCanMove = true;
+    }
     private void InspectorCheck()
     {
         if (_transform.localScale.y != 1 && _transform.localScale.y != -1)
             Debug.LogError("x-axis scale must either be 1 or -1 only");
     }
+    #endregion
 }
