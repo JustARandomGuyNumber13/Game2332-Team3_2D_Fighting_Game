@@ -37,7 +37,7 @@ public class PlayerInputHandler : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _isOnGround = true;
         _isCanJump = true;
-        _isCanMove = true;
+        isCanMove = true;
     }
     private void Start()
     {
@@ -63,11 +63,11 @@ public class PlayerInputHandler : MonoBehaviour
     private void Move()
     {
         Helper_FaceOtherPlayer();
-        if (_isCanMove)
+        if (isCanMove)
         {
             _moveSpeed = _moveInput - _transform.localScale.x == 0 ? _charStat.moveStandingSpeed : _charStat.moveCrouchingSpeed;
-            if (_isCrouching) _moveSpeed = _charStat.moveCrouchingSpeed;
-            if (_isDefending) _moveSpeed = 0;
+            if (isCrouching) _moveSpeed = _charStat.moveCrouchingSpeed;
+            if (isDefending) _moveSpeed = 0;
             _rb.linearVelocity =  Vector2.right *_moveInput * _moveSpeed + Vector2.up * _rb.linearVelocityY; 
         }
     }
@@ -105,11 +105,11 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void OnCrouch(InputValue value)
     {
-        _isCrouching = value.Get<float>() == 1;
+        isCrouching = value.Get<float>() == 1;
     }
     private void OnDefend(InputValue value)
     { 
-        _isDefending = value.Get<float>() == 1;
+        isDefending = value.Get<float>() == 1;
     }
     private void OnAttack()
     {
@@ -133,14 +133,14 @@ public class PlayerInputHandler : MonoBehaviour
     #region ~~ Other handlers ~~
     public IEnumerator NoMoveCoroutine(float duration)
     {
-        _isCanMove = false;
+        isCanMove = false;
         float timer = 0;
         if (timer < duration)
         {
             timer += Time.deltaTime;
             yield return null;
         }
-        _isCanMove = true;
+        isCanMove = true;
     }
     private void InspectorCheck()
     {
