@@ -13,11 +13,35 @@ MonoBehaviour:
   m_Name: New Character Database
   m_EditorClassIdentifier: 
   character:
-  - characterName: Character 1
+  - characterName: Character 0
     characterSprite: {fileID: -2615874204119335, guid: 34ff39b1a449772458a65f558e0e414f, type: 3}
-  - characterName: Character 2
+    characterAttacks:
+    - {fileID: 8935304109732356370, guid: a6dafa67650ab824f9b7d411ff8400c9, type: 3}
+    - {fileID: 3290332103540150903, guid: 8adde4b9f12e1d246ad194bd3ae2eaee, type: 3}
+    - {fileID: 8823012555465876209, guid: ddbd5f486a5f2f647b5caf119723a1f3, type: 3}
+    - {fileID: 5395976488637898092, guid: 59f06bc70634b434d8400dad224e8807, type: 3}
+    - {fileID: 3738316827334755918, guid: ee898078943f5cb4da2ed6340665312b, type: 3}
+  - characterName: Character 1
     characterSprite: {fileID: -6099873399732076034, guid: 3c6b97c411c30f0448715e7a51753603, type: 3}
-  - characterName: Character 3
+    characterAttacks:
+    - {fileID: 2827339017167181162, guid: c4d027a65ae60d847867811d907b3c3b, type: 3}
+    - {fileID: 6243792209153188313, guid: c37432353e234254999710c082294394, type: 3}
+    - {fileID: 6612633637492650260, guid: 66cec3627baa0cf409bb9d926bc3ce98, type: 3}
+    - {fileID: 4010923424496531859, guid: 7d8cae6f5eeb82c4fb304985d76ea40a, type: 3}
+    - {fileID: 6481806566980380905, guid: efa1f1b44046a84469c7f20431739c88, type: 3}
+  - characterName: Character 2
     characterSprite: {fileID: -6410442598547967069, guid: c669d256f58011f40b50c661b942d02e, type: 3}
-  - characterName: Character 4
+    characterAttacks:
+    - {fileID: 1700232100656653411, guid: 5035bf74ebd34914bbf57933366ccf58, type: 3}
+    - {fileID: 7877004126062193957, guid: 89d279dcc2b634043b30a77d92a542c4, type: 3}
+    - {fileID: 3945527376082179152, guid: e31b4ce045baa8f4590a2728caf3d52e, type: 3}
+    - {fileID: 2134312617405049348, guid: bee5acbf198992d43a137556bfb686c6, type: 3}
+    - {fileID: 8111292353802074342, guid: 68a032a28d0e7c94dbf3ede50997e4c8, type: 3}
+  - characterName: Character 3
     characterSprite: {fileID: -2093324750932669864, guid: a82ee0d85531f1f4e9eee440215943de, type: 3}
+    characterAttacks:
+    - {fileID: 8489622715280120205, guid: 40aea7bf01978f648ab26c1685a14e9c, type: 3}
+    - {fileID: 4613389548705847429, guid: 77e20d8c6ded5534882340644af4cf19, type: 3}
+    - {fileID: 8344964218369354372, guid: 15796dfb0f2fc9e44a87a03f08bd4d49, type: 3}
+    - {fileID: 3804249872565676470, guid: ce780b0d48094404fb73413063b9107b, type: 3}
+    - {fileID: 2674808779391681604, guid: 2a4576b151f2c3442ad00869de77f977, type: 3}

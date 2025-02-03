@@ -8,6 +8,7 @@ public class CharacterManager : MonoBehaviour
 
     public Text nameText;
     public SpriteRenderer artworkSprite;
+    public GameObject[] skillGameObject;
 
     private int selectedOption = 0;
 
