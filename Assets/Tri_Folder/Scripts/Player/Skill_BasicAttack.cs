@@ -18,28 +18,20 @@ public class Skill_BasicAttack : Skill
 
     protected override void BeforeSkill()
     { 
-    
+        _inputHandler.isCanMove = false;
     }
     protected override void DuringSkill()
     {
         Vector3 start = transform.position;
         Vector3 dir = Vector3.right * _transform.localScale.x * _attackRange;
 
-        if (_inputHandler.isCrouching)
-        {
-            start += Vector3.down * _OffsetCrouchingAttackY;
-            dir += Vector3.down * _OffsetCrouchingAttackY;
-        }
-        else
-        {
-            start += Vector3.up * _OffsetStandingAttackY;
-            dir += Vector3.up * _OffsetStandingAttackY;
-        }
+        start += _inputHandler.isCrouching ? Vector3.down * _OffsetCrouchingAttackY : Vector3.up * _OffsetStandingAttackY;
+        _inputHandler.CallSkillAnimation(0);
 
-        Debug.DrawRay(start, dir, Color.red, 3f);
+        Debug.DrawRay(start, dir, Color.red, 1.5f);   // Display attack ray
     }
     protected override void AfterSkill() 
     {
-    
+        _inputHandler.isCanMove = true;
     }
 }
