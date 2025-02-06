@@ -8,5 +8,5 @@ public class Character
 {
     public string characterName;
     public Sprite characterSprite;
-    public GameObject[] characterAttacks;
+    public Sprite[] characterAttacks;
 }
