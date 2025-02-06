@@ -214,8 +214,6 @@ public class CharacterManager : MonoBehaviour
         artworkSprite.sprite = character.characterSprite;
         nameText.text = character.characterName;
 
-
-
         for (int i = 0; i < 5; i++)
         {
             currentParent = superParentB.GetChild(i);
@@ -223,7 +221,6 @@ public class CharacterManager : MonoBehaviour
             {
                 currentParent.GetChild(0).GetComponent<Image>().sprite = character.characterAttacks[i];
             }
-            //superParentB.GetChild(i).GetChild(i).GetComponent<Image>().sprite = character.characterAttacks[i];
         }
 
     }
