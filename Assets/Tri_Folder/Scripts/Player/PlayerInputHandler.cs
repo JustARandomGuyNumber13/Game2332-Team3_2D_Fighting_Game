@@ -83,6 +83,7 @@ public class PlayerInputHandler : MonoBehaviour
             _isOnGround = false;
             _isCanJump = false;
             _anim.SetBool(_animHash.isOnGround, _isOnGround);
+            _anim.SetTrigger(_animHash.jump);
         }
     }
     #endregion

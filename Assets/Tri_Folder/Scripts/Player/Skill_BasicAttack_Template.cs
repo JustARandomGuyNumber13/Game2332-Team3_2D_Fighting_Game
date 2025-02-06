@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Skill_BasicAttack : Skill
+public class Skill_BasicAttack_Template : Skill
 {
     [Header("Child class variable")]
     [SerializeField] private float _attackRange;
@@ -25,8 +25,16 @@ public class Skill_BasicAttack : Skill
         Vector3 start = transform.position;
         Vector3 dir = Vector3.right * _transform.localScale.x * _attackRange;
 
-        start += _inputHandler.isCrouching ? Vector3.down * _OffsetCrouchingAttackY : Vector3.up * _OffsetStandingAttackY;
-        _inputHandler.CallSkillAnimation(0);
+        if (!_inputHandler.isCrouching) // Attack while standing
+        {
+            start += Vector3.up * _OffsetStandingAttackY;
+            _inputHandler.CallSkillAnimation(0);
+        }
+        else    // Attack while crouching
+        {
+            start += Vector3.down* _OffsetCrouchingAttackY;
+            _inputHandler.CallSkillAnimation(-1);
+        }
 
         Debug.DrawRay(start, dir, Color.red, 1.5f);   // Display attack ray
     }
