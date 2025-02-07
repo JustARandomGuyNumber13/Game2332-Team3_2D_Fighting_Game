@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using UnityEngine.InputSystem.Interactions;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEngine.TextCore.Text;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class CharacterManager : MonoBehaviour
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
     public Image[] skillSprites;
-    private Image[] navigatableArray;
+    
 
     [SerializeField]
     private Image activeSlotHighlight;
@@ -43,12 +44,13 @@ public class CharacterManager : MonoBehaviour
     public Transform superParentA;
     public Transform superParentB;
 
+ 
+
     private Transform currentParent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
 
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
@@ -115,11 +117,8 @@ public class CharacterManager : MonoBehaviour
 
 
 
-        //Transform childA = parentA.GetChild(0);
-        //Transform childB = parentB.GetChild(0); 
-
-        Transform childA = superParentA.GetChild(selectedActiveIndex).GetChild(0);
-        Transform childB = superParentB.GetChild(selectedSkillIndex).GetChild(0);
+        //Transform childA = superParentA.GetChild(selectedActiveIndex).GetChild(0);
+        OriginalSlot childB = superParentB.GetChild(selectedSkillIndex).GetComponentInChildren<OriginalSlot>();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -139,22 +138,23 @@ public class CharacterManager : MonoBehaviour
 
                     /*Vector3 childAPosition = childA.localPosition;
                     Vector3 childBPosition = childB.localPosition;
-                    
-                    childA.SetParent(parentB);
-                    childB.SetParent(parentA);
-
-                    childA.localPosition = childBPosition;
-                    childB.localPosition = childAPosition;
-                    break;*/
-
-                    Vector3 childAPosition = childA.localPosition;
-                    Vector3 childBPosition = childB.localPosition;
 
                     childA.SetParent(superParentB.GetChild(selectedSkillIndex));
                     childB.SetParent(superParentA.GetChild(selectedActiveIndex));
 
                     childA.localPosition = childBPosition;
-                    childB.localPosition = childAPosition;
+                    childB.localPosition = childAPosition;*/
+
+                    returnToParent(selectedActiveIndex);
+
+                    if (childB == null)
+                    {
+                        break;
+                    }
+
+                    childB.transform.SetParent(activeSkillSlot[selectedActiveIndex].transform);
+
+
                     break;
 
 
@@ -210,19 +210,43 @@ public class CharacterManager : MonoBehaviour
 
     private void UpdateCharacter(int selectedOption)
     {
+        for (int index = 0; index < activeSkillSlot.Length; index++)
+        {
+            returnToParent(index);
+        }
+
         Character character = characterDB.GetCharacter(selectedOption);
         artworkSprite.sprite = character.characterSprite;
         nameText.text = character.characterName;
 
-        for (int i = 0; i < 5; i++)
+
+        //Sprites for skills
+        /*for (int i = 0; i < 5; i++)
         {
             currentParent = superParentB.GetChild(i);
             for (int j = 0; j < 5; j++)
             {
                 currentParent.GetChild(0).GetComponent<Image>().sprite = character.characterAttacks[i];
             }
+        }*/
+
+        for (int i = 0; i < selectableSkillSlot.Length; i++)
+        {
+            superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = character.characterAttacks[i];
         }
 
+
+
+    }
+
+    private void returnToParent(int index)
+    {
+        OriginalSlot child = activeSkillSlot[index].transform.GetComponentInChildren<OriginalSlot>();
+        if (child != null)
+        {
+            child.transform.SetParent(child.getOriginalParent());
+            //child.resetPosition();
+        }
     }
 
     private void Load()
