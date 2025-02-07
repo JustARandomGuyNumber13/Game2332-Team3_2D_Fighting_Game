@@ -11,22 +11,22 @@ public class Player1 : MonoBehaviour
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("selectedOption"))
+        if (!PlayerPrefs.HasKey("selectedOption")) //checks if it has a selectedOption saved from last session
         {
-            selectedOption = 0;
+            selectedOption = 0; //if it does not, selectedOption is 0
         }
 
         else
         {
-            Load();
+            Load(); //else, it loads saved selectedOtpion
         }
 
-        UpdateCharacter(selectedOption);
+        UpdateCharacter(selectedOption); //shows character based on selectedOption
     }
 
     private void UpdateCharacter(int selectedOption)
     {
-        Character character = characterDB.GetCharacter(selectedOption);
+        Character character = characterDB.GetCharacter(selectedOption); //Creates character; uses GetCharacter function from characterDB based on selectedOption
         artworkSprite.sprite = character.characterSprite;
     }
 
