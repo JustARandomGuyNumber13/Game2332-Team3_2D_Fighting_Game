@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using JetBrains.Annotations;
 using UnityEngine.InputSystem.Interactions;
 
-public class OriginalSlot : MonoBehaviour
+public class Child : MonoBehaviour
 {
 
     [SerializeField]
