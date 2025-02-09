@@ -8,7 +8,9 @@ public class PlayerInputHandler : MonoBehaviour
     #region ~~ Variables ~~
     [SerializeField] private Transform _otherPlayer;
     [SerializeField] private SO_CharacterStat _charStat;
+    [SerializeField] private SO_AnimatorHash _animHash;
     [SerializeField] private SO_Layer _layer;
+    [SerializeField] private Animator _anim;
 
     public UnityEvent OnAttackEvent; 
     public UnityEvent OnSkillOneEvent; 
@@ -21,19 +23,18 @@ public class PlayerInputHandler : MonoBehaviour
     public bool isCrouching;
     public bool isDefending;
 
-    private Transform _transform;
     private Rigidbody2D _rb;
     private bool _isOnGround;
     private bool _isCanJump;
     private float _moveInput;
     private float _moveSpeed;
+    private float _moveDirection;
     #endregion
 
 
     #region ~~ Monobehavior handlers ~~
     private void Awake()
     {
-        _transform = transform;
         _rb = GetComponent<Rigidbody2D>();
         _isOnGround = true;
         _isCanJump = true;
@@ -46,15 +47,15 @@ public class PlayerInputHandler : MonoBehaviour
     private void Update()
     {
         //Debug.DrawLine(_transform.position, _transform.position + Vector3.down * _charStat.groundCheckDistance, Color.yellow);    // Display ground check ray
+    }
+    private void FixedUpdate()
+    {
+        Helper_FaceOtherPlayer();
         Move();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Physics2D.Raycast(_transform.position, Vector2.down, _charStat.groundCheckDistance))
-        {
-            _isOnGround = true;
-            _isCanJump = true;
-        }
+        Helper_GroundCheck();
     }
     #endregion
 
@@ -62,13 +63,26 @@ public class PlayerInputHandler : MonoBehaviour
     #region ~~ Action handlers ~~
     private void Move()
     {
-        Helper_FaceOtherPlayer();
+        if (_moveInput == 0)
+        {
+            _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;  
+            if (_anim.GetInteger(_animHash.moveDirection) != 0)    
+                _anim.SetInteger(_animHash.moveDirection, 0);
+
+            return;
+        }
+
         if (isCanMove)
         {
-            _moveSpeed = _moveInput - _transform.localScale.x == 0 ? _charStat.moveStandingSpeed : _charStat.moveCrouchingSpeed;
-            if (isCrouching) _moveSpeed = _charStat.moveCrouchingSpeed;
-            if (isDefending) _moveSpeed = 0;
-            _rb.linearVelocity =  Vector2.right *_moveInput * _moveSpeed + Vector2.up * _rb.linearVelocityY; 
+            _moveDirection = Mathf.Sign(transform.localScale.x * _moveInput);
+
+            if (isCrouching) 
+                _moveSpeed = _charStat.moveCrouchingSpeed;
+            else
+                _moveSpeed = _moveDirection == 1 ? _charStat.moveStandingSpeed : _charStat.moveCrouchingSpeed; // Forward or backward (backward use same speed as crouching)
+            
+            _rb.linearVelocity = Vector2.right * _moveInput * _moveSpeed + Vector2.up * _rb.linearVelocityY;
+            _anim.SetInteger(_animHash.moveDirection, (int)_moveDirection);
         }
     }
     private void Jump()
@@ -78,6 +92,8 @@ public class PlayerInputHandler : MonoBehaviour
             _rb.AddForce(Vector2.up * _charStat.jumpForce, ForceMode2D.Impulse);
             _isOnGround = false;
             _isCanJump = false;
+            _anim.SetBool(_animHash.isOnGround, _isOnGround);
+            _anim.SetTrigger(_animHash.jump);
         }
     }
     #endregion
@@ -86,18 +102,28 @@ public class PlayerInputHandler : MonoBehaviour
     #region ~~ Helper Methods ~~
     private void Helper_FaceOtherPlayer()   
     {
-        if (_transform.localScale.x > 0 && _otherPlayer.position.x < _transform.position.x) // is looking Right but other player is on the Left
-            _transform.localScale = Vector2.left + Vector2.up;
-        else if (_transform.localScale.x < 0 && _otherPlayer.position.x > _transform.position.x)// is looking Left but other player is on the Right
-            _transform.localScale = Vector3.one;
+        if (transform.localScale.x > 0 && _otherPlayer.position.x < transform.position.x) // is looking Right but other player is on the Left
+            transform.localScale = Vector2.left + Vector2.up;
+        else if (transform.localScale.x < 0 && _otherPlayer.position.x > transform.position.x)// is looking Left but other player is on the Right
+            transform.localScale = Vector3.one;
+    }
+    private void Helper_GroundCheck()
+    {
+        if (Physics2D.Raycast(transform.position, Vector2.down, _charStat.groundCheckDistance))
+        {
+            _isOnGround = true;
+            _isCanJump = true;
+            _anim.SetBool(_animHash.isOnGround, _isOnGround);
+        }
     }
     #endregion
-    
+
 
     #region ~~ Input handlers ~~
     private void OnMove(InputValue value)
     {
-        _moveInput = Mathf.Ceil(value.Get<float>());// -1, 0, 1
+        _moveInput = Mathf.Sign(value.Get<float>());
+        isDefending = Mathf.Sign(value.Get<float>()) == -1;
     }
     private void OnJump()
     {
@@ -106,11 +132,13 @@ public class PlayerInputHandler : MonoBehaviour
     private void OnCrouch(InputValue value)
     {
         isCrouching = value.Get<float>() == 1;
+        _anim.SetBool(_animHash.isCrouching, isCrouching);
     }
-    private void OnDefend(InputValue value)
-    { 
-        isDefending = value.Get<float>() == 1;
-    }
+    //private void OnDefend(InputValue value)
+    //{ 
+    //    isDefending = value.Get<float>() == 1;
+    //    _anim.SetBool(_animHash.isDefending, isDefending);
+    //}
     private void OnAttack()
     {
         OnAttackEvent?.Invoke();
@@ -131,20 +159,14 @@ public class PlayerInputHandler : MonoBehaviour
 
 
     #region ~~ Other handlers ~~
-    public IEnumerator NoMoveCoroutine(float duration)
+    public void CallSkillAnimation(int skillIndex)
     {
-        isCanMove = false;
-        float timer = 0;
-        if (timer < duration)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-        isCanMove = true;
+        _anim.SetTrigger(_animHash.useSkill);
+        _anim.SetInteger(_animHash.skillIndex, skillIndex);
     }
     private void InspectorCheck()
     {
-        if (_transform.localScale.y != 1 && _transform.localScale.y != -1)
+        if (transform.localScale.x != 1 && transform.localScale.x != -1)
             Debug.LogError("x-axis scale must either be 1 or -1 only");
     }
     #endregion
