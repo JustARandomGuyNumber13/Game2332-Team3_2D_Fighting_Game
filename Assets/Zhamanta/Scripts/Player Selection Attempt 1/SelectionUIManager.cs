@@ -6,6 +6,7 @@ using UnityEngine.InputSystem.Interactions;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.TextCore.Text;
+using UnityEngine.InputSystem;
 
 public class SelectionUIManager : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class SelectionUIManager : MonoBehaviour
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
-    public Image[] skillSprites; 
 
     [SerializeField]
     private Image activeSlotHighlight;
@@ -55,105 +55,131 @@ public class SelectionUIManager : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
-    private void Update()
+
+    public void MoveRight(InputAction.CallbackContext obj)
     {
         RectTransform rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
         RectTransform rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
 
-        //Forward key
-        if (Input.GetKeyDown(KeyCode.D)) 
+        switch (currentSelectionMode)
         {
-            switch (currentSelectionMode)
-            {
-                case selectionMode.characterSelection:
-                    NextOption();
-                    break;
-                case selectionMode.activeSlot: //Changes active slot index and highlighter
-                    selectedActiveIndex++;
-                    rectTransformH1.anchoredPosition += new Vector2(83f, 0); 
-                    if (rectTransformH1.anchoredPosition.x == 166f)
-                    {
-                        rectTransformH1.anchoredPosition = new Vector2(-83f, -50f);
-                    }
-                    if (selectedActiveIndex == 3)
-                    {
-                        selectedActiveIndex = 0;
-                    }
-                    break;
-                case selectionMode.selectableSlot: //Changes selectable slot index andn highlighter
-                    selectedSkillIndex++;
-                    rectTransformH2.anchoredPosition += new Vector2(83f, 0);
-                    if (rectTransformH2.anchoredPosition.x == 249f)
-                    {
-                        rectTransformH2.anchoredPosition = new Vector2(-166f, -123);
-                    }
-                    if (selectedSkillIndex == 5)
-                    {
-                        selectedSkillIndex = 0;
-                    }
-                    break; 
-            }
-
-               
-            //BackOption();
+            case selectionMode.characterSelection:
+                NextOption();
+                break;
+            case selectionMode.activeSlot: //Changes active slot index and highlighter
+                selectedActiveIndex++;
+                rectTransformH1.anchoredPosition += new Vector2(83f, 0);
+                if (rectTransformH1.anchoredPosition.x == 166f)
+                {
+                    rectTransformH1.anchoredPosition = new Vector2(-83f, -50f);
+                }
+                if (selectedActiveIndex == 3)
+                {
+                    selectedActiveIndex = 0;
+                }
+                break;
+            case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
+                selectedSkillIndex++;
+                rectTransformH2.anchoredPosition += new Vector2(83f, 0);
+                if (rectTransformH2.anchoredPosition.x == 249f)
+                {
+                    rectTransformH2.anchoredPosition = new Vector2(-166f, -123);
+                }
+                if (selectedSkillIndex == 5)
+                {
+                    selectedSkillIndex = 0;
+                }
+                break;
         }
-
-    
-        //Confirmation logic
-        Child childB = superParentB.GetChild(selectedSkillIndex).GetComponentInChildren<Child>();
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            switch (currentSelectionMode)
-            {
-                case selectionMode.characterSelection:
-                    currentSelectionMode = selectionMode.activeSlot;
-                    activeSlotHighlight.enabled = true;
-                    break;
-                case selectionMode.activeSlot:
-                    currentSelectionMode = selectionMode.selectableSlot;
-                    selectedSkillHighlight.enabled = true;
-                    break;
-                case selectionMode.selectableSlot:
-
-                    returnToParent(selectedActiveIndex);  //If there is a skill in the active slot, it will return it to its original slot **
-
-                    if (childB == null) //if there is no skill in the selectable slot, nothing will happen
-                    {
-                        break;
-                    }
-
-                    childB.transform.SetParent(activeSkillSlot[selectedActiveIndex].transform); //if there is a skill in the selectable slot, it will go to the active slot **
-
-
-                    break;
-
-
-            }
-        }
-
-        //Goes back
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            switch (currentSelectionMode)
-            {
-                case selectionMode.characterSelection:
-                    break;
-                case selectionMode.activeSlot:
-                    currentSelectionMode = selectionMode.characterSelection;
-                    activeSlotHighlight.enabled = false;
-                    break;
-                case selectionMode.selectableSlot:
-                    currentSelectionMode = selectionMode.activeSlot;
-                    selectedSkillHighlight.enabled = false;
-                    break;
-            }
-
-        }
-
-
     }
 
+    public void MoveLeft(InputAction.CallbackContext obj)
+    {
+        RectTransform rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
+        RectTransform rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
+
+        switch (currentSelectionMode)
+        {
+            case selectionMode.characterSelection:
+                BackOption();
+                break;
+            case selectionMode.activeSlot: //Changes active slot index and highlighter
+                selectedActiveIndex--;
+                rectTransformH1.anchoredPosition += new Vector2(-83f, 0);
+                if (rectTransformH1.anchoredPosition.x == 166f)
+                {
+                    rectTransformH1.anchoredPosition = new Vector2(-83f, -50f);
+                }
+                if (selectedActiveIndex == 3)
+                {
+                    selectedActiveIndex = 0;
+                }
+                break;
+            case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
+                selectedSkillIndex--;
+                rectTransformH2.anchoredPosition += new Vector2(-83f, 0);
+                if (rectTransformH2.anchoredPosition.x == 249f)
+                {
+                    rectTransformH2.anchoredPosition = new Vector2(-166f, -123);
+                }
+                if (selectedSkillIndex == 5)
+                {
+                    selectedSkillIndex = 0;
+                }
+                break;
+        }
+    }
+
+    public void Confirm(InputAction.CallbackContext obj)
+    {
+        Child childB = superParentB.GetChild(selectedSkillIndex).GetComponentInChildren<Child>();
+
+        switch (currentSelectionMode)
+        {
+            case selectionMode.characterSelection:
+                currentSelectionMode = selectionMode.activeSlot;
+                activeSlotHighlight.enabled = true;
+                break;
+            case selectionMode.activeSlot:
+                currentSelectionMode = selectionMode.selectableSlot;
+                selectedSkillHighlight.enabled = true;
+                break;
+            case selectionMode.selectableSlot:
+
+                returnToParent(selectedActiveIndex);  //If there is a skill in the active slot, it will return it to its original slot **
+
+                if (childB == null) //if there is no skill in the selectable slot, nothing will happen
+                {
+                    break;
+                }
+
+                childB.transform.SetParent(activeSkillSlot[selectedActiveIndex].transform); //if there is a skill in the selectable slot, it will go to the active slot **
+
+
+                break;
+        }
+    }
+
+    public void GoBack(InputAction.CallbackContext obj)
+    {
+        switch (currentSelectionMode)
+        {
+            case selectionMode.characterSelection:
+                break;
+            case selectionMode.activeSlot:
+                currentSelectionMode = selectionMode.characterSelection;
+                activeSlotHighlight.enabled = false;
+                break;
+            case selectionMode.selectableSlot:
+                currentSelectionMode = selectionMode.activeSlot;
+                selectedSkillHighlight.enabled = false;
+                break;
+        }
+    }
+
+
+
+    //Changing character
     public void NextOption()
     {
         selectedOption++;
@@ -167,7 +193,7 @@ public class SelectionUIManager : MonoBehaviour
         Save();
     }
 
-    public void BackOption()
+    public void BackOption() 
     {
         selectedOption--;
 
@@ -180,7 +206,6 @@ public class SelectionUIManager : MonoBehaviour
         Save();
     }
 
-    //Changing character
     private void UpdateCharacter(int selectedOption)
     {
         for (int index = 0; index < activeSkillSlot.Length; index++)
@@ -198,6 +223,8 @@ public class SelectionUIManager : MonoBehaviour
         }
     }
 
+
+
     //Return skill to original slot
     private void returnToParent(int index)
     {
@@ -207,6 +234,11 @@ public class SelectionUIManager : MonoBehaviour
             child.transform.SetParent(child.getOriginalParent());
         }
     }
+
+
+
+
+    //Changing scene and saving player prefs
 
     private void Load()
     {
