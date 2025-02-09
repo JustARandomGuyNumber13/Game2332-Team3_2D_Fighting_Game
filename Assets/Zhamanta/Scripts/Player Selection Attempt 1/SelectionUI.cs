@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine.TextCore.Text;
 using UnityEngine.InputSystem;
 
-public class SelectionUIManager : MonoBehaviour
+public class SelectionUI : MonoBehaviour
 {
     public CharacterDatabase characterDB;
 
@@ -106,25 +106,25 @@ public class SelectionUIManager : MonoBehaviour
             case selectionMode.activeSlot: //Changes active slot index and highlighter
                 selectedActiveIndex--;
                 rectTransformH1.anchoredPosition += new Vector2(-83f, 0);
-                if (rectTransformH1.anchoredPosition.x == 166f)
+                if (rectTransformH1.anchoredPosition.x == -166f)
                 {
-                    rectTransformH1.anchoredPosition = new Vector2(-83f, -50f);
+                    rectTransformH1.anchoredPosition = new Vector2(83f, -50f);
                 }
-                if (selectedActiveIndex == 3)
+                if (selectedActiveIndex == -1)
                 {
-                    selectedActiveIndex = 0;
+                    selectedActiveIndex = 2;
                 }
                 break;
             case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
                 selectedSkillIndex--;
                 rectTransformH2.anchoredPosition += new Vector2(-83f, 0);
-                if (rectTransformH2.anchoredPosition.x == 249f)
+                if (rectTransformH2.anchoredPosition.x == -249f)
                 {
-                    rectTransformH2.anchoredPosition = new Vector2(-166f, -123);
+                    rectTransformH2.anchoredPosition = new Vector2(166f, -123);
                 }
-                if (selectedSkillIndex == 5)
+                if (selectedSkillIndex == -1)
                 {
-                    selectedSkillIndex = 0;
+                    selectedSkillIndex = 4;
                 }
                 break;
         }
@@ -257,8 +257,8 @@ public class SelectionUIManager : MonoBehaviour
     }
 }
 /*
- * Remove Grid layout on childs
- * fix highlights
+ * 
+ * 
  * replace PlayerRef with Scriptable Object
  * Separate highlight mechanic
  * Keep five skill images Static (optional)
