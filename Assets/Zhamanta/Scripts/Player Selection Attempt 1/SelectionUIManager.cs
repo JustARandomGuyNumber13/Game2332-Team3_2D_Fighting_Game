@@ -233,6 +233,7 @@ public class SelectionUIManager : MonoBehaviour
         {
             child.transform.SetParent(child.getOriginalParent());
         }
+
     }
 
 
@@ -255,3 +256,28 @@ public class SelectionUIManager : MonoBehaviour
         SceneManager.LoadScene(sceneID);
     }
 }
+/*
+ * Remove Grid layout on childs
+ * fix highlights
+ * replace PlayerRef with Scriptable Object
+ * Separate highlight mechanic
+ * Keep five skill images Static (optional)
+ * Use SO_PlayerSelection to save data
+ * 
+ * Global variables for -> GetComponent
+ * Use SO_CharacterStat, SO_SkillStat, SO_CharacterList
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+// Note, GameObject that contain these type of functions should have a InputPlayer with the map corresponding to the action
+
+// Template: private void On___  *Name base on action name
+
+//private void OnChangeSelection(InputValue value)
+//{
+//    print(value.Get<float>());
+//}

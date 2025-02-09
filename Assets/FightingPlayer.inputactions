@@ -67,15 +67,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Defend",
-                    "type": "Value",
-                    "id": "3c76809c-39b0-4e8e-9891-17314f3e1250",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -175,17 +166,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e384d092-72ee-4dff-837f-fbf844a19516",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Defend",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

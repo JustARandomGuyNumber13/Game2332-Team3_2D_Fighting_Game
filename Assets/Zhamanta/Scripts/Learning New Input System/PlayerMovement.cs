@@ -26,18 +26,24 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(_moveDirection.x * moveSpeed, _moveDirection.y * moveSpeed);
     }*/
 
-    private void OnEnable()
-    {
-        fire.action.started += Fire;
-    }
+    //private void OnEnable()
+    //{
+    //    fire.action.started += Fire;
+    //}
 
     /*private void OnDisable()
     {
         fire.action.started -= Fire;
     }*/
 
-    private void Fire(InputAction.CallbackContext obj)
+    //private void Fire(InputAction.CallbackContext obj)
+    //{
+    //    Debug.Log("Fired");
+    //}
+
+
+    private void OnChangeSelection(InputValue value)
     {
-        Debug.Log("Fired");
+        print(value.Get<float>());
     }
 }
