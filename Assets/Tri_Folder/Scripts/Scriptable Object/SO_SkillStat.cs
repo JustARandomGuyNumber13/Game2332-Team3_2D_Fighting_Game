@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class SO_SkillStat : ScriptableObject
 {
     public Sprite skillSprite;
-    public int skillID;
 
     public string skillName;
     public string skillDescription;

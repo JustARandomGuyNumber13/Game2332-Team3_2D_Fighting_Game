@@ -38,9 +38,13 @@ public class PlayerSelection : MonoBehaviour
             if (characterIndex < 0)
                 characterIndex = _charactersList.size - 1;
         }
-        _curCharacter = _charactersList.GetCharacterAt(characterIndex);
-        Helper_ResetSkillSlots();
-        Helper_ChangeCharacter_UpdateUI();
+
+        if (direction != 0)
+        {
+            _curCharacter = _charactersList.GetCharacterAt(characterIndex);
+            Helper_ResetSkillSlots();
+            Helper_ChangeCharacter_UpdateUI();
+        }
     }
     private void AssignSkillSlot(int skillSlot, int skillIndex) // skillSlot 1-3, skillIndex 1-5
     {
