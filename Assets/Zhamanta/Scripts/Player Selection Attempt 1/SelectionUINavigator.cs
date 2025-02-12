@@ -15,6 +15,12 @@ public class SelectionUINavigator : MonoBehaviour
     {
         SelectionUI selectionUI = UIManager.GetComponent<SelectionUI>();
 
+        moveRight.action.Enable();
+        moveLeft.action.Enable();
+        confirm.action.Enable();
+        goBack.action.Enable();
+
+
         moveRight.action.started += selectionUI.MoveRight;
         moveLeft.action.started += selectionUI.MoveLeft;
         confirm.action.started += selectionUI.Confirm;
