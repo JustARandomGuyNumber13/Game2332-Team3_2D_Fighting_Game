@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class SelectedOption : MonoBehaviour
 {
-    public CharacterDatabase characterDB;
+    //public CharacterDatabase characterDB;
+    public SO_CharactersList characterList;
 
     public SpriteRenderer artworkSprite;
 
@@ -26,8 +27,11 @@ public class Player1 : MonoBehaviour
 
     private void UpdateCharacter(int selectedOption)
     {
-        Character character = characterDB.GetCharacter(selectedOption); //Creates character; uses GetCharacter function from characterDB based on selectedOption
-        artworkSprite.sprite = character.characterSprite;
+        //Character character = characterDB.GetCharacter(selectedOption); //Creates character; uses GetCharacter function from characterDB based on selectedOption
+        SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
+
+        //artworkSprite.sprite = character.characterSprite;
+        artworkSprite.sprite = characterStat.characterSprite;
     }
 
     private void Load()

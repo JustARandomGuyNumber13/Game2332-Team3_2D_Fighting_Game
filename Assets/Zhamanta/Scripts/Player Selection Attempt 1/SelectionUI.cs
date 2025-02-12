@@ -10,7 +10,8 @@ using UnityEngine.InputSystem;
 
 public class SelectionUI : MonoBehaviour
 {
-    public CharacterDatabase characterDB;
+    //public CharacterDatabase characterDB;
+    public SO_CharactersList characterList;
 
     public Text nameText;
     public SpriteRenderer artworkSprite;
@@ -34,10 +35,18 @@ public class SelectionUI : MonoBehaviour
     public Transform superParentB;
     private Transform currentParent;
 
-    
 
+    Vector2 originalH1;
+    Vector2 originalH2;
+    RectTransform rectTransformH1;
+    RectTransform rectTransformH2;
     void Start()
     {
+        rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
+        rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
+
+        originalH1 = rectTransformH1.anchoredPosition;
+        originalH2 = rectTransformH2.anchoredPosition;
 
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
@@ -58,8 +67,8 @@ public class SelectionUI : MonoBehaviour
 
     public void MoveRight(InputAction.CallbackContext obj)
     {
-        RectTransform rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
-        RectTransform rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
+        /*RectTransform rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
+        RectTransform rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();*/
 
         switch (currentSelectionMode)
         {
@@ -68,10 +77,11 @@ public class SelectionUI : MonoBehaviour
                 break;
             case selectionMode.activeSlot: //Changes active slot index and highlighter
                 selectedActiveIndex++;
-                rectTransformH1.anchoredPosition += new Vector2(83f, 0);
-                if (rectTransformH1.anchoredPosition.x == 166f)
+                
+                rectTransformH1.anchoredPosition += new Vector2(71f, 0);
+                if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(213f, 0)))
                 {
-                    rectTransformH1.anchoredPosition = new Vector2(-83f, -50f);
+                    rectTransformH1.anchoredPosition = originalH1;
                 }
                 if (selectedActiveIndex == 3)
                 {
@@ -80,10 +90,10 @@ public class SelectionUI : MonoBehaviour
                 break;
             case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
                 selectedSkillIndex++;
-                rectTransformH2.anchoredPosition += new Vector2(83f, 0);
-                if (rectTransformH2.anchoredPosition.x == 249f)
+                rectTransformH2.anchoredPosition += new Vector2(71f, 0);
+                if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(355f, 0)))
                 {
-                    rectTransformH2.anchoredPosition = new Vector2(-166f, -123);
+                    rectTransformH2.anchoredPosition = originalH2;
                 }
                 if (selectedSkillIndex == 5)
                 {
@@ -105,10 +115,10 @@ public class SelectionUI : MonoBehaviour
                 break;
             case selectionMode.activeSlot: //Changes active slot index and highlighter
                 selectedActiveIndex--;
-                rectTransformH1.anchoredPosition += new Vector2(-83f, 0);
-                if (rectTransformH1.anchoredPosition.x == -166f)
+                rectTransformH1.anchoredPosition += new Vector2(-71f, 0);
+                if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(-71f, 0)))
                 {
-                    rectTransformH1.anchoredPosition = new Vector2(83f, -50f);
+                    rectTransformH1.anchoredPosition = originalH1 + new Vector2(142f, 0);
                 }
                 if (selectedActiveIndex == -1)
                 {
@@ -117,10 +127,10 @@ public class SelectionUI : MonoBehaviour
                 break;
             case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
                 selectedSkillIndex--;
-                rectTransformH2.anchoredPosition += new Vector2(-83f, 0);
-                if (rectTransformH2.anchoredPosition.x == -249f)
+                rectTransformH2.anchoredPosition += new Vector2(-71f, 0);
+                if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(-71f, 0)))
                 {
-                    rectTransformH2.anchoredPosition = new Vector2(166f, -123);
+                    rectTransformH2.anchoredPosition = originalH2 + new Vector2(284f, 0);
                 }
                 if (selectedSkillIndex == -1)
                 {
@@ -184,7 +194,15 @@ public class SelectionUI : MonoBehaviour
     {
         selectedOption++;
 
-        if(selectedOption >= characterDB.CharacterCount)
+        /*if(selectedOption >= characterDB.CharacterCount)
+        {
+            selectedOption = 0;
+        }
+
+        UpdateCharacter(selectedOption);
+        Save();*/
+
+        if (selectedOption >= characterList.size)
         {
             selectedOption = 0;
         }
@@ -197,9 +215,17 @@ public class SelectionUI : MonoBehaviour
     {
         selectedOption--;
 
-        if (selectedOption < 0)
+        /*if (selectedOption < 0)
         {
             selectedOption = characterDB.CharacterCount - 1;
+        }
+
+        UpdateCharacter(selectedOption);
+        Save();*/
+
+        if (selectedOption < 0)
+        {
+            selectedOption = characterList.size - 1;
         }
 
         UpdateCharacter(selectedOption);
@@ -213,13 +239,19 @@ public class SelectionUI : MonoBehaviour
             returnToParent(index);
         }
 
-        Character character = characterDB.GetCharacter(selectedOption);
-        artworkSprite.sprite = character.characterSprite;
-        nameText.text = character.characterName;
+        //Character character = characterDB.GetCharacter(selectedOption);
+        SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
+
+        //artworkSprite.sprite = character.characterSprite;
+        //nameText.text = character.characterName;
+
+        artworkSprite.sprite = characterStat.characterSprite;
+        nameText.text = characterStat.characterName;
 
         for (int i = 0; i < selectableSkillSlot.Length; i++)
         {
-            superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = character.characterAttacks[i];
+            //superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = character.characterAttacks[i];
+            superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = characterStat.skills[i].skillSprite;
         }
     }
 
@@ -259,7 +291,7 @@ public class SelectionUI : MonoBehaviour
 /*
  * 
  * 
- * replace PlayerRef with Scriptable Object
+ * replace PlayerPref with Scriptable Object
  * Separate highlight mechanic
  * Keep five skill images Static (optional)
  * Use SO_PlayerSelection to save data
