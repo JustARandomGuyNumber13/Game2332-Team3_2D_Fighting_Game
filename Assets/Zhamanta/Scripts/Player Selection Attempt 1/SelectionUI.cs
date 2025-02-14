@@ -13,8 +13,13 @@ public class SelectionUI : MonoBehaviour
     //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
+
     public Text nameText;
+    public Text skillDescription;
     public SpriteRenderer artworkSprite;
+
+    public Text readyText;
+    private bool _ready = false;
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
@@ -50,6 +55,9 @@ public class SelectionUI : MonoBehaviour
 
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
+
+        readyText.enabled = false;
+        skillDescription.enabled = false;
 
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
@@ -99,6 +107,9 @@ public class SelectionUI : MonoBehaviour
                 {
                     selectedSkillIndex = 0;
                 }
+
+                UpdateSkillDescription();
+
                 break;
         }
     }
@@ -136,7 +147,11 @@ public class SelectionUI : MonoBehaviour
                 {
                     selectedSkillIndex = 4;
                 }
+
+                UpdateSkillDescription();
+
                 break;
+                
         }
     }
 
@@ -153,9 +168,12 @@ public class SelectionUI : MonoBehaviour
             case selectionMode.activeSlot:
                 currentSelectionMode = selectionMode.selectableSlot;
                 selectedSkillHighlight.enabled = true;
+                skillDescription.enabled = true;
+                UpdateSkillDescription();
                 break;
             case selectionMode.selectableSlot:
 
+                
                 returnToParent(selectedActiveIndex);  //If there is a skill in the active slot, it will return it to its original slot **
 
                 if (childB == null) //if there is no skill in the selectable slot, nothing will happen
@@ -183,11 +201,24 @@ public class SelectionUI : MonoBehaviour
             case selectionMode.selectableSlot:
                 currentSelectionMode = selectionMode.activeSlot;
                 selectedSkillHighlight.enabled = false;
+                skillDescription.enabled = false;
                 break;
         }
     }
 
-
+    public void Ready(InputAction.CallbackContext obj)
+    {
+        if (_ready == false)
+        {
+            _ready = !_ready;
+            readyText.enabled = true;
+        }
+        else
+        {
+            _ready = !_ready;
+            readyText.enabled = false;
+        }
+    }
 
     //Changing character
     public void NextOption()
@@ -228,8 +259,15 @@ public class SelectionUI : MonoBehaviour
             selectedOption = characterList.size - 1;
         }
 
+
         UpdateCharacter(selectedOption);
         Save();
+    }
+
+    private void UpdateSkillDescription()
+    {
+        SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
+        skillDescription.text = characterStat.skills[selectedSkillIndex].skillDescription;
     }
 
     private void UpdateCharacter(int selectedOption)

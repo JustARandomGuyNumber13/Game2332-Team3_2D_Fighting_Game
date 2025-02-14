@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Ready",
+                    "type": "Button",
+                    "id": "8954c4ae-44ba-4e0f-a70c-67c57f279f71",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -128,6 +137,17 @@
                     "action": "ChangeSelection",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e3450f49-36e1-4e86-9fee-495f3d7081d4",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -179,6 +199,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Ready",
+                    "type": "Button",
+                    "id": "4acf16e2-3d5f-448f-ad19-69b7be2a955d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -258,6 +287,17 @@
                     "action": "ChangeSelection",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2f10d1a7-e81d-4256-92cb-5fc8c18fd0f7",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

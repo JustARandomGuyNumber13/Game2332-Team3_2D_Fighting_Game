@@ -10,6 +10,7 @@ public class SelectionUINavigator : MonoBehaviour
     public InputActionReference moveLeft;
     public InputActionReference confirm;
     public InputActionReference goBack;
+    public InputActionReference ready;
 
     private void OnEnable()
     {
@@ -19,12 +20,14 @@ public class SelectionUINavigator : MonoBehaviour
         moveLeft.action.Enable();
         confirm.action.Enable();
         goBack.action.Enable();
+        ready.action.Enable();
 
 
         moveRight.action.started += selectionUI.MoveRight;
         moveLeft.action.started += selectionUI.MoveLeft;
         confirm.action.started += selectionUI.Confirm;
         goBack.action.started += selectionUI.GoBack;
+        ready.action.started += selectionUI.Ready;
     }
     
 }
