@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: SO_SkillStat_Blue_5
   m_EditorClassIdentifier: 
   skillSprite: {fileID: -5392625257635239999, guid: f014ee8fb90ceb042baf062cec443d71, type: 3}
-  skillID: 5
   skillName: 
-  skillDescription: 
+  skillDescription: B Attack 5
   skillDelay: 0
   skillDuration: 0
   skillCD: 0

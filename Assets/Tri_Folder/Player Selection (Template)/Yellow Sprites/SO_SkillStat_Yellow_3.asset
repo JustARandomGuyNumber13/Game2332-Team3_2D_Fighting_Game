@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: SO_SkillStat_Yellow_3
   m_EditorClassIdentifier: 
   skillSprite: {fileID: 4120901811166270815, guid: 55aab0837063e654bb867a1daf1de7a5, type: 3}
-  skillID: 3
   skillName: 
-  skillDescription: 
+  skillDescription: Y Attack 3
   skillDelay: 0
   skillDuration: 0
   skillCD: 0
