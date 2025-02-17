@@ -7,13 +7,14 @@ using UnityEngine.Rendering;
 public class Audio_Manager : MonoBehaviour
 {
     public static Audio_Manager Instance;
+    public BGMNameDisplay songName;
 
     [Header("Audio Source")]
     public AudioSource bgmSource;
     public AudioSource sfxSource;
 
     [Header("Audio Clips")]
-    public AudioClip bgmClip;
+    public List<AudioClip> bgmClip;
     public List<AudioClip> sfxClip;
 
     [Header("Sliders")]
@@ -26,6 +27,8 @@ public class Audio_Manager : MonoBehaviour
 
     private bool isBGMMuted = false;
     private bool isSFXMuted = false;
+    private int currentBGMIndex = 0;
+    private bool sfxPlaysAtStart = true;
 
     private void Awake()
     {
@@ -44,15 +47,15 @@ public class Audio_Manager : MonoBehaviour
     private void Start()
     {
         bgmSlide.onValueChanged.AddListener(SetBGMVol);
-        sfxSlide.onValueChanged.AddListener(SetSFXVol);
+        sfxSlide.onValueChanged.AddListener(OnSFXVolChange);
 
         bgmToggle.onValueChanged.AddListener(ToggleBGM);
         sfxToggle.onValueChanged.AddListener(ToggleSFX);
 
-        sfxSlide.onValueChanged.AddListener(delegate { PlaySFX(0); });
-
         bgmSlide.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
         sfxSlide.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+
+        sfxPlaysAtStart = false;
 
         PlayBGM();
     }
@@ -71,9 +74,19 @@ public class Audio_Manager : MonoBehaviour
 
     public void PlayBGM()
     {
-        bgmSource.clip = bgmClip;
-        bgmSource.loop = true;
+        if (bgmClip.Count == 0)
+        {
+            return;
+        }
+
+        bgmSource.clip = bgmClip[currentBGMIndex];
+        bgmSource.loop = false;
         bgmSource.Play();
+        
+        songName.DisplaySongName(bgmSource.clip.name);
+
+        currentBGMIndex = (currentBGMIndex + 1) % bgmClip.Count;
+
         StartCoroutine(ReplayBGM());
     }
 
@@ -100,9 +113,34 @@ public class Audio_Manager : MonoBehaviour
         sfxSlide.interactable = !isSFXMuted;
     }
 
+    public void OnSFXVolChange(float volume)
+    {
+        SetSFXVol(volume);
+        if (!sfxPlaysAtStart)
+        {
+            PlaySFX(0);
+        }
+    }
+
+    public void ShowAudioSettings()
+    {
+        bgmSlide.gameObject.SetActive(true);
+        sfxSlide.gameObject.SetActive(true);
+        bgmToggle.gameObject.SetActive(true);
+        sfxToggle.gameObject.SetActive(true);
+    }
+
+    public void ShowBGMname()
+    {
+        if (songName != null && bgmSource.clip != null)
+        {
+            songName.DisplaySongName(bgmSource.clip.name);
+        }
+    }
+
     private IEnumerator ReplayBGM()
     {
-        yield return new WaitForSeconds(bgmClip.length);
+        yield return new WaitForSeconds(bgmSource.clip.length);
         PlayBGM();
     }
 }
