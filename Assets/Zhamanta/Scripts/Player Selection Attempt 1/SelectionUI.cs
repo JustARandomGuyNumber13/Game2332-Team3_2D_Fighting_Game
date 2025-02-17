@@ -7,18 +7,19 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.TextCore.Text;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class SelectionUI : MonoBehaviour
 {
     //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
+    public UnityEvent OnReadyCheck;
 
     public Text nameText;
     public Text skillDescription;
     public SpriteRenderer artworkSprite;
 
-    public Text readyText;
     private bool _ready = false;
    
     public Image[] activeSkillSlot;
@@ -29,9 +30,9 @@ public class SelectionUI : MonoBehaviour
     [SerializeField]
     private Image selectedSkillHighlight;
 
-    private int selectedOption = 0;
-    public int selectedActiveIndex = 0;
-    public int selectedSkillIndex = 0;
+    private int selectedOption = 0; //character selection
+    public int selectedActiveIndex = 0; 
+    public int selectedSkillIndex = 0; //skill indexes
 
     public enum selectionMode { characterSelection, activeSlot, selectableSlot }
     public selectionMode currentSelectionMode = selectionMode.characterSelection;
@@ -56,7 +57,7 @@ public class SelectionUI : MonoBehaviour
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
 
-        readyText.enabled = false;
+        
         skillDescription.enabled = false;
 
         if (!PlayerPrefs.HasKey("selectedOption"))
@@ -208,7 +209,9 @@ public class SelectionUI : MonoBehaviour
 
     public void Ready(InputAction.CallbackContext obj)
     {
-        if (_ready == false)
+        OnReadyCheck?.Invoke();
+
+      /*  if (_ready == false)
         {
             _ready = !_ready;
             readyText.enabled = true;
@@ -217,7 +220,7 @@ public class SelectionUI : MonoBehaviour
         {
             _ready = !_ready;
             readyText.enabled = false;
-        }
+        }*/
     }
 
     //Changing character
