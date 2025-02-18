@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerSelection : MonoBehaviour
@@ -59,10 +61,31 @@ public class PlayerSelection : MonoBehaviour
     #endregion
 
 
+    [SerializeField] private TMP_Text _readyText;
+    public UnityEvent OnReadyCheck;
+    private bool _isReady;
     #region ~~ Public functions for UI buttons/handlers ~~
-    public void UI_SaveData()
+    private void OnSaveData() // Input Handler
     {
-        _playerSelection.SaveData(characterIndex, skillOne, skillTwo, skillThree);
+        // Implement the toggle for _isReady and update _readyText
+        OnReadyCheck?.Invoke(); // Call every key action to toggle in the Save.script
+        if (_isReady)
+            _playerSelection.SaveData(characterIndex, skillOne, skillTwo, skillThree);
+    }
+
+    private struct Save
+    {
+        private bool _isPlayer1Ready, _isPlayer2Ready;
+        private void ReadyCheck(bool isPlayer1)
+        {
+            if (isPlayer1)
+                _isPlayer1Ready = _isPlayer1Ready ? false : true;
+            else
+                _isPlayer2Ready = _isPlayer2Ready ? false : true;
+
+            if (_isPlayer1Ready && _isPlayer1Ready)
+                print("Change scene");
+        }
     }
 
     /*

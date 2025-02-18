@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerHealthHandler : MonoBehaviour
@@ -6,7 +7,8 @@ public class PlayerHealthHandler : MonoBehaviour
 
     private PlayerInputHandler _inputHandler;
 
-    private float _health;
+    public float health
+    { get; private set; }
 
     private void Awake()
     {
@@ -14,12 +16,12 @@ public class PlayerHealthHandler : MonoBehaviour
     }
     private void Start()
     {
-        _health = _characterStat.maxHealth;
+        health = _characterStat.maxHealth;
     }
 
     public void IncreaseHealth(float amount)
     {
-        _health += amount;
+        health += amount;
     }
     public void DecreaseHealth(float amount)
     {
@@ -31,10 +33,48 @@ public class PlayerHealthHandler : MonoBehaviour
             _inputHandler.CallDefendAnimation();
         }
         else
-        { 
+        {
             _inputHandler.CallHurtAnimation();
         }
 
-        _health -= damageAmount;
+        health -= damageAmount;
+    }
+
+    public void DecreaseHealthOverTime(float amount, float duration, float tickDuration)
+    { 
+        StartCoroutine(DecreaseHealthOverTimeCoroutine(amount, duration, tickDuration));
+    }
+    private IEnumerator DecreaseHealthOverTimeCoroutine(float amount, float duration, float tickDuration)
+    {
+        float timer = 0;
+        float tick = tickDuration;
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            if (timer >= tick)
+            {
+                tick += tickDuration;
+                DecreaseHealth(amount);
+            }
+            yield return null;
+        }
+    }
+
+    public void ReverseMovementInput(float duration)
+    {
+        StartCoroutine(ReverseInputOverTimeCoroutine(duration));
+    }
+    private IEnumerator ReverseInputOverTimeCoroutine(float duration)
+    {
+        float timer = 0;
+        _inputHandler.isReverseInput = true;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        _inputHandler.isReverseInput = false;
     }
 }

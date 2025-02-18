@@ -20,24 +20,29 @@ public class Skill_BasicAttack_Template : Skill
     protected override void BeforeSkill()
     { 
         _inputHandler.isCanMove = false;
+        _inputHandler.isCanUseSkill = false;
     }
     protected override void DuringSkill()
     {
         Vector3 start = transform.position;
         Vector3 direction = Vector3.right * transform.localScale.x;
 
-        if (!_inputHandler.isCrouching) // Attack while standing
+        if (!_inputHandler.isCrouching) 
         {
             start += Vector3.up * _OffsetStandingAttackY;
-            _inputHandler.CallSkillAnimation(0);
+
+            if(_inputHandler.isOnGround)
+                _inputHandler.CallSkillAnimation(0); // Standing Attack
+            else
+                _inputHandler.CallSkillAnimation(-2);   // Jumping Attack
         }
-        else    // Attack while crouching
+        else    
         {
             start += Vector3.down* _OffsetCrouchingAttackY;
-            _inputHandler.CallSkillAnimation(-1);
+            _inputHandler.CallSkillAnimation(-1); // Crouching Attack
         }
 
-        //Debug.DrawRay(start, direction * _attackRange, Color.red, 1.5f);   // Display attack ray
+        Debug.DrawRay(start, direction * _attackRange, Color.red, 1.5f);   // Display attack ray
         RaycastHit2D[] hitList = Physics2D.RaycastAll(start, Vector2.right, _attackRange, _layer.playerLayer);
 
         if (hitList.Length > 0)
@@ -58,5 +63,6 @@ public class Skill_BasicAttack_Template : Skill
     protected override void AfterSkill() 
     {
         _inputHandler.isCanMove = true;
+        _inputHandler.isCanUseSkill = true;
     }
 }

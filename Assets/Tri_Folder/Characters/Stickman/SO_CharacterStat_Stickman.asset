@@ -18,8 +18,8 @@ MonoBehaviour:
   characterPrefab: {fileID: 0}
   moveStandingSpeed: 5
   moveCrouchingSpeed: 3
-  jumpForce: 10
+  jumpForce: 11.5
   maxHealth: 100
-  groundCheckDistance: 3
+  groundCheckDistance: 1.5
   defenseValue: 1
   skills: []
