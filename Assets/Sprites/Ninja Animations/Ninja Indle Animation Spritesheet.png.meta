@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Indle Animation Spritesheet_0: -614293327128696295
+      Ninja Indle Animation Spritesheet_1: 923112738784543349
+      Ninja Indle Animation Spritesheet_2: 3496261999208921864
+      Ninja Indle Animation Spritesheet_3: -4008305935647665349
+      Ninja Indle Animation Spritesheet_4: -5662115284165902160
+      Ninja Indle Animation Spritesheet_5: 5966687205105756210
+      Ninja Indle Animation Spritesheet_6: -1722112710996045419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
