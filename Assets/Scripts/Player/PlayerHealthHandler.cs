@@ -59,22 +59,4 @@ public class PlayerHealthHandler : MonoBehaviour
             yield return null;
         }
     }
-
-    public void ReverseMovementInput(float duration)
-    {
-        StartCoroutine(ReverseInputOverTimeCoroutine(duration));
-    }
-    private IEnumerator ReverseInputOverTimeCoroutine(float duration)
-    {
-        float timer = 0;
-        _inputHandler.isReverseInput = true;
-
-        while (timer < duration)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        _inputHandler.isReverseInput = false;
-    }
 }

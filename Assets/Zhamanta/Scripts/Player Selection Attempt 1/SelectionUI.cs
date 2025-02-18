@@ -20,7 +20,7 @@ public class SelectionUI : MonoBehaviour
     public Text skillDescription;
     public SpriteRenderer artworkSprite;
 
-    private bool _ready = false;
+    //private bool _ready = false;
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
@@ -211,7 +211,7 @@ public class SelectionUI : MonoBehaviour
     {
         OnReadyCheck?.Invoke();
 
-      /*  if (_ready == false)
+      /* if (_ready == false)
         {
             _ready = !_ready;
             readyText.enabled = true;
@@ -221,6 +221,8 @@ public class SelectionUI : MonoBehaviour
             _ready = !_ready;
             readyText.enabled = false;
         }*/
+      // ReadyCheck?.Invoke()
+      // if (_ready) Save Data ()
     }
 
     //Changing character

@@ -200,4 +200,24 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.LogError("x-axis scale must either be 1 or -1 only", gameObject);
     }
     #endregion
+
+    #region ~~ Special effects ~~
+    public void ReverseMovementInput(float duration)
+    {
+        StartCoroutine(ReverseInputOverTimeCoroutine(duration));
+    }
+    private IEnumerator ReverseInputOverTimeCoroutine(float duration)
+    {
+        float timer = 0;
+        isReverseInput = true;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        isReverseInput = false;
+    }
+    #endregion
 }

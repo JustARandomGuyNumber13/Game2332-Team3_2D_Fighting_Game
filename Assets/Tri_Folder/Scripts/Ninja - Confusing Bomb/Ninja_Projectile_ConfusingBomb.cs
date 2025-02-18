@@ -7,7 +7,7 @@ public class Ninja_Projectile_ConfusingBomb : Projectile
     protected override void DealDamageBehavior(GameObject otherPlayer)
     {
         _otherHealthHandler.DecreaseHealth(_damageAmount);
-
-        _otherHealthHandler.ReverseMovementInput(_effectDuration);
+        Debug.Log("Someting");
+        _otherInputHandler.ReverseMovementInput(_effectDuration);
     }
 }

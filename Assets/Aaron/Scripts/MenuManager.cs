@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        audioManager = FindObjectOfType<Audio_Manager>();
+        audioManager = FindFirstObjectByType<Audio_Manager>();
 
         if (audioManager == null)
         {

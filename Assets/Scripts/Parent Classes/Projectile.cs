@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected float _launchSpeed;
 
     protected PlayerHealthHandler _otherHealthHandler;
+    protected PlayerInputHandler _otherInputHandler;
     protected GameObject _shooter;
     protected Rigidbody2D _rb;
 
@@ -30,6 +31,10 @@ public class Projectile : MonoBehaviour
             {
                 if (_otherHealthHandler == null)
                     _otherHealthHandler = collision.GetComponent<PlayerHealthHandler>();
+
+                if(_otherInputHandler == null)
+                    _otherInputHandler = collision.GetComponent<PlayerInputHandler>();
+
                 DealDamageBehavior(collision.gameObject);
             }
         }
