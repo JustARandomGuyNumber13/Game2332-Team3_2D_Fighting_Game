@@ -4,9 +4,8 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-public class PlayerInputHandler : MonoBehaviour
+public class PlayerInputHandler_Advance : MonoBehaviour
 {
-    #region ~~ Variables ~~
     [SerializeField] private SO_AnimatorHash _animatorHash;
     [SerializeField] private SO_Layer _layer;
     [SerializeField] private SO_CharacterStat _chararacterStat;
@@ -14,9 +13,9 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Collider2D _standCollider, _crouchCollider;
 
-    public UnityEvent OnAttackEvent;
-    public UnityEvent OnSkillOneEvent;
-    public UnityEvent OnSkillTwoEvent;
+    public UnityEvent OnAttackEvent; 
+    public UnityEvent OnSkillOneEvent; 
+    public UnityEvent OnSkillTwoEvent; 
     public UnityEvent OnSkillThreeEvent;
     public UnityEvent OnDefendEvent;
     public UnityEvent OnCrouchEvent;
@@ -34,10 +33,8 @@ public class PlayerInputHandler : MonoBehaviour
     private float _crouchInput;
     private float _moveSpeed;
     private float _moveDirection;
-    #endregion
 
 
-    #region ~~ Monobehavior handlers ~~
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -50,7 +47,6 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.DrawLine(transform.position, transform.position + Vector3.down *  _chararacterStat.groundCheckDistance, Color.yellow);    // Display ground check ray
         Crouch();
     }
     private void FixedUpdate()
@@ -62,11 +58,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         Helper_GroundCheck();
     }
-    #endregion
 
 
-    #region ~~ Action handlers ~~
-    private void Move()
+    private void Move() // Fixed Update
     {
         if (_moveInput == 0)
         {
@@ -79,7 +73,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else if (isCanMove)
         {
-            _moveDirection = Mathf.Sign(transform.localScale.x * _moveInput * (isReverseInput ? -1 : 1));
+            _moveDirection = Mathf.Sign(transform.localScale.x * _moveInput);
             isDefending = _moveDirection == -1;
 
             if (isCrouching) 
@@ -87,13 +81,13 @@ public class PlayerInputHandler : MonoBehaviour
             else
                 _moveSpeed = _moveDirection == 1 ? _chararacterStat.moveStandingSpeed : _chararacterStat.moveCrouchingSpeed; // Forward or backward (backward use same speed as crouching)
             
-            _rb.linearVelocity = Vector2.right * _moveInput * (isReverseInput ? -1 : 1) * _moveSpeed + Vector2.up * _rb.linearVelocityY;
+            _rb.linearVelocity = Vector2.right * _moveInput * _moveSpeed + Vector2.up * _rb.linearVelocityY;
             _animator.SetInteger(_animatorHash.moveDirection, (int)_moveDirection);
         }
     }
-    private void Jump() 
+    private void Jump() // Event base
     {
-        if (isCanMove && isOnGround && isCanUseSkill && isCanJump)
+        if (isCanMove &&  isOnGround && isCanUseSkill && isCanJump)
         {
             isOnGround = false;
             isCanJump = false;
@@ -102,7 +96,7 @@ public class PlayerInputHandler : MonoBehaviour
             _animator.SetTrigger(_animatorHash.jump);
         }
     }
-    private void Crouch()   
+    private void Crouch()   // Update
     {
         if (isCanMove && isOnGround && isCanUseSkill && _crouchInput != 0) // Prevent crouching while attacking
         {
@@ -111,7 +105,7 @@ public class PlayerInputHandler : MonoBehaviour
             _standCollider.enabled = false;
             _crouchCollider.enabled = true;
         }
-        else if (!_standCollider.enabled)
+        else if(!_standCollider.enabled)
         {
             isCrouching = false;
             _animator.SetBool(_animatorHash.isCrouching, false);
@@ -119,11 +113,9 @@ public class PlayerInputHandler : MonoBehaviour
             _crouchCollider.enabled = false;
         }
     }
-    #endregion
 
 
-    #region ~~ Helper Methods ~~
-    private void Helper_FaceOtherPlayer()   
+    private void Helper_FaceOtherPlayer()   // Fixed Update
     {
         if (!isOnGround || !isCanMove) return;
 
@@ -134,20 +126,18 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Helper_GroundCheck()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, _chararacterStat.groundCheckDistance))
+        if (Physics2D.Raycast(transform.position, Vector2.down, _chararacterStat.groundCheckDistance, _layer.groundLayer))
         {
             isOnGround = true;
             isCanJump = true;
             _animator.SetBool(_animatorHash.isOnGround, isOnGround);
         }
     }
-    #endregion
 
 
-    #region ~~ Input handlers ~~
     private void OnMove(InputValue value)
     {
-        _moveInput = Mathf.Ceil(value.Get<float>());
+        _moveInput = Mathf.Ceil(value.Get<float>()) * (isReverseInput ? -1 : 1);
     }
     private void OnJump()
     {
@@ -177,10 +167,8 @@ public class PlayerInputHandler : MonoBehaviour
         if(isCanUseSkill)
             OnSkillThreeEvent?.Invoke();
     }
-    #endregion
 
 
-    #region ~~ Other handlers ~~
     public void CallDefendAnimation()
     {
         _animator.SetTrigger(_animatorHash.defend);
@@ -199,5 +187,4 @@ public class PlayerInputHandler : MonoBehaviour
         if (transform.localScale.x != 1 && transform.localScale.x != -1)
             Debug.LogError("x-axis scale must either be 1 or -1 only", gameObject);
     }
-    #endregion
 }
