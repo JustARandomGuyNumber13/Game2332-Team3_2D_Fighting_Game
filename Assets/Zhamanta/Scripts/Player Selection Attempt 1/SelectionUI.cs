@@ -46,33 +46,22 @@ public class SelectionUI : MonoBehaviour
     RectTransform rectTransformH1;
     RectTransform rectTransformH2;
 
+    private int playerSkill1;
+    private int playerSkill2;
+    private int playerSkill3;
 
-    //WOKRING ON SAVE
-    [SerializeField]
-    private SelectionUI UI1;
-    [SerializeField]
-    private SelectionUI UI2;
-
-    private bool _ready1;
-    private bool _ready2;
-
-    private int player1Char;
-    private int player1Skill1;
-    private int player1Skill2;
-    private int player1Skill3;
-
-    private int player2Char;
+    /*private int player2Char;
     private int player2Skill1;
     private int player2Skill2;
-    private int player2Skill3;
+    private int player2Skill3;*/
 
     public UnityEvent<MyCharacterSelection, MyCharacterSelection> OnReady;
 
+    [SerializeField]
+    SO_PlayerSelection playerSelection;
+
     void Start()
     {
-        UI1 = GameObject.Find("UIManager (Player 1)").GetComponent<SelectionUI>();
-        UI2 = GameObject.Find("UIManager (Player 2)").GetComponent<SelectionUI>();
-
         rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
         rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
 
@@ -98,22 +87,40 @@ public class SelectionUI : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
+    public bool isReady;
+    public UnityEvent OnReadyCheck;
+    public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
+    {
+        if (isReady && otherPlayer.isReady)
+        {
+            Debug.Log("Change Scene");
+            //GoToScene();
+        }
+    }
+    private void SelfReadyCheck()
+    {
+        isReady = isReady ? false : true;
+        if (isReady)
+        {
+            // saveData
+            Debug.Log("Save data");
+
+            playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
+        }
+        OnReadyCheck?.Invoke();
+    }
 
     private void Update()
     {
-        _ready1 = UI1._ready;
-        _ready2 = UI2._ready;
+        Debug.Log("Test Update");
+        int.TryParse(superParentA.GetChild(0).GetChild(0).name, out playerSkill1);
+        int.TryParse(superParentA.GetChild(1).GetChild(0).name, out playerSkill2);
+        int.TryParse(superParentA.GetChild(2).GetChild(0).name, out playerSkill3);
+        Debug.Log(playerSkill1);
 
-        player1Char = UI1.selectedOption;
-        player2Char = UI2.selectedOption;
-
-        int.TryParse(UI1.superParentB.GetChild(0).GetChild(0).name, out player1Skill1);
-        int.TryParse(UI1.superParentB.GetChild(1).GetChild(0).name, out player1Skill2);
-        int.TryParse(UI1.superParentB.GetChild(2).GetChild(0).name, out player1Skill3);
-
-        int.TryParse(UI2.superParentB.GetChild(0).GetChild(0).name, out player2Skill1);
-        int.TryParse(UI2.superParentB.GetChild(1).GetChild(0).name, out player2Skill2);
-        int.TryParse(UI2.superParentB.GetChild(2).GetChild(0).name, out player2Skill3);
+        /*int.TryParse(UI2.superParentA.GetChild(0).GetChild(0).name, out player2Skill1);
+        int.TryParse(UI2.superParentA.GetChild(1).GetChild(0).name, out player2Skill2);
+        int.TryParse(UI2.superParentA.GetChild(2).GetChild(0).name, out player2Skill3);*/
     }
 
 
@@ -252,25 +259,27 @@ public class SelectionUI : MonoBehaviour
     {
         //OnReadyCheck?.Invoke();
 
-        if (_ready == false)
-        {
-            _ready = !_ready;
-            readyText.enabled = true;
-        }
-        else
-        {
-            _ready = !_ready;
-            readyText.enabled = false;
-        }
+        SelfReadyCheck();
+
+        //if (_ready == false)
+        //{
+        //    _ready = !_ready;
+        //    readyText.enabled = true;
+        //}
+        //else
+        //{
+        //    _ready = !_ready;
+        //    readyText.enabled = false;
+        //}
 
 
-        if (_ready1 && _ready2)
+        /*if (_ready1 && _ready2)
         {
             MyCharacterSelection player1selection = new MyCharacterSelection(player1Char, player1Skill1, player1Skill2, player1Skill3);
             MyCharacterSelection player2selection = new MyCharacterSelection(player2Char, player2Skill1, player2Skill2, player2Skill3);
 
             OnReady.Invoke(player1selection, player2selection);
-        }
+        }*/
     }
 
 
