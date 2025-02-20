@@ -18,7 +18,7 @@ public class SelectionUI : MonoBehaviour
     public Text skillDescription;
     public SpriteRenderer artworkSprite;
 
-    private bool _ready = false;
+    
     public Text readyText;
    
     public Image[] activeSkillSlot;
