@@ -14,13 +14,12 @@ public class SelectionUI : MonoBehaviour
     //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
-    public UnityEvent OnReadyCheck;
-
     public Text nameText;
     public Text skillDescription;
     public SpriteRenderer artworkSprite;
 
-    //private bool _ready = false;
+    private bool _ready = false;
+    public Text readyText;
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
@@ -46,8 +45,27 @@ public class SelectionUI : MonoBehaviour
     Vector2 originalH2;
     RectTransform rectTransformH1;
     RectTransform rectTransformH2;
+
+
+    //WOKRING ON SAVE
+    public GameObject UI1;
+    public GameObject UI2;
+
+    private bool _ready1;
+    private bool _ready2;
+    //public UnityEvent OnReadyCheck;
+
+    PlayerSelection player1 = new PlayerSelection();
+    PlayerSelection player2 = new PlayerSelection();
+
+
     void Start()
     {
+      
+
+        _ready1 = GameObject.Find("UIManager (Player 1)").GetComponent<SelectionUI>()._ready;
+        _ready2 = GameObject.Find("UIManager (Player 2)").GetComponent<SelectionUI>()._ready;
+
         rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
         rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
 
@@ -72,6 +90,13 @@ public class SelectionUI : MonoBehaviour
 
         UpdateCharacter(selectedOption);
     }
+
+
+    private void Update()
+    {
+        
+    }
+
 
 
     public void MoveRight(InputAction.CallbackContext obj)
@@ -209,9 +234,9 @@ public class SelectionUI : MonoBehaviour
 
     public void Ready(InputAction.CallbackContext obj)
     {
-        OnReadyCheck?.Invoke();
+        //OnReadyCheck?.Invoke();
 
-      /* if (_ready == false)
+        if (_ready == false)
         {
             _ready = !_ready;
             readyText.enabled = true;
@@ -220,9 +245,23 @@ public class SelectionUI : MonoBehaviour
         {
             _ready = !_ready;
             readyText.enabled = false;
+        }
+    }
+
+    private void ReadyCheck()
+    {
+        if (_ready1 && _ready2)
+        {
+            //OnReady.Invoke<Player1, Player2>
+        }
+    }
+
+    private void OnSaveData()
+    {
+        /*if (_isReady)
+        {
+            SO_PlayerSelection.SaveData(*//*takes 3 arguments*//*);
         }*/
-      // ReadyCheck?.Invoke()
-      // if (_ready) Save Data ()
     }
 
     //Changing character
