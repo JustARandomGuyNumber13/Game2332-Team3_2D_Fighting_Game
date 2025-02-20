@@ -41,34 +41,34 @@ public class Ninja_Skill_BasicAttack : Skill
         }
     }
 
-    //private void OnDrawGizmosSelected()
-    //{
-    //    // Get facing direction
-    //    float facingDirection = Mathf.Sign(transform.localScale.x);
+    private void OnDrawGizmosSelected()
+    {
+        // Get facing direction
+        float facingDirection = Mathf.Sign(transform.localScale.x);
 
-    //    // Calculate the *flipped* offset
-    //    Vector2 flippedOffset = new Vector2(_attackOffset.x * facingDirection, _attackOffset.y);
+        // Calculate the *flipped* offset
+        Vector2 flippedOffset = new Vector2(_attackOffset.x * facingDirection, _attackOffset.y);
 
 
-    //    // Calculate box center
-    //    Vector2 boxCenter = (Vector2)transform.position + flippedOffset;
+        // Calculate box center
+        Vector2 boxCenter = (Vector2)transform.position + flippedOffset;
 
-    //    // Calculate half size
-    //    Vector2 halfSize = _attackBoxSize * 0.5f;
+        // Calculate half size
+        Vector2 halfSize = _attackBoxSize * 0.5f;
 
-    //    // Calculate box corners
-    //    Vector2 topLeft = boxCenter + new Vector2(-halfSize.x, halfSize.y);
-    //    Vector2 topRight = boxCenter + new Vector2(halfSize.x, halfSize.y);
-    //    Vector2 bottomLeft = boxCenter + new Vector2(-halfSize.x, -halfSize.y);
-    //    Vector2 bottomRight = boxCenter + new Vector2(halfSize.x, -halfSize.y);
+        // Calculate box corners
+        Vector2 topLeft = boxCenter + new Vector2(-halfSize.x, halfSize.y);
+        Vector2 topRight = boxCenter + new Vector2(halfSize.x, halfSize.y);
+        Vector2 bottomLeft = boxCenter + new Vector2(-halfSize.x, -halfSize.y);
+        Vector2 bottomRight = boxCenter + new Vector2(halfSize.x, -halfSize.y);
 
-    //    // Draw the box
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawLine(topLeft, topRight);
-    //    Gizmos.DrawLine(topRight, bottomRight);
-    //    Gizmos.DrawLine(bottomRight, bottomLeft);
-    //    Gizmos.DrawLine(bottomLeft, topLeft);
-    //}
+        // Draw the box
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(topLeft, topRight);
+        Gizmos.DrawLine(topRight, bottomRight);
+        Gizmos.DrawLine(bottomRight, bottomLeft);
+        Gizmos.DrawLine(bottomLeft, topLeft);
+    }
     protected override void AfterSkill() 
     {
         _inputHandler.isCanMove = true;
