@@ -114,6 +114,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -284,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Indle Animation Spritesheet_0: -614293327128696295
+      Ninja Indle Animation Spritesheet_1: 923112738784543349
+      Ninja Indle Animation Spritesheet_2: 3496261999208921864
+      Ninja Indle Animation Spritesheet_3: -4008305935647665349
+      Ninja Indle Animation Spritesheet_4: -5662115284165902160
+      Ninja Indle Animation Spritesheet_5: 5966687205105756210
+      Ninja Indle Animation Spritesheet_6: -1722112710996045419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

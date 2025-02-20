@@ -4,14 +4,17 @@ using UnityEngine;
 public abstract class Skill : MonoBehaviour
 {
     #region ~~ Variables ~~
-    [SerializeField] protected SO_SkillStat _skillStat;
+    public SO_SkillStat skillStat;
     protected bool _isCanUseSkill = true;
+
+    [Tooltip("Only for passive skill")]
+    public bool isPassiveSkillActive;
     #endregion
 
     #region ~~ Skill behavior handlers ~~
     public void ActivateSkill() 
     {
-        if (!_skillStat.isPassiveSkill &&_isCanUseSkill)
+        if ((!skillStat.isPassiveSkill && _isCanUseSkill) || (skillStat.isPassiveSkill && isPassiveSkillActive))
         {
             _isCanUseSkill = false;
             StartCoroutine(SkillCoroutine());
@@ -22,9 +25,10 @@ public abstract class Skill : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(SkillCoolDownCoroutine());
     }
-    protected abstract void BeforeSkill();
-    protected abstract void DuringSkill();
-    protected abstract void AfterSkill();
+    protected virtual void BeforeSkill() { }
+    protected virtual void DuringSkill(float timer) { }
+    protected virtual void TriggerSkill() { }
+    protected virtual void AfterSkill() { }
     #endregion
 
     #region ~~ Coroutine handlers ~~
@@ -33,25 +37,26 @@ public abstract class Skill : MonoBehaviour
         // Delay before use skill
         float timer = 0;
         BeforeSkill();
-        while (timer < _skillStat.skillDelay)
+        while (timer < skillStat.skillDelay)
         {
             timer += Time.deltaTime;
             yield return null;
         }
 
         // Using skill
+        TriggerSkill();
         timer = 0;
-        do
+        while (timer < skillStat.skillDuration)
         {
-            DuringSkill();
+            DuringSkill(timer);
             timer += Time.deltaTime;
             yield return null;
-        } while (timer < _skillStat.skillDuration);
+        }
         AfterSkill();
 
         // Cool down
         timer = 0;
-        while (timer < _skillStat.skillCD)
+        while (timer < skillStat.skillCD)
         {
             timer += Time.deltaTime;
             yield return null;
@@ -61,7 +66,7 @@ public abstract class Skill : MonoBehaviour
     protected IEnumerator SkillCoolDownCoroutine()
     {
         float timer = 0;
-        while (timer < _skillStat.skillCD)
+        while (timer < skillStat.skillCD)
         {
             timer += Time.deltaTime;
             yield return null;

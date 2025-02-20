@@ -18,11 +18,6 @@ public class Projectile : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _rb.gravityScale = 0;
     }
-    protected virtual void Start()
-    { 
-        this.gameObject.SetActive(false);
-    }
-
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if ((_layer.playerLayer & (1 << collision.gameObject.layer)) != 0)  // Compare bits (if "name" is in "invite list")
