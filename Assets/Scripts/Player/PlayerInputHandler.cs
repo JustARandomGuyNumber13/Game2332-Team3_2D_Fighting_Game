@@ -8,12 +8,14 @@ using static UnityEngine.Rendering.DebugUI;
 public class PlayerInputHandler : MonoBehaviour
 {
     #region ~~ Variables ~~
+    [Header("Private Variables")]
     [SerializeField] private SO_AnimatorHash _animatorHash;
     [SerializeField] private SO_Layer _layer;
     [SerializeField] private SO_CharacterStat _chararacterStat;
     [SerializeField] private Animator _animator;
     [SerializeField] private Collider2D _standCollider, _crouchCollider;
 
+    [Header("Unity Events")]
     public UnityEvent OnAttackEvent;
     public UnityEvent OnSkillOneEvent;
     public UnityEvent OnSkillTwoEvent;
@@ -23,6 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
     public UnityEvent OnJumpEvent;
     public UnityEvent OnLandEvent;
 
+    [Header("Public Variables")]
     public Transform otherPlayer;
     public bool isCanMove = true;
     public bool isCanUseSkill = true;
@@ -195,9 +198,12 @@ public class PlayerInputHandler : MonoBehaviour
 
 
     #region ~~ Other handlers ~~
-    public void CallDefendAnimation()
+    public void Public_TakeDamageAnimation()
     {
-        _animator.SetTrigger(_animatorHash.defend);
+        if(isDefending)
+            _animator.SetTrigger(_animatorHash.defend);
+        else
+            CallHurtAnimation();
     }
     public void CallHurtAnimation()
     { 

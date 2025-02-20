@@ -191,6 +191,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterStat: {fileID: 11400000, guid: 5bf988c43e5a89b459861cae720d5a81, type: 2}
+  OnHealthDecrease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2136780532028163805}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: Public_TakeDamageAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHealthDecreaseOverTimer:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthIncrease:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthIncreaseOverTimer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2136780532028163805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +398,6 @@ MonoBehaviour:
   skillStat: {fileID: 11400000, guid: c1b2a5c9246725a4b88d84037d8cd289, type: 2}
   isPassiveSkillActive: 0
   _jumpForce: 11.5
-  _isSkillActive: 1
 --- !u!1 &894462382725253810
 GameObject:
   m_ObjectHideFlags: 0

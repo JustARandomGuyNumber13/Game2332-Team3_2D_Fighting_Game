@@ -497,6 +497,10 @@ PrefabInstance:
       value: Character_Ninja (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2136780532028163805, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 1413437400300244303}
+    - target: {fileID: 2136780532028163805, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
       propertyPath: _otherPlayer
       value: 
       objectReference: {fileID: 1413437400300244303}
@@ -879,6 +883,10 @@ PrefabInstance:
       value: Character_Ninja
       objectReference: {fileID: 0}
     - target: {fileID: 2136780532028163805, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 1165662493}
+    - target: {fileID: 2136780532028163805, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
       propertyPath: _otherPlayer
       value: 
       objectReference: {fileID: 1165662493}
@@ -947,7 +955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54d9c773792c148867454418a9c4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skillStat: {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}
+  skillStat: {fileID: 0}
+  isPassiveSkillActive: 0
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
   _damageAmount: 10
   _attackBoxSize: {x: 1.24, y: 1.86}
