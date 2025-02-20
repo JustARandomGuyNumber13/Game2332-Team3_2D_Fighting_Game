@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealthHandler : MonoBehaviour
 {
     [SerializeField] private SO_CharacterStat _characterStat;
+    public UnityEvent OnHealthChange;
 
     private PlayerInputHandler _inputHandler;
 
@@ -17,15 +19,18 @@ public class PlayerHealthHandler : MonoBehaviour
     private void Start()
     {
         health = _characterStat.maxHealth;
+        OnHealthChange?.Invoke();
     }
 
     public void IncreaseHealth(float amount)
     {
         health += amount;
+        OnHealthChange?.Invoke();
     }
     public void DecreaseHealth(float amount)
     {
         float damageAmount = (amount - _characterStat.defenseValue);
+        Debug.Log(gameObject.name + " decrease health");
 
         if (_inputHandler.isDefending)
         {
@@ -38,6 +43,7 @@ public class PlayerHealthHandler : MonoBehaviour
         }
 
         health -= damageAmount;
+        OnHealthChange?.Invoke();
     }
 
     public void DecreaseHealthOverTime(float amount, float duration, float tickDuration)
@@ -54,7 +60,8 @@ public class PlayerHealthHandler : MonoBehaviour
             if (timer >= tick)
             {
                 tick += tickDuration;
-                DecreaseHealth(amount);
+                health -= amount;
+                OnHealthChange?.Invoke();
             }
             yield return null;
         }

@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2214e48d8019343827758f1af74010, type: 3}
-  m_Name: SO_CharactersList
+  m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
+  m_Name: Ninja_SO_SkillStat_SwordAttack
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 11400000, guid: 5bf988c43e5a89b459861cae720d5a81, type: 2}
+  skillSprite: {fileID: 0}
+  skillName: Ninja Sword Attack
+  skillDescription: 
+  skillDelay: 0
+  skillDuration: 0.2
+  skillCD: 5
+  isPassiveSkill: 0

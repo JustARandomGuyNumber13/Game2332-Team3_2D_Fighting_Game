@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private SO_AnimatorHash _animatorHash;
     [SerializeField] private SO_Layer _layer;
     [SerializeField] private SO_CharacterStat _chararacterStat;
-    [SerializeField] private Transform _otherPlayer;
     [SerializeField] private Animator _animator;
     [SerializeField] private Collider2D _standCollider, _crouchCollider;
 
@@ -20,7 +20,10 @@ public class PlayerInputHandler : MonoBehaviour
     public UnityEvent OnSkillThreeEvent;
     public UnityEvent OnDefendEvent;
     public UnityEvent OnCrouchEvent;
+    public UnityEvent OnJumpEvent;
+    public UnityEvent OnLandEvent;
 
+    public Transform otherPlayer;
     public bool isCanMove = true;
     public bool isCanUseSkill = true;
     public bool isCrouching;
@@ -68,7 +71,7 @@ public class PlayerInputHandler : MonoBehaviour
     #region ~~ Action handlers ~~
     private void Move()
     {
-        if (_moveInput == 0)
+        if ((!isCanMove || _moveInput == 0) && isCanUseSkill)
         {
             _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
             if (_animator.GetInteger(_animatorHash.moveDirection) != 0)
@@ -93,6 +96,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Jump() 
     {
+        OnJumpEvent?.Invoke();
         if (isCanMove && isOnGround && isCanUseSkill && isCanJump)
         {
             isOnGround = false;
@@ -125,11 +129,11 @@ public class PlayerInputHandler : MonoBehaviour
     #region ~~ Helper Methods ~~
     private void Helper_FaceOtherPlayer()   
     {
-        if (!isOnGround || !isCanMove) return;
+        if (!isOnGround || !isCanMove || !isCanUseSkill) return;
 
-        if (transform.localScale.x > 0 && _otherPlayer.position.x < transform.position.x) // is looking Right but other player is on the Left
+        if (transform.localScale.x > 0 && otherPlayer.position.x < transform.position.x) // is looking Right but other player is on the Left
             transform.localScale = Vector2.left + Vector2.up;
-        else if (transform.localScale.x < 0 && _otherPlayer.position.x > transform.position.x)// is looking Left but other player is on the Right
+        else if (transform.localScale.x < 0 && otherPlayer.position.x > transform.position.x)// is looking Left but other player is on the Right
             transform.localScale = Vector3.one;
     }
     private void Helper_GroundCheck()
@@ -139,6 +143,7 @@ public class PlayerInputHandler : MonoBehaviour
             isOnGround = true;
             isCanJump = true;
             _animator.SetBool(_animatorHash.isOnGround, isOnGround);
+            OnLandEvent?.Invoke();
         }
     }
     #endregion
@@ -149,13 +154,22 @@ public class PlayerInputHandler : MonoBehaviour
     {
         _moveInput = Mathf.Ceil(value.Get<float>());
     }
-    private void OnJump()
+    private void OnJump(InputValue value)
     {
-        Jump();
+        if (!isReverseInput)
+        {
+            if(value.Get<float>() != 0)
+                Jump();
+        }
+        else
+            _crouchInput = Mathf.Ceil(value.Get<float>());
     }
     private void OnCrouch(InputValue value)
     {
-        _crouchInput = Mathf.Ceil(value.Get<float>());
+        if (!isReverseInput)
+            _crouchInput = Mathf.Ceil(value.Get<float>());
+        else
+            Jump();
     }
     private void OnAttack()
     {
@@ -202,7 +216,7 @@ public class PlayerInputHandler : MonoBehaviour
     #endregion
 
     #region ~~ Special effects ~~
-    public void ReverseMovementInput(float duration)
+    public void OnReverseMovementInput(float duration)
     {
         StartCoroutine(ReverseInputOverTimeCoroutine(duration));
     }

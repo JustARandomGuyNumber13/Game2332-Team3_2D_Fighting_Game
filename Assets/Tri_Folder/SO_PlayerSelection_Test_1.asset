@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2214e48d8019343827758f1af74010, type: 3}
-  m_Name: SO_CharactersList
+  m_Script: {fileID: 11500000, guid: fee5c95e3675cb34aa4deb9b4fb62f8c, type: 3}
+  m_Name: SO_PlayerSelection_Test_1
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 11400000, guid: 5bf988c43e5a89b459861cae720d5a81, type: 2}
+  _characterIndex: 0
+  _skillOneIndex: 0
+  _skillTwoIndex: 1
+  _skillThreeIndex: 2

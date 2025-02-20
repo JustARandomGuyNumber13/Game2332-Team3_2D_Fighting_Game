@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eae66be2049d414fb44f5976efe559d, type: 3}
+  m_Name: Ninja_SO_CharacterStat
+  m_EditorClassIdentifier: 
+  characterName: 
+  characterDescription: 
+  characterSprite: {fileID: 0}
+  characterPrefab: {fileID: 894348835929635628, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
+  moveStandingSpeed: 5
+  moveCrouchingSpeed: 3
+  jumpForce: 11.5
+  maxHealth: 100
+  groundCheckDistance: 1.5
+  defenseValue: 0
+  skills:
+  - {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}
+  - {fileID: 11400000, guid: c1b2a5c9246725a4b88d84037d8cd289, type: 2}
+  - {fileID: 11400000, guid: c2b0668b487ba0c41b17e7e468791b5c, type: 2}
+  - {fileID: 11400000, guid: df3b46a8391b4674588dbe3143e23c28, type: 2}
+  - {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
