@@ -48,23 +48,30 @@ public class SelectionUI : MonoBehaviour
 
 
     //WOKRING ON SAVE
-    public GameObject UI1;
-    public GameObject UI2;
+    [SerializeField]
+    private SelectionUI UI1;
+    [SerializeField]
+    private SelectionUI UI2;
 
     private bool _ready1;
     private bool _ready2;
-    //public UnityEvent OnReadyCheck;
 
-    PlayerSelection player1 = new PlayerSelection();
-    PlayerSelection player2 = new PlayerSelection();
+    private int player1Char;
+    private int player1Skill1;
+    private int player1Skill2;
+    private int player1Skill3;
 
+    private int player2Char;
+    private int player2Skill1;
+    private int player2Skill2;
+    private int player2Skill3;
+
+    public UnityEvent<MyCharacterSelection, MyCharacterSelection> OnReady;
 
     void Start()
     {
-      
-
-        _ready1 = GameObject.Find("UIManager (Player 1)").GetComponent<SelectionUI>()._ready;
-        _ready2 = GameObject.Find("UIManager (Player 2)").GetComponent<SelectionUI>()._ready;
+        UI1 = GameObject.Find("UIManager (Player 1)").GetComponent<SelectionUI>();
+        UI2 = GameObject.Find("UIManager (Player 2)").GetComponent<SelectionUI>();
 
         rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
         rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
@@ -94,16 +101,25 @@ public class SelectionUI : MonoBehaviour
 
     private void Update()
     {
-        
+        _ready1 = UI1._ready;
+        _ready2 = UI2._ready;
+
+        player1Char = UI1.selectedOption;
+        player2Char = UI2.selectedOption;
+
+        int.TryParse(UI1.superParentB.GetChild(0).GetChild(0).name, out player1Skill1);
+        int.TryParse(UI1.superParentB.GetChild(1).GetChild(0).name, out player1Skill2);
+        int.TryParse(UI1.superParentB.GetChild(2).GetChild(0).name, out player1Skill3);
+
+        int.TryParse(UI2.superParentB.GetChild(0).GetChild(0).name, out player2Skill1);
+        int.TryParse(UI2.superParentB.GetChild(1).GetChild(0).name, out player2Skill2);
+        int.TryParse(UI2.superParentB.GetChild(2).GetChild(0).name, out player2Skill3);
     }
 
 
 
     public void MoveRight(InputAction.CallbackContext obj)
     {
-        /*RectTransform rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
-        RectTransform rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();*/
-
         switch (currentSelectionMode)
         {
             case selectionMode.characterSelection:
@@ -246,23 +262,17 @@ public class SelectionUI : MonoBehaviour
             _ready = !_ready;
             readyText.enabled = false;
         }
-    }
 
-    private void ReadyCheck()
-    {
+
         if (_ready1 && _ready2)
         {
-            //OnReady.Invoke<Player1, Player2>
+            MyCharacterSelection player1selection = new MyCharacterSelection(player1Char, player1Skill1, player1Skill2, player1Skill3);
+            MyCharacterSelection player2selection = new MyCharacterSelection(player2Char, player2Skill1, player2Skill2, player2Skill3);
+
+            OnReady.Invoke(player1selection, player2selection);
         }
     }
 
-    private void OnSaveData()
-    {
-        /*if (_isReady)
-        {
-            SO_PlayerSelection.SaveData(*//*takes 3 arguments*//*);
-        }*/
-    }
 
     //Changing character
     public void NextOption()
