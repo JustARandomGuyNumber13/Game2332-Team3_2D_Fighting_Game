@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ninja_Skill_BasicAttack : Skill
 {
-    [Header("Child class variable")]
+    [Header("Skill exclusive variables")]
     [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _damageAmount;
     [SerializeField] private Vector2 _attackBoxSize;
@@ -37,7 +37,7 @@ public class Ninja_Skill_BasicAttack : Skill
             if (_otherPlayerHealthHandler == null)
                 _otherPlayerHealthHandler = hit.collider.GetComponent<PlayerHealthHandler>();
 
-            _otherPlayerHealthHandler.DecreaseHealth(_damageAmount);
+            _otherPlayerHealthHandler.Public_DecreaseHealth(_damageAmount);
         }
     }
 

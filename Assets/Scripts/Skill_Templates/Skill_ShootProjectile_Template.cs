@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Skill_ShootProjectile_Template : Skill
 {
+    [Header("Skill exclusive variables")]
     [SerializeField] private Projectile _projectilePrefab;
+
     private PlayerInputHandler _inputHandler;
 
     private void Awake()

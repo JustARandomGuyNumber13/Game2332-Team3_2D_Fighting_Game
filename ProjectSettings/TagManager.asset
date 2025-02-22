@@ -19,7 +19,7 @@ TagManager:
   - Projectile
   - Wall
   - Ghost
-  - 
+  - Death Wall
   - 
   - 
   - 
@@ -41,11 +41,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1310884907
+    locked: 0
+  - name: Player
+    uniqueID: 4101048711
+    locked: 0
+  - name: Projectile
+    uniqueID: 2663841331
+    locked: 0
+  - name: Trap
+    uniqueID: 1949102455
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 1310884907
     locked: 0
   m_RenderingLayers:
   - Default

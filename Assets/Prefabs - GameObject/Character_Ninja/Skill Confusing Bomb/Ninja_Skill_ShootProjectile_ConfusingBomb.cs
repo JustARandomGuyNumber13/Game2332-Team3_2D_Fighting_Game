@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Ninja_Skill_ShootProjectile_ConfusingBomb : Skill
 {
+    [Header("Skill exclusive variables")]
     [SerializeField] private Projectile _projectilePrefab;
+
     private PlayerInputHandler _inputHandler;
 
     private void Awake()

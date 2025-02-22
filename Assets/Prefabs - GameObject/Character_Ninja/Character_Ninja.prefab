@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3654919383183698273}
   - component: {fileID: 6687198478981063695}
   - component: {fileID: 8550303498455435260}
+  - component: {fileID: 1083015098773949598}
   - component: {fileID: 2136780532028163805}
   - component: {fileID: 7746399103920483354}
   - component: {fileID: 7799150831038751822}
@@ -191,12 +192,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterStat: {fileID: 11400000, guid: 5bf988c43e5a89b459861cae720d5a81, type: 2}
-  OnHealthDecrease:
+  OnHealthIncreaseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthIncreaseOverTimerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthDecreaseEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2136780532028163805}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: Public_TakeDamageAnimation
+      - m_Target: {fileID: 1083015098773949598}
+        m_TargetAssemblyTypeName: PlayerAnimationHandler, Assembly-CSharp
+        m_MethodName: Public_HurtAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -206,15 +213,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnHealthDecreaseOverTimer:
+  OnHealthDecreaseOverTimerEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnHealthIncrease:
+  OnDefendEvent:
     m_PersistentCalls:
-      m_Calls: []
-  OnHealthIncreaseOverTimer:
-    m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1083015098773949598}
+        m_TargetAssemblyTypeName: PlayerAnimationHandler, Assembly-CSharp
+        m_MethodName: Public_DefendAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1083015098773949598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894348835929635628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c84b426c3188049bb9bae817eb8129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1530577333705418959}
+  _animatorHash: {fileID: 11400000, guid: 03f68dc0e7e01fd4c863138207352936, type: 2}
 --- !u!114 &2136780532028163805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +263,94 @@ MonoBehaviour:
   _animator: {fileID: 1530577333705418959}
   _standCollider: {fileID: 7739818589428305381}
   _crouchCollider: {fileID: 3654919383183698273}
-  OnAttackEvent:
+  OnMoveEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1083015098773949598}
+        m_TargetAssemblyTypeName: PlayerAnimationHandler, Assembly-CSharp
+        m_MethodName: Public_MoveAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnJumpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1083015098773949598}
+        m_TargetAssemblyTypeName: PlayerAnimationHandler, Assembly-CSharp
+        m_MethodName: Public_JumpAnimation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4411445096182034750}
+        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
+        m_MethodName: ActivateSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnVerticalVelocityChangeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1083015098773949598}
+        m_TargetAssemblyTypeName: PlayerAnimationHandler, Assembly-CSharp
+        m_MethodName: Public_VerticalVelocityChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1083015098773949598}
+        m_TargetAssemblyTypeName: PlayerAnimationHandler, Assembly-CSharp
+        m_MethodName: Public_LandAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4411445096182034750}
+        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
+        m_MethodName: ActivateSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBasicAttackEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7746399103920483354}
@@ -260,39 +377,6 @@ MonoBehaviour:
   OnDefendEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnJumpEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4411445096182034750}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: ActivateSkill
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4411445096182034750}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: ActivateSkill
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   otherPlayer: {fileID: 0}
   isCanMove: 1
   isCanUseSkill: 1
@@ -314,7 +398,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStat: {fileID: 11400000, guid: ad43b6b5e6b6f6b48bb488342d4c5e10, type: 2}
-  isPassiveSkillActive: 0
+  OnBeforeSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
   _damageAmount: 5
   _attackBoxSize: {x: 1.24, y: 1.86}
@@ -332,7 +424,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStat: {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}
-  isPassiveSkillActive: 0
+  OnBeforeSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
   _damageAmount: 10
   _attackBoxSize: {x: 1.24, y: 1.86}
@@ -350,7 +450,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStat: {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
-  isPassiveSkillActive: 0
+  OnBeforeSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _projectilePrefab: {fileID: 6185349662160931064}
 --- !u!114 &2113740404865417900
 MonoBehaviour:
@@ -365,7 +473,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStat: {fileID: 11400000, guid: df3b46a8391b4674588dbe3143e23c28, type: 2}
-  isPassiveSkillActive: 0
+  OnBeforeSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _projectilePrefab: {fileID: 4254715270057301220}
 --- !u!114 &8249838024990762391
 MonoBehaviour:
@@ -380,7 +496,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStat: {fileID: 11400000, guid: c2b0668b487ba0c41b17e7e468791b5c, type: 2}
-  isPassiveSkillActive: 0
+  OnBeforeSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
   _dashSpeed: 20
 --- !u!114 &4411445096182034750
@@ -396,7 +520,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillStat: {fileID: 11400000, guid: c1b2a5c9246725a4b88d84037d8cd289, type: 2}
-  isPassiveSkillActive: 0
+  OnBeforeSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _jumpForce: 11.5
 --- !u!1 &894462382725253810
 GameObject:
@@ -579,7 +711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6481778072571002353}
   m_Layer: 0
-  m_Name: ShootPoint
+  m_Name: ProjectileShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +743,7 @@ GameObject:
   - component: {fileID: 6100313770955060018}
   - component: {fileID: 6294415067192266924}
   - component: {fileID: 1530577333705418959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ninja Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,8 +806,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -193918585
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: -614293327128696295, guid: 5e2004ab009987b4dbcedfd714d67fd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -807,7 +939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4836414562205836748}
   - component: {fileID: 3370968810001337300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

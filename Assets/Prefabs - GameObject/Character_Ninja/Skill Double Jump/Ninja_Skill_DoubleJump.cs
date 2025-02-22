@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Ninja_Skill_DoubleJump : Skill
 {
+    [Header("Skill exclusive variables")]
     [SerializeField] private float _jumpForce;
+
     private bool _isCanDoubleJump = true;
     private PlayerInputHandler _inputHandler;
     private Rigidbody2D _rb;
@@ -17,7 +19,7 @@ public class Ninja_Skill_DoubleJump : Skill
     {
         if(!_inputHandler.isOnGround && _inputHandler.isCanUseSkill && _isCanDoubleJump)
         {
-            Debug.Log("Ninja Double Jump", gameObject);
+            Debug.Log("Ninja Double Jump");
             _rb.linearVelocity = Vector2.right * _rb.linearVelocityX;
             _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
             _isCanDoubleJump = false;
