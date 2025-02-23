@@ -10,7 +10,7 @@ public abstract class Skill : MonoBehaviour
 
     [Header("Unity Events")]
     public UnityEvent OnBeforeSkillEvent;
-    public UnityEvent OnTriggerSkillEvent;
+    public UnityEvent<bool> OnTriggerSkillEvent;
     public UnityEvent OnAfterSkillEvent;
 
     protected bool _isCanUseSkill = true;
@@ -50,7 +50,7 @@ public abstract class Skill : MonoBehaviour
 
         /* Using skill */
         TriggerSkill();
-        OnTriggerSkillEvent?.Invoke();
+        OnTriggerSkillEvent?.Invoke(skillStat.isPassiveSkill);
         float timer = 0;
         while (timer < skillStat.skillDuration)
         {

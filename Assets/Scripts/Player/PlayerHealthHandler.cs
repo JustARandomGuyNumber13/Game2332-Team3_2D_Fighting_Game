@@ -34,7 +34,7 @@ public class PlayerHealthHandler : MonoBehaviour
     public void Public_DecreaseHealth(float amount)
     {
         float damageAmount = (amount - _characterStat.defenseValue);
-        Debug.Log(gameObject.name + " decrease _health");
+        Debug.Log(gameObject.name + " decrease health");
 
         if (_inputHandler.isDefending)
         {

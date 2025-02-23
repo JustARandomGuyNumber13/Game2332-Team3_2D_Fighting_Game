@@ -109,8 +109,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.15, y: -0.29}
-  m_Size: {x: 0.6, y: 2.3}
+  m_Offset: {x: -0.15, y: -0.04}
+  m_Size: {x: 0.6, y: 2.8}
   m_Direction: 0
 --- !u!70 &3654919383183698273
 CapsuleCollider2D:
@@ -635,9 +635,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
   _spawnPosition: {fileID: 6481778072571002353}
+  _spawnOffset: {x: 0, y: 0}
   _damageAmount: 5
   _launchSpeed: 15
   _effectDuration: 3
+  _verticalLaunchForce: 5
 --- !u!58 &8699837783744549976
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -689,7 +691,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1183,6 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
   _spawnPosition: {fileID: 6481778072571002353}
+  _spawnOffset: {x: 0, y: 0}
   _damageAmount: 30
   _launchSpeed: 15
 --- !u!1 &8433020143598542859

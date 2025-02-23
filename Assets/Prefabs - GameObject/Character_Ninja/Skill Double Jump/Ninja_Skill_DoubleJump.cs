@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ninja_Skill_DoubleJump : Skill
+public class Ninja_Skill_DoubleJump : Skill // Skill_Passive_Template.cs
 {
     [Header("Skill exclusive variables")]
     [SerializeField] private float _jumpForce;

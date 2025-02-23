@@ -5,6 +5,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] protected SO_Layer _layer;
     [SerializeField] protected Transform _spawnPosition;
+    [SerializeField] protected Vector2 _spawnOffset;
     [SerializeField] protected float _damageAmount;
     [SerializeField] protected float _launchSpeed;
 
@@ -46,10 +47,11 @@ public class Projectile : MonoBehaviour
         _rb.linearVelocity = Vector2.zero;
         this.gameObject.SetActive(false);
     }
-    public void LaunchProjectile(GameObject shooter)
+    public virtual void LaunchProjectile(GameObject shooter)
     {
+        Vector3 offset = Vector3.right * (_spawnOffset.x * transform.lossyScale.x) + Vector3.up * _spawnOffset.y;
         _shooter = shooter;
-        transform.position = _spawnPosition.position;
+        transform.position = _spawnPosition.position + offset;
         this.gameObject.SetActive(true);
         _rb.AddForce(Vector2.right * transform.lossyScale.x * _launchSpeed, ForceMode2D.Impulse);
     }
