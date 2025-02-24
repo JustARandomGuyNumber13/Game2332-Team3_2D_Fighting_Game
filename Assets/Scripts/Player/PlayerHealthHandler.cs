@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerHealthHandler : MonoBehaviour
 {
-    [SerializeField] private SO_CharacterStat _characterStat;
+    [SerializeField] public SO_CharacterStat _characterStat; //Changed from private to public
     [SerializeField] private HealthBar healthBar; //Reference to health bar script
 
     private PlayerInputHandler _inputHandler;
@@ -21,10 +21,16 @@ public class PlayerHealthHandler : MonoBehaviour
         healthBar.SetHealth(health, _characterStat.maxHealth); //Calls SetHealth function
     }
 
+    public void SetHealth(float amount) //created for the round timer script to reference
+    {
+        health = Mathf.Clamp(amount, 0, _characterStat.maxHealth); //Ensuring that health is within an acceptable range to avoid a number error
+        healthBar.SetHealth(health, _characterStat.maxHealth);
+    }
     public void IncreaseHealth(float amount)
     {
-        health += amount;
-        healthBar.SetHealth(health, _characterStat.maxHealth); //SetHealth
+        //health += amount;
+        //healthBar.SetHealth(health, _characterStat.maxHealth); //SetHealth
+        SetHealth(health + amount); //using SetHealth method to ensure health number is valid
     }
     public void DecreaseHealth(float amount)
     {
