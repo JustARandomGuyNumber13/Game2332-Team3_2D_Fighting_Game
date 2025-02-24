@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerHealthHandler : MonoBehaviour
 {
     [SerializeField] private SO_CharacterStat _characterStat;
+    [SerializeField] private HealthBar healthBar; //Reference to health bar script
 
     private PlayerInputHandler _inputHandler;
 
@@ -17,11 +18,13 @@ public class PlayerHealthHandler : MonoBehaviour
     private void Start()
     {
         health = _characterStat.maxHealth;
+        healthBar.SetHealth(health, _characterStat.maxHealth); //Calls SetHealth function
     }
 
     public void IncreaseHealth(float amount)
     {
         health += amount;
+        healthBar.SetHealth(health, _characterStat.maxHealth); //SetHealth
     }
     public void DecreaseHealth(float amount)
     {
@@ -38,6 +41,7 @@ public class PlayerHealthHandler : MonoBehaviour
         }
 
         health -= damageAmount;
+        healthBar.SetHealth(health, _characterStat.maxHealth); //SetHealth
     }
 
     public void DecreaseHealthOverTime(float amount, float duration, float tickDuration)

@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Walking Animation Spritesheet_0: 879398351028844847
+      Ninja Walking Animation Spritesheet_1: -2373342638977321145
+      Ninja Walking Animation Spritesheet_2: 5609112204266749978
+      Ninja Walking Animation Spritesheet_3: 1919100291576540189
+      Ninja Walking Animation Spritesheet_4: 6344196623569154538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
