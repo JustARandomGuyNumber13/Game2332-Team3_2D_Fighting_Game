@@ -10,10 +10,12 @@ public class PlayerHealthHandler : MonoBehaviour
     public UnityEvent<float> OnHealthIncreaseOverTimerEvent;
     public UnityEvent<float> OnHealthDecreaseEvent;
     public UnityEvent<float> OnHealthDecreaseOverTimerEvent;
+    public UnityEvent OnDeath;
     public UnityEvent OnDefendEvent;
 
     private PlayerInputHandler _inputHandler;
     private float _health;
+    public bool IsDead { get; private set; }
     //public float health
     //{ get; private set; }
 
@@ -44,6 +46,7 @@ public class PlayerHealthHandler : MonoBehaviour
 
         _health -= damageAmount;
         OnHealthDecreaseEvent?.Invoke(_health);
+        DeathCheck();
     }
 
     public void Public_DecreaseHealthOverTime(float amount, float duration, float tickDuration)
@@ -62,8 +65,18 @@ public class PlayerHealthHandler : MonoBehaviour
                 tick += tickDuration;
                 _health -= amount;
                 OnHealthDecreaseOverTimerEvent?.Invoke(_health);
+                DeathCheck();
             }
             yield return null;
+        }
+    }
+
+    private void DeathCheck()
+    {
+        if (_health <= 0)
+        {
+            IsDead = true;
+            OnDeath?.Invoke();
         }
     }
 }
