@@ -17,7 +17,6 @@ public class SelectionUI : MonoBehaviour
     public Text nameText;
     public Text skillDescription;
     public SpriteRenderer artworkSprite;
-
     
     public Text readyText;
    
@@ -50,15 +49,13 @@ public class SelectionUI : MonoBehaviour
     private int playerSkill2;
     private int playerSkill3;
 
-    /*private int player2Char;
-    private int player2Skill1;
-    private int player2Skill2;
-    private int player2Skill3;*/
-
     public UnityEvent<MyCharacterSelection, MyCharacterSelection> OnReady;
 
     [SerializeField]
     SO_PlayerSelection playerSelection;
+
+    public bool isReady;
+    public UnityEvent OnReadyCheck;
 
     void Start()
     {
@@ -87,44 +84,31 @@ public class SelectionUI : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
-    public bool isReady;
-    public UnityEvent OnReadyCheck;
     public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
     {
         if (isReady && otherPlayer.isReady)
         {
             Debug.Log("Change Scene");
-            //GoToScene();
         }
     }
     private void SelfReadyCheck()
     {
         isReady = isReady ? false : true;
+        readyText.enabled = !readyText.enabled;
+
         if (isReady)
         {
-            // saveData
             Debug.Log("Save data");
-
             playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
         }
         OnReadyCheck?.Invoke();
     }
 
-    private void Update()
+    public void Ready(InputAction.CallbackContext obj)
     {
-        Debug.Log("Test Update");
-        int.TryParse(superParentA.GetChild(0).GetChild(0).name, out playerSkill1);
-        int.TryParse(superParentA.GetChild(1).GetChild(0).name, out playerSkill2);
-        int.TryParse(superParentA.GetChild(2).GetChild(0).name, out playerSkill3);
-        Debug.Log(playerSkill1);
-
-        /*int.TryParse(UI2.superParentA.GetChild(0).GetChild(0).name, out player2Skill1);
-        int.TryParse(UI2.superParentA.GetChild(1).GetChild(0).name, out player2Skill2);
-        int.TryParse(UI2.superParentA.GetChild(2).GetChild(0).name, out player2Skill3);*/
+        SelfReadyCheck();
+        getSkillIndex();
     }
-
-
-
     public void MoveRight(InputAction.CallbackContext obj)
     {
         switch (currentSelectionMode)
@@ -255,46 +239,10 @@ public class SelectionUI : MonoBehaviour
         }
     }
 
-    public void Ready(InputAction.CallbackContext obj)
-    {
-        //OnReadyCheck?.Invoke();
-
-        SelfReadyCheck();
-
-        //if (_ready == false)
-        //{
-        //    _ready = !_ready;
-        //    readyText.enabled = true;
-        //}
-        //else
-        //{
-        //    _ready = !_ready;
-        //    readyText.enabled = false;
-        //}
-
-
-        /*if (_ready1 && _ready2)
-        {
-            MyCharacterSelection player1selection = new MyCharacterSelection(player1Char, player1Skill1, player1Skill2, player1Skill3);
-            MyCharacterSelection player2selection = new MyCharacterSelection(player2Char, player2Skill1, player2Skill2, player2Skill3);
-
-            OnReady.Invoke(player1selection, player2selection);
-        }*/
-    }
-
-
     //Changing character
     public void NextOption()
     {
         selectedOption++;
-
-        /*if(selectedOption >= characterDB.CharacterCount)
-        {
-            selectedOption = 0;
-        }
-
-        UpdateCharacter(selectedOption);
-        Save();*/
 
         if (selectedOption >= characterList.size)
         {
@@ -308,14 +256,6 @@ public class SelectionUI : MonoBehaviour
     public void BackOption() 
     {
         selectedOption--;
-
-        /*if (selectedOption < 0)
-        {
-            selectedOption = characterDB.CharacterCount - 1;
-        }
-
-        UpdateCharacter(selectedOption);
-        Save();*/
 
         if (selectedOption < 0)
         {
@@ -340,18 +280,13 @@ public class SelectionUI : MonoBehaviour
             returnToParent(index);
         }
 
-        //Character character = characterDB.GetCharacter(selectedOption);
         SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
-
-        //artworkSprite.sprite = character.characterSprite;
-        //nameText.text = character.characterName;
 
         artworkSprite.sprite = characterStat.characterSprite;
         nameText.text = characterStat.characterName;
 
         for (int i = 0; i < selectableSkillSlot.Length; i++)
         {
-            //superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = character.characterAttacks[i];
             superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = characterStat.skills[i].skillSprite;
         }
     }
@@ -366,13 +301,16 @@ public class SelectionUI : MonoBehaviour
         {
             child.transform.SetParent(child.getOriginalParent());
         }
-
     }
 
-
-
-
-    //Changing scene and saving player prefs
+    private void getSkillIndex()
+    {
+        Debug.Log("Test Update");
+        int.TryParse(superParentA.GetChild(0).GetChild(0).name, out playerSkill1);
+        int.TryParse(superParentA.GetChild(1).GetChild(0).name, out playerSkill2);
+        int.TryParse(superParentA.GetChild(2).GetChild(0).name, out playerSkill3);
+        Debug.Log(playerSkill1);
+    }
 
     private void Load()
     {
@@ -383,34 +321,8 @@ public class SelectionUI : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectedOption", selectedOption);
     }
-
-    public void ChangeScene(int sceneID)
-    {
-        SceneManager.LoadScene(sceneID);
-    }
 }
-/*
- * 
- * 
- * replace PlayerPref with Scriptable Object
- * Separate highlight mechanic
- * Keep five skill images Static (optional)
- * Use SO_PlayerSelection to save data
- * 
- * Global variables for -> GetComponent
- * Use SO_CharacterStat, SO_SkillStat, SO_CharacterList
- * 
- * 
- * 
- * 
- */
 
-
-// Note, GameObject that contain these type of functions should have a InputPlayer with the map corresponding to the action
-
-// Template: private void On___  *Name base on action name
-
-//private void OnChangeSelection(InputValue value)
-//{
-//    print(value.Get<float>());
-//}
+//Make it so that player can only be ready when 3 skills are selected
+//Disable ready when player goes back to making selections
+//Make sure to reset selection values when necessary and that saving works the first time ready is clicked and conditions are met
