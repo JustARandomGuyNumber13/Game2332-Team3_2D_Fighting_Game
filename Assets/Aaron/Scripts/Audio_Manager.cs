@@ -50,32 +50,36 @@ public class Audio_Manager : MonoBehaviour
 
     private void Start()
     {
-        InitializeAudio();
+        //InitializeAudio();
         PlayBGM();
     }
 
     private void InitializeAudio()
     {
         //Null checks to ensure that erros do not happen in case the volume sliders are not present
-        if (bgmSlide != null)
-        {
+        //if (bgmSlide != null)
+        //{
+            Debug.Log("BGM slider assigned");
             bgmSlide.onValueChanged.AddListener(SetBGMVol);
             bgmSlide.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
-        }
+        //}
 
         if (sfxSlide != null)
         {
+            Debug.Log("SFX slider assigned");
             sfxSlide.onValueChanged.AddListener(OnSFXVolChange);
             sfxSlide.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
         }
 
         if (bgmToggle != null)
         {
+            Debug.Log("BGM toggle assigned");
             bgmToggle.onValueChanged.AddListener(ToggleBGM);
         }
 
         if (sfxToggle != null)
         {
+            Debug.Log("SFX toggle assigned");
             sfxToggle.onValueChanged.AddListener(ToggleSFX);
         }
 
@@ -171,7 +175,24 @@ public class Audio_Manager : MonoBehaviour
         sfxSlide = newSfxSlider;
         bgmToggle = newBgmToggle;
         sfxToggle = newSfxToggle;
-        InitializeAudio();
+        Debug.Log("UI components updated")
+;       InitializeAudio();
+    }
+    public void AssignUIComponents(GameObject parentObject)
+    {
+        Slider newBgmSlider = parentObject.transform.Find("BGMSlider").GetComponent<Slider>();
+        Slider newSfxSlider = parentObject.transform.Find("SFXSlider").GetComponent<Slider>();
+        Toggle newBgmToggle = parentObject.transform.Find("BGMMute").GetComponent<Toggle>();
+        Toggle newSfxToggle = parentObject.transform.Find("SFXMute").GetComponent<Toggle>();
+
+        if (newBgmSlider == null || newSfxSlider == null || newBgmToggle == null || newSfxToggle == null)
+        {
+            Debug.LogError("One or more UI components could not be found");
+        }
+        else
+        {
+            UpdateUIComponents(newBgmSlider, newSfxSlider, newBgmToggle, newSfxToggle);
+        }     
     }
 
     public void ShowBGMname()
@@ -195,7 +216,7 @@ public class Audio_Manager : MonoBehaviour
 
 
     /*
-     * Possibly won't work for final product but will work within the confines of getting to milestone 2
+     * Possibly won't work for final product but might work within the confines of getting to milestone 2
      * Ex: within Ninja_Skill_ShootProjectile_ConfusingBomb
      * add [Serializefield] private int sfxIndex; //To specify which sfx to use
      * 
