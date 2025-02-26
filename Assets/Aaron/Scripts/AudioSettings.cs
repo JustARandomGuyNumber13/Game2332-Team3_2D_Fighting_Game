@@ -13,7 +13,7 @@ public class AudioSettings : MonoBehaviour
     {
         if (Audio_Manager.Instance == null) //Making sure that the instance exists
         {
-            Debug.Log("AudioManager Insatance not present");
+            Debug.Log("AudioManager Instance not present");
             return;
         }
 
