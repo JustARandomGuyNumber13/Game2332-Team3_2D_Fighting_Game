@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Rendering;
+using UnityEngine.Events;
 
 public class Audio_Manager : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class Audio_Manager : MonoBehaviour
     public Toggle bgmToggle;
     public Toggle sfxToggle;
 
+    [Header("Events")]
+    public UnityEvent<int> OnPlaySFX;
+
     private bool isBGMMuted = false;
     private bool isSFXMuted = false;
     private int currentBGMIndex = 0;
@@ -46,20 +50,42 @@ public class Audio_Manager : MonoBehaviour
 
     private void Start()
     {
-        bgmSlide.onValueChanged.AddListener(SetBGMVol);
-        sfxSlide.onValueChanged.AddListener(OnSFXVolChange);
-
-        bgmToggle.onValueChanged.AddListener(ToggleBGM);
-        sfxToggle.onValueChanged.AddListener(ToggleSFX);
-
-        bgmSlide.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
-        sfxSlide.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
-
-        sfxPlaysAtStart = false;
-
+        InitializeAudio();
         PlayBGM();
     }
 
+    private void InitializeAudio()
+    {
+        //Null checks to ensure that erros do not happen in case the volume sliders are not present
+        if (bgmSlide != null)
+        {
+            bgmSlide.onValueChanged.AddListener(SetBGMVol);
+            bgmSlide.value = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        }
+
+        if (sfxSlide != null)
+        {
+            sfxSlide.onValueChanged.AddListener(OnSFXVolChange);
+            sfxSlide.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        }
+
+        if (bgmToggle != null)
+        {
+            bgmToggle.onValueChanged.AddListener(ToggleBGM);
+        }
+
+        if (sfxToggle != null)
+        {
+            sfxToggle.onValueChanged.AddListener(ToggleSFX);
+        }
+
+        if (OnPlaySFX == null) //Quick reference in how it we might go about this if this won't change, scroll to bottom of script
+        {
+            OnPlaySFX = new UnityEvent<int>();
+        }
+
+        sfxPlaysAtStart = false;
+    }
     public void SetBGMVol(float volume)
     {
         bgmSource.volume = volume;
@@ -83,7 +109,10 @@ public class Audio_Manager : MonoBehaviour
         bgmSource.loop = false;
         bgmSource.Play();
         
-        songName.DisplaySongName(bgmSource.clip.name);
+        if (songName != null)
+        {
+            songName.DisplaySongName(bgmSource.clip.name);
+        }
 
         currentBGMIndex = (currentBGMIndex + 1) % bgmClip.Count;
 
@@ -103,14 +132,20 @@ public class Audio_Manager : MonoBehaviour
     {
         isBGMMuted = isMuted;
         bgmSource.mute = isBGMMuted;
-        bgmSlide.interactable = !isBGMMuted;
+        if (bgmSlide != null)
+        {
+            bgmSlide.interactable = !isBGMMuted;
+        }
     }
 
     public void ToggleSFX(bool isMuted)
     {
         isSFXMuted = isMuted;
         sfxSource.mute = isSFXMuted;
-        sfxSlide.interactable = !isSFXMuted;
+        if (sfxSlide != null)
+        {
+            sfxSlide.interactable = !isSFXMuted;
+        }
     }
 
     public void OnSFXVolChange(float volume)
@@ -122,12 +157,21 @@ public class Audio_Manager : MonoBehaviour
         }
     }
 
-    public void ShowAudioSettings()
+    /*public void ShowAudioSettings()
     {
-        bgmSlide.gameObject.SetActive(true);
-        sfxSlide.gameObject.SetActive(true);
-        bgmToggle.gameObject.SetActive(true);
-        sfxToggle.gameObject.SetActive(true);
+        bgmSlide.gameObject?.SetActive(true);
+        sfxSlide.gameObject?.SetActive(true);
+        bgmToggle.gameObject?.SetActive(true);
+        sfxToggle.gameObject?.SetActive(true);
+    }*/
+
+    public void UpdateUIComponents(Slider newBgmSlider, Slider newSfxSlider, Toggle newBgmToggle, Toggle newSfxToggle)
+    {
+        bgmSlide = newBgmSlider;
+        sfxSlide = newSfxSlider;
+        bgmToggle = newBgmToggle;
+        sfxToggle = newSfxToggle;
+        InitializeAudio();
     }
 
     public void ShowBGMname()
@@ -136,6 +180,11 @@ public class Audio_Manager : MonoBehaviour
         {
             songName.DisplaySongName(bgmSource.clip.name);
         }
+
+        else
+        {
+            Debug.Log("Display Name is not assigned yet!");
+        }
     }
 
     private IEnumerator ReplayBGM()
@@ -143,4 +192,17 @@ public class Audio_Manager : MonoBehaviour
         yield return new WaitForSeconds(bgmSource.clip.length);
         PlayBGM();
     }
+
+
+    /*
+     * Possibly won't work for final product but will work within the confines of getting to milestone 2
+     * Ex: within Ninja_Skill_ShootProjectile_ConfusingBomb
+     * add [Serializefield] private int sfxIndex; //To specify which sfx to use
+     * 
+     * within TriggerSkill()
+     * add if (Audio_manager.Instance != null)
+     * {
+     *     Audio.Manager.Instance.OnPlaySFX.Invoke(sfxIndex)
+     * }
+     */
 }
