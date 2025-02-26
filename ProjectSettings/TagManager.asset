@@ -41,20 +41,23 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Sky
+    uniqueID: 1949102455
+    locked: 0
+  - name: CityBuilding
+    uniqueID: 3222699001
+    locked: 0
+  - name: Ground
     uniqueID: 1310884907
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 4101048711
     locked: 0
   - name: Projectile
     uniqueID: 2663841331
-    locked: 0
-  - name: Trap
-    uniqueID: 1949102455
-    locked: 0
-  - name: Default
-    uniqueID: 0
     locked: 0
   m_RenderingLayers:
   - Default
