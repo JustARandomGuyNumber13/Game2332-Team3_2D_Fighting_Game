@@ -187,6 +187,9 @@ MonoBehaviour:
   sfxSlide: {fileID: 0}
   bgmToggle: {fileID: 0}
   sfxToggle: {fileID: 0}
+  OnPlaySFX:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7336591750664113057
 GameObject:
   m_ObjectHideFlags: 0
