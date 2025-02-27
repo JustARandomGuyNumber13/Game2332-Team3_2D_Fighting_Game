@@ -40,26 +40,26 @@ public class Game_Manager : MonoBehaviour
         // TODO: Implement spawn Death Wall
     }
 
-    public void Public_SetUpGameManager(PlayerHealthHandler p1Health, PlayerHealthHandler p2Health)
+    public void Public_SetUp(PlayerHealthHandler p1Health, PlayerHealthHandler p2Health)
     {
         _playerOneHealthHandler = p1Health;
         _playerTwoHealthHandler = p2Health;
     }
-    public void Public_OnPlayerHealthChange()
-    {
-        if (_playerOneHealthHandler.IsDead && _playerTwoHealthHandler.IsDead)
-        {
-            _matchResult.Public_OnMatchEnd(0);
-            OnMatchEnd?.Invoke();
-            CheckPlayerWin();
-        }
-        else if (_playerOneHealthHandler.IsDead || _playerTwoHealthHandler.IsDead)
-        { 
-            _matchResult.Public_OnMatchEnd(_playerTwoHealthHandler.IsDead ? 1 : 2);
-            OnMatchEnd?.Invoke();
-            CheckPlayerWin();
-        }
-    }
+    //public void Public_OnPlayerHealthChange()
+    //{
+    //    if (_playerOneHealthHandler.IsDead && _playerTwoHealthHandler.IsDead)
+    //    {
+    //        _matchResult.Public_OnMatchEnd(0);
+    //        OnMatchEnd?.Invoke();
+    //        CheckPlayerWin();
+    //    }
+    //    else if (_playerOneHealthHandler.IsDead || _playerTwoHealthHandler.IsDead)
+    //    { 
+    //        _matchResult.Public_OnMatchEnd(_playerTwoHealthHandler.IsDead ? 1 : 2);
+    //        OnMatchEnd?.Invoke();
+    //        CheckPlayerWin();
+    //    }
+    //}
 
     private void CheckPlayerWin()
     {
