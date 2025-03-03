@@ -37,6 +37,7 @@ public class ManageAudio : MonoBehaviour
     public void SetVolume(string parameter, float volume)
     {
         mixer.SetFloat(parameter, Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat(parameter, volume);
     }
 
     public void SetMasterVolume(float volume)
@@ -62,5 +63,12 @@ public class ManageAudio : MonoBehaviour
     public void UnMute(string parameter, float volume)
     {
         SetVolume(parameter, volume);
+    }
+
+    private void LoadVolumeSetting()
+    {
+        SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume", 0.75f)); //Setting default volume
+        SetBGMVolume(PlayerPrefs.GetFloat("BGMVolume", 0.75f));
+        SetSFXVolume(PlayerPrefs.GetFloat("SFXVolume", 0.75f));
     }
 }
