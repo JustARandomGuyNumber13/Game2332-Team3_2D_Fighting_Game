@@ -19,3 +19,4 @@ MonoBehaviour:
   skillDuration: 0.2
   skillCD: 1
   isPassiveSkill: 0
+  sfxIndex: 1

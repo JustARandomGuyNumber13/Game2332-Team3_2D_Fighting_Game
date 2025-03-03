@@ -25,6 +25,18 @@ public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
     protected override void TriggerSkill()
     {
         Debug.Log("Ninja Basic Attack", gameObject);
+
+
+        if (skillStat != null)
+        {
+            SFXManager.Instance.PlaySFX(skillStat.sfxIndex);
+        }
+        else
+        {
+            Debug.LogError("SkillStat not assigned!", gameObject);
+        }
+
+
         DebugDrawAttackBox();
         RaycastHit2D hit = Physics2D.BoxCast(
             (Vector2) transform.position +  (Vector2.right * transform.localScale.x * _attackOffset.x) + (Vector2.up * _attackOffset.y),
