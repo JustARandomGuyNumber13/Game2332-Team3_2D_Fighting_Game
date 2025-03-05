@@ -10,7 +10,7 @@ public class PlayerHealthHandler : MonoBehaviour
     public UnityEvent<float> OnHealthIncreaseOverTimerEvent;
     public UnityEvent<float> OnHealthDecreaseEvent;
     public UnityEvent<float> OnHealthDecreaseOverTimerEvent;
-    public UnityEvent OnDeath;
+    public UnityEvent OnDeathEvent;
     public UnityEvent OnDefendEvent;
 
     private PlayerInputHandler _inputHandler;
@@ -73,7 +73,7 @@ public class PlayerHealthHandler : MonoBehaviour
         {
             Debug.Log(gameObject.name + " die!", gameObject);
             IsDead = true;
-            OnDeath?.Invoke();
+            OnDeathEvent?.Invoke();
         }
     }
 }

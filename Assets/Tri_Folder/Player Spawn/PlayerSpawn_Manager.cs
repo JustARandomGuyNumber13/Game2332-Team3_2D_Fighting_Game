@@ -11,17 +11,13 @@ public class PlayerSpawn_Manager : MonoBehaviour
     //[SerializeField] private SO_PlayerSelection _player1Selection, _player2Selection;
     [SerializeField] private Transform _player1SpawnPosition, _player2SpawnPosition;
 
-    [Header("Connect scripts")]
-    [SerializeField] private HealthBar_UI _player1HealthBar;
-    [SerializeField] private HealthBar_UI _player2HealthBar;
-    [SerializeField] private Camera_Manager _camManager;
-
+    [SerializeField] private UnityEvent<GameObject, GameObject> OnSetUpEvent;
     private GameObject  _player1, _player2;
 
     private void Start()
     {
         SpawnCharacters();
-        ConnectComponents();
+        SetUpCharacters();
     }
 
     private void SpawnCharacters()
@@ -29,35 +25,25 @@ public class PlayerSpawn_Manager : MonoBehaviour
         _player1 = Instantiate(_characterList.GetCharacterAt(_player1Selection.GetCharacterIndex()).characterPrefab, _player1SpawnPosition.position, _player1SpawnPosition.rotation);
         _player2 = Instantiate(_characterList.GetCharacterAt(_player2Selection.GetCharacterIndex()).characterPrefab, _player2SpawnPosition.position, _player2SpawnPosition.rotation);
     }
-    private void ConnectComponents()
+    private void SetUpCharacters()
     {
-        // Get prefabs components
-        PlayerInputHandler p1Input = _player1.GetComponent<PlayerInputHandler>();
-        PlayerInputHandler p2Input = _player2.GetComponent<PlayerInputHandler>();
-
-        PlayerHealthHandler p1Health = _player1.GetComponent<PlayerHealthHandler>();
-        PlayerHealthHandler p2Health = _player2.GetComponent< PlayerHealthHandler>();
-
-        Skill[] p1SkillList = _player1.GetComponents<Skill>();
-        Skill[] p2SkillList = _player2.GetComponents<Skill>();
-
-        /* SetUp player's Action Maps */
+        /* Set up player's Action Maps */
         _player1.GetComponent<PlayerInput>().SwitchCurrentActionMap("Player1");
         _player2.GetComponent<PlayerInput>().SwitchCurrentActionMap("Player2");
 
-        /* SetUp PlayerInputHandler.cs */
+        /* Set up players' input handlers */
+        PlayerInputHandler p1Input = _player1.GetComponent<PlayerInputHandler>();
+        PlayerInputHandler p2Input = _player2.GetComponent<PlayerInputHandler>();
         p1Input.otherPlayer = p2Input.transform;
-        AssignSkills(p1SkillList, p1Input, _player1Selection);
-
         p2Input.otherPlayer = p1Input.transform;
+
+        /* Assign players' selected skills */
+        Skill[] p1SkillList = _player1.GetComponents<Skill>();
+        Skill[] p2SkillList = _player2.GetComponents<Skill>();
+        AssignSkills(p1SkillList, p1Input, _player1Selection);
         AssignSkills(p2SkillList, p2Input, _player2Selection);
 
-        /* SetUp Camera_Manger.cs */
-        _camManager.Public_SetUp(_player1.transform, _player2.transform);
-
-        /* SetUp HealthBar_UI.cs */
-        _player1HealthBar.Public_SetUp(p1Health);
-        _player2HealthBar.Public_SetUp(p2Health);
+        OnSetUpEvent?.Invoke(_player1, _player2);
     }
 
     private void AssignSkills(Skill[] skillList, PlayerInputHandler inputHandler, SO_PlayerSelection_Test playerSelection)
