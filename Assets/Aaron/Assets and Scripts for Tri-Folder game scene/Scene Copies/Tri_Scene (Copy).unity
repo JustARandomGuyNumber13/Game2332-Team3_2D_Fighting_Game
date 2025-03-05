@@ -370,7 +370,7 @@ PrefabInstance:
     - target: {fileID: 8788647554784353519, guid: f455b6e678f83fa4aa7fdd0fc3237ad0, type: 3}
       propertyPath: sceneBGM
       value: 
-      objectReference: {fileID: 8300000, guid: e1a1b2769e2403a47b04e9bfcf4e36a4, type: 3}
+      objectReference: {fileID: 8300000, guid: f64ccb1e3406e0a46850a136635aef90, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
