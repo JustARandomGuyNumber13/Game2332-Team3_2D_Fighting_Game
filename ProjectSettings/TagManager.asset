@@ -44,6 +44,9 @@ TagManager:
   - name: Sky
     uniqueID: 1949102455
     locked: 0
+  - name: Foreground
+    uniqueID: 4088531773
+    locked: 0
   - name: CityBuilding
     uniqueID: 3222699001
     locked: 0
@@ -58,9 +61,6 @@ TagManager:
     locked: 0
   - name: Projectile
     uniqueID: 2663841331
-    locked: 0
-  - name: Foreground
-    uniqueID: 4088531773
     locked: 0
   m_RenderingLayers:
   - Default
