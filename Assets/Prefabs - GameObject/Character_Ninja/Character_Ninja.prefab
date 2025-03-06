@@ -216,6 +216,9 @@ MonoBehaviour:
   OnHealthDecreaseOverTimerEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
   OnDefendEvent:
     m_PersistentCalls:
       m_Calls:
@@ -478,7 +481,19 @@ MonoBehaviour:
       m_Calls: []
   OnTriggerSkillEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+        m_TargetAssemblyTypeName: MasterAudio_Test, Assembly-CSharp
+        m_MethodName: Public_PlayBackgroundMusic
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 247050fee36f33b4e8fe45ace474aa02, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAfterSkillEvent:
     m_PersistentCalls:
       m_Calls: []

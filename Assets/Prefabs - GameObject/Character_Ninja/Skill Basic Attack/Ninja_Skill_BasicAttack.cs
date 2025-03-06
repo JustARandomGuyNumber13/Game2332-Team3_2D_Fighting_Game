@@ -27,14 +27,14 @@ public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
         Debug.Log("Ninja Basic Attack", gameObject);
 
 
-        if (skillStat != null)
+        /*if (skillStat != null)
         {
             SFXManager.Instance.PlaySFX(skillStat.sfxIndex);
         }
         else
         {
             Debug.LogError("SkillStat not assigned!", gameObject);
-        }
+        }*/
 
 
         DebugDrawAttackBox();

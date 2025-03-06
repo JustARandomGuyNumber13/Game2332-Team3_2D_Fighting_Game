@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Aaron/Assets and Scripts for Tri-Folder game scene/Scene Copies/Tri_Scene
       (Copy).unity
     guid: 7c838f6f1d272754b894286862be5acc
+  - enabled: 1
+    path: Assets/Aaron/Example Scripts/Test 1-MainMenu.unity
+    guid: 480746a33d5daf04e980f8b931fab95b
+  - enabled: 1
+    path: Assets/Aaron/Example Scripts/Test 2-GamePlay.unity
+    guid: 7473f75c3f66f1e4d9092dcb4442bf71
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
