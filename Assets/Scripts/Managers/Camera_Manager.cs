@@ -67,10 +67,10 @@ public class Camera_Manager : MonoBehaviour
         _camera.orthographicSize = _camSize;
     }
 
-    public void Public_AssignPlayer(Transform p1, Transform p2)
+    public void Public_SetUp(GameObject p1, GameObject p2)
     { 
-        _player1 = p1;
-        _player2 = p2;
+        _player1 = p1.transform;
+        _player2 = p2.transform;
     }
     private void OnDrawGizmosSelected()
     {

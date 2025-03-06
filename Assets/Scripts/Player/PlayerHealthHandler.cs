@@ -10,28 +10,24 @@ public class PlayerHealthHandler : MonoBehaviour
     public UnityEvent<float> OnHealthIncreaseOverTimerEvent;
     public UnityEvent<float> OnHealthDecreaseEvent;
     public UnityEvent<float> OnHealthDecreaseOverTimerEvent;
-    public UnityEvent OnDeath;
+    public UnityEvent OnDeathEvent;
     public UnityEvent OnDefendEvent;
 
     private PlayerInputHandler _inputHandler;
-    private float _health;
     public bool IsDead { get; private set; }
-    //public float health
-    //{ get; private set; }
+    public float health
+    { get; private set; }
 
     private void Awake()
     {
         _inputHandler = GetComponent<PlayerInputHandler>();
-    }
-    private void Start()
-    {
-        _health = _characterStat.maxHealth;
+        health = _characterStat.maxHealth;  // Either be in Awake or OnEnable
     }
 
     public void Public_IncreaseHealth(float amount)
     {
-        _health += amount;
-        OnHealthIncreaseEvent?.Invoke(_health);
+        health += amount;
+        OnHealthIncreaseEvent?.Invoke(health);
     }
     public void Public_DecreaseHealth(float amount)
     {
@@ -44,8 +40,8 @@ public class PlayerHealthHandler : MonoBehaviour
             damageAmount *= 0.2f; // This float is adjustable to match balance (Take 20% of damage if is defending)
         }
 
-        _health -= damageAmount;
-        OnHealthDecreaseEvent?.Invoke(_health);
+        health -= damageAmount;
+        OnHealthDecreaseEvent?.Invoke(health);
         DeathCheck();
     }
 
@@ -63,8 +59,8 @@ public class PlayerHealthHandler : MonoBehaviour
             if (timer >= tick)
             {
                 tick += tickDuration;
-                _health -= amount;
-                OnHealthDecreaseOverTimerEvent?.Invoke(_health);
+                health -= amount;
+                OnHealthDecreaseOverTimerEvent?.Invoke(health);
                 DeathCheck();
             }
             yield return null;
@@ -73,10 +69,11 @@ public class PlayerHealthHandler : MonoBehaviour
 
     private void DeathCheck()
     {
-        if (_health <= 0)
+        if (health <= 0)
         {
+            Debug.Log(gameObject.name + " die!", gameObject);
             IsDead = true;
-            OnDeath?.Invoke();
+            OnDeathEvent?.Invoke();
         }
     }
 }
