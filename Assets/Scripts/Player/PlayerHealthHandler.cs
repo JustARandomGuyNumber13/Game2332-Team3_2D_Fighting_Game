@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerHealthHandler : MonoBehaviour
 {
-    [SerializeField] private SO_CharacterStat _characterStat;
+    [SerializeField] public SO_CharacterStat _characterStat; //changed from private to public
 
     public UnityEvent<float> OnHealthIncreaseEvent;
     public UnityEvent<float> OnHealthIncreaseOverTimerEvent;
