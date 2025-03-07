@@ -25,6 +25,7 @@ public class UI_Skill : MonoBehaviour
 
     private void UI_SkillCooldown()
     {
+        _countDownText.text = _cdDuration.ToString();
         _countDownText.enabled = true;
         _skillLockImage.enabled = true;
         StartCoroutine(UI_SkillCooldownCoroutine());
