@@ -14,13 +14,11 @@ public class SelectionUI : MonoBehaviour
     //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
-    public UnityEvent OnReadyCheck;
-
     public Text nameText;
     public Text skillDescription;
     public SpriteRenderer artworkSprite;
-
-    //private bool _ready = false;
+    
+    public Text readyText;
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
@@ -46,6 +44,19 @@ public class SelectionUI : MonoBehaviour
     Vector2 originalH2;
     RectTransform rectTransformH1;
     RectTransform rectTransformH2;
+
+    private int playerSkill1;
+    private int playerSkill2;
+    private int playerSkill3;
+
+    public UnityEvent<MyCharacterSelection, MyCharacterSelection> OnReady;
+
+    [SerializeField]
+    SO_PlayerSelection playerSelection;
+
+    public bool isReady;
+    public UnityEvent OnReadyCheck;
+
     void Start()
     {
         rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
@@ -73,12 +84,33 @@ public class SelectionUI : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
+    public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
+    {
+        if (isReady && otherPlayer.isReady)
+        {
+            Debug.Log("Change Scene");
+        }
+    }
+    private void SelfReadyCheck()
+    {
+        isReady = isReady ? false : true;
+        readyText.enabled = !readyText.enabled;
 
+        if (isReady)
+        {
+            Debug.Log("Save data");
+            playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
+        }
+        OnReadyCheck?.Invoke();
+    }
+
+    public void Ready(InputAction.CallbackContext obj)
+    {
+        SelfReadyCheck();
+        getSkillIndex();
+    }
     public void MoveRight(InputAction.CallbackContext obj)
     {
-        /*RectTransform rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
-        RectTransform rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();*/
-
         switch (currentSelectionMode)
         {
             case selectionMode.characterSelection:
@@ -207,36 +239,10 @@ public class SelectionUI : MonoBehaviour
         }
     }
 
-    public void Ready(InputAction.CallbackContext obj)
-    {
-        OnReadyCheck?.Invoke();
-
-      /* if (_ready == false)
-        {
-            _ready = !_ready;
-            readyText.enabled = true;
-        }
-        else
-        {
-            _ready = !_ready;
-            readyText.enabled = false;
-        }*/
-      // ReadyCheck?.Invoke()
-      // if (_ready) Save Data ()
-    }
-
     //Changing character
     public void NextOption()
     {
         selectedOption++;
-
-        /*if(selectedOption >= characterDB.CharacterCount)
-        {
-            selectedOption = 0;
-        }
-
-        UpdateCharacter(selectedOption);
-        Save();*/
 
         if (selectedOption >= characterList.size)
         {
@@ -250,14 +256,6 @@ public class SelectionUI : MonoBehaviour
     public void BackOption() 
     {
         selectedOption--;
-
-        /*if (selectedOption < 0)
-        {
-            selectedOption = characterDB.CharacterCount - 1;
-        }
-
-        UpdateCharacter(selectedOption);
-        Save();*/
 
         if (selectedOption < 0)
         {
@@ -282,18 +280,13 @@ public class SelectionUI : MonoBehaviour
             returnToParent(index);
         }
 
-        //Character character = characterDB.GetCharacter(selectedOption);
         SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
-
-        //artworkSprite.sprite = character.characterSprite;
-        //nameText.text = character.characterName;
 
         artworkSprite.sprite = characterStat.characterSprite;
         nameText.text = characterStat.characterName;
 
         for (int i = 0; i < selectableSkillSlot.Length; i++)
         {
-            //superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = character.characterAttacks[i];
             superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = characterStat.skills[i].skillSprite;
         }
     }
@@ -308,13 +301,16 @@ public class SelectionUI : MonoBehaviour
         {
             child.transform.SetParent(child.getOriginalParent());
         }
-
     }
 
-
-
-
-    //Changing scene and saving player prefs
+    private void getSkillIndex()
+    {
+        Debug.Log("Test Update");
+        int.TryParse(superParentA.GetChild(0).GetChild(0).name, out playerSkill1);
+        int.TryParse(superParentA.GetChild(1).GetChild(0).name, out playerSkill2);
+        int.TryParse(superParentA.GetChild(2).GetChild(0).name, out playerSkill3);
+        Debug.Log(playerSkill1);
+    }
 
     private void Load()
     {
@@ -325,34 +321,8 @@ public class SelectionUI : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectedOption", selectedOption);
     }
-
-    public void ChangeScene(int sceneID)
-    {
-        SceneManager.LoadScene(sceneID);
-    }
 }
-/*
- * 
- * 
- * replace PlayerPref with Scriptable Object
- * Separate highlight mechanic
- * Keep five skill images Static (optional)
- * Use SO_PlayerSelection to save data
- * 
- * Global variables for -> GetComponent
- * Use SO_CharacterStat, SO_SkillStat, SO_CharacterList
- * 
- * 
- * 
- * 
- */
 
-
-// Note, GameObject that contain these type of functions should have a InputPlayer with the map corresponding to the action
-
-// Template: private void On___  *Name base on action name
-
-//private void OnChangeSelection(InputValue value)
-//{
-//    print(value.Get<float>());
-//}
+//Make it so that player can only be ready when 3 skills are selected
+//Disable ready when player goes back to making selections
+//Make sure to reset selection values when necessary and that saving works the first time ready is clicked and conditions are met
