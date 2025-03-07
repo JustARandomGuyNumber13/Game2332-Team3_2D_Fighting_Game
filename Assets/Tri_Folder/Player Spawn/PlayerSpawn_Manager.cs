@@ -10,6 +10,7 @@ public class PlayerSpawn_Manager : MonoBehaviour
     [SerializeField] private SO_PlayerSelection_Test _player1Selection, _player2Selection;
     //[SerializeField] private SO_PlayerSelection _player1Selection, _player2Selection;
     [SerializeField] private Transform _player1SpawnPosition, _player2SpawnPosition;
+    [SerializeField] private UI_Skill[] _player1SkillBoxes, _player2SkillBoxes;
 
     [SerializeField] private UnityEvent<GameObject, GameObject> OnSetUpEvent;
     private GameObject  _player1, _player2;
@@ -40,18 +41,22 @@ public class PlayerSpawn_Manager : MonoBehaviour
         /* Assign players' selected skills */
         Skill[] p1SkillList = _player1.GetComponents<Skill>();
         Skill[] p2SkillList = _player2.GetComponents<Skill>();
-        AssignSkills(p1SkillList, p1Input, _player1Selection);
-        AssignSkills(p2SkillList, p2Input, _player2Selection);
+        AssignSkills(p1SkillList, _player1SkillBoxes, p1Input, _player1Selection);
+        AssignSkills(p2SkillList, _player2SkillBoxes, p2Input, _player2Selection);
 
         OnSetUpEvent?.Invoke(_player1, _player2);
     }
 
-    private void AssignSkills(Skill[] skillList, PlayerInputHandler inputHandler, SO_PlayerSelection_Test playerSelection)
+    private void AssignSkills(Skill[] skillList, UI_Skill[] skillBoxList ,PlayerInputHandler inputHandler, SO_PlayerSelection_Test playerSelection)
     //private void AssignSkills(Skill[] skillList, PlayerInputHandler inputHandler, SO_PlayerSelection playerSelection)
     {
         Skill skillOne = Helper_GetSkillFromPrefab(skillList, playerSelection._skillOneIndex, playerSelection);
         Skill skillTwo = Helper_GetSkillFromPrefab(skillList, playerSelection._skillTwoIndex, playerSelection);
         Skill skillThree = Helper_GetSkillFromPrefab(skillList, playerSelection._skillThreeIndex, playerSelection);
+
+        skillBoxList[0].Public_SetUp(skillOne);
+        skillBoxList[1].Public_SetUp(skillTwo);
+        skillBoxList[2].Public_SetUp(skillThree);
 
         //Skill skillOne = Helper_GetSkillIndex(skillList, playerSelection.GetSkillOneIndex(), playerSelection);
         //Skill skillTwo = Helper_GetSkillIndex(skillList, playerSelection.GetSkillTwoIndex(), playerSelection);
