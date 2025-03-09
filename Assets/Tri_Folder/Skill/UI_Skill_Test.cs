@@ -3,7 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class UI_Skill : MonoBehaviour
+public class UI_Skill_Test : MonoBehaviour
 {
     private float _cdDuration;
     [SerializeField] private TMP_Text _countDownText;
@@ -16,7 +16,7 @@ public class UI_Skill : MonoBehaviour
         _skillLockImage.enabled = false;
     }
 
-    public void Public_SetUp(Skill skill)
+    public void Public_SetUp(Skill_Test skill)
     {
         _cdDuration = skill.skillStat.skillCD;
         _skillImage.sprite = skill.skillStat.skillSprite;

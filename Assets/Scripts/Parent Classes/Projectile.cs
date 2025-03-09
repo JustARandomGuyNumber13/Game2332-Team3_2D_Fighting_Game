@@ -18,10 +18,22 @@ public class Projectile : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.gravityScale = 0;
+
+        Transform projectileSpawnPos = transform.parent.parent.Find("ProjectileShootPoint");
+        if (projectileSpawnPos == null)
+        {
+            Debug.LogError("No \"ProjectileShootPoint\" gameObject was found as player prefab's child");
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Spawn Pos set sucessfully");
+            _spawnPosition = projectileSpawnPos;
+        }
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((_layer.playerLayer & (1 << collision.gameObject.layer)) != 0)  // Compare bits (if "name" is in "invite list")
+        if (_layer.playerLayerIndex == collision.gameObject.layer)  // Compare bits (if "name" is in "invite list")
         {
             if (collision.gameObject != _shooter)
             {
@@ -32,14 +44,16 @@ public class Projectile : MonoBehaviour
                     _otherInputHandler = collision.GetComponent<PlayerInputHandler>();
 
                 DealDamageBehavior(collision.gameObject);
+                DeactivateProjectile();
             }
         }
-        DeactivateProjectile();
+        else
+            DeactivateProjectile();
     }
 
     protected virtual void DealDamageBehavior(GameObject otherPlayer) 
     {
-        Debug.Log("Hit opponent player", gameObject);
+        Debug.Log("Hit opponent player " + otherPlayer.name, gameObject);
     }
 
     protected void DeactivateProjectile()
@@ -49,10 +63,11 @@ public class Projectile : MonoBehaviour
     }
     public virtual void LaunchProjectile(GameObject shooter)
     {
+        this.gameObject.SetActive(true);
         Vector3 offset = Vector3.right * (_spawnOffset.x * transform.lossyScale.x) + Vector3.up * _spawnOffset.y;
         _shooter = shooter;
         transform.position = _spawnPosition.position + offset;
-        this.gameObject.SetActive(true);
         _rb.AddForce(Vector2.right * transform.lossyScale.x * _launchSpeed, ForceMode2D.Impulse);
+        Debug.Log(transform.lossyScale.x);
     }
 }
