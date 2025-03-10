@@ -30,4 +30,12 @@ public class SO_Layer : ScriptableObject
         get { return LayerMask.NameToLayer(ghostLayerName); }
         private set { }
     }
+
+    [SerializeField] private string projectileLayerName;
+    public LayerMask projectileLayer;
+    public int projectileLayerIndex
+    { 
+        get { return LayerMask.NameToLayer(projectileLayerName); }
+        private set { }
+    }
 }

@@ -231,6 +231,22 @@ Transform:
   - {fileID: 1784080058}
   m_Father: {fileID: 1831491788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &69002673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8577227575884822702, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+  m_PrefabInstance: {fileID: 1074956024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9915688ffff43f4096806cab0340650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &69002674 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+  m_PrefabInstance: {fileID: 1074956024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &71348401
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2076,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &863544459
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8682470244890445122}
+    m_Modifications:
+    - target: {fileID: 1027550227215723156, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_Name
+      value: T_GP_Skill_BasicAttack_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
 --- !u!1 &881584669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,6 +3184,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1074956024
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3922617834787158701}
+    m_Modifications:
+    - target: {fileID: 1027550227215723156, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_Name
+      value: T_GP_Skill_BasicAttack_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
 --- !u!1 &1185316561
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,6 +4506,22 @@ RectTransform:
   m_AnchoredPosition: {x: 583, y: -401}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1660259962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1289471199611764946, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+  m_PrefabInstance: {fileID: 863544459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1660259963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8577227575884822702, guid: dde2ade4b3667f0479def8d70ebb5851, type: 3}
+  m_PrefabInstance: {fileID: 863544459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9915688ffff43f4096806cab0340650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760468335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5609,8 +5755,8 @@ MonoBehaviour:
   OnBasicAttackEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
+      - m_Target: {fileID: 69002673}
+        m_TargetAssemblyTypeName: T_GP_Skill, Assembly-CSharp
         m_MethodName: ActivateSkill
         m_Mode: 1
         m_Arguments:
@@ -5628,6 +5774,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnSkillThreeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkillFourEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkillFiveEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDefendEvent:
@@ -6668,7 +6820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
-  _spawnPosition: {fileID: 5104967262985648276}
   _spawnOffset: {x: 0, y: 0}
   _damageAmount: 30
   _launchSpeed: 15
@@ -7744,6 +7895,7 @@ Transform:
   - {fileID: 5104967262985648276}
   - {fileID: 6644497297257095337}
   - {fileID: 853539130943886504}
+  - {fileID: 69002674}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3999885981051095525
@@ -8620,7 +8772,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
-  _spawnPosition: {fileID: 5104967262985648276}
   _spawnOffset: {x: 0, y: 0}
   _damageAmount: 5
   _launchSpeed: 15
@@ -8804,9 +8955,9 @@ MonoBehaviour:
   OnBasicAttackEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1660259963}
+        m_TargetAssemblyTypeName: T_GP_Skill, Assembly-CSharp
+        m_MethodName: ActivateSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8823,6 +8974,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnSkillThreeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkillFourEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkillFiveEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDefendEvent:
@@ -9634,6 +9791,7 @@ Transform:
   - {fileID: 401548226814134712}
   - {fileID: 633274860943984507}
   - {fileID: 1307270511739068230}
+  - {fileID: 1660259962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9219476141114388830

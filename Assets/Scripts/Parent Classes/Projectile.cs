@@ -4,11 +4,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] protected SO_Layer _layer;
-    [SerializeField] protected Transform _spawnPosition;
     [SerializeField] protected Vector2 _spawnOffset;
     [SerializeField] protected float _damageAmount;
     [SerializeField] protected float _launchSpeed;
 
+    protected Transform _spawnPosition;
     protected PlayerHealthHandler _otherHealthHandler;
     protected PlayerInputHandler _otherInputHandler;
     protected GameObject _shooter;
@@ -17,19 +17,9 @@ public class Projectile : MonoBehaviour
     protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.gravityScale = 0;
 
         Transform projectileSpawnPos = transform.parent.parent.Find("ProjectileShootPoint");
-        if (projectileSpawnPos == null)
-        {
-            Debug.LogError("No \"ProjectileShootPoint\" gameObject was found as player prefab's child");
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Spawn Pos set sucessfully");
-            _spawnPosition = projectileSpawnPos;
-        }
+        _spawnPosition = projectileSpawnPos;
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
@@ -56,7 +46,7 @@ public class Projectile : MonoBehaviour
         Debug.Log("Hit opponent player " + otherPlayer.name, gameObject);
     }
 
-    protected void DeactivateProjectile()
+    public void DeactivateProjectile()
     {
         _rb.linearVelocity = Vector2.zero;
         this.gameObject.SetActive(false);
@@ -68,6 +58,5 @@ public class Projectile : MonoBehaviour
         _shooter = shooter;
         transform.position = _spawnPosition.position + offset;
         _rb.AddForce(Vector2.right * transform.lossyScale.x * _launchSpeed, ForceMode2D.Impulse);
-        Debug.Log(transform.lossyScale.x);
     }
 }
