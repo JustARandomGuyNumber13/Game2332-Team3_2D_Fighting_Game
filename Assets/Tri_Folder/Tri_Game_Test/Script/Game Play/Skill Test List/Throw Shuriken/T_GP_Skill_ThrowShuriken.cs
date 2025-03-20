@@ -19,7 +19,6 @@ public class T_GP_Skill_ThrowShuriken : T_GP_Skill  // Skill_ShootProjectile_Tem
     }
     protected override void TriggerSkill()
     {
-        Debug.Log("Ninja Throw Shuriken", gameObject);
         _projectilePrefab.LaunchProjectile(transform.parent.gameObject);
     }
     protected override void AfterSkill() 

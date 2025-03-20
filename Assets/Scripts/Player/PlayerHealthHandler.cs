@@ -32,7 +32,6 @@ public class PlayerHealthHandler : MonoBehaviour
     public void Public_DecreaseHealth(float amount)
     {
         float damageAmount = (amount - _characterStat.defenseValue);
-        Debug.Log(gameObject.name + " decrease health");
 
         if (_inputHandler.isDefending)
         {
@@ -71,7 +70,6 @@ public class PlayerHealthHandler : MonoBehaviour
     {
         if (health <= 0)
         {
-            Debug.Log(gameObject.name + " die!", gameObject);
             IsDead = true;
             OnDeathEvent?.Invoke();
         }

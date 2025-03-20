@@ -13,12 +13,10 @@ public class T_GP_PlayerSpawn_Manager : MonoBehaviour
     [SerializeField] private T_GP_UI_Skill[] _p1SkillBoxes, _p2SkillBoxes;
 
     [SerializeField] private UnityEvent<GameObject, GameObject> OnSetUpEvent;
-    private GameObject  _player1, _player2;
 
     private void Start()
     {
         InspectorCheck();
-
         AssignSkills(_p1InputHandler, _p1SkillSelect, _p1SkillBoxes);
         AssignSkills(_p2InputHandler, _p2SkillSelect, _p2SkillBoxes);
         OnSetUpEvent?.Invoke(_p1InputHandler.gameObject, _p2InputHandler.gameObject);
@@ -26,8 +24,7 @@ public class T_GP_PlayerSpawn_Manager : MonoBehaviour
     private void AssignSkills(PlayerInputHandler inputHandler, T_SO_PlayerSelection skillSelect, T_GP_UI_Skill[] skillBoxes)
     {
         int[] skillListIndex = skillSelect.selectedSkillList;
-        //for (int i = 0; i < skillListIndex.Length; i++)
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < skillBoxes.Length; i++)
         {
             T_SO_SkillStat curSkillStat = _skillList.skillList[skillListIndex[i]];   // Get skill from skill list
             T_GP_Skill curSkill = Instantiate(curSkillStat.skillPrefab, inputHandler.gameObject.transform).GetComponent<T_GP_Skill>();
@@ -63,15 +60,17 @@ public class T_GP_PlayerSpawn_Manager : MonoBehaviour
     }
     private void InspectorCheck()
     {
-        if (_p1SkillSelect.selectedSkillList.Length != 3 ||  _p1SkillBoxes.Length != 3)
+        if (_p1SkillSelect.selectedSkillList.Length !=  _p1SkillBoxes.Length)
         {
-            Debug.LogError("Only 3 skills are available currently");
-            return;
+            Debug.LogError(GetType().Name + ".cs inspector check failed, player one skills amount don't match skill slots amount \n" +
+                "Skill amount: " + _p1SkillSelect.selectedSkillList.Length +
+                ", skill slot amount: " + _p1SkillBoxes.Length, gameObject);
         }
-        if (_p2SkillSelect.selectedSkillList.Length != 3 || _p1SkillBoxes.Length != 3)
+        if (_p2SkillSelect.selectedSkillList.Length != _p2SkillBoxes.Length)
         {
-            Debug.LogError("Only 3 skills are available currently");
-            return;
+            Debug.LogError(GetType().Name + ".cs inspector check failed, player two skills amount don't match skill slots amount \n" +
+                "Skill amount: " + _p2SkillSelect.selectedSkillList.Length +
+                ", skill slot amount: " + _p2SkillBoxes.Length, gameObject);
         }
     }
 }

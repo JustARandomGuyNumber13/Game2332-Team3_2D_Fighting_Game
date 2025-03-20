@@ -3,7 +3,6 @@ using UnityEngine;
 public class T_GP_Skill_Dash : T_GP_Skill
 {
     [Header("Skill exclusive variables")]
-    [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _dashSpeed;
     
     private PlayerInputHandler _inputHandler;
@@ -19,8 +18,7 @@ public class T_GP_Skill_Dash : T_GP_Skill
     {
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
-        gameObject.layer = _layer.ghostLayerIndex;
-        Debug.Log("Ninja Dash", gameObject);
+        gameObject.layer = Global.ghostLayerIndex;
     }
     protected override void DuringSkill(float timer)
     {
@@ -31,6 +29,6 @@ public class T_GP_Skill_Dash : T_GP_Skill
     {
         _inputHandler.isCanMove = true;
         _inputHandler.isCanUseSkill = true;
-        gameObject.layer = _layer.playerLayerIndex;
+        gameObject.layer = Global.playerLayerIndex;
     }
 }

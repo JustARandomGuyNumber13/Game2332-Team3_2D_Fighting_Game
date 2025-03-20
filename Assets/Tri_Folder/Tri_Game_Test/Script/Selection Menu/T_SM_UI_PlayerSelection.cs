@@ -10,13 +10,18 @@ using UnityEngine.Events;
 
 public class T_SM_UI_PlayerSelection : MonoBehaviour
 {
-    [SerializeField] private T_SO_PlayerSelection _playerData;
-    [SerializeField] private GameObject _readyObject;
+    [Header("Scripts")]
+    [SerializeField] private T_SO_PlayerSelection _playerData;  // Adjust skill selection amount in: T_SO_PlayerSelection (instance), 
     [SerializeField] private T_SM_UI_Skill_List _skillList;
+    [SerializeField] private T_SM_UI_Skill_Slot[] _skillSlotList;
+
+    [Header("UI Components")]
     [SerializeField] private Image _skillImage;
     [SerializeField] private TMP_Text _skillType;
     [SerializeField] private TMP_Text _skillDescription;
-    [SerializeField] T_SM_UI_Skill_Slot[] _skillSlotList;
+
+    [Header("Other")]
+    [SerializeField] private GameObject _readyObject;
     [SerializeField] private UnityEvent<bool> OnReadyCheck;
 
     private int[] _skillIndexList;
@@ -42,6 +47,7 @@ public class T_SM_UI_PlayerSelection : MonoBehaviour
         for (int i = 0; i < _skillIndexList.Length; i++)
             _skillIndexList[i] = -1;
     }
+
 
     /* Ready check handlers */
     private void ReadyCheck()
@@ -73,9 +79,9 @@ public class T_SM_UI_PlayerSelection : MonoBehaviour
     public void Public_ReadyCheck(bool isOtherPlayerReady)
     {
         if (_selectionState == SelectionState.ReadyCheck && isOtherPlayerReady)
-            SceneManager.LoadScene("Tri-GamePlay-Scene");
-            //Debug.Log("Both players are ready, change scene");
+            SceneManager.LoadScene(Global.gamePlayScene);
     }
+
 
     /* Assign skill handlers */
     private void ToggleAssignSkill()
@@ -138,6 +144,7 @@ public class T_SM_UI_PlayerSelection : MonoBehaviour
         _skillIndexList[index] = -1;
     }
 
+
     /* View skill handlers */
     private void GetSkill(int direction)
     {
@@ -167,6 +174,7 @@ public class T_SM_UI_PlayerSelection : MonoBehaviour
             _skillType.text = "Ability type: Active" + "\n" + "Cooldown duration: " + _curSkill.skill.skillCD + "s";
     }
 
+
     /* Input handlers */
     private void OnJump(InputValue value)
     {
@@ -188,6 +196,7 @@ public class T_SM_UI_PlayerSelection : MonoBehaviour
     {
         if (Mathf.Ceil(value.Get<float>()) != 0) ReadyCheck();
     }
+
 
     private void InspectorCheck()
     {
