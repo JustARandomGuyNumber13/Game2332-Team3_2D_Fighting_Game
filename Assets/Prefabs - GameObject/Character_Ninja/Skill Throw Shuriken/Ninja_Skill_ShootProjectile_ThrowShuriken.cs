@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class Ninja_Skill_ShootProjectile_ThrowShuriken : Skill
+public class Ninja_Skill_ShootProjectile_ThrowShuriken : Skill  // Skill_ShootProjectile_Template.cs
 {
+    [Header("Skill exclusive variables")]
     [SerializeField] private Projectile _projectilePrefab;
+
     private PlayerInputHandler _inputHandler;
 
     private void Awake()

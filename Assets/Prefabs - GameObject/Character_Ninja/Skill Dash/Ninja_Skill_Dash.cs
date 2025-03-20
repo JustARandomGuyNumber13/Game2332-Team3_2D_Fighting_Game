@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Ninja_Skill_Dash : Skill
 {
+    [Header("Skill exclusive variables")]
     [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _dashSpeed;
     

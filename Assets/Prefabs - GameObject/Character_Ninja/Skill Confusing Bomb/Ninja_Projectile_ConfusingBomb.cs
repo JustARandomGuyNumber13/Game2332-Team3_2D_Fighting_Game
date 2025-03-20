@@ -4,9 +4,20 @@ using UnityEngine;
 public class Ninja_Projectile_ConfusingBomb : Projectile
 {
     [SerializeField] private float _effectDuration;
+    [SerializeField] private float _verticalLaunchForce;
+    protected override void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
+    public override void LaunchProjectile(GameObject shooter)
+    { 
+        base.LaunchProjectile(shooter);
+        _rb.AddForce(Vector2.up * _verticalLaunchForce, ForceMode2D.Impulse);
+    }
+
     protected override void DealDamageBehavior(GameObject otherPlayer)
     {
-        _otherHealthHandler.DecreaseHealth(_damageAmount);
-        _otherInputHandler.OnReverseMovementInput(_effectDuration);
+        _otherHealthHandler.Public_DecreaseHealth(_damageAmount);
+        _otherInputHandler.Public_ReverseMovementInput(_effectDuration);
     }
 }

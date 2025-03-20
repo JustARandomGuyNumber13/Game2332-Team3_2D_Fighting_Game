@@ -5,6 +5,6 @@ public class Ninja_Projectile_ThrowShuriken : Projectile
 {
     protected override void DealDamageBehavior(GameObject otherPlayer)
     {
-        _otherHealthHandler.DecreaseHealth(_damageAmount);
+        _otherHealthHandler.Public_DecreaseHealth(_damageAmount);
     }
 }

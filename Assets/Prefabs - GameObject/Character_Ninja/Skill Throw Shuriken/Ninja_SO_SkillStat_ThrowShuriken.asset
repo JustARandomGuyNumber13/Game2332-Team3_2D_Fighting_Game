@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Ninja_SO_SkillStat_ThrowShuriken
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: 21300000, guid: cef4d8465dee69b4cb93b5c9b0b3e43d, type: 3}
+  skillSprite: {fileID: -5392625257635239999, guid: 609d2d5f30c26fe4c8d320099bb1786e, type: 3}
   skillName: Ninja Throw Shuriken
   skillDescription: 
   skillDelay: 0

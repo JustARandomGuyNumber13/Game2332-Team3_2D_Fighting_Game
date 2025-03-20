@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Ninja_Skill_BasicAttack : Skill
+public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
 {
-    [Header("Child class variable")]
+    [Header("Skill exclusive variables")]
     [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _damageAmount;
     [SerializeField] private Vector2 _attackBoxSize;
@@ -10,6 +10,7 @@ public class Ninja_Skill_BasicAttack : Skill
 
     private PlayerHealthHandler _otherPlayerHealthHandler;
     private PlayerInputHandler _inputHandler;
+
 
     private void Awake()
     {
@@ -24,6 +25,19 @@ public class Ninja_Skill_BasicAttack : Skill
     protected override void TriggerSkill()
     {
         Debug.Log("Ninja Basic Attack", gameObject);
+
+
+        /*if (skillStat != null)
+        {
+            SFXManager.Instance.PlaySFX(skillStat.sfxIndex);
+        }
+        else
+        {
+            Debug.LogError("SkillStat not assigned!", gameObject);
+        }*/
+
+
+        DebugDrawAttackBox();
         RaycastHit2D hit = Physics2D.BoxCast(
             (Vector2) transform.position +  (Vector2.right * transform.localScale.x * _attackOffset.x) + (Vector2.up * _attackOffset.y),
             _attackBoxSize,
@@ -37,11 +51,12 @@ public class Ninja_Skill_BasicAttack : Skill
             if (_otherPlayerHealthHandler == null)
                 _otherPlayerHealthHandler = hit.collider.GetComponent<PlayerHealthHandler>();
 
-            _otherPlayerHealthHandler.DecreaseHealth(_damageAmount);
+            _otherPlayerHealthHandler.Public_DecreaseHealth(_damageAmount);
         }
     }
 
-    private void OnDrawGizmosSelected()
+    private float debugDuration = 2f;
+    private void DebugDrawAttackBox()
     {
         // Get facing direction
         float facingDirection = Mathf.Sign(transform.localScale.x);
@@ -49,26 +64,25 @@ public class Ninja_Skill_BasicAttack : Skill
         // Calculate the *flipped* offset
         Vector2 flippedOffset = new Vector2(_attackOffset.x * facingDirection, _attackOffset.y);
 
-
         // Calculate box center
-        Vector2 boxCenter = (Vector2)transform.position + flippedOffset;
+        Vector2 boxCenter = (Vector3)transform.position + (Vector3)flippedOffset;
 
         // Calculate half size
         Vector2 halfSize = _attackBoxSize * 0.5f;
 
         // Calculate box corners
-        Vector2 topLeft = boxCenter + new Vector2(-halfSize.x, halfSize.y);
-        Vector2 topRight = boxCenter + new Vector2(halfSize.x, halfSize.y);
-        Vector2 bottomLeft = boxCenter + new Vector2(-halfSize.x, -halfSize.y);
-        Vector2 bottomRight = boxCenter + new Vector2(halfSize.x, -halfSize.y);
+        Vector3 topLeft = boxCenter + new Vector2(-halfSize.x, halfSize.y);
+        Vector3 topRight = boxCenter + new Vector2(halfSize.x, halfSize.y);
+        Vector3 bottomLeft = boxCenter + new Vector2(-halfSize.x, -halfSize.y);
+        Vector3 bottomRight = boxCenter + new Vector2(halfSize.x, -halfSize.y);
 
-        // Draw the box
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(topLeft, topRight);
-        Gizmos.DrawLine(topRight, bottomRight);
-        Gizmos.DrawLine(bottomRight, bottomLeft);
-        Gizmos.DrawLine(bottomLeft, topLeft);
+        // Draw the box using Debug.DrawLine with 4 parameters
+        Debug.DrawLine(topLeft, topRight, Color.red, debugDuration);
+        Debug.DrawLine(topRight, bottomRight, Color.red, debugDuration);
+        Debug.DrawLine(bottomRight, bottomLeft, Color.red, debugDuration);
+        Debug.DrawLine(bottomLeft, topLeft, Color.red, debugDuration);
     }
+
     protected override void AfterSkill() 
     {
         _inputHandler.isCanMove = true;
