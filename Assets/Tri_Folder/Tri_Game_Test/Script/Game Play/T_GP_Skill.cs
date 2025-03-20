@@ -44,6 +44,7 @@ public abstract class T_GP_Skill : MonoBehaviour
             yield return new WaitForSeconds(skillStat.skillDelay);
 
         /* Using skill */
+        Debug.Log("Perform " + GetType().Name, gameObject);
         TriggerSkill();
         OnTriggerSkillEvent?.Invoke();
         float timer = 0;

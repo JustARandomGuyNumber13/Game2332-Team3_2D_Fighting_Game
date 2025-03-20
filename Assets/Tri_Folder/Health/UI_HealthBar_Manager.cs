@@ -21,6 +21,7 @@ public class UI_HealthBar_Manager : MonoBehaviour
 
         SetPlayerOneHealth(p1MaxHealth);
         SetPlayerTwoHealth(p2MaxHealth);
+        SetUpCheck(p1Health, p2Health);
     }
     public void SetPlayerOneHealth(float health) 
     {
@@ -29,5 +30,16 @@ public class UI_HealthBar_Manager : MonoBehaviour
     public void SetPlayerTwoHealth(float health) 
     {
         _p2Fill.fillAmount = health / p2MaxHealth;
+    }
+    private void SetUpCheck(PlayerHealthHandler p1, PlayerHealthHandler p2)
+    {
+        if (p1 == null || p2 == null)
+        {
+            Debug.LogError(GetType().Name + ".cs setup failed! \n" +
+                "p1Health: " + (p1 != null) +
+                ", p2Health: " + (p2 != null), gameObject);
+        }
+        else
+            Debug.Log(GetType().Name + ".cs setup successfully!");
     }
 }

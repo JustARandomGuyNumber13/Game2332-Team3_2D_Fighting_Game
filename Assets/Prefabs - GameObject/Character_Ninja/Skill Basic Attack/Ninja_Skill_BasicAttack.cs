@@ -3,7 +3,6 @@ using UnityEngine;
 public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
 {
     [Header("Skill exclusive variables")]
-    [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _damageAmount;
     [SerializeField] private Vector2 _attackBoxSize;
     [SerializeField] private Vector2 _attackOffset;
@@ -44,7 +43,7 @@ public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
             0,
             Vector2.zero,
             0,
-            _layer.playerLayer);
+            Global.playerLayer);
 
         if (hit.collider != null && hit.collider.gameObject != this.gameObject)
         {

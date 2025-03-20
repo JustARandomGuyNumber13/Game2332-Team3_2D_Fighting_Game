@@ -3,7 +3,6 @@ using UnityEngine;
 public class T_GP_Skill_SwordAttack : T_GP_Skill    // Skill_BasicAttack_Template.cs
 {
     [Header("Skill exclusive variables")]
-    [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _damageAmount;
     [SerializeField] private Vector2 _attackBoxSize;
     [SerializeField] private Vector2 _attackOffset;
@@ -23,11 +22,10 @@ public class T_GP_Skill_SwordAttack : T_GP_Skill    // Skill_BasicAttack_Templat
     }
     protected override void TriggerSkill()
     {
-        Debug.Log("Sword Attack", gameObject);
         DebugDrawAttackBox();
 
         RaycastHit2D[] hit = Physics2D.BoxCastAll(
-            (Vector2)transform.position + (Vector2.right * transform.parent.lossyScale.x * _attackOffset.x) + (Vector2.up * _attackOffset.y),
+            (Vector2)transform.position + (Vector2.right * _inputHandler.transform.lossyScale.x * _attackOffset.x) + (Vector2.up * _attackOffset.y),
             _attackBoxSize,
             0,
             Vector2.zero,
@@ -36,21 +34,18 @@ public class T_GP_Skill_SwordAttack : T_GP_Skill    // Skill_BasicAttack_Templat
         if (hit.Length != 0)
             foreach (RaycastHit2D hitItem in hit)
             {
-                if (hitItem.collider.gameObject.layer == _layer.playerLayerIndex || hitItem.collider.gameObject.layer == _layer.projectileLayerIndex)
+                if (hitItem.collider.gameObject.layer == Global.playerLayerIndex)
                 {
-                    if (hitItem.collider.gameObject.layer == _layer.playerLayerIndex)
-                    {
-                        if (hitItem.collider.gameObject == _inputHandler.gameObject) continue;
+                    if (hitItem.collider.gameObject == _inputHandler.gameObject) continue;
 
-                        if (_otherPlayerHealthHandler == null)
-                            _otherPlayerHealthHandler = hitItem.collider.GetComponent<PlayerHealthHandler>();
+                    if (_otherPlayerHealthHandler == null)
+                        _otherPlayerHealthHandler = hitItem.collider.GetComponent<PlayerHealthHandler>();
 
-                        _otherPlayerHealthHandler.Public_DecreaseHealth(_damageAmount);
-                    }
-                    else if (hitItem.collider.gameObject.layer == _layer.projectileLayerIndex)
-                    {
-                        hitItem.collider.GetComponent<Projectile>().DeactivateProjectile();
-                    }
+                    _otherPlayerHealthHandler.Public_DecreaseHealth(_damageAmount);
+                }
+                else if (hitItem.collider.gameObject.layer == Global.projectileLayerIndex)
+                {
+                    hitItem.collider.GetComponent<Projectile>().DeactivateProjectile();
                 }
             }
     }
@@ -59,7 +54,7 @@ public class T_GP_Skill_SwordAttack : T_GP_Skill    // Skill_BasicAttack_Templat
     private void DebugDrawAttackBox()
     {
         // Get facing direction
-        float facingDirection = Mathf.Sign(transform.parent.lossyScale.x);
+        float facingDirection = Mathf.Sign(_inputHandler.transform.lossyScale.x);
 
         // Calculate the *flipped* offset
         Vector2 flippedOffset = new Vector2(_attackOffset.x * facingDirection, _attackOffset.y);

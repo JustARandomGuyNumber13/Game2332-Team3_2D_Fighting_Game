@@ -19,7 +19,6 @@ public class T_Skill_ConfusingBomb : T_GP_Skill  // Skill_ShootProjectile_Templa
     }
     protected override void TriggerSkill()
     {
-        Debug.Log("Ninja Confusion Bomb", gameObject);
         _projectilePrefab.LaunchProjectile(transform.parent.gameObject);
     }
     protected override void AfterSkill() 

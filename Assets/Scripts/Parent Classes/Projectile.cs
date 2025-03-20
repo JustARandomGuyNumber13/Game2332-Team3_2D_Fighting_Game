@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] protected SO_Layer _layer;
     [SerializeField] protected Vector2 _spawnOffset;
     [SerializeField] protected float _damageAmount;
     [SerializeField] protected float _launchSpeed;
@@ -23,7 +22,7 @@ public class Projectile : MonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_layer.playerLayerIndex == collision.gameObject.layer)  // Compare bits (if "name" is in "invite list")
+        if (Global.playerLayerIndex == collision.gameObject.layer)  // Compare bits (if "name" is in "invite list")
         {
             if (collision.gameObject != _shooter)
             {

@@ -10,7 +10,6 @@ public class PlayerInputHandler : MonoBehaviour
     #region ~~ Variables ~~
     [Header("Require Components")]
     [SerializeField] private SO_AnimatorHash _animatorHash;
-    [SerializeField] private SO_Layer _layer;
     [SerializeField] private SO_CharacterStat _chararacterStat;
     [SerializeField] private Animator _animator;
     [SerializeField] private Collider2D _standCollider, _crouchCollider;
@@ -145,7 +144,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Helper_GroundCheck()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, _chararacterStat.groundCheckDistance, _layer.groundLayer))
+        if (Physics2D.Raycast(transform.position, Vector2.down, _chararacterStat.groundCheckDistance, Global.groundLayer))
         {
             isOnGround = true;
             isCanJump = true;
