@@ -86,7 +86,7 @@ public class SelectionUI : MonoBehaviour
 
     public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
     {
-        if (isReady && otherPlayer.isReady)
+        if (isReady && (otherPlayer.isReady == true))
         {
             Debug.Log("Change Scene");
         }
@@ -99,6 +99,8 @@ public class SelectionUI : MonoBehaviour
         if (isReady)
         {
             Debug.Log("Save data");
+            //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
+
             playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
         }
         OnReadyCheck?.Invoke();
@@ -108,8 +110,8 @@ public class SelectionUI : MonoBehaviour
     {
         if (superParentA.GetChild(0).childCount == 1 && superParentA.GetChild(1).childCount == 1 && superParentA.GetChild(2).childCount == 1)
         {
-            SelfReadyCheck();
             getSkillIndex();
+            SelfReadyCheck();
         }
         else
         {
@@ -325,7 +327,7 @@ public class SelectionUI : MonoBehaviour
         int.TryParse(superParentA.GetChild(0).GetChild(0).name, out playerSkill1);
         int.TryParse(superParentA.GetChild(1).GetChild(0).name, out playerSkill2);
         int.TryParse(superParentA.GetChild(2).GetChild(0).name, out playerSkill3);
-        Debug.Log(playerSkill1);
+        Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
     }
 
     private void Load()
@@ -341,3 +343,4 @@ public class SelectionUI : MonoBehaviour
 
 
 //Make sure to reset selection values when necessary and that saving works the first time ready is clicked and conditions are met
+//Make sure loading debug.log actually works, unity event currently not working
