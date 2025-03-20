@@ -106,136 +106,152 @@ public class SelectionUI : MonoBehaviour
 
     public void Ready(InputAction.CallbackContext obj)
     {
-        SelfReadyCheck();
-        getSkillIndex();
+        if (superParentA.GetChild(0).childCount == 1 && superParentA.GetChild(1).childCount == 1 && superParentA.GetChild(2).childCount == 1)
+        {
+            SelfReadyCheck();
+            getSkillIndex();
+        }
+        else
+        {
+            Debug.Log("Cannot be ready. Must have 3 skills selected.");
+        }
     }
     public void MoveRight(InputAction.CallbackContext obj)
     {
-        switch (currentSelectionMode)
+        if (!isReady)
         {
-            case selectionMode.characterSelection:
-                NextOption();
-                break;
-            case selectionMode.activeSlot: //Changes active slot index and highlighter
-                selectedActiveIndex++;
-                
-                rectTransformH1.anchoredPosition += new Vector2(71f, 0);
-                if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(213f, 0)))
-                {
-                    rectTransformH1.anchoredPosition = originalH1;
-                }
-                if (selectedActiveIndex == 3)
-                {
-                    selectedActiveIndex = 0;
-                }
-                break;
-            case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
-                selectedSkillIndex++;
-                rectTransformH2.anchoredPosition += new Vector2(71f, 0);
-                if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(355f, 0)))
-                {
-                    rectTransformH2.anchoredPosition = originalH2;
-                }
-                if (selectedSkillIndex == 5)
-                {
-                    selectedSkillIndex = 0;
-                }
+            switch (currentSelectionMode)
+            {
+                case selectionMode.characterSelection:
+                    NextOption();
+                    break;
+                case selectionMode.activeSlot: //Changes active slot index and highlighter
+                    selectedActiveIndex++;
 
-                UpdateSkillDescription();
+                    rectTransformH1.anchoredPosition += new Vector2(71f, 0);
+                    if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(213f, 0)))
+                    {
+                        rectTransformH1.anchoredPosition = originalH1;
+                    }
+                    if (selectedActiveIndex == 3)
+                    {
+                        selectedActiveIndex = 0;
+                    }
+                    break;
+                case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
+                    selectedSkillIndex++;
+                    rectTransformH2.anchoredPosition += new Vector2(71f, 0);
+                    if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(355f, 0)))
+                    {
+                        rectTransformH2.anchoredPosition = originalH2;
+                    }
+                    if (selectedSkillIndex == 5)
+                    {
+                        selectedSkillIndex = 0;
+                    }
 
-                break;
-        }
+                    UpdateSkillDescription();
+
+                    break;
+            }
+        }   
     }
 
     public void MoveLeft(InputAction.CallbackContext obj)
     {
-        RectTransform rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
-        RectTransform rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
-
-        switch (currentSelectionMode)
+        if (!isReady)
         {
-            case selectionMode.characterSelection:
-                BackOption();
-                break;
-            case selectionMode.activeSlot: //Changes active slot index and highlighter
-                selectedActiveIndex--;
-                rectTransformH1.anchoredPosition += new Vector2(-71f, 0);
-                if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(-71f, 0)))
-                {
-                    rectTransformH1.anchoredPosition = originalH1 + new Vector2(142f, 0);
-                }
-                if (selectedActiveIndex == -1)
-                {
-                    selectedActiveIndex = 2;
-                }
-                break;
-            case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
-                selectedSkillIndex--;
-                rectTransformH2.anchoredPosition += new Vector2(-71f, 0);
-                if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(-71f, 0)))
-                {
-                    rectTransformH2.anchoredPosition = originalH2 + new Vector2(284f, 0);
-                }
-                if (selectedSkillIndex == -1)
-                {
-                    selectedSkillIndex = 4;
-                }
+            switch (currentSelectionMode)
+            {
+                case selectionMode.characterSelection:
+                    BackOption();
+                    break;
+                case selectionMode.activeSlot: //Changes active slot index and highlighter
+                    selectedActiveIndex--;
+                    rectTransformH1.anchoredPosition += new Vector2(-71f, 0);
+                    if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(-71f, 0)))
+                    {
+                        rectTransformH1.anchoredPosition = originalH1 + new Vector2(142f, 0);
+                    }
+                    if (selectedActiveIndex == -1)
+                    {
+                        selectedActiveIndex = 2;
+                    }
+                    break;
+                case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
+                    selectedSkillIndex--;
+                    rectTransformH2.anchoredPosition += new Vector2(-71f, 0);
+                    if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(-71f, 0)))
+                    {
+                        rectTransformH2.anchoredPosition = originalH2 + new Vector2(284f, 0);
+                    }
+                    if (selectedSkillIndex == -1)
+                    {
+                        selectedSkillIndex = 4;
+                    }
 
-                UpdateSkillDescription();
+                    UpdateSkillDescription();
 
-                break;
-                
+                    break;
+            }
         }
+     
     }
 
     public void Confirm(InputAction.CallbackContext obj)
     {
-        Child childB = superParentB.GetChild(selectedSkillIndex).GetComponentInChildren<Child>();
-
-        switch (currentSelectionMode)
+        if (!isReady)
         {
-            case selectionMode.characterSelection:
-                currentSelectionMode = selectionMode.activeSlot;
-                activeSlotHighlight.enabled = true;
-                break;
-            case selectionMode.activeSlot:
-                currentSelectionMode = selectionMode.selectableSlot;
-                selectedSkillHighlight.enabled = true;
-                skillDescription.enabled = true;
-                UpdateSkillDescription();
-                break;
-            case selectionMode.selectableSlot:
+            Child childB = superParentB.GetChild(selectedSkillIndex).GetComponentInChildren<Child>();
 
-                
-                returnToParent(selectedActiveIndex);  //If there is a skill in the active slot, it will return it to its original slot **
-
-                if (childB == null) //if there is no skill in the selectable slot, nothing will happen
-                {
+            switch (currentSelectionMode)
+            {
+                case selectionMode.characterSelection:
+                    currentSelectionMode = selectionMode.activeSlot;
+                    activeSlotHighlight.enabled = true;
                     break;
-                }
+                case selectionMode.activeSlot:
+                    currentSelectionMode = selectionMode.selectableSlot;
+                    selectedSkillHighlight.enabled = true;
+                    skillDescription.enabled = true;
+                    UpdateSkillDescription();
+                    break;
+                case selectionMode.selectableSlot:
 
-                childB.transform.SetParent(activeSkillSlot[selectedActiveIndex].transform); //if there is a skill in the selectable slot, it will go to the active slot **
+
+                    returnToParent(selectedActiveIndex);  //If there is a skill in the active slot, it will return it to its original slot **
+
+                    if (childB == null) //if there is no skill in the selectable slot, nothing will happen
+                    {
+                        break;
+                    }
+
+                    childB.transform.SetParent(activeSkillSlot[selectedActiveIndex].transform); //if there is a skill in the selectable slot, it will go to the active slot **
 
 
-                break;
+                    break;
+            }
         }
     }
 
     public void GoBack(InputAction.CallbackContext obj)
     {
-        switch (currentSelectionMode)
+        if (!isReady)
         {
-            case selectionMode.characterSelection:
-                break;
-            case selectionMode.activeSlot:
-                currentSelectionMode = selectionMode.characterSelection;
-                activeSlotHighlight.enabled = false;
-                break;
-            case selectionMode.selectableSlot:
-                currentSelectionMode = selectionMode.activeSlot;
-                selectedSkillHighlight.enabled = false;
-                skillDescription.enabled = false;
-                break;
+            switch (currentSelectionMode)
+            {
+                case selectionMode.characterSelection:
+                    break;
+                case selectionMode.activeSlot:
+                    currentSelectionMode = selectionMode.characterSelection;
+                    activeSlotHighlight.enabled = false;
+                    break;
+                case selectionMode.selectableSlot:
+                    currentSelectionMode = selectionMode.activeSlot;
+                    selectedSkillHighlight.enabled = false;
+                    skillDescription.enabled = false;
+                    break;
+            }
         }
     }
 
@@ -323,6 +339,5 @@ public class SelectionUI : MonoBehaviour
     }
 }
 
-//Make it so that player can only be ready when 3 skills are selected
-//Disable ready when player goes back to making selections
+
 //Make sure to reset selection values when necessary and that saving works the first time ready is clicked and conditions are met
