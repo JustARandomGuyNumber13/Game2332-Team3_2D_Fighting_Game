@@ -26,6 +26,8 @@ public abstract class Skill : MonoBehaviour
         {
             _isCanUseSkill = false;
             StartCoroutine(SkillCoroutine());
+
+            AudioPlayer._instance.Public_PlaySkillSFX(skillStat);
         }
     }
     public void DeactivateSkill() 

@@ -14,6 +14,4 @@ public class SO_SkillStat : ScriptableObject
     public float skillCD;
 
     public bool isPassiveSkill;
-
-    //public int sfxIndex; //Sound effect index
 }
