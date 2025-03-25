@@ -1,46 +1,40 @@
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class Game_Manager : MonoBehaviour
 {
     [SerializeField] private SO_MatchResult _matchResult;
-    //[SerializeField] private Trap[] _trapList;
+    [SerializeField] private Trap[] trapList;
 
     public UnityEvent OnMatchEndEvent;
     public float MatchTimer { get; private set; }
 
     private PlayerHealthHandler _p1HealthHandler, _p2HealthHandler;
-    private PlayerInput _p1Input, _p2Input;
     private bool _isEndGame;
     
 
-    private void Start()
-    {
-        
-    }
     private void Update()
     {
         MatchTimer += Time.deltaTime;
     }
 
-    private struct Trap {
-        public bool IsAvailable { get; private set; }
-        public void Activate() { }
-    };
-    private Trap[] _trapList;
     private void SpawnTraps()
     {
-        int randomChosenTrap = (int)Random.Range(0, _trapList.Length);
+        if (trapList.Length == 0) return;
+        int randomChosenTrap = (int)Random.Range(0, trapList.Length);
+
         while (true)
         {
-            if (_trapList[randomChosenTrap].IsAvailable)
-                _trapList[randomChosenTrap].Activate();
+            if (trapList[randomChosenTrap].IsAvailable)
+                trapList[randomChosenTrap].Activate();
             else
             {
                 randomChosenTrap++;
-                if (randomChosenTrap >= _trapList.Length)
+                if (randomChosenTrap >= trapList.Length)
                     randomChosenTrap = 0;
             }
         }
@@ -54,26 +48,27 @@ public class Game_Manager : MonoBehaviour
     {
         if (_matchResult.GetPlayerOneScore() == 2)
         {
-            // TODO: Go to player 1 win scene
+            StartCoroutine(ChangeSceneCoroutine(3, Global.playerOneWinScene));
         }
         else if (_matchResult.GetPlayerTwoScore() == 2)
         {
-            // TODO : Go to player 2 win scene
+            StartCoroutine(ChangeSceneCoroutine(3, Global.playerTwoWinScene));
         }
         else
-        { 
-            // TODO: Repeat fight match scene
+        {
+            StartCoroutine(ChangeSceneCoroutine(3, Global.gamePlayScene));
         }
     }
-
+    private IEnumerator ChangeSceneCoroutine(float delay, string scene)
+    { 
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(scene);
+    }
 
     public void Public_SetUp(GameObject p1, GameObject p2)
     {
         _p1HealthHandler = p1.GetComponent<PlayerHealthHandler>();
         _p2HealthHandler = p2.GetComponent<PlayerHealthHandler>();
-
-        _p1Input = p1.GetComponent<PlayerInput>();
-        _p2Input = p2.GetComponent<PlayerInput>();
 
         _p1HealthHandler.OnDeathEvent.AddListener(OnPlayerDieCheck);
         _p2HealthHandler.OnDeathEvent.AddListener(OnPlayerDieCheck);
@@ -83,8 +78,6 @@ public class Game_Manager : MonoBehaviour
     private void OnPlayerDie()
     {
         _isEndGame = true;
-        _p1Input.enabled = false;
-        _p2Input.enabled = false;
         OnMatchEndEvent?.Invoke();
     }
     private IEnumerator OnPlayerDieCheckCoroutine()

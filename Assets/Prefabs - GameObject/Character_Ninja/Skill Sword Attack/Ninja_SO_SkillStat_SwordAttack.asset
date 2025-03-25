@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Ninja_SO_SkillStat_SwordAttack
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: 0}
+  skillSprite: {fileID: -5392625257635239999, guid: 3dcbf13865c7698478ecd7ee70bad283, type: 3}
   skillName: Ninja Sword Attack
   skillDescription: 
   skillDelay: 0

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5559285541879079175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6544421265407059025}
+  - component: {fileID: 7540021593505726330}
+  m_Layer: 0
+  m_Name: T_Skill_SwordAttack_Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6544421265407059025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559285541879079175}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7540021593505726330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559285541879079175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8459ed74c0d043d41b996a8a0e1c69d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillStat: {fileID: 11400000, guid: c38c0787e3c010849abde42c9e2b8190, type: 2}
+  OnBeforeSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTriggerSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _layer: {fileID: 11400000, guid: 79f5b11b4f3f4e54ea2c9910d51f492c, type: 2}
+  _damageAmount: 15
+  _attackBoxSize: {x: 2, y: 2}
+  _attackOffset: {x: 1, y: 1}

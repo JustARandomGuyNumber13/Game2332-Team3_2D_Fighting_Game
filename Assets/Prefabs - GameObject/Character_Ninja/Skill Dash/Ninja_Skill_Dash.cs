@@ -3,7 +3,6 @@ using UnityEngine;
 public class Ninja_Skill_Dash : Skill
 {
     [Header("Skill exclusive variables")]
-    [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _dashSpeed;
     
     private PlayerInputHandler _inputHandler;
@@ -19,18 +18,17 @@ public class Ninja_Skill_Dash : Skill
     {
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
-        gameObject.layer = _layer.ghostLayerIndex;
+        gameObject.layer = Global.ghostLayerIndex;
         Debug.Log("Ninja Dash", gameObject);
     }
     protected override void DuringSkill(float timer)
     {
         _rb.linearVelocity = Vector2.up * _rb.linearVelocityY + Vector2.right * transform.localScale.x * _dashSpeed;
-        
     }
     protected override void AfterSkill()
     {
         _inputHandler.isCanMove = true;
         _inputHandler.isCanUseSkill = true;
-        gameObject.layer = _layer.playerLayerIndex;
+        gameObject.layer = Global.playerLayerIndex;
     }
 }

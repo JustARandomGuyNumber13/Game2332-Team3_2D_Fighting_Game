@@ -24,12 +24,10 @@ public class UI_HealthBar_Manager : MonoBehaviour
     }
     public void SetPlayerOneHealth(float health) 
     {
-        Debug.Log("Loose health p1 " + health / p1MaxHealth);
         _p1Fill.fillAmount = health / p1MaxHealth;
     }
     public void SetPlayerTwoHealth(float health) 
     {
-        Debug.Log("Loose health p2 " + health / p2MaxHealth);
         _p2Fill.fillAmount = health / p2MaxHealth;
     }
 }

@@ -5,10 +5,7 @@ public class Ninja_Projectile_ConfusingBomb : Projectile
 {
     [SerializeField] private float _effectDuration;
     [SerializeField] private float _verticalLaunchForce;
-    protected override void Awake()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-    }
+
     public override void LaunchProjectile(GameObject shooter)
     { 
         base.LaunchProjectile(shooter);

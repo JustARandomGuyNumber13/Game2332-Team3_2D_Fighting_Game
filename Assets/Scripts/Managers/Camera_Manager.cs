@@ -35,11 +35,7 @@ public class Camera_Manager : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (_player1 == null || _player2 == null) //Debug log
-        {
-            Debug.Log("Player transforms are not assigned yet!");
-            return;
-        }
+        if(_player1 == null || _player2 == null) return;
 
         _playerMidPoint = (_player1.position + _player2.position) / 2;
         _playerDistance.x = Mathf.Abs(_player1.position.x - _player2.position.x);
@@ -68,7 +64,7 @@ public class Camera_Manager : MonoBehaviour
     }
 
     public void Public_SetUp(GameObject p1, GameObject p2)
-    { 
+    {
         _player1 = p1.transform;
         _player2 = p2.transform;
     }

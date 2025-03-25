@@ -128,10 +128,10 @@ TextureImporter:
       name: Ninja Walking Animation Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 301
-        y: 2008
-        width: 1425
-        height: 1962
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: Ninja Walking Animation Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2276
-        y: 2012
-        width: 1377
-        height: 1966
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Ninja Walking Animation Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4229
-        y: 2023
-        width: 1314
-        height: 1968
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Ninja Walking Animation Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6276
-        y: 2037
-        width: 1377
-        height: 1933
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: Ninja Walking Animation Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 330
-        y: 26
-        width: 1377
-        height: 1960
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3b883d2f202b99c498eddd9426a1b8e8
     internalID: 0
     vertices: []
     indices: 

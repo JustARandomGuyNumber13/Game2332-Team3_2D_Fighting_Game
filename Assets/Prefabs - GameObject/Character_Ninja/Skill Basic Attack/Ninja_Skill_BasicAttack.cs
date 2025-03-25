@@ -3,7 +3,6 @@ using UnityEngine;
 public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
 {
     [Header("Skill exclusive variables")]
-    [SerializeField] private SO_Layer _layer;
     [SerializeField] private float _damageAmount;
     [SerializeField] private Vector2 _attackBoxSize;
     [SerializeField] private Vector2 _attackOffset;
@@ -24,8 +23,6 @@ public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
     }
     protected override void TriggerSkill()
     {
-        Debug.Log("Ninja Basic Attack", gameObject);
-
         DebugDrawAttackBox();
         RaycastHit2D hit = Physics2D.BoxCast(
             (Vector2) transform.position +  (Vector2.right * transform.localScale.x * _attackOffset.x) + (Vector2.up * _attackOffset.y),
@@ -33,7 +30,7 @@ public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
             0,
             Vector2.zero,
             0,
-            _layer.playerLayer);
+            Global.playerLayer);
 
         if (hit.collider != null && hit.collider.gameObject != this.gameObject)
         {

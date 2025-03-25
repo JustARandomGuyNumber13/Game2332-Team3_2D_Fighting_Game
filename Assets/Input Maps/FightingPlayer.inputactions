@@ -60,6 +60,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "SkillFour",
+                    "type": "Button",
+                    "id": "508efe48-472e-4b9e-8688-dc005508b7ad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillFive",
+                    "type": "Button",
+                    "id": "6770bf13-52ab-4071-b054-7abead2406a3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "67560ea1-6cd8-4b8c-8790-ef74fa29ec1a",
@@ -160,6 +178,28 @@
                 },
                 {
                     "name": "",
+                    "id": "db39769b-c1db-4784-80b3-c38a66aed65d",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillFour",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d3aa6db-4e43-4187-86d7-1d7b18aa3d24",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillFive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "83b7e5b7-19d8-4521-91f4-99b4619a3866",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -224,6 +264,24 @@
                     "name": "SkillThree",
                     "type": "Button",
                     "id": "cd32cdea-b4f3-42e0-bba0-f9ae2a8fc356",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillFour",
+                    "type": "Button",
+                    "id": "85f4de28-6025-47ea-b56c-6c0d7b66abb4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillFive",
+                    "type": "Button",
+                    "id": "2eb9a69c-2a0b-407c-bc52-977f278d9bc5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -325,6 +383,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "SkillThree",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29ab0eca-6ef2-48dc-accc-8b9b4619fdc7",
+                    "path": "<Keyboard>/numpadPlus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillFour",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8bf5f26-3ee8-425e-a136-c6ba18eddea2",
+                    "path": "<Keyboard>/numpad6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillFive",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
