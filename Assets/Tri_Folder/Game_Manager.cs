@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class Game_Manager : MonoBehaviour
 {
     [SerializeField] private SO_MatchResult _matchResult;
-    //[SerializeField] private Trap[] _trapList;
+    [SerializeField] private Trap[] trapList;
 
     public UnityEvent OnMatchEndEvent;
     public float MatchTimer { get; private set; }
@@ -22,22 +22,19 @@ public class Game_Manager : MonoBehaviour
         MatchTimer += Time.deltaTime;
     }
 
-    private struct Trap {
-        public bool IsAvailable { get; private set; }
-        public void Activate() { }
-    };
-    private Trap[] _trapList;
     private void SpawnTraps()
     {
-        int randomChosenTrap = (int)Random.Range(0, _trapList.Length);
+        if (trapList.Length == 0) return;
+        int randomChosenTrap = (int)Random.Range(0, trapList.Length);
+
         while (true)
         {
-            if (_trapList[randomChosenTrap].IsAvailable)
-                _trapList[randomChosenTrap].Activate();
+            if (trapList[randomChosenTrap].IsAvailable)
+                trapList[randomChosenTrap].Activate();
             else
             {
                 randomChosenTrap++;
-                if (randomChosenTrap >= _trapList.Length)
+                if (randomChosenTrap >= trapList.Length)
                     randomChosenTrap = 0;
             }
         }

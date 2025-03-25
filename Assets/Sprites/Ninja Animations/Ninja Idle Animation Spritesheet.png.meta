@@ -131,155 +131,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ninja Indle Animation Spritesheet_0
+      name: Ninja Idle Animation Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 274
-        y: 2008
-        width: 1425
-        height: 1962
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 91ae99049779977f0800000000000000
-      internalID: -614293327128696295
+      spriteID: 5a6e6f8b5f6595a4db2df8e67fbb83ae
+      internalID: -1412792046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Indle Animation Spritesheet_1
+      name: Ninja Idle Animation Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2272
-        y: 2008
-        width: 1424
-        height: 1967
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 57204e2252e8fcc00800000000000000
-      internalID: 923112738784543349
+      spriteID: e057fcfe2291774448848bd3e25f7a08
+      internalID: -1845263058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Indle Animation Spritesheet_2
+      name: Ninja Idle Animation Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4272
-        y: 2008
-        width: 1424
-        height: 1975
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 80b7b88a3c7358030800000000000000
-      internalID: 3496261999208921864
+      spriteID: bd011b68ec4ef12419eead9008222b87
+      internalID: 1772794396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Indle Animation Spritesheet_3
+      name: Ninja Idle Animation Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6272
-        y: 2008
-        width: 1424
-        height: 1982
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b3391aa0df2af58c0800000000000000
-      internalID: -4008305935647665349
+      spriteID: d1ee0e0872b1b074691195502f586ceb
+      internalID: -357721246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Indle Animation Spritesheet_4
+      name: Ninja Idle Animation Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 272
-        y: 8
-        width: 1424
-        height: 1980
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0b04bf1f5202c61b0800000000000000
-      internalID: -5662115284165902160
+      spriteID: 207007e2a175d524c80655ea9ecfd3d8
+      internalID: -795961611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Indle Animation Spritesheet_5
+      name: Ninja Idle Animation Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2272
-        y: 8
-        width: 1432
-        height: 1964
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2386232766eedc250800000000000000
-      internalID: 5966687205105756210
+      spriteID: b4cd90b0f97ad09468ccf3984642b8dd
+      internalID: 1811356538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Indle Animation Spritesheet_6
+      name: Ninja Idle Animation Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4272
-        y: 8
-        width: 1424
-        height: 1959
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59155ed0d93d918e0800000000000000
-      internalID: -1722112710996045419
+      spriteID: 7626b35d214a3134ebe44b51e6f00658
+      internalID: -1214240447
       vertices: []
       indices: 
       edges: []
@@ -288,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ca46a46c97325c942b812df4629a99de
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ninja Indle Animation Spritesheet_0: -614293327128696295
-      Ninja Indle Animation Spritesheet_1: 923112738784543349
-      Ninja Indle Animation Spritesheet_2: 3496261999208921864
-      Ninja Indle Animation Spritesheet_3: -4008305935647665349
-      Ninja Indle Animation Spritesheet_4: -5662115284165902160
-      Ninja Indle Animation Spritesheet_5: 5966687205105756210
-      Ninja Indle Animation Spritesheet_6: -1722112710996045419
+      Ninja Idle Animation Spritesheet_0: -1412792046
+      Ninja Idle Animation Spritesheet_1: -1845263058
+      Ninja Idle Animation Spritesheet_2: 1772794396
+      Ninja Idle Animation Spritesheet_3: -357721246
+      Ninja Idle Animation Spritesheet_4: -795961611
+      Ninja Idle Animation Spritesheet_5: 1811356538
+      Ninja Idle Animation Spritesheet_6: -1214240447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

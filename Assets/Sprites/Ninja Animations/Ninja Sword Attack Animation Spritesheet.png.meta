@@ -1,28 +1,46 @@
 fileFormatVersion: 2
-guid: ca0ff1e91a594284eaf7bfec05a646d1
+guid: 0ceae69ebeb5cbb4b82f987480d71448
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5157454445496286668
-    second: Ninja Throwing Animation Spritesheet_0
+      213: 509433738322192163
+    second: Ninja Sword Attack Animation Spritesheet_0
   - first:
-      213: -6865419694684904509
-    second: Ninja Throwing Animation Spritesheet_1
+      213: 2114312857258833560
+    second: Ninja Sword Attack Animation Spritesheet_1
   - first:
-      213: 8295834911718642741
-    second: Ninja Throwing Animation Spritesheet_2
+      213: 3060131474596316502
+    second: Ninja Sword Attack Animation Spritesheet_2
   - first:
-      213: -2705304950110315809
-    second: Ninja Throwing Animation Spritesheet_3
+      213: -6877526731679601730
+    second: Ninja Sword Attack Animation Spritesheet_3
   - first:
-      213: 5175340576096877585
-    second: Ninja Throwing Animation Spritesheet_4
+      213: -5308487949591412386
+    second: Ninja Sword Attack Animation Spritesheet_4
   - first:
-      213: 3766166487076232527
-    second: Ninja Throwing Animation Spritesheet_5
+      213: -3849826293863836275
+    second: Ninja Sword Attack Animation Spritesheet_5
   - first:
-      213: -5524988899233206456
-    second: Ninja Throwing Animation Spritesheet_6
+      213: 3914059341733396406
+    second: Ninja Sword Attack Animation Spritesheet_6
+  - first:
+      213: -7171425724904494380
+    second: Ninja Sword Attack Animation Spritesheet_7
+  - first:
+      213: -580021892782719012
+    second: Ninja Sword Attack Animation Spritesheet_8
+  - first:
+      213: -5583229031661180384
+    second: Ninja Sword Attack Animation Spritesheet_9
+  - first:
+      213: 2149442999616996905
+    second: Ninja Sword Attack Animation Spritesheet_10
+  - first:
+      213: 6930881448081939460
+    second: Ninja Sword Attack Animation Spritesheet_11
+  - first:
+      213: 4640714983236271305
+    second: Ninja Sword Attack Animation Spritesheet_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -114,17 +132,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ninja Throwing Animation Spritesheet_0
+      name: Ninja Sword Attack Animation Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 275
-        y: 2009
-        width: 1425
-        height: 1960
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4324fe6d18a0d68b0800000000000000
-      internalID: -5157454445496286668
+      spriteID: 3272b41394fd11700800000000000000
+      internalID: 509433738322192163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Throwing Animation Spritesheet_1
+      name: Ninja Sword Attack Animation Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2244
-        y: 2009
-        width: 1424
-        height: 1961
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c3e558892129b0a0800000000000000
-      internalID: -6865419694684904509
+      spriteID: 89634f0775c875d10800000000000000
+      internalID: 2114312857258833560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Throwing Animation Spritesheet_2
+      name: Ninja Sword Attack Animation Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4218
-        y: 2009
-        width: 1672
-        height: 1961
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 534164426e9b02370800000000000000
-      internalID: 8295834911718642741
+      spriteID: 6554e45ec55c77a20800000000000000
+      internalID: 3060131474596316502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Throwing Animation Spritesheet_3
+      name: Ninja Sword Attack Animation Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6218
-        y: 2009
-        width: 1672
-        height: 1961
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fda919f2b73d47ad0800000000000000
-      internalID: -2705304950110315809
+      spriteID: ebbebf050ed1e80a0800000000000000
+      internalID: -6877526731679601730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Throwing Animation Spritesheet_4
+      name: Ninja Sword Attack Animation Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 218
-        y: 9
-        width: 1672
-        height: 1961
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11c7be575d082d740800000000000000
-      internalID: 5175340576096877585
+      spriteID: e51892ed5567456b0800000000000000
+      internalID: -5308487949591412386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Throwing Animation Spritesheet_5
+      name: Ninja Sword Attack Animation Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2218
-        y: 9
-        width: 1672
-        height: 1961
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4dd82b477c144430800000000000000
-      internalID: 3766166487076232527
+      spriteID: d85994b026ba29ac0800000000000000
+      internalID: -3849826293863836275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Throwing Animation Spritesheet_6
+      name: Ninja Sword Attack Animation Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4218
-        y: 9
-        width: 1672
-        height: 1961
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +296,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84f6a396edb4353b0800000000000000
-      internalID: -5524988899233206456
+      spriteID: 6bf71d5db38815630800000000000000
+      internalID: 3914059341733396406
       vertices: []
       indices: 
       edges: []
@@ -275,7 +306,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 101f6a02e362e134b90161a7cb50079d
     internalID: 0
     vertices: []
     indices: 
@@ -284,7 +315,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Sword Attack Animation Spritesheet_0: 509433738322192163
+      Ninja Sword Attack Animation Spritesheet_1: 2114312857258833560
+      Ninja Sword Attack Animation Spritesheet_2: 3060131474596316502
+      Ninja Sword Attack Animation Spritesheet_3: -6877526731679601730
+      Ninja Sword Attack Animation Spritesheet_4: -5308487949591412386
+      Ninja Sword Attack Animation Spritesheet_5: -3849826293863836275
+      Ninja Sword Attack Animation Spritesheet_6: 3914059341733396406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

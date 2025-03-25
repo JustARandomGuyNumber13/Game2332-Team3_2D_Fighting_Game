@@ -16,7 +16,6 @@ MonoBehaviour:
   skillName: Ninja Basic Attack
   skillDescription: 
   skillDelay: 0
-  skillDuration: 0.2
+  skillDuration: 0.35
   skillCD: 1
   isPassiveSkill: 0
-  sfxIndex: 1

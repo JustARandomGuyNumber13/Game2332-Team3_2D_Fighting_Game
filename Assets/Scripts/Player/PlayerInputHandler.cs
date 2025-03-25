@@ -7,7 +7,6 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    #region ~~ Variables ~~
     [Header("Require Components")]
     [SerializeField] private SO_AnimatorHash _animatorHash;
     [SerializeField] private SO_CharacterStat _chararacterStat;
@@ -43,9 +42,7 @@ public class PlayerInputHandler : MonoBehaviour
     private float _crouchInput;
     private float _moveSpeed;
     private float _moveDirection;
-    #endregion
 
-    #region ~~ Monobehavior handlers ~~
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -62,6 +59,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (otherPlayer == null) return;
         Helper_FaceOtherPlayer();
         Move();
         if(!isOnGround || _rb.linearVelocityY != 0) OnVerticalVelocityChangeEvent?.Invoke(_rb.linearVelocityY);
@@ -75,25 +73,23 @@ public class PlayerInputHandler : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * _chararacterStat.groundCheckDistance);
     }
-    #endregion
 
 
-    #region ~~ Action handlers ~~
     private void Move()
     {
-        if ((!isCanMove || _moveInput == 0) && isCanUseSkill)
+        if (!isCanMove || _moveInput == 0)  // when can not move
         {
             _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
             isDefending = false;
-            OnMoveEvent?.Invoke(0);
+            OnMoveEvent?.Invoke(0); // When can move
         }
         else if (isCanMove)
         {
             _moveDirection = Mathf.Sign(transform.localScale.x * _moveInput * (isReverseInput ? -1 : 1));
             isDefending = _moveDirection == -1;
 
-            if (isCrouching) 
-                _moveSpeed = _chararacterStat.moveCrouchingSpeed;
+            if (isCrouching)
+                _moveSpeed = 0; //_moveSpeed = _chararacterStat.moveCrouchingSpeed;
             else
                 _moveSpeed = _moveDirection == 1 ? _chararacterStat.moveStandingSpeed : _chararacterStat.moveCrouchingSpeed; // Forward or backward (backward use same speed as crouching)
             
@@ -114,7 +110,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Crouch()   
     {
-        if (isCanMove && isOnGround && isCanUseSkill && _crouchInput != 0) // Prevent crouching while attacking
+        if (_crouchInput != 0 &&  isCanMove && isOnGround && isCanUseSkill) // Prevent crouching while attacking
         {
             isCrouching = true;
             _animator.SetBool(_animatorHash.isCrouching, true);
@@ -129,10 +125,7 @@ public class PlayerInputHandler : MonoBehaviour
             _crouchCollider.enabled = false;
         }
     }
-    #endregion
 
-
-    #region ~~ Helper Methods ~~
     private void Helper_FaceOtherPlayer()   
     {
         if (!isOnGround || !isCanMove || !isCanUseSkill) return;
@@ -151,10 +144,7 @@ public class PlayerInputHandler : MonoBehaviour
             OnLandEvent?.Invoke();
         }
     }
-    #endregion
 
-
-    #region ~~ Input handlers ~~
     private void OnMove(InputValue value)
     {
         _moveInput = Mathf.Ceil(value.Get<float>());
@@ -206,18 +196,12 @@ public class PlayerInputHandler : MonoBehaviour
         if (value.Get<float>() == 1 && isCanUseSkill)
             OnSkillFiveEvent?.Invoke();
     }
-    #endregion
 
-
-    #region ~~ Other handlers ~~
     private void InspectorCheck()
     {
         if (transform.localScale.x != 1 && transform.localScale.x != -1)
             Debug.LogError("x-axis scale must either be 1 or -1 only", gameObject);
     }
-    #endregion
-
-    #region ~~ Special effects ~~
     public void Public_ReverseMovementInput(float duration)
     {
         StartCoroutine(ReverseInputOverTimeCoroutine(duration));
@@ -228,5 +212,4 @@ public class PlayerInputHandler : MonoBehaviour
         yield return new WaitForSeconds(duration);
         isReverseInput = false;
     }
-    #endregion
 }

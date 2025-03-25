@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: f576eb385bf874b4aa00266aa62768bb
+guid: e55cc330fe0c9eb44aab80c99c2468a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 879398351028844847
-    second: Ninja Walking Animation Spritesheet_0
+      213: -58605662807631736
+    second: Ninja Falling Animation Spritesheet_0
   - first:
-      213: -2373342638977321145
-    second: Ninja Walking Animation Spritesheet_1
+      213: 8755965371014092853
+    second: Ninja Falling Animation Spritesheet_1
   - first:
-      213: 5609112204266749978
-    second: Ninja Walking Animation Spritesheet_2
+      213: -1603560770496784525
+    second: Ninja Falling Animation Spritesheet_2
   - first:
-      213: 1919100291576540189
-    second: Ninja Walking Animation Spritesheet_3
+      213: 4004007721237772663
+    second: Ninja Falling Animation Spritesheet_3
   - first:
-      213: 6344196623569154538
-    second: Ninja Walking Animation Spritesheet_4
+      213: -4595503151106738467
+    second: Ninja Falling Animation Spritesheet_4
+  - first:
+      213: 399448263368725516
+    second: Ninja Falling Animation Spritesheet_5
+  - first:
+      213: -8810005110914421341
+    second: Ninja Falling Animation Spritesheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ninja Walking Animation Spritesheet_0
+      name: Ninja Falling Animation Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -140,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2973291420443c00800000000000000
-      internalID: 879398351028844847
+      spriteID: 888568ec57acf2ff0800000000000000
+      internalID: -58605662807631736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Animation Spritesheet_1
+      name: Ninja Falling Animation Spritesheet_1
       rect:
         serializedVersion: 2
         x: 2000
@@ -162,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 747f771c171301fd0800000000000000
-      internalID: -2373342638977321145
+      spriteID: 5389ae42d10738970800000000000000
+      internalID: 8755965371014092853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Animation Spritesheet_2
+      name: Ninja Falling Animation Spritesheet_2
       rect:
         serializedVersion: 2
         x: 4000
@@ -184,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a10c0a8d4d197dd40800000000000000
-      internalID: 5609112204266749978
+      spriteID: 37799caa9f10fb9e0800000000000000
+      internalID: -1603560770496784525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Animation Spritesheet_3
+      name: Ninja Falling Animation Spritesheet_3
       rect:
         serializedVersion: 2
         x: 6000
@@ -206,14 +212,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1ca4cf1c8302aa10800000000000000
-      internalID: 1919100291576540189
+      spriteID: 7797c4eeec7119730800000000000000
+      internalID: 4004007721237772663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Animation Spritesheet_4
+      name: Ninja Falling Animation Spritesheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -228,8 +234,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae17215573d1b0850800000000000000
-      internalID: 6344196623569154538
+      spriteID: dd6381a6b3e7930c0800000000000000
+      internalID: -4595503151106738467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Falling Animation Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c045d3444102b8500800000000000000
+      internalID: 399448263368725516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Falling Animation Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ade19e67039cb580800000000000000
+      internalID: -8810005110914421341
       vertices: []
       indices: 
       edges: []
@@ -238,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b883d2f202b99c498eddd9426a1b8e8
+    spriteID: d962d3f0511ed22448fd9fb07dace3ad
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ninja Walking Animation Spritesheet_0: 879398351028844847
-      Ninja Walking Animation Spritesheet_1: -2373342638977321145
-      Ninja Walking Animation Spritesheet_2: 5609112204266749978
-      Ninja Walking Animation Spritesheet_3: 1919100291576540189
-      Ninja Walking Animation Spritesheet_4: 6344196623569154538
+      Ninja Falling Animation Spritesheet_0: -58605662807631736
+      Ninja Falling Animation Spritesheet_1: 8755965371014092853
+      Ninja Falling Animation Spritesheet_2: -1603560770496784525
+      Ninja Falling Animation Spritesheet_3: 4004007721237772663
+      Ninja Falling Animation Spritesheet_4: -4595503151106738467
+      Ninja Falling Animation Spritesheet_5: 399448263368725516
+      Ninja Falling Animation Spritesheet_6: -8810005110914421341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

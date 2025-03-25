@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 9bcff90334517f84eac18ca2f17ae782
+guid: 2b84e6e05d9146a4ba451c43e04629c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7387930598079251058
-    second: Ninja Walking Backwards Animation Spritesheet_0
+      213: 3635677185843131777
+    second: Ninja Jumping Animation Spritesheet_0
   - first:
-      213: -1849440126596147669
-    second: Ninja Walking Backwards Animation Spritesheet_1
+      213: -5629703462456583219
+    second: Ninja Jumping Animation Spritesheet_1
   - first:
-      213: -7058467773535469913
-    second: Ninja Walking Backwards Animation Spritesheet_2
+      213: -6287575121726829364
+    second: Ninja Jumping Animation Spritesheet_2
   - first:
-      213: 3277306177725967617
-    second: Ninja Walking Backwards Animation Spritesheet_3
+      213: -4062772141750997882
+    second: Ninja Jumping Animation Spritesheet_3
   - first:
-      213: -5673684043973355687
-    second: Ninja Walking Backwards Animation Spritesheet_4
+      213: 8180381278772970100
+    second: Ninja Jumping Animation Spritesheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,17 +108,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ninja Walking Backwards Animation Spritesheet_0
+      name: Ninja Jumping Animation Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 330
-        y: 2008
-        width: 1377
-        height: 1986
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e8d3f34934cc87990800000000000000
-      internalID: -7387930598079251058
+      spriteID: 185fb2c4325847230800000000000000
+      internalID: 3635677185843131777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Backwards Animation Spritesheet_1
+      name: Ninja Jumping Animation Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2304
-        y: 2019
-        width: 1377
-        height: 1967
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2612ece0087556e0800000000000000
-      internalID: -1849440126596147669
+      spriteID: dcb1d7147864fd1b0800000000000000
+      internalID: -5629703462456583219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Backwards Animation Spritesheet_2
+      name: Ninja Jumping Animation Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4229
-        y: 2026
-        width: 1362
-        height: 1952
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ae30e315f84b0e90800000000000000
-      internalID: -7058467773535469913
+      spriteID: ccc83e26dbb0eb8a0800000000000000
+      internalID: -6287575121726829364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Backwards Animation Spritesheet_3
+      name: Ninja Jumping Animation Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6229
-        y: 2023
-        width: 1340
-        height: 1976
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 10dac8fca945b7d20800000000000000
-      internalID: 3277306177725967617
+      spriteID: 68c249733422e97c0800000000000000
+      internalID: -4062772141750997882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Walking Backwards Animation Spritesheet_4
+      name: Ninja Jumping Animation Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 301
-        y: 19
-        width: 1425
-        height: 1951
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9579a272c660341b0800000000000000
-      internalID: -5673684043973355687
+      spriteID: 472c4887e6d868170800000000000000
+      internalID: 8180381278772970100
       vertices: []
       indices: 
       edges: []
@@ -225,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: be1d9e9a57bdc1042b052d2bae9ddefc
     internalID: 0
     vertices: []
     indices: 
@@ -234,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Jumping Animation Spritesheet_0: 3635677185843131777
+      Ninja Jumping Animation Spritesheet_1: -5629703462456583219
+      Ninja Jumping Animation Spritesheet_2: -6287575121726829364
+      Ninja Jumping Animation Spritesheet_3: -4062772141750997882
+      Ninja Jumping Animation Spritesheet_4: 8180381278772970100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

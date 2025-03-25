@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 5a5a85e479f6f2b4d86b76228c5c153b
+guid: 9bcff90334517f84eac18ca2f17ae782
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1916814008965657728
-    second: Ninja Dashing Animation Spritesheet_0
+      213: -7387930598079251058
+    second: Ninja Walking Backwards Animation Spritesheet_0
   - first:
-      213: -357445446908059621
-    second: Ninja Dashing Animation Spritesheet_1
+      213: -1849440126596147669
+    second: Ninja Walking Backwards Animation Spritesheet_1
   - first:
-      213: 149411653446390953
-    second: Ninja Dashing Animation Spritesheet_2
+      213: -7058467773535469913
+    second: Ninja Walking Backwards Animation Spritesheet_2
   - first:
-      213: -1179012698868088587
-    second: Ninja Dashing Animation Spritesheet_3
+      213: 3277306177725967617
+    second: Ninja Walking Backwards Animation Spritesheet_3
   - first:
-      213: 1556242206597487923
-    second: Ninja Dashing Animation Spritesheet_4
-  - first:
-      213: -3037187292704792423
-    second: Ninja Dashing Animation Spritesheet_5
+      213: -5673684043973355687
+    second: Ninja Walking Backwards Animation Spritesheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -111,17 +108,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ninja Dashing Animation Spritesheet_0
+      name: Ninja Walking Backwards Animation Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 114
-        y: 2076
-        width: 1619
-        height: 1730
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08b0c1780db1665e0800000000000000
-      internalID: -1916814008965657728
+      spriteID: e8d3f34934cc87990800000000000000
+      internalID: -7387930598079251058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Dashing Animation Spritesheet_1
+      name: Ninja Walking Backwards Animation Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2114
-        y: 2076
-        width: 1620
-        height: 1729
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b10e67682491a0bf0800000000000000
-      internalID: -357445446908059621
+      spriteID: b2612ece0087556e0800000000000000
+      internalID: -1849440126596147669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Dashing Animation Spritesheet_2
+      name: Ninja Walking Backwards Animation Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4114
-        y: 2076
-        width: 1621
-        height: 1729
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a4d9f07b11d21200800000000000000
-      internalID: 149411653446390953
+      spriteID: 7ae30e315f84b0e90800000000000000
+      internalID: -7058467773535469913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Dashing Animation Spritesheet_3
+      name: Ninja Walking Backwards Animation Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6114
-        y: 2076
-        width: 1619
-        height: 1729
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f00b42723e43afe0800000000000000
-      internalID: -1179012698868088587
+      spriteID: 10dac8fca945b7d20800000000000000
+      internalID: 3277306177725967617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Dashing Animation Spritesheet_4
+      name: Ninja Walking Backwards Animation Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 2033
-        width: 12
-        height: 10
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,30 +228,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33d96b4aa02e89510800000000000000
-      internalID: 1556242206597487923
+      spriteID: 9579a272c660341b0800000000000000
+      internalID: -5673684043973355687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Dashing Animation Spritesheet_5
+      name: Ninja Walking Backwards Animation Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 114
-        y: 76
-        width: 1618
-        height: 1729
+        x: 6000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 990200ebf3eb9d5d0800000000000000
-      internalID: -3037187292704792423
+      spriteID: 7a4642e867f7be84c83272e99e8dbf2c
+      internalID: -977171064
       vertices: []
       indices: 
       edges: []
@@ -250,7 +260,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1dd97c83783274d478881dfd780eafc6
     internalID: 0
     vertices: []
     indices: 
@@ -259,7 +269,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Walking Backwards Animation Spritesheet_0: -7387930598079251058
+      Ninja Walking Backwards Animation Spritesheet_1: -1849440126596147669
+      Ninja Walking Backwards Animation Spritesheet_2: -7058467773535469913
+      Ninja Walking Backwards Animation Spritesheet_3: 3277306177725967617
+      Ninja Walking Backwards Animation Spritesheet_4: -5673684043973355687
+      Ninja Walking Backwards Animation Spritesheet_5: -977171064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

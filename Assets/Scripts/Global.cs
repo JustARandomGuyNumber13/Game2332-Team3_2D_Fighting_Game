@@ -29,4 +29,13 @@ public static class Global
     public static readonly string gamePlayScene = "Tri-GamePlay-Scene";
     public static readonly string playerOneWinScene;
     public static readonly string playerTwoWinScene;
+
+    /* Tags */
+    public static readonly string playerOneTag = "Player1";
+    public static readonly string playerTwoTag = "Player2";
+
+    /* Input Action Maps */
+    public static readonly string playerOneInputMap = "Player1";
+    public static readonly string playerTwoInputMap = "Player2";
+
 }

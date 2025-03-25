@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: e55cc330fe0c9eb44aab80c99c2468a4
+guid: ca0ff1e91a594284eaf7bfec05a646d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -58605662807631736
-    second: Ninja Falling Animation Spritesheet_0
+      213: -5157454445496286668
+    second: Ninja Throwing Animation Spritesheet_0
   - first:
-      213: 8755965371014092853
-    second: Ninja Falling Animation Spritesheet_1
+      213: -6865419694684904509
+    second: Ninja Throwing Animation Spritesheet_1
   - first:
-      213: -1603560770496784525
-    second: Ninja Falling Animation Spritesheet_2
+      213: 8295834911718642741
+    second: Ninja Throwing Animation Spritesheet_2
   - first:
-      213: 4004007721237772663
-    second: Ninja Falling Animation Spritesheet_3
+      213: -2705304950110315809
+    second: Ninja Throwing Animation Spritesheet_3
   - first:
-      213: -4595503151106738467
-    second: Ninja Falling Animation Spritesheet_4
+      213: 5175340576096877585
+    second: Ninja Throwing Animation Spritesheet_4
   - first:
-      213: 399448263368725516
-    second: Ninja Falling Animation Spritesheet_5
+      213: 3766166487076232527
+    second: Ninja Throwing Animation Spritesheet_5
   - first:
-      213: -8810005110914421341
-    second: Ninja Falling Animation Spritesheet_6
+      213: -5524988899233206456
+    second: Ninja Throwing Animation Spritesheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -114,17 +114,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ninja Falling Animation Spritesheet_0
+      name: Ninja Throwing Animation Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 108
-        y: 2009
-        width: 1666
-        height: 1967
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 888568ec57acf2ff0800000000000000
-      internalID: -58605662807631736
+      spriteID: 4324fe6d18a0d68b0800000000000000
+      internalID: -5157454445496286668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Falling Animation Spritesheet_1
+      name: Ninja Throwing Animation Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2108
-        y: 2009
-        width: 1666
-        height: 1967
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5389ae42d10738970800000000000000
-      internalID: 8755965371014092853
+      spriteID: 3c3e558892129b0a0800000000000000
+      internalID: -6865419694684904509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Falling Animation Spritesheet_2
+      name: Ninja Throwing Animation Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4108
-        y: 2009
-        width: 1666
-        height: 1967
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37799caa9f10fb9e0800000000000000
-      internalID: -1603560770496784525
+      spriteID: 534164426e9b02370800000000000000
+      internalID: 8295834911718642741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Falling Animation Spritesheet_3
+      name: Ninja Throwing Animation Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6108
-        y: 2009
-        width: 1666
-        height: 1967
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7797c4eeec7119730800000000000000
-      internalID: 4004007721237772663
+      spriteID: fda919f2b73d47ad0800000000000000
+      internalID: -2705304950110315809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Falling Animation Spritesheet_4
+      name: Ninja Throwing Animation Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 108
-        y: 9
-        width: 1666
-        height: 1967
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd6381a6b3e7930c0800000000000000
-      internalID: -4595503151106738467
+      spriteID: 11c7be575d082d740800000000000000
+      internalID: 5175340576096877585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Falling Animation Spritesheet_5
+      name: Ninja Throwing Animation Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2108
-        y: 9
-        width: 1666
-        height: 1967
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +256,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c045d3444102b8500800000000000000
-      internalID: 399448263368725516
+      spriteID: f4dd82b477c144430800000000000000
+      internalID: 3766166487076232527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ninja Falling Animation Spritesheet_6
+      name: Ninja Throwing Animation Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4108
-        y: 9
-        width: 1666
-        height: 1967
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ade19e67039cb580800000000000000
-      internalID: -8810005110914421341
+      spriteID: 84f6a396edb4353b0800000000000000
+      internalID: -5524988899233206456
       vertices: []
       indices: 
       edges: []
@@ -275,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e1b7ae9948031844ebfc9c8dad8f9855
     internalID: 0
     vertices: []
     indices: 
@@ -284,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Throwing Animation Spritesheet_0: -5157454445496286668
+      Ninja Throwing Animation Spritesheet_1: -6865419694684904509
+      Ninja Throwing Animation Spritesheet_2: 8295834911718642741
+      Ninja Throwing Animation Spritesheet_3: -2705304950110315809
+      Ninja Throwing Animation Spritesheet_4: 5175340576096877585
+      Ninja Throwing Animation Spritesheet_5: 3766166487076232527
+      Ninja Throwing Animation Spritesheet_6: -5524988899233206456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -24,7 +24,6 @@ public class Ninja_Skill_Dash : Skill
     protected override void DuringSkill(float timer)
     {
         _rb.linearVelocity = Vector2.up * _rb.linearVelocityY + Vector2.right * transform.localScale.x * _dashSpeed;
-        
     }
     protected override void AfterSkill()
     {
