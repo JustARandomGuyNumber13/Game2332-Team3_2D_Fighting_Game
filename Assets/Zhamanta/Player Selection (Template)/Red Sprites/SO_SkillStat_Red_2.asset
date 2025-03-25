@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: SO_SkillStat_Red_2
   m_EditorClassIdentifier: 
   skillSprite: {fileID: -5392625257635239999, guid: 2f62bd9087379214fb7a78fa5b30181e, type: 3}
-  skillName: 
-  skillDescription: R Attack 2
+  skillName: Double Jump
+  skillDescription: Ned jumps, then uses his agility to jump again in midair, reaching
+    a higher altitude.
   skillDelay: 0
   skillDuration: 0
   skillCD: 0

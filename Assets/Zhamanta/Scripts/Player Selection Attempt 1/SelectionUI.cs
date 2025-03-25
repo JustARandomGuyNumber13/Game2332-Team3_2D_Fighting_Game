@@ -8,14 +8,15 @@ using Unity.VisualScripting;
 using UnityEngine.TextCore.Text;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using TMPro;
 
 public class SelectionUI : MonoBehaviour
 {
     //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
-    public Text nameText;
-    public Text skillDescription;
+    public TMP_Text nameText;
+    public TMP_Text skillDescription;
     public SpriteRenderer artworkSprite;
     
     public Text readyText;

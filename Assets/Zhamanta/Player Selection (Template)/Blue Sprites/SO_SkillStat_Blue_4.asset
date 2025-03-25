@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: SO_SkillStat_Blue_4
   m_EditorClassIdentifier: 
   skillSprite: {fileID: 3070833167237525939, guid: 3ca46f8a7ed4ff74b84310f1cfa3e5f2, type: 3}
-  skillName: 
-  skillDescription: B Attack 4
+  skillName: Spiked Roll
+  skillDescription: Quill curls into a spiked ball and rolls forward, crashing into
+    anything in his path.
   skillDelay: 0
   skillDuration: 0
   skillCD: 0
