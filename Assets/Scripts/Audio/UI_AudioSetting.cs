@@ -21,17 +21,17 @@ public class UI_AudioSetting : MonoBehaviour
     {
         float masterVolume = 0;
         _mixer.GetFloat("Master", out masterVolume);
-        _masterSlider.value = masterVolume;
+        _masterSlider.value = DecibelToLinear(masterVolume);
         _masterSlider.onValueChanged.AddListener(SetMasterVolume);
 
         float bgmVolume = 0;
         _mixer.GetFloat("Bgm", out bgmVolume);
-        _bgmSlider.value = bgmVolume;
+        _bgmSlider.value = DecibelToLinear(bgmVolume);
         _bgmSlider.onValueChanged.AddListener(SetBgmVolume);
 
         float sfxVolume = 0;
         _mixer.GetFloat("Sfx", out sfxVolume);
-        _sfxSlider.value = sfxVolume;
+        _sfxSlider.value = DecibelToLinear(sfxVolume);
         _sfxSlider.onValueChanged.AddListener(SetSfxVolume);
     }
     public void UI_OnReturnButtonPress()
@@ -65,5 +65,10 @@ public class UI_AudioSetting : MonoBehaviour
         _bgmSlider.onValueChanged.RemoveListener(SetBgmVolume);
         _sfxSlider.onValueChanged.RemoveListener(SetSfxVolume);
 
+    }
+
+    private float DecibelToLinear(float decibel)
+    {
+        return Mathf.Pow(10, decibel / 20);
     }
 }
