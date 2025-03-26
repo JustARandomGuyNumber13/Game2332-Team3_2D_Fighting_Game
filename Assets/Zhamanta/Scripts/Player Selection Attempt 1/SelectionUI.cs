@@ -18,6 +18,7 @@ public class SelectionUI : MonoBehaviour
 
     public TMP_Text nameText;
     public TMP_Text skillDescription;
+    public TMP_Text characterDescription;
     public Animator artworkSprite;
     
     public Text readyText;
@@ -329,6 +330,7 @@ public class SelectionUI : MonoBehaviour
         //artworkSprite = characterStat.characterSprite; //COME BACK HERE
         artworkSprite.Play(characterStat.characterSprite.name);
         nameText.text = characterStat.characterName;
+        characterDescription.text = characterStat.characterDescription;
 
         for (int i = 0; i < selectableSkillSlot.Length; i++)
         {

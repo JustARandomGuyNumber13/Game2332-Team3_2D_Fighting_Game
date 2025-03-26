@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SO_CharacterStat_Red
   m_EditorClassIdentifier: 
   characterName: Ned
-  characterDescription: 
+  characterDescription: Ned is quick, quiet, and always ready for action. Whether
+    he's tossing shuriken with pinpoint accuracy, swinging his trusty sword, or causing
+    a little mayhem with his bombs, he always finds a way to outsmart his enemies.
   characterSprite: {fileID: 7400000, guid: ba36b59232e99b44fa9026a26a6fbb14, type: 2}
   characterPrefab: {fileID: 0}
   moveStandingSpeed: 0

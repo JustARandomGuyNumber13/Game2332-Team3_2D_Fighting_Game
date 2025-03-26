@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SO_CharacterStat_Blue
   m_EditorClassIdentifier: 
   characterName: Quill
-  characterDescription: 
+  characterDescription: "Quill is one tough, spiky monster. With razor-sharp claws
+    and a back full of deadly quills, he\u2019s not someone you want to mess with.
+    He\u2019s rough, tough, and always ready to roll."
   characterSprite: {fileID: 7400000, guid: ad8e90e5de3b0e64ba3d202499edceb9, type: 2}
   characterPrefab: {fileID: 0}
   moveStandingSpeed: 0
