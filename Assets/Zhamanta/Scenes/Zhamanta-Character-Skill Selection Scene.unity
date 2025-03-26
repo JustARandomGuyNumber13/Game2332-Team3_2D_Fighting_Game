@@ -1477,7 +1477,7 @@ MonoBehaviour:
         m_MethodName: OtherPlayerReadyCheck
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 306473782}
+          m_ObjectArgument: {fileID: 88653561}
           m_ObjectArgumentAssemblyTypeName: SelectionUI, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

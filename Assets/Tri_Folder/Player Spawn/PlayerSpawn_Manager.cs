@@ -7,7 +7,7 @@ public class PlayerSpawn_Manager : MonoBehaviour
 {
     [Header("Basic requirements")]
     [SerializeField] private SO_CharactersList _characterList;
-    [SerializeField] private SO_PlayerSelection_Test _player1Selection, _player2Selection;
+    [SerializeField] private SO_PlayerSelection _player1Selection, _player2Selection; //Changed from SO_PlayerSelection_Test
     //[SerializeField] private SO_PlayerSelection _player1Selection, _player2Selection;
     [SerializeField] private Transform _player1SpawnPosition, _player2SpawnPosition;
     [SerializeField] private UI_Skill[] _player1SkillBoxes, _player2SkillBoxes;
@@ -41,13 +41,13 @@ public class PlayerSpawn_Manager : MonoBehaviour
         /* Assign players' selected skills */
         Skill[] p1SkillList = _player1.GetComponents<Skill>();
         Skill[] p2SkillList = _player2.GetComponents<Skill>();
-        AssignSkills(p1SkillList, _player1SkillBoxes, p1Input, _player1Selection);
+        AssignSkills(p1SkillList, _player1SkillBoxes, p1Input, _player1Selection); 
         AssignSkills(p2SkillList, _player2SkillBoxes, p2Input, _player2Selection);
 
         OnSetUpEvent?.Invoke(_player1, _player2);
     }
 
-    private void AssignSkills(Skill[] skillList, UI_Skill[] skillBoxList ,PlayerInputHandler inputHandler, SO_PlayerSelection_Test playerSelection)
+    private void AssignSkills(Skill[] skillList, UI_Skill[] skillBoxList ,PlayerInputHandler inputHandler, SO_PlayerSelection playerSelection) //Changed from SO_PlayerSelection_Test
     //private void AssignSkills(Skill[] skillList, PlayerInputHandler inputHandler, SO_PlayerSelection playerSelection)
     {
         Skill skillOne = Helper_GetSkillFromPrefab(skillList, playerSelection._skillOneIndex, playerSelection);
@@ -66,7 +66,7 @@ public class PlayerSpawn_Manager : MonoBehaviour
         Helper_PassiveSkillCheck(skillTwo, inputHandler.OnSkillTwoEvent);
         Helper_PassiveSkillCheck(skillThree, inputHandler.OnSkillThreeEvent);
     }
-    private Skill Helper_GetSkillFromPrefab(Skill[] skillList, int selectionSkillIndex, SO_PlayerSelection_Test playerSelection)
+    private Skill Helper_GetSkillFromPrefab(Skill[] skillList, int selectionSkillIndex, SO_PlayerSelection playerSelection) //Changed from SO_PlayerSelection_Test
     //private Skill Helper_GetSkillIndex(Skill[] skillList, int selectionSkillIndex, SO_PlayerSelection playerSelection) // Loop through every component Skill.cs in the prefab, then return correct skill that match the selected skill index by comparing SO_SkillStat
     {
         for (int i = 0; i < skillList.Length; i++)

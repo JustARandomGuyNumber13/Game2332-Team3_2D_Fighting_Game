@@ -89,7 +89,7 @@ public class SelectionUI : MonoBehaviour
     {
         if (isReady && (otherPlayer.isReady == true))
         {
-            Debug.Log("Change Scene");
+            SceneManager.LoadScene(1);
         }
     }
     private void SelfReadyCheck()
@@ -162,6 +162,7 @@ public class SelectionUI : MonoBehaviour
 
     public void MoveLeft(InputAction.CallbackContext obj)
     {
+        Debug.Log("Hi");
         if (!isReady)
         {
             switch (currentSelectionMode)

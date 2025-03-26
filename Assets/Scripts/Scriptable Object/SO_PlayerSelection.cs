@@ -5,10 +5,10 @@ public class SO_PlayerSelection : ScriptableObject
 {
 
     #region ~~ Variables ~~
-    private int _characterIndex;
-    private int _skillOneIndex;
-    private int _skillTwoIndex;
-    private int _skillThreeIndex;
+    public int _characterIndex;
+    public int _skillOneIndex;
+    public int _skillTwoIndex;
+    public int _skillThreeIndex;
     #endregion
 
     public void SaveData(int charIndex, int skillOne, int skillTwo, int skillThree)
