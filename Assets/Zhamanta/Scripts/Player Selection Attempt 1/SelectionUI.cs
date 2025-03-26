@@ -9,6 +9,7 @@ using UnityEngine.TextCore.Text;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using TMPro;
+using UnityEditor;
 
 public class SelectionUI : MonoBehaviour
 {
@@ -24,10 +25,22 @@ public class SelectionUI : MonoBehaviour
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
 
-    [SerializeField]
+    /*[SerializeField]
     private Image activeSlotHighlight;
     [SerializeField]
-    private Image selectedSkillHighlight;
+    private Image selectedSkillHighlight;*/
+
+    [SerializeField]
+    Image activeSlotHighlight;
+
+    [SerializeField]
+    Image selectedSkillHighlight;
+
+    [SerializeField]
+    RectTransform highlight1Position;
+
+    [SerializeField]
+    RectTransform highlight2Position;
 
     private int selectedOption = 0; //character selection
     public int selectedActiveIndex = 0; 
@@ -41,10 +54,10 @@ public class SelectionUI : MonoBehaviour
     private Transform currentParent;
 
 
-    Vector2 originalH1;
+    /*Vector2 originalH1;
     Vector2 originalH2;
     RectTransform rectTransformH1;
-    RectTransform rectTransformH2;
+    RectTransform rectTransformH2;*/
 
     private int playerSkill1;
     private int playerSkill2;
@@ -60,11 +73,11 @@ public class SelectionUI : MonoBehaviour
 
     void Start()
     {
-        rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
-        rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();
+        /*rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
+        rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();*/
 
-        originalH1 = rectTransformH1.anchoredPosition;
-        originalH2 = rectTransformH2.anchoredPosition;
+        /*originalH1 = rectTransformH1.anchoredPosition;
+        originalH2 = rectTransformH2.anchoredPosition;*/
 
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
@@ -131,29 +144,35 @@ public class SelectionUI : MonoBehaviour
                 case selectionMode.activeSlot: //Changes active slot index and highlighter
                     selectedActiveIndex++;
 
-                    rectTransformH1.anchoredPosition += new Vector2(71f, 0);
+                    /*rectTransformH1.anchoredPosition += new Vector2(71f, 0);
                     if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(213f, 0)))
                     {
                         rectTransformH1.anchoredPosition = originalH1;
-                    }
+                    }*/
+
                     if (selectedActiveIndex == 3)
                     {
                         selectedActiveIndex = 0;
                     }
+
+                    SelectableSlotHighlight(selectedActiveIndex);
+
                     break;
                 case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
                     selectedSkillIndex++;
-                    rectTransformH2.anchoredPosition += new Vector2(71f, 0);
-                    if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(355f, 0)))
+                    /*rectTransformH2.anchoredPosition += new Vector2(71f, 0);
+                    *//*if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(355f, 0)))
                     {
                         rectTransformH2.anchoredPosition = originalH2;
-                    }
+                    }*/
+
                     if (selectedSkillIndex == 5)
                     {
                         selectedSkillIndex = 0;
                     }
 
                     UpdateSkillDescription();
+                    SelectedSkillHighlight(selectedSkillIndex);
 
                     break;
             }
@@ -162,7 +181,6 @@ public class SelectionUI : MonoBehaviour
 
     public void MoveLeft(InputAction.CallbackContext obj)
     {
-        Debug.Log("Hi");
         if (!isReady)
         {
             switch (currentSelectionMode)
@@ -172,28 +190,34 @@ public class SelectionUI : MonoBehaviour
                     break;
                 case selectionMode.activeSlot: //Changes active slot index and highlighter
                     selectedActiveIndex--;
-                    rectTransformH1.anchoredPosition += new Vector2(-71f, 0);
+                    /*rectTransformH1.anchoredPosition += new Vector2(-71f, 0);
                     if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(-71f, 0)))
                     {
                         rectTransformH1.anchoredPosition = originalH1 + new Vector2(142f, 0);
-                    }
+                    }*/
+
                     if (selectedActiveIndex == -1)
                     {
                         selectedActiveIndex = 2;
                     }
+
+                    SelectableSlotHighlight(selectedActiveIndex);
+
                     break;
                 case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
                     selectedSkillIndex--;
-                    rectTransformH2.anchoredPosition += new Vector2(-71f, 0);
+                    /*rectTransformH2.anchoredPosition += new Vector2(-71f, 0);
                     if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(-71f, 0)))
                     {
                         rectTransformH2.anchoredPosition = originalH2 + new Vector2(284f, 0);
-                    }
+                    }*/
+
                     if (selectedSkillIndex == -1)
                     {
                         selectedSkillIndex = 4;
                     }
 
+                    SelectedSkillHighlight(selectedSkillIndex);
                     UpdateSkillDescription();
 
                     break;
@@ -213,16 +237,16 @@ public class SelectionUI : MonoBehaviour
                 case selectionMode.characterSelection:
                     currentSelectionMode = selectionMode.activeSlot;
                     activeSlotHighlight.enabled = true;
+                    SelectableSlotHighlight(selectedActiveIndex);
                     break;
                 case selectionMode.activeSlot:
                     currentSelectionMode = selectionMode.selectableSlot;
                     selectedSkillHighlight.enabled = true;
+                    SelectedSkillHighlight(selectedSkillIndex);
                     skillDescription.enabled = true;
                     UpdateSkillDescription();
                     break;
                 case selectionMode.selectableSlot:
-
-
                     returnToParent(selectedActiveIndex);  //If there is a skill in the active slot, it will return it to its original slot **
 
                     if (childB == null) //if there is no skill in the selectable slot, nothing will happen
@@ -309,6 +333,23 @@ public class SelectionUI : MonoBehaviour
         {
             superParentB.GetChild(i).transform.GetComponentsInChildren<Image>()[1].sprite = characterStat.skills[i].skillSprite;
         }
+    }
+
+    private void SelectableSlotHighlight(int selectedActiveIndex)
+    {
+        //Vector2 overallPosition = superParentA.GetComponent<RectTransform>().anchoredPosition;
+        Vector2 position = superParentA.GetChild(selectedActiveIndex).GetComponent<RectTransform>().position;
+ 
+        //highlight1Position.anchoredPosition = overallPosition;
+        highlight1Position.position = position;
+   
+   
+    }
+
+    private void SelectedSkillHighlight(int selectedSkillIndex)
+    {
+        Vector2 position = superParentB.GetChild(selectedSkillIndex).GetComponent<RectTransform>().position;
+        highlight2Position.position = position;
     }
 
 
