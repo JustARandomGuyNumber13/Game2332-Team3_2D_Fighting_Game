@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Quill
   characterDescription: 
-  characterSprite: {fileID: -265231386308922477, guid: 9bca76b9d286f2d44ae38f3c967270c7, type: 3}
+  characterSprite: {fileID: 7400000, guid: ad8e90e5de3b0e64ba3d202499edceb9, type: 2}
   characterPrefab: {fileID: 0}
   moveStandingSpeed: 0
   moveCrouchingSpeed: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Ned
   characterDescription: 
-  characterSprite: {fileID: -5157454445496286668, guid: ca0ff1e91a594284eaf7bfec05a646d1, type: 3}
+  characterSprite: {fileID: 7400000, guid: ba36b59232e99b44fa9026a26a6fbb14, type: 2}
   characterPrefab: {fileID: 0}
   moveStandingSpeed: 0
   moveCrouchingSpeed: 0
