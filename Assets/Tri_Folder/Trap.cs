@@ -27,4 +27,11 @@ public class Trap : MonoBehaviour
     { 
     
     }
+
+    //Just for SpawnTest script. Will be deleted
+    public void InitializeSpawnZone(Vector2 min, Vector2 max)
+    {
+        spawnZoneMin = min;
+        spawnZoneMax = max;
+    }
 }
