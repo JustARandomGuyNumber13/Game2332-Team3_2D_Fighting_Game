@@ -21,6 +21,7 @@ public class Trap : MonoBehaviour
     protected virtual void Deactivate() 
     {
         gameObject.SetActive(false);
+        //Destroy(gameObject);
         IsAvailable = true;
     }
     protected virtual void TrapBehavior()

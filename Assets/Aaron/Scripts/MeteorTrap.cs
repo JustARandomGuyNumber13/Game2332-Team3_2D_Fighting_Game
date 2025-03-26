@@ -22,7 +22,8 @@ public class MeteorTrap : Trap
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) ;
         {
-            Instantiate(explosionEffect, transform.position, Quaternion.identity); //Starts explosion effecct
+            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity); //Starts explosion effecct
+            Destroy(explosion, 2f); //Destroys after 2 seconds
             Deactivate(); //Deactivates gameobject
         }
     }
