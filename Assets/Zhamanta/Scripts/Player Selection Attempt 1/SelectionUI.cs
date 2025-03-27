@@ -21,7 +21,7 @@ public class SelectionUI : MonoBehaviour
     public TMP_Text characterDescription;
     public Animator artworkSprite;
     
-    public Text readyText;
+    public TMP_Text readyText;
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
@@ -413,10 +413,6 @@ public class SelectionUI : MonoBehaviour
                     }
 
                 }
-
-            if (!isReady)
-                currentTarget = Color.red;
-
         }
     }
 
