@@ -517,11 +517,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 247050fee36f33b4e8fe45ace474aa02, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[2].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 247050fee36f33b4e8fe45ace474aa02, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[3].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 247050fee36f33b4e8fe45ace474aa02, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.data[0].skillStat
       value: 
       objectReference: {fileID: 11400000, guid: ad43b6b5e6b6f6b48bb488342d4c5e10, type: 2}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.data[1].skillStat
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[2].skillStat
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[3].skillStat
       value: 
       objectReference: {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
     - target: {fileID: 3191831922325096420, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}

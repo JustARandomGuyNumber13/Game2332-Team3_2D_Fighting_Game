@@ -1639,6 +1639,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b828c98316ac6943a0139a10a716792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterList: {fileID: 11400000, guid: 88f2c9d12244c5041bfc499868851bf0, type: 2}
+  p1Selection: {fileID: 11400000, guid: a67a513288d043644aa927a159c1dfc3, type: 2}
+  p2Selection: {fileID: 11400000, guid: b5472ba7512febd43a1bf0ec9b17bb05, type: 2}
+  p1SpawnPos: {fileID: 753561897}
+  p2SpawnPos: {fileID: 995707366}
+  spawnPosOffsetY: 0
+  p1SkillBoxes: []
+  p2SkillBoxes: []
+  OnSetUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &463322684
 Transform:
   m_ObjectHideFlags: 0

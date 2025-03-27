@@ -14,7 +14,7 @@ public class SkillAudioMapping
 public class AudioPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource _bgm, _sfx;
-    [SerializeField] private AudioClip _menuBGM, _gameBGM;
+    [SerializeField] private AudioClip _menuBGM, _gameBGM, _selectionBGM;
     [SerializeField] private SkillAudioMapping[] skillAudioMappings;
 
     public static AudioPlayer _instance;
@@ -69,6 +69,8 @@ public class AudioPlayer : MonoBehaviour
             case "Main-GamePlayer_Scene"://"Test 2-GamePlay":
                 Public_PlayBackgroundMusic(_gameBGM);
                 break;
+            /*case "";
+                Public_PlayBackgroundMusic(_selectionBGM);*/
             default:
                 _bgm.Stop();
                 break;
