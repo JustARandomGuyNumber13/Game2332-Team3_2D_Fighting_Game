@@ -116,19 +116,15 @@ public class SelectionUI : MonoBehaviour
     {
         isReady = isReady ? false : true;
         readyText.enabled = !readyText.enabled;
+        fadeImage.enabled = !fadeImage.enabled;
 
         if (isReady)
         {
-            fadeImage.enabled = true;
-            ReadyOverlay();
+            FadeImageLoop();
             Debug.Log("Save data");
             //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
 
             playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
-        }
-        else
-        {
-            fadeImage.enabled = false;
         }
 
         OnReadyCheck?.Invoke();
@@ -368,20 +364,51 @@ public class SelectionUI : MonoBehaviour
         highlight2Position.position = position;
     }
 
-    private void ReadyOverlay()
+    private void FadeImageLoop()
     {
         var currentColor = fadeImage.color;
+        var currentTarget = targetColor1;
 
-        while (true)
+        while (isReady)
         {
-            currentColor = Color.Lerp(currentColor, targetColor1, fadeSpeed * Time.deltaTime);
-            fadeImage.color = currentColor;
 
-            currentColor = Color.Lerp(currentColor, targetColor2, fadeSpeed * Time.deltaTime);
-            fadeImage.color = currentColor;
+        Debug.Log("Loop Started");
+            if (currentTarget == targetColor1)   
+            {    
+                currentTarget = Color.red;
+                currentColor = Color.Lerp(currentColor, targetColor1, fadeSpeed * Time.deltaTime);
+                fadeImage.color = currentColor;
+                if (currentColor == targetColor1)
+                {
+                    currentTarget = targetColor2;
+                }
 
-            currentColor = Color.Lerp(currentColor, targetColor3, fadeSpeed * Time.deltaTime);
-            fadeImage.color = currentColor;
+            }
+
+            if (currentTarget == targetColor2)
+            {
+                currentTarget = Color.red;
+                currentColor = Color.Lerp(currentColor, targetColor2, fadeSpeed * Time.deltaTime);
+                fadeImage.color = currentColor;
+                if (currentColor == targetColor2)
+                {
+                    currentTarget = targetColor3;
+                }
+
+            }
+
+            if (currentTarget == targetColor3)
+                {
+                    currentTarget = Color.red;
+                    currentColor = Color.Lerp(currentColor, targetColor3, fadeSpeed * Time.deltaTime);
+                    fadeImage.color = currentColor;
+                    if (currentColor == targetColor3)
+                    {
+                        currentTarget = targetColor1;
+                    }
+
+                }
+                    
         }
     }
 
