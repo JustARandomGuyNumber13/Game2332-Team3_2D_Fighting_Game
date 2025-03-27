@@ -64,6 +64,7 @@ public class SelectionUI : MonoBehaviour
     Color targetColor3;
     [SerializeField]
     float fadeSpeed;
+    Color currentTarget;
 
     private int playerSkill1;
     private int playerSkill2;
@@ -84,6 +85,7 @@ public class SelectionUI : MonoBehaviour
 
         /*originalH1 = rectTransformH1.anchoredPosition;
         originalH2 = rectTransformH2.anchoredPosition;*/
+        currentTarget = targetColor1;
         fadeImage.enabled = false;
 
         activeSlotHighlight.enabled = false;
@@ -103,6 +105,11 @@ public class SelectionUI : MonoBehaviour
         }
 
         UpdateCharacter(selectedOption);
+    }
+
+    private void Update()
+    {
+        FadeImageLoop();
     }
 
     public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
@@ -367,19 +374,19 @@ public class SelectionUI : MonoBehaviour
     private void FadeImageLoop()
     {
         var currentColor = fadeImage.color;
-        var currentTarget = targetColor1;
+        //var currentTarget = targetColor1;
 
-        while (isReady)
+
+        if (isReady)
         {
 
         Debug.Log("Loop Started");
             if (currentTarget == targetColor1)   
-            {    
-                currentTarget = Color.red;
+            {
                 currentColor = Color.Lerp(currentColor, targetColor1, fadeSpeed * Time.deltaTime);
                 fadeImage.color = currentColor;
                 if (currentColor == targetColor1)
-                {
+                { 
                     currentTarget = targetColor2;
                 }
 
@@ -387,7 +394,6 @@ public class SelectionUI : MonoBehaviour
 
             if (currentTarget == targetColor2)
             {
-                currentTarget = Color.red;
                 currentColor = Color.Lerp(currentColor, targetColor2, fadeSpeed * Time.deltaTime);
                 fadeImage.color = currentColor;
                 if (currentColor == targetColor2)
@@ -399,7 +405,6 @@ public class SelectionUI : MonoBehaviour
 
             if (currentTarget == targetColor3)
                 {
-                    currentTarget = Color.red;
                     currentColor = Color.Lerp(currentColor, targetColor3, fadeSpeed * Time.deltaTime);
                     fadeImage.color = currentColor;
                     if (currentColor == targetColor3)
@@ -408,7 +413,10 @@ public class SelectionUI : MonoBehaviour
                     }
 
                 }
-                    
+
+            if (!isReady)
+                currentTarget = Color.red;
+
         }
     }
 
