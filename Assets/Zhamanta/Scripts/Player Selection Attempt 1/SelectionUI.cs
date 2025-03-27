@@ -54,11 +54,16 @@ public class SelectionUI : MonoBehaviour
     public Transform superParentB;
     private Transform currentParent;
 
-
-    /*Vector2 originalH1;
-    Vector2 originalH2;
-    RectTransform rectTransformH1;
-    RectTransform rectTransformH2;*/
+    [SerializeField]
+    private Image fadeImage;
+    [SerializeField]
+    Color targetColor1;
+    [SerializeField]
+    Color targetColor2;
+    [SerializeField]
+    Color targetColor3;
+    [SerializeField]
+    float fadeSpeed;
 
     private int playerSkill1;
     private int playerSkill2;
@@ -79,6 +84,7 @@ public class SelectionUI : MonoBehaviour
 
         /*originalH1 = rectTransformH1.anchoredPosition;
         originalH2 = rectTransformH2.anchoredPosition;*/
+        fadeImage.enabled = false;
 
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
@@ -113,11 +119,18 @@ public class SelectionUI : MonoBehaviour
 
         if (isReady)
         {
+            fadeImage.enabled = true;
+            ReadyOverlay();
             Debug.Log("Save data");
             //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
 
             playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
         }
+        else
+        {
+            fadeImage.enabled = false;
+        }
+
         OnReadyCheck?.Invoke();
     }
 
@@ -355,6 +368,22 @@ public class SelectionUI : MonoBehaviour
         highlight2Position.position = position;
     }
 
+    private void ReadyOverlay()
+    {
+        var currentColor = fadeImage.color;
+
+        while (true)
+        {
+            currentColor = Color.Lerp(currentColor, targetColor1, fadeSpeed * Time.deltaTime);
+            fadeImage.color = currentColor;
+
+            currentColor = Color.Lerp(currentColor, targetColor2, fadeSpeed * Time.deltaTime);
+            fadeImage.color = currentColor;
+
+            currentColor = Color.Lerp(currentColor, targetColor3, fadeSpeed * Time.deltaTime);
+            fadeImage.color = currentColor;
+        }
+    }
 
 
     //Return skill to original slot
