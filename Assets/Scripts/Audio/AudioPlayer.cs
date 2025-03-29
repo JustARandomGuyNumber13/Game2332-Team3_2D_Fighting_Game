@@ -67,14 +67,18 @@ public class AudioPlayer : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void EnableAudioMapping()
+    {
+        EnableIA();
 
         //Player 1
-        p1MoveRight.action.Enable();
-        p1MoveLeft.action.Enable();
-        p1Confirm.action.Enable();
-        p1GoBack.action.Enable();
-        p1Ready.action.Enable();
-
         p1MoveRight.action.started += _ => Public_PlaySoundEffect(_p1MoveRClip);
         p1MoveLeft.action.started += _ => Public_PlaySoundEffect(_p1MoveLClip);
         p1Confirm.action.started += _ => Public_PlaySoundEffect(_p1ConfirmClip);
@@ -82,12 +86,6 @@ public class AudioPlayer : MonoBehaviour
         p1Ready.action.started += _ => Public_PlaySoundEffect(_p1ReadyClip);
 
         //Player 2
-        p2MoveRight.action.Enable();
-        p2MoveLeft.action.Enable();
-        p2Confirm.action.Enable();
-        p2GoBack.action.Enable();
-        p2Ready.action.Enable();
-
         p2MoveRight.action.started += _ => Public_PlaySoundEffect(_p2MoveRClip);
         p2MoveLeft.action.started += _ => Public_PlaySoundEffect(_p2MoveLClip);
         p2Confirm.action.started += _ => Public_PlaySoundEffect(_p2ConfirmClip);
@@ -95,10 +93,45 @@ public class AudioPlayer : MonoBehaviour
         p2Ready.action.started += _ => Public_PlaySoundEffect(_p2ReadyClip);
     }
 
-    private void OnDisable()
+    private void DisableAudioMapping()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        DisableIA();
 
+        //Player 1
+        p1MoveRight.action.started -= _ => Public_PlaySoundEffect(_p1MoveRClip);
+        p1MoveLeft.action.started -= _ => Public_PlaySoundEffect(_p1MoveLClip);
+        p1Confirm.action.started -= _ => Public_PlaySoundEffect(_p1ConfirmClip);
+        p1GoBack.action.started -= _ => Public_PlaySoundEffect(_p1GoBackClip);
+        p1Ready.action.started -= _ => Public_PlaySoundEffect(_p1ReadyClip);
+
+        //Player 2
+        p2MoveRight.action.started -= _ => Public_PlaySoundEffect(_p2MoveRClip);
+        p2MoveLeft.action.started -= _ => Public_PlaySoundEffect(_p2MoveLClip);
+        p2Confirm.action.started -= _ => Public_PlaySoundEffect(_p2ConfirmClip);
+        p2GoBack.action.started -= _ => Public_PlaySoundEffect(_p2GoBackClip);
+        p2Ready.action.started -= _ => Public_PlaySoundEffect(_p2ReadyClip);
+    }
+
+    private void EnableIA()
+    {
+        //Player 1
+        p1MoveRight.action.Enable();
+        p1MoveLeft.action.Enable();
+        p1Confirm.action.Enable();
+        p1GoBack.action.Enable();
+        p1Ready.action.Enable();
+
+
+        //Player 2
+        p2MoveRight.action.Enable();
+        p2MoveLeft.action.Enable();
+        p2Confirm.action.Enable();
+        p2GoBack.action.Enable();
+        p2Ready.action.Enable();
+    }
+
+    private void DisableIA()
+    {
         //Player 1
         p1MoveRight.action.Disable();
         p1MoveLeft.action.Disable();
@@ -131,6 +164,16 @@ public class AudioPlayer : MonoBehaviour
                 _bgm.Stop();
                 break;
         }
+
+        if (_scene.name == "Character-Skill Selection Scene")
+        {
+            EnableAudioMapping();
+        }
+
+        else
+        {
+            DisableAudioMapping();
+        }
     }
     public void Public_PlaySoundEffect(AudioClip audioClip)
     {
@@ -154,16 +197,4 @@ public class AudioPlayer : MonoBehaviour
         _bgm.clip = audioClip;
         _bgm.Play();
     }
-
-    /*public void OnButtonPress(string inputActionName)
-    {
-        if (_buttonMapping.TryGetValue(inputActionName, out AudioClip iaClip))
-        {
-            Public_PlaySoundEffect(iaClip);
-        }
-        else
-        {
-            Debug.LogWarning($"No audio clip mapped for Input action: {inputActionName}");
-        }
-    }*/
 }
