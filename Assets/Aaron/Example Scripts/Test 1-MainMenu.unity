@@ -265,12 +265,28 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 3ccb98fdd6256094d832ed63699af833, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: buttonAudioMappings.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[0].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 36bfefb942aa77743a1f251bed97b8ae, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[1].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ccb98fdd6256094d832ed63699af833, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[0].skillStat
+      value: 
+      objectReference: {fileID: 11400000, guid: c2b0668b487ba0c41b17e7e468791b5c, type: 2}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[1].skillStat
+      value: 
+      objectReference: {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}
     - target: {fileID: 3191831922325096420, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1030.2493
@@ -310,6 +326,10 @@ PrefabInstance:
     - target: {fileID: 3191831922325096420, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207015041201272547, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3207015041201272547, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_Resource

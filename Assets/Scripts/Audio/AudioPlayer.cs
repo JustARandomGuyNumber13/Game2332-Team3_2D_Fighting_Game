@@ -13,22 +13,39 @@ public class SkillAudioMapping
     public AudioClip sfxClip;
 }
 
-[System.Serializable]
-public class ButtonAudioMapping
-{
-    public string actionMapName;
-    public AudioClip buttonClip;
-}
-
 public class AudioPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource _bgm, _sfx;
     [SerializeField] private AudioClip _menuBGM, _gameBGM, _selectionBGM;
     [SerializeField] private SkillAudioMapping[] skillAudioMappings;
-    [SerializeField] private InputActionReference p1MoveRight, p1MoveLeft, p1Confirm, p1GoBack, p1Ready;
-    [SerializeField] private InputActionReference p2MoveRight, p2MoveLeft, p2Confirm, p2GoBack, p2Ready;
-    [SerializeField] private AudioClip _p1MoveRClip, _p1MoveLClip, _p1ConfirmClip, _p1GoBackClip, _p1ReadyClip;
-    [SerializeField] private AudioClip _p2MoveRClip, _p2MoveLClip, _p2ConfirmClip, _p2GoBackClip, _p2ReadyClip;
+
+    [Header("Player 1 Input Actions")]
+    [SerializeField] private InputActionReference p1MoveRight;
+    [SerializeField] private InputActionReference p1MoveLeft;
+    [SerializeField] private InputActionReference p1Confirm;
+    [SerializeField] private InputActionReference p1GoBack;
+    [SerializeField] private InputActionReference p1Ready;
+
+    [Header("Player 2 Input Actions")]
+    [SerializeField] private InputActionReference p2MoveRight;
+    [SerializeField] private InputActionReference p2MoveLeft;
+    [SerializeField] private InputActionReference p2Confirm;
+    [SerializeField] private InputActionReference p2GoBack;
+    [SerializeField] private InputActionReference p2Ready;
+
+    [Header("Player 1 IA Clips")]
+    [SerializeField] private AudioClip _p1MoveRClip;
+    [SerializeField] private AudioClip _p1MoveLClip;
+    [SerializeField] private AudioClip _p1ConfirmClip;
+    [SerializeField] private AudioClip _p1GoBackClip;
+    [SerializeField] private AudioClip _p1ReadyClip;
+
+    [Header("Player 2 IA Clips")]
+    [SerializeField] private AudioClip _p2MoveRClip;
+    [SerializeField] private AudioClip _p2MoveLClip;
+    [SerializeField] private AudioClip _p2ConfirmClip;
+    [SerializeField] private AudioClip _p2GoBackClip;
+    [SerializeField] private AudioClip _p2ReadyClip;
 
     public static AudioPlayer _instance;
 
