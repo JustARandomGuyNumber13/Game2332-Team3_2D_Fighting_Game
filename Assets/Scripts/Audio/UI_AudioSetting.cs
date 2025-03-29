@@ -39,6 +39,7 @@ public class UI_AudioSetting : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Test 1-MainMenu")
             //SceneManager.LoadScene("Test 2-GamePlay");
+            //SceneManager.LoadScene("Character-Skill Selection Scene");
             SceneManager.LoadScene("Main-GamePlayer_Scene");
         else if (SceneManager.GetActiveScene().name == "Test 2-GamePlay")
             SceneManager.LoadScene("Test 1-MainMenu");

@@ -33,7 +33,6 @@ public class AudioPlayer : MonoBehaviour
     public static AudioPlayer _instance;
 
     private Dictionary<SO_SkillStat, AudioClip> _sfxMapping = new Dictionary<SO_SkillStat, AudioClip>();
-    private Dictionary<string, AudioClip> _buttonMapping = new Dictionary<string, AudioClip>();
 
     private void Awake()
     {
@@ -165,6 +164,7 @@ public class AudioPlayer : MonoBehaviour
                 break;
         }
 
+        //Ensuring that audio clips assigned only play if the scene is the player selection scene
         if (_scene.name == "Character-Skill Selection Scene")
         {
             EnableAudioMapping();
@@ -175,6 +175,8 @@ public class AudioPlayer : MonoBehaviour
             DisableAudioMapping();
         }
     }
+
+    //Play sounds
     public void Public_PlaySoundEffect(AudioClip audioClip)
     {
         _sfx.clip = audioClip;
