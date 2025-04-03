@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Jumping Animation Spritesheet_0: 3635677185843131777
+      Ninja Jumping Animation Spritesheet_1: -5629703462456583219
+      Ninja Jumping Animation Spritesheet_2: -6287575121726829364
+      Ninja Jumping Animation Spritesheet_3: -4062772141750997882
+      Ninja Jumping Animation Spritesheet_4: 8180381278772970100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

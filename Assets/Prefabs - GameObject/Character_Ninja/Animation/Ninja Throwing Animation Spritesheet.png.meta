@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Throwing Animation Spritesheet_0: -5157454445496286668
+      Ninja Throwing Animation Spritesheet_1: -6865419694684904509
+      Ninja Throwing Animation Spritesheet_2: 8295834911718642741
+      Ninja Throwing Animation Spritesheet_3: -2705304950110315809
+      Ninja Throwing Animation Spritesheet_4: 5175340576096877585
+      Ninja Throwing Animation Spritesheet_5: 3766166487076232527
+      Ninja Throwing Animation Spritesheet_6: -5524988899233206456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

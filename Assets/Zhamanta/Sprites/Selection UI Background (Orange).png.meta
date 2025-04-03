@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Selection UI Background (Orange)_0: -4420621226214118646
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Selection UI (purple-semiblurred no clouds)_0: 3490630291918624242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Walking Backwards Animation Spritesheet_0: -7387930598079251058
+      Ninja Walking Backwards Animation Spritesheet_1: -1849440126596147669
+      Ninja Walking Backwards Animation Spritesheet_2: -7058467773535469913
+      Ninja Walking Backwards Animation Spritesheet_3: 3277306177725967617
+      Ninja Walking Backwards Animation Spritesheet_4: -5673684043973355687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

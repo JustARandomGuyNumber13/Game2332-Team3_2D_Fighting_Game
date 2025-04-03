@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Dashing Animation Spritesheet_0: -1916814008965657728
+      Ninja Dashing Animation Spritesheet_1: -357445446908059621
+      Ninja Dashing Animation Spritesheet_2: 149411653446390953
+      Ninja Dashing Animation Spritesheet_3: -1179012698868088587
+      Ninja Dashing Animation Spritesheet_4: 1556242206597487923
+      Ninja Dashing Animation Spritesheet_5: -3037187292704792423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

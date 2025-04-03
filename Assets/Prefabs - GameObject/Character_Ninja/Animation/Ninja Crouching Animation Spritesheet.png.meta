@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Crouching Animation Spritesheet_0: -4056202793659758144
+      Ninja Crouching Animation Spritesheet_1: 1000796716996391103
+      Ninja Crouching Animation Spritesheet_2: -7318597446796066980
+      Ninja Crouching Animation Spritesheet_3: -625029420468576322
+      Ninja Crouching Animation Spritesheet_4: -8467687573648061067
+      Ninja Crouching Animation Spritesheet_5: -3516596008654858420
+      Ninja Crouching Animation Spritesheet_6: 8072365024662599162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

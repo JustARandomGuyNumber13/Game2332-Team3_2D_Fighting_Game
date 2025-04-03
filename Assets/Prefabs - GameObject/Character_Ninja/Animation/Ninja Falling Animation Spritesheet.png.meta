@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Falling Animation Spritesheet_0: -58605662807631736
+      Ninja Falling Animation Spritesheet_1: 8755965371014092853
+      Ninja Falling Animation Spritesheet_2: -1603560770496784525
+      Ninja Falling Animation Spritesheet_3: 4004007721237772663
+      Ninja Falling Animation Spritesheet_4: -4595503151106738467
+      Ninja Falling Animation Spritesheet_5: 399448263368725516
+      Ninja Falling Animation Spritesheet_6: -8810005110914421341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Selection UI Background (Purple-semiblurred)_0: 1358024426237801361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

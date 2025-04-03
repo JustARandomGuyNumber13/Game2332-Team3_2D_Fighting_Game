@@ -434,7 +434,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ninja Sword Attack Animation Spritesheet_0: 509433738322192163
+      Ninja Sword Attack Animation Spritesheet_1: 2114312857258833560
+      Ninja Sword Attack Animation Spritesheet_10: 2149442999616996905
+      Ninja Sword Attack Animation Spritesheet_11: 6930881448081939460
+      Ninja Sword Attack Animation Spritesheet_12: 4640714983236271305
+      Ninja Sword Attack Animation Spritesheet_2: 3060131474596316502
+      Ninja Sword Attack Animation Spritesheet_3: -6877526731679601730
+      Ninja Sword Attack Animation Spritesheet_4: -5308487949591412386
+      Ninja Sword Attack Animation Spritesheet_5: -3849826293863836275
+      Ninja Sword Attack Animation Spritesheet_6: 3914059341733396406
+      Ninja Sword Attack Animation Spritesheet_7: -7171425724904494380
+      Ninja Sword Attack Animation Spritesheet_8: -580021892782719012
+      Ninja Sword Attack Animation Spritesheet_9: -5583229031661180384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
