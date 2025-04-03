@@ -18,5 +18,5 @@ MonoBehaviour:
     before stopping.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 3
   isPassiveSkill: 0

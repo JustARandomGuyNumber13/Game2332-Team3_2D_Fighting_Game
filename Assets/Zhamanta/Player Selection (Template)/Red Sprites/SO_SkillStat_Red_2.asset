@@ -18,5 +18,5 @@ MonoBehaviour:
     a higher altitude.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 2
   isPassiveSkill: 0

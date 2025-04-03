@@ -18,5 +18,5 @@ MonoBehaviour:
     anything in his path.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 4
   isPassiveSkill: 0

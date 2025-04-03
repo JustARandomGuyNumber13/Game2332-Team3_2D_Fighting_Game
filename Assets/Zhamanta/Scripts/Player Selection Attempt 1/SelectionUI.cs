@@ -17,7 +17,9 @@ public class SelectionUI : MonoBehaviour
     public SO_CharactersList characterList;
 
     public TMP_Text nameText;
+    public TMP_Text skillNameText;
     public TMP_Text skillDescription;
+    public TMP_Text skillCooldownText;
     public TMP_Text characterDescription;
     public Animator artworkSprite;
     
@@ -93,6 +95,8 @@ public class SelectionUI : MonoBehaviour
 
         
         skillDescription.enabled = false;
+        skillNameText.enabled = false;
+        skillCooldownText.enabled = false;
 
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
@@ -261,6 +265,8 @@ public class SelectionUI : MonoBehaviour
                     selectedSkillHighlight.enabled = true;
                     SelectedSkillHighlight(selectedSkillIndex);
                     skillDescription.enabled = true;
+                    skillNameText.enabled = true;
+                    skillCooldownText.enabled = true;
                     UpdateSkillDescription();
                     break;
                 case selectionMode.selectableSlot:
@@ -295,6 +301,8 @@ public class SelectionUI : MonoBehaviour
                     currentSelectionMode = selectionMode.activeSlot;
                     selectedSkillHighlight.enabled = false;
                     skillDescription.enabled = false;
+                    skillNameText.enabled = false;
+                    skillCooldownText.enabled = false;
                     break;
             }
         }
@@ -332,6 +340,8 @@ public class SelectionUI : MonoBehaviour
     {
         SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
         skillDescription.text = characterStat.skills[selectedSkillIndex].skillDescription;
+        skillNameText.text = characterStat.skills[selectedSkillIndex].skillName;
+        skillCooldownText.text = "Cooldown: " + characterStat.skills[selectedSkillIndex].skillCD.ToString() + " s";
     }
 
     private void UpdateCharacter(int selectedOption)
@@ -343,7 +353,6 @@ public class SelectionUI : MonoBehaviour
 
         SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
 
-        //artworkSprite = characterStat.characterSprite; //COME BACK HERE
         artworkSprite.Play(characterStat.characterSprite.name);
         nameText.text = characterStat.characterName;
         characterDescription.text = characterStat.characterDescription;

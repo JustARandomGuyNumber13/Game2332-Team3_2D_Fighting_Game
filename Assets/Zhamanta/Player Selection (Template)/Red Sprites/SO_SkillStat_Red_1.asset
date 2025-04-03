@@ -18,5 +18,5 @@ MonoBehaviour:
     wave toward his enemy.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 1
   isPassiveSkill: 0

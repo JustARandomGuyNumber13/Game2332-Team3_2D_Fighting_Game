@@ -18,5 +18,5 @@ MonoBehaviour:
     air toward his target.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 4
   isPassiveSkill: 0

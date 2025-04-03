@@ -18,5 +18,5 @@ MonoBehaviour:
     force toward his enemy.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 2
   isPassiveSkill: 0

@@ -18,5 +18,5 @@ MonoBehaviour:
     their movement.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 5
   isPassiveSkill: 0
