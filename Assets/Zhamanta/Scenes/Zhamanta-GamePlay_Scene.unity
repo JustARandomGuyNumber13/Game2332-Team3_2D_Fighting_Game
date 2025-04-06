@@ -5064,7 +5064,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a50906d739c444793e7672298d919c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapPrefab: {fileID: 8128122943036129949, guid: 033796dd0a48a574cb5fffc7481681e1, type: 3}
+  spawnZoneMin: {x: 0, y: 0}
+  spawnZoneMax: {x: 0, y: 0}
+  targetScale: {x: 0, y: 0, z: 0}
+  speed: 5
+  lifespam: 5
+  dmgAmount: 0
+  dmgDuration: 0
+  dmgTickDuration: 0
 --- !u!4 &1228361988
 Transform:
   m_ObjectHideFlags: 0
@@ -8659,6 +8666,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a081e1e63880a314e873ddc4675c7667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &805527196793277220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2396139449532301970, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504110372072197687, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: lifespam
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303527380720396723, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 936809010}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.384079
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1397898
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.09806108
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233177311776106126, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357349941058073513, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: lifespam
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015971152517014867, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: lifespam
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367618713975153015, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
+      propertyPath: m_Name
+      value: PoisoningSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de863cd99604b314aa9d28f5b80ba821, type: 3}
 --- !u!1001 &3434609315391901696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8854,3 +8938,4 @@ SceneRoots:
   - {fileID: 1723024130}
   - {fileID: 133096290}
   - {fileID: 1009951786}
+  - {fileID: 805527196793277220}
