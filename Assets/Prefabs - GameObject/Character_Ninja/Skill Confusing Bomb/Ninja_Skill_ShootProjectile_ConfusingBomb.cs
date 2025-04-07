@@ -16,10 +16,10 @@ public class Ninja_Skill_ShootProjectile_ConfusingBomb : Skill  // Skill_ShootPr
     {
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
+        _inputHandler.Public_StopMove();
     }
     protected override void TriggerSkill()
     {
-        Debug.Log("Ninja Confusion Bomb", gameObject);
         _projectilePrefab.LaunchProjectile(this.gameObject);
     }
     protected override void AfterSkill() 

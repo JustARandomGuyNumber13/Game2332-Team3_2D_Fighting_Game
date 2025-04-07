@@ -68,7 +68,7 @@ public class PlayerHealthHandler : MonoBehaviour
 
     private void DeathCheck()
     {
-        if (health <= 0)
+        if (!IsDead && health <= 0)
         {
             IsDead = true;
             OnDeathEvent?.Invoke();

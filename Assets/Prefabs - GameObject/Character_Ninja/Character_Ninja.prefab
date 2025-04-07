@@ -396,7 +396,7 @@ MonoBehaviour:
   OnAfterSkillEvent:
     m_PersistentCalls:
       m_Calls: []
-  _damageAmount: 5
+  _damageAmount: 50
   _attackBoxSize: {x: 1.24, y: 1.86}
   _attackOffset: {x: 1.12, y: -0.22}
 --- !u!114 &7799150831038751822
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player1
+  m_DefaultActionMap: Player2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &894462382725253810

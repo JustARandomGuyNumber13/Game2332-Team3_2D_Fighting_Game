@@ -18,8 +18,8 @@ public class Ninja_Skill_Dash : Skill
     {
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
+        _inputHandler.Public_StopMove();
         gameObject.layer = Global.ghostLayerIndex;
-        Debug.Log("Ninja Dash", gameObject);
     }
     protected override void DuringSkill(float timer)
     {

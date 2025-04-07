@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7aef91481e3ad43844f06b0791146e, type: 3}
   m_Name: SO_PlayerSelection_Player_1
   m_EditorClassIdentifier: 
+  CharacterIndex: 0
+  SkillOneIndex: 2
+  SkillTwoIndex: 3
+  SkillThreeIndex: 4

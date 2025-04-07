@@ -8,21 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Ignore/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/Zhamanta/Scenes/Character-Skill Selection Scene.unity
-    guid: 4ee4f6aef44bbb7448dcf997b2f6a4c3
-  - enabled: 0
-    path: Assets/Zhamanta/Scenes/Game Scene.unity
-    guid: ff6a3447c9227ab48a6cb98c245461f6
-  - enabled: 0
-    path: Assets/Scenes/Main-GamePlay_Scene.unity
+  - enabled: 1
+    path: Assets/Scenes/Main-MainMenu-Scene.unity
+    guid: 1b78aca1b768c13468493707e9fa0d77
+  - enabled: 1
+    path: Assets/Scenes/Main-GamePlay-Scene.unity
     guid: 8244123c62cc7ad43aea812e335a8851
-  - enabled: 1
-    path: Assets/Tri_Folder/Tri_Game_Test/Tri-SkillSelection-Scene.unity
-    guid: 3a80a73502bef934ba4860d8c14008c4
-  - enabled: 1
-    path: Assets/Tri_Folder/Tri_Game_Test/Tri-GamePlay-Scene.unity
-    guid: 26e5186b03c717848b78559eaa2a5af5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c73d9a27f3664b7409a2734e919fabba, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

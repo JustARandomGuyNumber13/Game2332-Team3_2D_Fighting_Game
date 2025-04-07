@@ -77,15 +77,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Move()
     {
-        if (!isCanMove || _moveInput == 0)  // when can not move
+        if (isCanMove)
         {
-            _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
-            isDefending = false;
-            OnMoveEvent?.Invoke(0); // When can move
-        }
-        else if (isCanMove)
-        {
-            _moveDirection = Mathf.Sign(transform.localScale.x * _moveInput * (isReverseInput ? -1 : 1));
+            _moveDirection = transform.localScale.x * _moveInput * (isReverseInput ? -1 : 1);
             isDefending = _moveDirection == -1;
 
             if (isCrouching)
@@ -96,6 +90,11 @@ public class PlayerInputHandler : MonoBehaviour
             _rb.linearVelocity = Vector2.right * _moveInput * (isReverseInput ? -1 : 1) * _moveSpeed + Vector2.up * _rb.linearVelocityY;
             OnMoveEvent?.Invoke((int)_moveDirection);
         }
+    }
+    public void Public_StopMove()
+    {
+        _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
+        OnMoveEvent?.Invoke(0);
     }
     private void Jump() 
     {
