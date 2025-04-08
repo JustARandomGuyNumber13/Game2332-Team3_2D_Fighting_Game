@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public abstract class Z_GP_Skill : MonoBehaviour
 {
     [Header("Require Components")]
-    public T_SO_SkillStat skillStat;
+    public SO_SkillStat skillStat;
 
     [Header("Unity Events")]
     public UnityEvent OnBeforeSkillEvent;

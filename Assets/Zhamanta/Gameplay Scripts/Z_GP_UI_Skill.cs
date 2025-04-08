@@ -16,7 +16,7 @@ public class Z_GP_UI_Skill : MonoBehaviour
         _skillLockImage.enabled = false;
     }
 
-    public void Public_SetUp(T_GP_Skill skill)
+    public void Public_SetUp(Skill skill)
     {
         _cdDuration = skill.skillStat.skillCD;
         _skillImage.sprite = skill.skillStat.skillSprite;
