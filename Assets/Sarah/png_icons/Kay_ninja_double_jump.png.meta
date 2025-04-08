@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_ninja_double_jump_0: 6596065264072501146
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

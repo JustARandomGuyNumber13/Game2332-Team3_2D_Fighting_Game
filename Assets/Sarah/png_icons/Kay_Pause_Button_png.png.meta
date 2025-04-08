@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_Pause_Button_png_0: 2968726862804671233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

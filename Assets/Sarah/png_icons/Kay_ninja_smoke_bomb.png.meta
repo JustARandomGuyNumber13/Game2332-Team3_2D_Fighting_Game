@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_ninja_smoke_bomb_0: -5066059881999655918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

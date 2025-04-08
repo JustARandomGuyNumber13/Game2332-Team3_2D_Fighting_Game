@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_ninja_dashing_0: 6132062531693662407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

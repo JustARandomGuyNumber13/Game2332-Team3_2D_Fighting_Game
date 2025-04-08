@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_Play_Button_png_0: -5723477853259789067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

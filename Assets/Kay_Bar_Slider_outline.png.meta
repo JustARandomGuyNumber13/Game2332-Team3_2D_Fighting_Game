@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_Bar_Slider_outline_0: -9123649582040582772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

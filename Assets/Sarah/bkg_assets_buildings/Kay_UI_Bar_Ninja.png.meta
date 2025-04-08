@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_UI_Bar_Ninja_0: -4585328207633933031
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
