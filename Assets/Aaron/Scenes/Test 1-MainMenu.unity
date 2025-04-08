@@ -188,6 +188,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2374657669864705253, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: p1Skill1
+      value: 
+      objectReference: {fileID: -9036571816217839676, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: p1Skill2
+      value: 
+      objectReference: {fileID: -6867370533673860938, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: p1Skill3
+      value: 
+      objectReference: {fileID: 4088808034607195621, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: p2Defend
       value: 
       objectReference: {fileID: -4976729310862683252, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
@@ -195,6 +207,18 @@ PrefabInstance:
       propertyPath: p2GoBack
       value: 
       objectReference: {fileID: 4832704747103483549, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: p2Skill1
+      value: 
+      objectReference: {fileID: 3019981913396767698, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: p2Skill2
+      value: 
+      objectReference: {fileID: 8918754432241258566, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: p2Skill3
+      value: 
+      objectReference: {fileID: 5659039355541485166, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: moveRight
       value: 
@@ -309,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: buttonAudioMappings.Array.size
@@ -318,15 +342,27 @@ PrefabInstance:
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.data[0].sfxClip
       value: 
-      objectReference: {fileID: 8300000, guid: 36bfefb942aa77743a1f251bed97b8ae, type: 3}
+      objectReference: {fileID: 8300000, guid: 3ccb98fdd6256094d832ed63699af833, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.data[1].sfxClip
       value: 
-      objectReference: {fileID: 8300000, guid: 3ccb98fdd6256094d832ed63699af833, type: 3}
+      objectReference: {fileID: 8300000, guid: 36bfefb942aa77743a1f251bed97b8ae, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.data[2].sfxClip
       value: 
       objectReference: {fileID: 8300000, guid: 247050fee36f33b4e8fe45ace474aa02, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[3].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47a98dd32934f044b96c4ff4bb9b619d, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[4].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b063adff69a65034a887449bede22c3c, type: 3}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[5].sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b063adff69a65034a887449bede22c3c, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: skillAudioMappings.Array.data[0].skillStat
       value: 
@@ -339,6 +375,18 @@ PrefabInstance:
       propertyPath: skillAudioMappings.Array.data[2].skillStat
       value: 
       objectReference: {fileID: 11400000, guid: ad43b6b5e6b6f6b48bb488342d4c5e10, type: 2}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[3].skillStat
+      value: 
+      objectReference: {fileID: 11400000, guid: c1b2a5c9246725a4b88d84037d8cd289, type: 2}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[4].skillStat
+      value: 
+      objectReference: {fileID: 11400000, guid: df3b46a8391b4674588dbe3143e23c28, type: 2}
+    - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
+      propertyPath: skillAudioMappings.Array.data[5].skillStat
+      value: 
+      objectReference: {fileID: 11400000, guid: df3b46a8391b4674588dbe3143e23c28, type: 2}
     - target: {fileID: 3191831922325096420, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1030.2493
@@ -385,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3207015041201272547, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_Volume
-      value: 0.799
+      value: 0.198
       objectReference: {fileID: 0}
     - target: {fileID: 3207015041201272547, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_Resource
