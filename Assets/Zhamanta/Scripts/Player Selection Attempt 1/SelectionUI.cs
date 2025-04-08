@@ -353,6 +353,7 @@ public class SelectionUI : MonoBehaviour
 
         SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
 
+        Debug.Log(characterStat.characterSprite.name);
         artworkSprite.Play(characterStat.characterSprite.name);
         nameText.text = characterStat.characterName;
         characterDescription.text = characterStat.characterDescription;
