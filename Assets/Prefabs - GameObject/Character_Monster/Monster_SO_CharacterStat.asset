@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   characterDescription: 
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 7400000, guid: ad8e90e5de3b0e64ba3d202499edceb9, type: 2}
   characterPrefab: {fileID: 894348835929635628, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
   moveStandingSpeed: 3
   moveCrouchingSpeed: 2

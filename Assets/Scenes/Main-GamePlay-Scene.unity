@@ -8176,6 +8176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skill box
       objectReference: {fileID: 0}
+    - target: {fileID: 3999885981312988600, guid: 56d43dfad888e424c954bae71fbf3cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4380401970793052523, guid: 56d43dfad888e424c954bae71fbf3cec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
