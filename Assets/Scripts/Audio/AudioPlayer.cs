@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 
 //Note: I am aware of the mess of this code and will try to clean it up when everything is completed
-//Note: Rework or Delete Defense and Jump Audio code. Current method is not working at the moment
+//Note: Rework or Delete Defense and Jump Audio code. Current method is not working at the moment as player 2 actions somehow influence player 1 actions
 //Note: Move skills and selection IA audio to their respective player SFX method if possible
 
 
@@ -31,10 +31,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private InputActionReference p1Confirm;
     [SerializeField] private InputActionReference p1GoBack;
     [SerializeField] private InputActionReference p1Ready;
-    /*
+    
     [SerializeField] private InputActionReference p1Jump;
     [SerializeField] private InputActionReference p1Defend;
-    */
+    
 
     [Header("Player 2 Input Actions")]
     [SerializeField] private InputActionReference p2MoveRight;
@@ -42,10 +42,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private InputActionReference p2Confirm;
     [SerializeField] private InputActionReference p2GoBack;
     [SerializeField] private InputActionReference p2Ready;
-    /*
+    
     [SerializeField] private InputActionReference p2Jump;
     [SerializeField] private InputActionReference p2Defend;
-    */
+    
 
     [Header("Player 1 IA Clips")]
     [SerializeField] private AudioClip _p1MoveRClip;
@@ -53,10 +53,9 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioClip _p1ConfirmClip;
     [SerializeField] private AudioClip _p1GoBackClip;
     [SerializeField] private AudioClip _p1ReadyClip;
-    /*
-    [SerializeField] private AudioClip _p1JumpClip;
-    [SerializeField] private AudioClip _p1DefendClip;
-    */
+    //[SerializeField] private AudioClip _p1JumpClip;
+    //[SerializeField] private AudioClip _p1DefendClip;
+    
 
     [Header("Player 2 IA Clips")]
     [SerializeField] private AudioClip _p2MoveRClip;
@@ -64,12 +63,11 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioClip _p2ConfirmClip;
     [SerializeField] private AudioClip _p2GoBackClip;
     [SerializeField] private AudioClip _p2ReadyClip;
-    /*
-    [SerializeField] private AudioClip _p2JumpClip;
-    [SerializeField] private AudioClip _p2DefendClip;
+    //[SerializeField] private AudioClip _p2JumpClip;
+    //[SerializeField] private AudioClip _p2DefendClip;
 
-    [SerializeField] private float jumpClipCooldown = 2.0f;
-    */
+    [SerializeField] private float jumpClipCooldown = 0.85f;
+    
 
     public static AudioPlayer _instance;
 
@@ -135,18 +133,18 @@ public class AudioPlayer : MonoBehaviour
         EnableIA();
 
         //Player 1
-        p1MoveRight.action.started += _ => Public_PlaySoundEffect(_p1MoveRClip);
-        p1MoveLeft.action.started += _ => Public_PlaySoundEffect(_p1MoveLClip);
-        p1Confirm.action.started += _ => Public_PlaySoundEffect(_p1ConfirmClip);
-        p1GoBack.action.started += _ => Public_PlaySoundEffect(_p1GoBackClip);
-        p1Ready.action.started += _ => Public_PlaySoundEffect(_p1ReadyClip);
+        p1MoveRight.action.started += _ => Public_PlayP1SoundEffect(_p1MoveRClip);
+        p1MoveLeft.action.started += _ => Public_PlayP1SoundEffect(_p1MoveLClip);
+        p1Confirm.action.started += _ => Public_PlayP1SoundEffect(_p1ConfirmClip);
+        p1GoBack.action.started += _ => Public_PlayP1SoundEffect(_p1GoBackClip);
+        p1Ready.action.started += _ => Public_PlayP1SoundEffect(_p1ReadyClip);
 
         //Player 2
-        p2MoveRight.action.started += _ => Public_PlaySoundEffect(_p2MoveRClip);
-        p2MoveLeft.action.started += _ => Public_PlaySoundEffect(_p2MoveLClip);
-        p2Confirm.action.started += _ => Public_PlaySoundEffect(_p2ConfirmClip);
-        p2GoBack.action.started += _ => Public_PlaySoundEffect(_p2GoBackClip);
-        p2Ready.action.started += _ => Public_PlaySoundEffect(_p2ReadyClip);
+        p2MoveRight.action.started += _ => Public_PlayP2SoundEffect(_p2MoveRClip);
+        p2MoveLeft.action.started += _ => Public_PlayP2SoundEffect(_p2MoveLClip);
+        p2Confirm.action.started += _ => Public_PlayP2SoundEffect(_p2ConfirmClip);
+        p2GoBack.action.started += _ => Public_PlayP2SoundEffect(_p2GoBackClip);
+        p2Ready.action.started += _ => Public_PlayP2SoundEffect(_p2ReadyClip);
     }
 
     //When Player selection scene is not active
@@ -155,18 +153,18 @@ public class AudioPlayer : MonoBehaviour
         DisableIA();
 
         //Player 1
-        p1MoveRight.action.started -= _ => Public_PlaySoundEffect(_p1MoveRClip);
-        p1MoveLeft.action.started -= _ => Public_PlaySoundEffect(_p1MoveLClip);
-        p1Confirm.action.started -= _ => Public_PlaySoundEffect(_p1ConfirmClip);
-        p1GoBack.action.started -= _ => Public_PlaySoundEffect(_p1GoBackClip);
-        p1Ready.action.started -= _ => Public_PlaySoundEffect(_p1ReadyClip);
+        p1MoveRight.action.started -= _ => Public_PlayP1SoundEffect(_p1MoveRClip);
+        p1MoveLeft.action.started -= _ => Public_PlayP1SoundEffect(_p1MoveLClip);
+        p1Confirm.action.started -= _ => Public_PlayP1SoundEffect(_p1ConfirmClip);
+        p1GoBack.action.started -= _ => Public_PlayP1SoundEffect(_p1GoBackClip);
+        p1Ready.action.started -= _ => Public_PlayP1SoundEffect(_p1ReadyClip);
 
         //Player 2
-        p2MoveRight.action.started -= _ => Public_PlaySoundEffect(_p2MoveRClip);
-        p2MoveLeft.action.started -= _ => Public_PlaySoundEffect(_p2MoveLClip);
-        p2Confirm.action.started -= _ => Public_PlaySoundEffect(_p2ConfirmClip);
-        p2GoBack.action.started -= _ => Public_PlaySoundEffect(_p2GoBackClip);
-        p2Ready.action.started -= _ => Public_PlaySoundEffect(_p2ReadyClip);
+        p2MoveRight.action.started -= _ => Public_PlayP2SoundEffect(_p2MoveRClip);
+        p2MoveLeft.action.started -= _ => Public_PlayP2SoundEffect(_p2MoveLClip);
+        p2Confirm.action.started -= _ => Public_PlayP2SoundEffect(_p2ConfirmClip);
+        p2GoBack.action.started -= _ => Public_PlayP2SoundEffect(_p2GoBackClip);
+        p2Ready.action.started -= _ => Public_PlayP2SoundEffect(_p2ReadyClip);
     }
 
     private void EnableIA()
@@ -203,8 +201,9 @@ public class AudioPlayer : MonoBehaviour
         p2GoBack.action.Disable();
         p2Ready.action.Disable();
     }
-    /*
+    
     //Audio IA for basic actions
+    /*
     private IEnumerator IAGameCooldown(InputActionReference action)
     {
         IACooldown[action] = false; //disables specific audio
@@ -216,8 +215,9 @@ public class AudioPlayer : MonoBehaviour
         EnableGameIA();
 
         //Player 1 Jump
-        p1Jump.action.started += _ =>
+        p1Jump.action.performed += _ =>
         {
+            Debug.Log("Player 1 jump triggered");
             if (IACooldown[p1Jump])
             {
                 Public_PlayP1SoundEffect(_p1JumpClip);
@@ -226,8 +226,9 @@ public class AudioPlayer : MonoBehaviour
         };
 
         //Player 2 Jump
-        p2Jump.action.started += _ =>
+        p2Jump.action.performed += _ =>
         {
+            Debug.Log("Player 2 jump triggered");
             if (IACooldown[p2Jump])
             {
                 Public_PlayP2SoundEffect(_p2JumpClip);
@@ -280,8 +281,9 @@ public class AudioPlayer : MonoBehaviour
         isP2DefendClipPlaying = false;
 
         //Player 1 Jump
-        p1Jump.action.started -= _ => 
-        { 
+        p1Jump.action.performed -= _ => 
+        {
+            Debug.Log("Player 1 jump unbounded");
             if (IACooldown[p1Jump]) 
             { 
                 Public_PlayP1SoundEffect(_p1JumpClip);
@@ -292,6 +294,7 @@ public class AudioPlayer : MonoBehaviour
         //Player 2 Jump
         p2Jump.action.performed -= _ =>
         {
+            Debug.Log("Player 2 jump unbounded");
             if (IACooldown[p2Jump])
             {
                 Public_PlayP2SoundEffect(_p2JumpClip);
@@ -355,8 +358,8 @@ public class AudioPlayer : MonoBehaviour
         //Player 2
         p2Jump.action.Disable();
         p2Defend.action.Disable();
-    }*/
-
+    }
+    */
     private void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
     {
         switch (_scene.name)
@@ -385,9 +388,9 @@ public class AudioPlayer : MonoBehaviour
         {
             DisableAudioMapping();
         }
-        /*
+        
         //Ensuring that audio clips assigned only play if the scene is the game scene
-        if (_scene.name == "Main-GamePlayer_Scene")
+        /*if (_scene.name == "Main-GamePlayer_Scene")
         {
             EnableGameMapping();
         }

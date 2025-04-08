@@ -150,11 +150,11 @@ PrefabInstance:
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: p1Jump
       value: 
-      objectReference: {fileID: -1787976531331203260, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -4017652679857991281, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: p2Jump
       value: 
-      objectReference: {fileID: -4976729310862683252, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: 9151962696384022459, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
     - target: {fileID: 1435146328348483807, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: confirm
       value: 
@@ -385,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3207015041201272547, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.799
       objectReference: {fileID: 0}
     - target: {fileID: 3207015041201272547, guid: dda6297a8cfa0f04da765742c573a55c, type: 3}
       propertyPath: m_Resource
