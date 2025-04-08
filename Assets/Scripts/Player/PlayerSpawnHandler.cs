@@ -27,6 +27,7 @@ public class PlayerSpawnHandler : MonoBehaviour
         p2InputMap.enabled = true;
     }
 
+
     private void SpawnCharacters()
     {
         p1 = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab, p1SpawnPos.position + Vector3.up * spawnPosOffsetY, p1SpawnPos.rotation);
@@ -77,9 +78,9 @@ public class PlayerSpawnHandler : MonoBehaviour
         skillBoxList[1].Public_SetUp(skillTwo);
         skillBoxList[2].Public_SetUp(skillThree);
 
-        Helper_PassiveSkillCheck(skillOne, inputHandler.OnSkillOneEvent);
-        Helper_PassiveSkillCheck(skillTwo, inputHandler.OnSkillTwoEvent);
-        Helper_PassiveSkillCheck(skillThree, inputHandler.OnSkillThreeEvent);
+        Helper_EnableSkill(skillOne, inputHandler.OnSkillOneEvent);
+        Helper_EnableSkill(skillTwo, inputHandler.OnSkillTwoEvent);
+        Helper_EnableSkill(skillThree, inputHandler.OnSkillThreeEvent);
     }
     private Skill Helper_GetSkillFromPrefab(Skill[] skillList, int selectionSkillIndex, SO_PlayerSelection playerSelection) // Loop through every component Skill.cs in the prefab, then return correct skill that match the selected skill index by comparing SO_SkillStat
     {
@@ -93,8 +94,9 @@ public class PlayerSpawnHandler : MonoBehaviour
         }
         return null;
     }
-    private void Helper_PassiveSkillCheck(Skill skill, UnityEvent skillEvent)   // Toggle passive skill's active to true, or assign to event if it's not a passive skill
+    private void Helper_EnableSkill(Skill skill, UnityEvent skillEvent)   // Toggle passive skill's active to true, or assign to event if it's not a passive skill
     {
+        skill.enabled = true;
         if (skill.skillStat.isPassiveSkill)
             skill.isPassiveSkillActive = true;
         else

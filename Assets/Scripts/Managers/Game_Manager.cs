@@ -31,6 +31,14 @@ public class Game_Manager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+    public void Public_PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+    public void Public_ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 
     #region ~~ Set up ~~
     public void Public_SetUp(GameObject p1, GameObject p2)
