@@ -6,6 +6,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 
+//Note: I am aware of the mess of this code and will try to clean it up when everything is completed
+//Note: Rework or Delete Defense and Jump Audio code. Current method is not working at the moment
+//Note: Move skills and selection IA audio to their respective player SFX method if possible
+
+
 [System.Serializable]
 public class SkillAudioMapping
 {
@@ -15,16 +20,21 @@ public class SkillAudioMapping
 
 public class AudioPlayer : MonoBehaviour
 {
-    [SerializeField] private AudioSource _bgm, _sfx;
+    [SerializeField] private AudioSource _bgm, _sfx, _p1SFX, _p2SFX;
     [SerializeField] private AudioClip _menuBGM, _gameBGM, _selectionBGM;
     [SerializeField] private SkillAudioMapping[] skillAudioMappings;
 
+    //Selection Scene input fields
     [Header("Player 1 Input Actions")]
     [SerializeField] private InputActionReference p1MoveRight;
     [SerializeField] private InputActionReference p1MoveLeft;
     [SerializeField] private InputActionReference p1Confirm;
     [SerializeField] private InputActionReference p1GoBack;
     [SerializeField] private InputActionReference p1Ready;
+    /*
+    [SerializeField] private InputActionReference p1Jump;
+    [SerializeField] private InputActionReference p1Defend;
+    */
 
     [Header("Player 2 Input Actions")]
     [SerializeField] private InputActionReference p2MoveRight;
@@ -32,6 +42,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private InputActionReference p2Confirm;
     [SerializeField] private InputActionReference p2GoBack;
     [SerializeField] private InputActionReference p2Ready;
+    /*
+    [SerializeField] private InputActionReference p2Jump;
+    [SerializeField] private InputActionReference p2Defend;
+    */
 
     [Header("Player 1 IA Clips")]
     [SerializeField] private AudioClip _p1MoveRClip;
@@ -39,6 +53,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioClip _p1ConfirmClip;
     [SerializeField] private AudioClip _p1GoBackClip;
     [SerializeField] private AudioClip _p1ReadyClip;
+    /*
+    [SerializeField] private AudioClip _p1JumpClip;
+    [SerializeField] private AudioClip _p1DefendClip;
+    */
 
     [Header("Player 2 IA Clips")]
     [SerializeField] private AudioClip _p2MoveRClip;
@@ -46,10 +64,23 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioClip _p2ConfirmClip;
     [SerializeField] private AudioClip _p2GoBackClip;
     [SerializeField] private AudioClip _p2ReadyClip;
+    /*
+    [SerializeField] private AudioClip _p2JumpClip;
+    [SerializeField] private AudioClip _p2DefendClip;
+
+    [SerializeField] private float jumpClipCooldown = 2.0f;
+    */
 
     public static AudioPlayer _instance;
 
     private Dictionary<SO_SkillStat, AudioClip> _sfxMapping = new Dictionary<SO_SkillStat, AudioClip>();
+    /*
+    private Dictionary<InputActionReference, bool> IACooldown = new Dictionary<InputActionReference, bool>();
+    private List<PlayerInputHandler> playerInputHandlers = new List<PlayerInputHandler>();
+
+    private bool isP1DefendClipPlaying = false;
+    private bool isP2DefendClipPlaying = false;
+    */
 
     private void Awake()
     {
@@ -62,6 +93,13 @@ public class AudioPlayer : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(gameObject);
         InitializeSFXMapping();
+    }
+
+    private void Start()
+    {
+        //Cooldown states for basic actions
+        //IACooldown[p1Jump] = true;
+        //IACooldown[p2Jump] = true;
     }
 
     //Audio Mapping
@@ -90,6 +128,8 @@ public class AudioPlayer : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    //For Player selection scene
+    //When player selection scene is active
     private void EnableAudioMapping()
     {
         EnableIA();
@@ -109,6 +149,7 @@ public class AudioPlayer : MonoBehaviour
         p2Ready.action.started += _ => Public_PlaySoundEffect(_p2ReadyClip);
     }
 
+    //When Player selection scene is not active
     private void DisableAudioMapping()
     {
         DisableIA();
@@ -162,6 +203,159 @@ public class AudioPlayer : MonoBehaviour
         p2GoBack.action.Disable();
         p2Ready.action.Disable();
     }
+    /*
+    //Audio IA for basic actions
+    private IEnumerator IAGameCooldown(InputActionReference action)
+    {
+        IACooldown[action] = false; //disables specific audio
+        yield return new WaitForSeconds(jumpClipCooldown); //waits for a certain amount of time
+        IACooldown[action] = true; //reenables specific audio
+    }
+    private void EnableGameMapping()
+    {
+        EnableGameIA();
+
+        //Player 1 Jump
+        p1Jump.action.started += _ =>
+        {
+            if (IACooldown[p1Jump])
+            {
+                Public_PlayP1SoundEffect(_p1JumpClip);
+                StartCoroutine(IAGameCooldown(p1Jump));
+            }
+        };
+
+        //Player 2 Jump
+        p2Jump.action.started += _ =>
+        {
+            if (IACooldown[p2Jump])
+            {
+                Public_PlayP2SoundEffect(_p2JumpClip);
+                StartCoroutine(IAGameCooldown(p2Jump));
+            }
+        };
+
+        //Defend
+        foreach (var playerHandler in playerInputHandlers)
+        {
+            if (playerHandler == null) continue;
+            //Player 1 Defend
+            p1Defend.action.performed += _ =>
+            {
+                Debug.Log($"Player 1 defend performed: isDefending = {playerHandler.isDefending}");
+                if (playerHandler.isDefending && !isP1DefendClipPlaying)
+                {
+                    Public_PlayP1SoundEffect(_p1DefendClip);
+                    isP1DefendClipPlaying = true;
+                }
+            };
+
+            p1Defend.action.canceled += _ =>
+            {
+                isP1DefendClipPlaying = false;
+            };
+
+            //Player 2 Defend
+            p2Defend.action.performed += _ =>
+            {
+                Debug.Log($"Player 2 defend performed: isDefending = {playerHandler.isDefending}");
+                if (playerHandler.isDefending && !isP2DefendClipPlaying)
+                {
+                    Public_PlayP2SoundEffect(_p2DefendClip);
+                    isP2DefendClipPlaying = true;
+                }
+            };
+
+            p2Defend.action.canceled += _ =>
+            {
+                isP2DefendClipPlaying = false;
+            };
+        }
+    }
+
+    private void DisableGameMapping()
+    {
+        DisableGameIA();
+        isP1DefendClipPlaying = false;
+        isP2DefendClipPlaying = false;
+
+        //Player 1 Jump
+        p1Jump.action.started -= _ => 
+        { 
+            if (IACooldown[p1Jump]) 
+            { 
+                Public_PlayP1SoundEffect(_p1JumpClip);
+                StartCoroutine(IAGameCooldown(p1Jump));
+            } 
+        };
+
+        //Player 2 Jump
+        p2Jump.action.performed -= _ =>
+        {
+            if (IACooldown[p2Jump])
+            {
+                Public_PlayP2SoundEffect(_p2JumpClip);
+                StartCoroutine(IAGameCooldown(p2Jump));
+            }
+        };
+
+        //Defend
+        foreach (var playerHandler in playerInputHandlers)
+        {
+            if (playerHandler == null) continue;
+            //Player 1 Defend
+            p1Defend.action.performed -= _ =>
+            {
+                if (playerHandler.isDefending && !isP1DefendClipPlaying)
+                {
+                    Public_PlayP1SoundEffect(_p1DefendClip);
+                    isP1DefendClipPlaying = true;
+                }
+            };
+
+            p1Defend.action.canceled -= _ =>
+            {
+                isP1DefendClipPlaying = false;
+            };
+
+            //Player 2 Defend
+            p2Defend.action.performed -= _ =>
+            {
+                if (playerHandler.isDefending && !isP2DefendClipPlaying)
+                {
+                    Public_PlayP2SoundEffect(_p2DefendClip);
+                    isP2DefendClipPlaying = true;
+                }
+            };
+
+            p2Defend.action.canceled -= _ =>
+            {
+                isP2DefendClipPlaying = false;
+            };
+        }  
+    }
+
+    private void EnableGameIA()
+    {
+        //Player 1
+        p1Jump.action.Enable();
+        p1Defend.action.Enable();
+
+        //Player 2
+        p2Jump.action.Enable();
+        p2Defend.action.Enable();
+    }
+
+    private void DisableGameIA()
+    {
+        //Player 1
+        p1Jump.action.Disable();
+        p1Defend.action.Disable();
+
+        //Player 2
+        p2Jump.action.Disable();
+        p2Defend.action.Disable();
+    }*/
 
     private void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
     {
@@ -191,6 +385,17 @@ public class AudioPlayer : MonoBehaviour
         {
             DisableAudioMapping();
         }
+        /*
+        //Ensuring that audio clips assigned only play if the scene is the game scene
+        if (_scene.name == "Main-GamePlayer_Scene")
+        {
+            EnableGameMapping();
+        }
+
+        else
+        {
+            DisableGameMapping();
+        }*/
     }
 
     //Play sounds
@@ -198,6 +403,20 @@ public class AudioPlayer : MonoBehaviour
     {
         _sfx.clip = audioClip;
         _sfx.Play();
+    }
+
+    //Player 1 basic action play sound
+    public void Public_PlayP1SoundEffect(AudioClip audioClip)
+    {
+        _p1SFX.clip = audioClip;
+        _p1SFX.Play();
+    }
+
+    //Player 2 basic action play sound
+    public void Public_PlayP2SoundEffect(AudioClip audioClip)
+    {
+        _p2SFX.clip = audioClip;
+        _p2SFX.Play();
     }
 
     public void Public_PlaySkillSFX(SO_SkillStat skillStat)

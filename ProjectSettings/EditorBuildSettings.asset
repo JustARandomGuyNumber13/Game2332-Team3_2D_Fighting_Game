@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main-GamePlayer_Scene.unity
     guid: 8244123c62cc7ad43aea812e335a8851
   - enabled: 1
-    path: Assets/Aaron/Example Scripts/Test 1-MainMenu.unity
+    path: Assets/Aaron/Scenes/Test 1-MainMenu.unity
     guid: 480746a33d5daf04e980f8b931fab95b
   - enabled: 1
     path: Assets/Aaron/Example Scripts/Test 2-GamePlay.unity
