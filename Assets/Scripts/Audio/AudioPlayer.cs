@@ -66,7 +66,7 @@ public class AudioPlayer : MonoBehaviour
     //[SerializeField] private AudioClip _p2JumpClip;
     //[SerializeField] private AudioClip _p2DefendClip;
 
-    [SerializeField] private float jumpClipCooldown = 0.85f;
+    //[SerializeField] private float jumpClipCooldown = 0.85f;
     
 
     public static AudioPlayer _instance;
