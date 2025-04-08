@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Crouching.anim.meta
 guid: 6ace10bb108c5874bb20d8a9755b34af
+========
+guid: 2603e3184b54eb243a0d494f57f61c61
+>>>>>>>> origin/Zhamanta-Branch:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Idle.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

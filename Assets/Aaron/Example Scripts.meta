@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Aaron/Example Scripts.meta
 guid: d3caefff8625f084e9201d05ae7afd57
+========
+guid: a31cc2aab8ab97d479c3f485a0c32c7b
+>>>>>>>> origin/Zhamanta-Branch:Assets/Aaron/AudioMixer.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,0 +1,299 @@
+fileFormatVersion: 2
+guid: 771caacf442ba5d4fbbc4e949b890598
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4056202793659758144
+    second: Ninja Crouching Animation Spritesheet_0
+  - first:
+      213: 1000796716996391103
+    second: Ninja Crouching Animation Spritesheet_1
+  - first:
+      213: -7318597446796066980
+    second: Ninja Crouching Animation Spritesheet_2
+  - first:
+      213: -625029420468576322
+    second: Ninja Crouching Animation Spritesheet_3
+  - first:
+      213: -8467687573648061067
+    second: Ninja Crouching Animation Spritesheet_4
+  - first:
+      213: -3516596008654858420
+    second: Ninja Crouching Animation Spritesheet_5
+  - first:
+      213: 8072365024662599162
+    second: Ninja Crouching Animation Spritesheet_6
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ninja Crouching Animation Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1960
+        width: 1600
+        height: 2007
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c986f2cc0975b7c0800000000000000
+      internalID: -4056202793659758144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Crouching Animation Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 1960
+        width: 1600
+        height: 2007
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb072f8cf4b83ed00800000000000000
+      internalID: 1000796716996391103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Crouching Animation Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 4316
+        y: 1960
+        width: 1600
+        height: 2007
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fb3a1d56e1f6a90800000000000000
+      internalID: -7318597446796066980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Crouching Animation Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 6316
+        y: 2005
+        width: 1600
+        height: 1962
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf5dcabd037357f0800000000000000
+      internalID: -625029420468576322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Crouching Animation Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 5
+        width: 1600
+        height: 1492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57dc7b7f30bbc7a80800000000000000
+      internalID: -8467687573648061067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Crouching Animation Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 5
+        width: 1600
+        height: 1492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c471295df8a823fc0800000000000000
+      internalID: -3516596008654858420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Crouching Animation Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 4316
+        y: 5
+        width: 1600
+        height: 1489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af53d40883dc60070800000000000000
+      internalID: 8072365024662599162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ninja Crouching Animation Spritesheet_0: -4056202793659758144
+      Ninja Crouching Animation Spritesheet_1: 1000796716996391103
+      Ninja Crouching Animation Spritesheet_2: -7318597446796066980
+      Ninja Crouching Animation Spritesheet_3: -625029420468576322
+      Ninja Crouching Animation Spritesheet_4: -8467687573648061067
+      Ninja Crouching Animation Spritesheet_5: -3516596008654858420
+      Ninja Crouching Animation Spritesheet_6: 8072365024662599162
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

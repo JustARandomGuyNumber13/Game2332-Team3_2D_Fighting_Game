@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SO_SkillStat_Red_4
   m_EditorClassIdentifier: 
   skillSprite: {fileID: -5392625257635239999, guid: 3dcbf13865c7698478ecd7ee70bad283, type: 3}
-  skillName: 
-  skillDescription: R Attack 4
+  skillName: Shuriken
+  skillDescription: Ned hurls a massive shuriken, spinning it rapidly through the
+    air toward his target.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 4
   isPassiveSkill: 0

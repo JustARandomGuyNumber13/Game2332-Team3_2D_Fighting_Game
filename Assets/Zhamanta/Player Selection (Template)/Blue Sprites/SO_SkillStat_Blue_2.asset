@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SO_SkillStat_Blue_2
   m_EditorClassIdentifier: 
   skillSprite: {fileID: -2903757803667343341, guid: 05c14b5cde9e2a5449b0faf28f2d2450, type: 3}
-  skillName: 
-  skillDescription: B Attack 2
+  skillName: Quill Barrage
+  skillDescription: Quill hurls his sharp spikes forward, launching them with great
+    force toward his enemy.
   skillDelay: 0
   skillDuration: 0
-  skillCD: 0
+  skillCD: 2
   isPassiveSkill: 0

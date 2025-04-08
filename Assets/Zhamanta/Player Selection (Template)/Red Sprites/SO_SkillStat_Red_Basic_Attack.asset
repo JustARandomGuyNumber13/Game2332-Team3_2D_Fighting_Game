@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: SO_SkillStat_Red_Basic_Attack
   m_EditorClassIdentifier: 
   skillSprite: {fileID: 0}
-  skillID: 0
-  skillName: 
-  skillDescription: 
+  skillName: Slash
+  skillDescription: Ned swings his sword in a quick vertical arc, striking his enemy.
   skillDelay: 0
   skillDuration: 0
   skillCD: 0

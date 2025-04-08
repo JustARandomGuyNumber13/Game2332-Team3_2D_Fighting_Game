@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Aaron/Example Scripts/Test 2-GamePlay.unity.meta
 guid: 7473f75c3f66f1e4d9092dcb4442bf71
+========
+guid: 480746a33d5daf04e980f8b931fab95b
+>>>>>>>> origin/Zhamanta-Branch:Assets/Aaron/Example Scripts/Test 1-MainMenu.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Aaron/AudioMixer/Unused.meta
 guid: 947f970786f2db446bed6ff867025f27
+========
+guid: c1870be07176cea49844f04d00fa923d
+>>>>>>>> origin/Zhamanta-Branch:Assets/Aaron/Assets and Scripts for Tri-Folder game scene/Temp Health Bar Assets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

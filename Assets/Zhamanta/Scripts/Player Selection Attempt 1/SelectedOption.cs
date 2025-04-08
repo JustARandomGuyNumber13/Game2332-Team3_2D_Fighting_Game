@@ -5,7 +5,7 @@ public class SelectedOption : MonoBehaviour
     //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
-    public SpriteRenderer artworkSprite;
+    public Animator artworkSprite;
 
     private int selectedOption = 0;
 
@@ -31,7 +31,8 @@ public class SelectedOption : MonoBehaviour
         SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
 
         //artworkSprite.sprite = character.characterSprite;
-        artworkSprite.sprite = characterStat.characterSprite;
+        //artworkSprite = characterStat.characterSprite;
+        artworkSprite.Play(characterStat.characterSprite.name);
     }
 
     private void Load()
