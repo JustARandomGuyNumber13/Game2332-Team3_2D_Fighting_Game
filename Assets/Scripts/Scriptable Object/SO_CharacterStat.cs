@@ -6,7 +6,7 @@ public class SO_CharacterStat : ScriptableObject
 {
     public string characterName;
     public string characterDescription;
-    public Sprite characterSprite;
+    public AnimationClip characterSprite;
     public GameObject characterPrefab;
 
     public float moveStandingSpeed;
