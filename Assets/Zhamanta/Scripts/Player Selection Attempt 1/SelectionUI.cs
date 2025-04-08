@@ -120,7 +120,7 @@ public class SelectionUI : MonoBehaviour
     {
         if (isReady && (otherPlayer.isReady == true))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(Global.gamePlayScene);
         }
     }
     private void SelfReadyCheck()
