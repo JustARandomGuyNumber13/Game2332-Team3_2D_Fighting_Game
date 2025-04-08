@@ -9,6 +9,7 @@ public class SO_AnimatorHash : ScriptableObject
     [Header("Input string to corresponding Animator's parameters")]
     [Header("Float")]
     [SerializeField] private string _moveDirection;
+    [SerializeField] private string _yVelocity;
 
     [Header("Integer")]
     [SerializeField] private string _skillIndex;
@@ -29,6 +30,7 @@ public class SO_AnimatorHash : ScriptableObject
     public int isCrouching { get; private set; }
     public int defend { get; private set; }
     public int jump { get; private set; }
+    public int yVelocity { get; private set; }
 
     private void OnValidate()
     {
@@ -39,5 +41,6 @@ public class SO_AnimatorHash : ScriptableObject
         isCrouching = Animator.StringToHash(_isCrouching);
         defend = Animator.StringToHash(_defend);
         jump = Animator.StringToHash(_jump);
+        yVelocity = Animator.StringToHash(_yVelocity);
     }
 }

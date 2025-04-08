@@ -1,19 +1,31 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Skill : MonoBehaviour
 {
     #region ~~ Variables ~~
-    [SerializeField] protected SO_SkillStat _skillStat;
+    [Header("Require Components")]
+    public SO_SkillStat skillStat;
+
+    [Header("Unity Events")]
+    public UnityEvent OnBeforeSkillEvent;
+    public UnityEvent OnTriggerSkillEvent;
+    public UnityEvent OnAfterSkillEvent;
+
     protected bool _isCanUseSkill = true;
+    protected bool _isPassiveSkillActive;
+
+    public bool isPassiveSkillActive {set { _isPassiveSkillActive = value; } }
     #endregion
 
     #region ~~ Skill behavior handlers ~~
     public void ActivateSkill() 
     {
-        if (!_skillStat.isPassiveSkill &&_isCanUseSkill)
+        if ((!skillStat.isPassiveSkill && _isCanUseSkill) || (skillStat.isPassiveSkill && _isPassiveSkillActive))
         {
             _isCanUseSkill = false;
+            //Debug.Log(GetType().Name, gameObject);
             StartCoroutine(SkillCoroutine());
         }
     }
@@ -22,50 +34,41 @@ public abstract class Skill : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(SkillCoolDownCoroutine());
     }
-    protected abstract void BeforeSkill();
-    protected abstract void DuringSkill();
-    protected abstract void AfterSkill();
+    protected virtual void BeforeSkill() { }
+    protected virtual void DuringSkill(float timer) { }
+    protected virtual void TriggerSkill() { }
+    protected virtual void AfterSkill() { }
     #endregion
 
     #region ~~ Coroutine handlers ~~
     protected IEnumerator SkillCoroutine()
     {
-        // Delay before use skill
-        float timer = 0;
+        /* Delay before use skill */
         BeforeSkill();
-        while (timer < _skillStat.skillDelay)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        OnBeforeSkillEvent?.Invoke();
+        if(skillStat.skillDelay != 0)
+            yield return new WaitForSeconds(skillStat.skillDelay);
 
-        // Using skill
-        timer = 0;
-        do
+        /* Using skill */
+        TriggerSkill();
+        OnTriggerSkillEvent?.Invoke();
+        float timer = 0;
+        while (timer < skillStat.skillDuration)
         {
-            DuringSkill();
-            timer += Time.deltaTime;
             yield return null;
-        } while (timer < _skillStat.skillDuration);
+            DuringSkill(timer);
+            timer += Time.deltaTime;
+        }
         AfterSkill();
+        OnAfterSkillEvent?.Invoke();
 
-        // Cool down
-        timer = 0;
-        while (timer < _skillStat.skillCD)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-        _isCanUseSkill = true;
+        /* Cool down */
+        StartCoroutine (SkillCoolDownCoroutine());
     }
     protected IEnumerator SkillCoolDownCoroutine()
     {
-        float timer = 0;
-        while (timer < _skillStat.skillCD)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        if(skillStat.skillCD != 0)
+            yield return new WaitForSeconds(skillStat.skillCD);
         _isCanUseSkill = true;
     }
     #endregion

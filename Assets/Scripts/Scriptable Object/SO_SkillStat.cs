@@ -4,6 +4,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "SO_SkillStat", menuName = "Scriptable Objects/SO_SkillStat")]
 public class SO_SkillStat : ScriptableObject
 {
+    public GameObject SkillPrefab;
     public Sprite skillSprite;
 
     public string skillName;
@@ -14,4 +15,5 @@ public class SO_SkillStat : ScriptableObject
     public float skillCD;
 
     public bool isPassiveSkill;
+
 }

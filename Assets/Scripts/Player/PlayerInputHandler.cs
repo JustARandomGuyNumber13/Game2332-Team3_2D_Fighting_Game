@@ -3,24 +3,32 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    #region ~~ Variables ~~
+    [Header("Require Components")]
     [SerializeField] private SO_AnimatorHash _animatorHash;
-    [SerializeField] private SO_Layer _layer;
     [SerializeField] private SO_CharacterStat _chararacterStat;
-    [SerializeField] private Transform _otherPlayer;
     [SerializeField] private Animator _animator;
     [SerializeField] private Collider2D _standCollider, _crouchCollider;
 
-    public UnityEvent OnAttackEvent;
+    [Header("Unity Events")]
+    public UnityEvent<int> OnMoveEvent; // Pass in move direction
+    public UnityEvent<bool> OnJumpEvent;    // Pass in is can jump
+    public UnityEvent<float> OnVerticalVelocityChangeEvent; // Pass in rb.velocity.y
+    public UnityEvent OnLandEvent;
+    public UnityEvent OnCrouchEvent;
+    public UnityEvent OnBasicAttackEvent;
     public UnityEvent OnSkillOneEvent;
     public UnityEvent OnSkillTwoEvent;
     public UnityEvent OnSkillThreeEvent;
+    public UnityEvent OnSkillFourEvent;
+    public UnityEvent OnSkillFiveEvent;
     public UnityEvent OnDefendEvent;
-    public UnityEvent OnCrouchEvent;
 
+    [Header("Public Variables")]
+    public Transform otherPlayer;
     public bool isCanMove = true;
     public bool isCanUseSkill = true;
     public bool isCrouching;
@@ -34,10 +42,7 @@ public class PlayerInputHandler : MonoBehaviour
     private float _crouchInput;
     private float _moveSpeed;
     private float _moveDirection;
-    #endregion
 
-
-    #region ~~ Monobehavior handlers ~~
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -50,61 +55,61 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.DrawLine(transform.position, transform.position + Vector3.down *  _chararacterStat.groundCheckDistance, Color.yellow);    // Display ground check ray
         Crouch();
     }
     private void FixedUpdate()
     {
+        if (otherPlayer == null) return;
         Helper_FaceOtherPlayer();
         Move();
+        if(!isOnGround || _rb.linearVelocityY != 0) OnVerticalVelocityChangeEvent?.Invoke(_rb.linearVelocityY);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Helper_GroundCheck();
     }
-    #endregion
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * _chararacterStat.groundCheckDistance);
+    }
 
 
-    #region ~~ Action handlers ~~
     private void Move()
     {
-        if (_moveInput == 0)
+        if (isCanMove)
         {
-            _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
-            if (_animator.GetInteger(_animatorHash.moveDirection) != 0)
-            {
-                _animator.SetInteger(_animatorHash.moveDirection, 0);
-                isDefending = false;
-            }
-        }
-        else if (isCanMove)
-        {
-            _moveDirection = Mathf.Sign(transform.localScale.x * _moveInput * (isReverseInput ? -1 : 1));
+            _moveDirection = transform.localScale.x * _moveInput * (isReverseInput ? -1 : 1);
             isDefending = _moveDirection == -1;
 
-            if (isCrouching) 
-                _moveSpeed = _chararacterStat.moveCrouchingSpeed;
+            if (isCrouching)
+                _moveSpeed = 0; //_moveSpeed = _chararacterStat.moveCrouchingSpeed;
             else
                 _moveSpeed = _moveDirection == 1 ? _chararacterStat.moveStandingSpeed : _chararacterStat.moveCrouchingSpeed; // Forward or backward (backward use same speed as crouching)
             
             _rb.linearVelocity = Vector2.right * _moveInput * (isReverseInput ? -1 : 1) * _moveSpeed + Vector2.up * _rb.linearVelocityY;
-            _animator.SetInteger(_animatorHash.moveDirection, (int)_moveDirection);
+            OnMoveEvent?.Invoke((int)_moveDirection);
         }
+    }
+    public void Public_StopMove()
+    {
+        _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
+        OnMoveEvent?.Invoke(0);
     }
     private void Jump() 
     {
+        OnJumpEvent?.Invoke(isCanJump);
+
         if (isCanMove && isOnGround && isCanUseSkill && isCanJump)
         {
             isOnGround = false;
             isCanJump = false;
             _rb.AddForce(Vector2.up * _chararacterStat.jumpForce, ForceMode2D.Impulse);
-            _animator.SetBool(_animatorHash.isOnGround, isOnGround);
-            _animator.SetTrigger(_animatorHash.jump);
         }
     }
     private void Crouch()   
     {
-        if (isCanMove && isOnGround && isCanUseSkill && _crouchInput != 0) // Prevent crouching while attacking
+        if (_crouchInput != 0 &&  isCanMove && isOnGround && isCanUseSkill) // Prevent crouching while attacking
         {
             isCrouching = true;
             _animator.SetBool(_animatorHash.isCrouching, true);
@@ -119,105 +124,91 @@ public class PlayerInputHandler : MonoBehaviour
             _crouchCollider.enabled = false;
         }
     }
-    #endregion
 
-
-    #region ~~ Helper Methods ~~
     private void Helper_FaceOtherPlayer()   
     {
-        if (!isOnGround || !isCanMove) return;
+        if (!isOnGround || !isCanMove || !isCanUseSkill) return;
 
-        if (transform.localScale.x > 0 && _otherPlayer.position.x < transform.position.x) // is looking Right but other player is on the Left
+        if (transform.localScale.x > 0 && otherPlayer.position.x < transform.position.x) // is looking Right but other player is on the Left
             transform.localScale = Vector2.left + Vector2.up;
-        else if (transform.localScale.x < 0 && _otherPlayer.position.x > transform.position.x)// is looking Left but other player is on the Right
+        else if (transform.localScale.x < 0 && otherPlayer.position.x > transform.position.x)// is looking Left but other player is on the Right
             transform.localScale = Vector3.one;
     }
     private void Helper_GroundCheck()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, _chararacterStat.groundCheckDistance))
+        if (Physics2D.Raycast(transform.position, Vector2.down, _chararacterStat.groundCheckDistance, Global.groundLayer))
         {
             isOnGround = true;
             isCanJump = true;
-            _animator.SetBool(_animatorHash.isOnGround, isOnGround);
+            OnLandEvent?.Invoke();
         }
     }
-    #endregion
 
-
-    #region ~~ Input handlers ~~
     private void OnMove(InputValue value)
     {
         _moveInput = Mathf.Ceil(value.Get<float>());
     }
-    private void OnJump()
+    private void OnJump(InputValue value)
     {
-        Jump();
+        if (!isReverseInput)
+        {
+            if(value.Get<float>() == 1)
+                Jump();
+        }
+        else
+            _crouchInput = Mathf.Ceil(value.Get<float>());
     }
     private void OnCrouch(InputValue value)
     {
-        _crouchInput = Mathf.Ceil(value.Get<float>());
+        if (!isReverseInput)
+            _crouchInput = Mathf.Ceil(value.Get<float>());
+        else
+            Jump();
     }
-    private void OnAttack()
+    private void OnAttack(InputValue value)
     {
-        if (isCanUseSkill)
-            OnAttackEvent?.Invoke();
+        if (value.Get<float>() == 1 && isCanUseSkill)
+            OnBasicAttackEvent?.Invoke();
     }
-    private void OnSkillOne()
+    private void OnSkillOne(InputValue value)
     {
-        if (isCanUseSkill)
+        if (value.Get<float>() == 1 && isCanUseSkill)
             OnSkillOneEvent?.Invoke();
     }
-    private void OnSkillTwo()
+    private void OnSkillTwo(InputValue value)
     {
-        if (isCanUseSkill)
+        if (value.Get<float>() == 1 && isCanUseSkill)
             OnSkillTwoEvent?.Invoke();
     }
-    private void OnSkillThree()
+    private void OnSkillThree(InputValue value)
     {
-        if(isCanUseSkill)
+        if(value.Get<float>() == 1 && isCanUseSkill)
             OnSkillThreeEvent?.Invoke();
     }
-    #endregion
-
-
-    #region ~~ Other handlers ~~
-    public void CallDefendAnimation()
+    private void OnSkillFour(InputValue value)
     {
-        _animator.SetTrigger(_animatorHash.defend);
+        if (value.Get<float>() == 1 && isCanUseSkill)
+            OnSkillFourEvent?.Invoke();
     }
-    public void CallHurtAnimation()
-    { 
-        // Implement Hurt animation mechanic
-    }
-    public void CallSkillAnimation(int skillIndex)
+    private void OnSkillFive(InputValue value)
     {
-        _animator.SetTrigger(_animatorHash.useSkill);
-        _animator.SetInteger(_animatorHash.skillIndex, skillIndex);
+        if (value.Get<float>() == 1 && isCanUseSkill)
+            OnSkillFiveEvent?.Invoke();
     }
+
     private void InspectorCheck()
     {
         if (transform.localScale.x != 1 && transform.localScale.x != -1)
             Debug.LogError("x-axis scale must either be 1 or -1 only", gameObject);
     }
-    #endregion
-
-    #region ~~ Special effects ~~
-    public void ReverseMovementInput(float duration)
+    public void Public_ReverseMovementInput(float duration)
     {
         StartCoroutine(ReverseInputOverTimeCoroutine(duration));
     }
     private IEnumerator ReverseInputOverTimeCoroutine(float duration)
     {
-        float timer = 0;
         isReverseInput = true;
-
-        while (timer < duration)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
+        yield return new WaitForSeconds(duration);
         isReverseInput = false;
     }
-    #endregion
 }

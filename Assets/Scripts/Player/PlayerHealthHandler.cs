@@ -1,46 +1,50 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealthHandler : MonoBehaviour
 {
-    [SerializeField] private SO_CharacterStat _characterStat;
+    [SerializeField] public SO_CharacterStat _characterStat; //changed from private to public
+
+    public UnityEvent<float> OnHealthIncreaseEvent;
+    public UnityEvent<float> OnHealthIncreaseOverTimerEvent;
+    public UnityEvent<float> OnHealthDecreaseEvent;
+    public UnityEvent<float> OnHealthDecreaseOverTimerEvent;
+    public UnityEvent OnDeathEvent;
+    public UnityEvent OnDefendEvent;
 
     private PlayerInputHandler _inputHandler;
-
+    public bool IsDead { get; private set; }
     public float health
     { get; private set; }
 
     private void Awake()
     {
         _inputHandler = GetComponent<PlayerInputHandler>();
-    }
-    private void Start()
-    {
-        health = _characterStat.maxHealth;
+        health = _characterStat.maxHealth;  // Either be in Awake or OnEnable
     }
 
-    public void IncreaseHealth(float amount)
+    public void Public_IncreaseHealth(float amount)
     {
         health += amount;
+        OnHealthIncreaseEvent?.Invoke(health);
     }
-    public void DecreaseHealth(float amount)
+    public void Public_DecreaseHealth(float amount)
     {
         float damageAmount = (amount - _characterStat.defenseValue);
 
         if (_inputHandler.isDefending)
         {
+            OnDefendEvent?.Invoke();
             damageAmount *= 0.2f; // This float is adjustable to match balance (Take 20% of damage if is defending)
-            _inputHandler.CallDefendAnimation();
-        }
-        else
-        {
-            _inputHandler.CallHurtAnimation();
         }
 
         health -= damageAmount;
+        OnHealthDecreaseEvent?.Invoke(health);
+        DeathCheck();
     }
 
-    public void DecreaseHealthOverTime(float amount, float duration, float tickDuration)
+    public void Public_DecreaseHealthOverTime(float amount, float duration, float tickDuration)
     { 
         StartCoroutine(DecreaseHealthOverTimeCoroutine(amount, duration, tickDuration));
     }
@@ -54,9 +58,20 @@ public class PlayerHealthHandler : MonoBehaviour
             if (timer >= tick)
             {
                 tick += tickDuration;
-                DecreaseHealth(amount);
+                health -= amount;
+                OnHealthDecreaseOverTimerEvent?.Invoke(health);
+                DeathCheck();
             }
             yield return null;
+        }
+    }
+
+    private void DeathCheck()
+    {
+        if (!IsDead && health <= 0)
+        {
+            IsDead = true;
+            OnDeathEvent?.Invoke();
         }
     }
 }

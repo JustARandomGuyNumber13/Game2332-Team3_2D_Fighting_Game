@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eae66be2049d414fb44f5976efe559d, type: 3}
+  m_Name: SO_CharacterStat_Yellow
+  m_EditorClassIdentifier: 
+  characterName: Yellow
+  characterDescription: 
+  characterSprite: {fileID: -5392625257635239999, guid: a525740008a59d948afdfadb6f870f83, type: 3}
+  characterPrefab: {fileID: 0}
+  moveStandingSpeed: 0
+  moveCrouchingSpeed: 0
+  jumpForce: 0
+  maxHealth: 0
+  groundCheckDistance: 0
+  defenseValue: 0
+  skills:
+  - {fileID: 11400000, guid: afd8ac864f8e87c42b1520d444fc31f6, type: 2}
+  - {fileID: 11400000, guid: 4566ceb8719355149ae9cb76745a7096, type: 2}
+  - {fileID: 11400000, guid: 3e2857cae97e17b49a45e123f5ad290f, type: 2}
+  - {fileID: 11400000, guid: a280607b7ccaf944cbe93097413cbcd4, type: 2}
+  - {fileID: 11400000, guid: 62dc54793527d1949812df52c20c7616, type: 2}
+  - {fileID: 11400000, guid: 08f4cb2051e0d274586bbc544345ce01, type: 2}
