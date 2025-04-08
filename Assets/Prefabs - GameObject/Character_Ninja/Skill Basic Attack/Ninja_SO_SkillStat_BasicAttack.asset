@@ -19,3 +19,7 @@ MonoBehaviour:
   skillDuration: 0.35
   skillCD: 1
   isPassiveSkill: 0
+<<<<<<< HEAD
+=======
+  sfxIndex: 1
+>>>>>>> Aaron-Branch

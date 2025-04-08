@@ -24,9 +24,15 @@ public static class Global
     public static readonly int projectileLayerIndex = LayerMask.NameToLayer(projectileLayerName);
 
     /* Scene */
+<<<<<<< HEAD
     public static readonly string mainMenuScene = "Main-MainMenu-Scene";
     public static readonly string skillSelectionScene = "Main-GamePlay-Scene"; //"Main-SkillSelection-Scene";
     public static readonly string gamePlayScene = "Main-GamePlay-Scene";
+=======
+    public static readonly string mainMenuScene = "Tri-MainMenu-Scene";
+    public static readonly string skillSelectionScene = "Tri-SkillSelection-Scene";
+    public static readonly string gamePlayScene = "Tri-GamePlay-Scene";
+>>>>>>> Aaron-Branch
     public static readonly string playerOneWinScene;
     public static readonly string playerTwoWinScene;
 

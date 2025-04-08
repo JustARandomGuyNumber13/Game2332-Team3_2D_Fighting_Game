@@ -68,7 +68,11 @@ public class PlayerHealthHandler : MonoBehaviour
 
     private void DeathCheck()
     {
+<<<<<<< HEAD
         if (!IsDead && health <= 0)
+=======
+        if (health <= 0)
+>>>>>>> Aaron-Branch
         {
             IsDead = true;
             OnDeathEvent?.Invoke();

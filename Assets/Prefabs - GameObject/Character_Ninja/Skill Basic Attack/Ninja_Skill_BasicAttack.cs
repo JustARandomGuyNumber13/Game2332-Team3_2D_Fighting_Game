@@ -20,7 +20,10 @@ public class Ninja_Skill_BasicAttack : Skill    // Skill_BasicAttack_Template.cs
     { 
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
+<<<<<<< HEAD
         _inputHandler.Public_StopMove();
+=======
+>>>>>>> Aaron-Branch
     }
     protected override void TriggerSkill()
     {

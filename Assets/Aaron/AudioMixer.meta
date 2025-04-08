@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Aaron/AudioMixer.meta
 guid: a31cc2aab8ab97d479c3f485a0c32c7b
+========
+guid: c1870be07176cea49844f04d00fa923d
+>>>>>>>> Aaron-Branch:Assets/Aaron/Assets and Scripts for Tri-Folder game scene/Temp Health Bar Assets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,0 +1,38 @@
+using UnityEngine;
+
+public class Trap : MonoBehaviour
+{
+    [SerializeField] private Vector2 spawnZoneMin;
+    [SerializeField] private Vector2 spawnZoneMax;
+    public bool IsAvailable { get; private set; }
+
+    public virtual void Activate()
+    {
+        IsAvailable = false;
+        gameObject.SetActive(true);
+        transform.position = GetRandomPos();
+        TrapBehavior();
+    }
+    protected Vector2 GetRandomPos()
+    { 
+        return Vector2.right * Random.Range(spawnZoneMin.x, spawnZoneMax.x) + Vector2.up * Random.Range(spawnZoneMin.y, spawnZoneMax.y);
+    }
+
+    protected virtual void Deactivate() 
+    {
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
+        IsAvailable = true;
+    }
+    protected virtual void TrapBehavior()
+    { 
+    
+    }
+
+    //Just for SpawnTest script. Will be deleted
+    public void InitializeSpawnZone(Vector2 min, Vector2 max)
+    {
+        spawnZoneMin = min;
+        spawnZoneMax = max;
+    }
+}

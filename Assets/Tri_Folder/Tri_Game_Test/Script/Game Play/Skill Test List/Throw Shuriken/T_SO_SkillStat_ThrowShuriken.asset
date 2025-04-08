@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc09c67b8716184aafad2f8c65faa29, type: 3}
+  m_Name: T_SO_SkillStat_ThrowShuriken
+  m_EditorClassIdentifier: 
+  skillPrefab: {fileID: 1027550227215723156, guid: deffad294c11ecf4ab98f5e7dcbb117d, type: 3}
+  skillSprite: {fileID: 4120901811166270815, guid: e8cdd2e0c451aeb4799db2565e7f11c4, type: 3}
+  skillName: Big Shuriken
+  skillDescription: Throw a big Shuriken that deal huge damage. Player can not crouch
+    dodge this attack.
+  skillDelay: 0
+  skillDuration: 0.5
+  skillCD: 5
+  isPassiveSkill: 0

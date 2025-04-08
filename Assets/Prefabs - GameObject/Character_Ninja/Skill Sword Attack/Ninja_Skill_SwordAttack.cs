@@ -19,10 +19,17 @@ public class Ninja_Skill_SwordAttack : Skill    // Skill_BasicAttack_Template.cs
     { 
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
+<<<<<<< HEAD
         _inputHandler.Public_StopMove();
     }
     protected override void TriggerSkill()
     {
+=======
+    }
+    protected override void TriggerSkill()
+    {
+        Debug.Log("Ninja Sword Attack", gameObject);
+>>>>>>> Aaron-Branch
         DebugDrawAttackBox();
         RaycastHit2D hit = Physics2D.BoxCast(
             (Vector2) transform.position +  (Vector2.right * transform.localScale.x * _attackOffset.x) + (Vector2.up * _attackOffset.y),

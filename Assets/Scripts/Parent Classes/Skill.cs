@@ -25,8 +25,14 @@ public abstract class Skill : MonoBehaviour
         if ((!skillStat.isPassiveSkill && _isCanUseSkill) || (skillStat.isPassiveSkill && _isPassiveSkillActive))
         {
             _isCanUseSkill = false;
+<<<<<<< HEAD
             //Debug.Log(GetType().Name, gameObject);
+=======
+            Debug.Log(GetType().Name, gameObject);
+>>>>>>> Aaron-Branch
             StartCoroutine(SkillCoroutine());
+
+            AudioPlayer._instance.Public_PlaySkillSFX(skillStat);
         }
     }
     public void DeactivateSkill() 

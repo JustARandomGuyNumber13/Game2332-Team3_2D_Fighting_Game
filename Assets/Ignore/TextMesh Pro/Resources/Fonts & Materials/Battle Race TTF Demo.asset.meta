@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Ignore/TextMesh Pro/Resources/Fonts & Materials/Battle Race TTF Demo.asset.meta
 guid: 20b604603f3d0ea42a4f9b46ed34dd1f
+========
+guid: 5bf988c43e5a89b459861cae720d5a81
+>>>>>>>> Aaron-Branch:Assets/Prefabs - GameObject/Character_Ninja/Ninja_SO_CharacterStat.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
