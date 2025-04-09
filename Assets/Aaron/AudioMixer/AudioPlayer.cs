@@ -8,6 +8,7 @@ using UnityEngine.Windows;
 
 //Note: I am aware of the mess of this code and will try to clean it up when everything is completed
 //Note: Move skills and selection IA audio to their respective player SFX method if possible
+//Note: Check each comment and figure out if it needs to be deleted
 
 
 [System.Serializable]
@@ -22,10 +23,12 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioSource _bgm, _sfx, _p1SFX, _p2SFX;
     [SerializeField] private AudioClip _menuBGM, _gameBGM, _selectionBGM;
     [SerializeField] private SkillAudioMapping[] skillAudioMappings;
-    private SO_SkillStat[] p1EquippedSkills = new SO_SkillStat[3];
-    private SO_SkillStat[] p2EquippedSkills = new SO_SkillStat[3];
+    [SerializeField] private GameObject p1PrefabInst;
+    [SerializeField] private GameObject p2PrefabInst;
+    /*private SO_SkillStat[] p1EquippedSkills = new SO_SkillStat[3];
+    private SO_SkillStat[] p2EquippedSkills = new SO_SkillStat[3];*/
 
-    //Player Skill Input Fields
+    /*//Player Skill Input Fields
     [Header("Player 1 Skill Inputs")]
     [SerializeField] private InputActionReference p1Skill1;
     [SerializeField] private InputActionReference p1Skill2;
@@ -34,7 +37,7 @@ public class AudioPlayer : MonoBehaviour
     [Header("Player 2 Skill Inputs")]
     [SerializeField] private InputActionReference p2Skill1;
     [SerializeField] private InputActionReference p2Skill2;
-    [SerializeField] private InputActionReference p2Skill3;
+    [SerializeField] private InputActionReference p2Skill3;*/
 
     //Selection Scene input fields
     [Header("Player 1 Input Actions")]
@@ -71,6 +74,7 @@ public class AudioPlayer : MonoBehaviour
     public static AudioPlayer _instance;
 
     private Dictionary<SO_SkillStat, AudioClip> _sfxMapping = new Dictionary<SO_SkillStat, AudioClip>();
+    private string playerName;
 
     private void Awake()
     {
@@ -92,7 +96,15 @@ public class AudioPlayer : MonoBehaviour
         {
             if (mapping.skillStat != null && mapping.sfxClip != null)
             {
-                _sfxMapping.Add(mapping.skillStat, mapping.sfxClip);
+                if (!_sfxMapping.ContainsKey(mapping.skillStat))
+                {
+                    _sfxMapping.Add(mapping.skillStat, mapping.sfxClip);
+                    //Debug.Log($"Mapped {mapping.skillStat.name} to {mapping.sfxClip.name}");
+                }
+                /*else
+                {
+                    Debug.LogWarning($"Duplicate mapping for {mapping.skillStat.name}. Skipping.");
+                }*/
             }
             else
             {
@@ -101,7 +113,14 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    private void BindSkillInput()
+    /*public void RegisteredPlayers(GameObject player1, GameObject player2)
+    {
+        p1PrefabInst = player1;
+        p2PrefabInst = player2;
+        Debug.Log($"Players registered: Player 1 = {player1.name}, Player 2 = {player2.name}");
+    }*/
+
+    /*private void BindSkillInput()
     {
         EnableIA();
 
@@ -174,19 +193,6 @@ public class AudioPlayer : MonoBehaviour
             p2EquippedSkills[skillIndex] = skill;
         }
         Debug.Log($"{playername} equipped {skill.name} in slot {skillIndex}");
-    }
-    /*private SO_SkillStat GetSkillStat(string playerName, int skillIndex)
-    {
-        if (playerName == "Player 1")
-        {
-            return skillAudioMappings[skillIndex].skillStat;
-        }
-
-        if (playerName == "Player 2")
-        {
-            return skillAudioMappings[skillIndex].skillStat;
-        }
-        return null;
     }*/
     private void OnEnable()
     {
@@ -248,9 +254,9 @@ public class AudioPlayer : MonoBehaviour
         p1GoBack.action.Enable();
         p1Ready.action.Enable();
 
-        p1Skill1.action.Enable();
+        /*p1Skill1.action.Enable();
         p1Skill2.action.Enable();
-        p1Skill3.action.Enable();
+        p1Skill3.action.Enable();*/
 
         //Player 2
         p2MoveRight.action.Enable();
@@ -259,9 +265,9 @@ public class AudioPlayer : MonoBehaviour
         p2GoBack.action.Enable();
         p2Ready.action.Enable();
 
-        p2Skill1.action.Enable();
+        /*p2Skill1.action.Enable();
         p2Skill2.action.Enable();
-        p2Skill3.action.Enable();
+        p2Skill3.action.Enable();*/
 
     }
 
@@ -274,9 +280,9 @@ public class AudioPlayer : MonoBehaviour
         p1GoBack.action.Disable();
         p1Ready.action.Disable();
 
-        p1Skill1.action.Disable();
+        /*p1Skill1.action.Disable();
         p1Skill2.action.Disable();
-        p1Skill3.action.Disable();
+        p1Skill3.action.Disable();*/
 
         //Player 2
         p2MoveRight.action.Disable();
@@ -285,9 +291,9 @@ public class AudioPlayer : MonoBehaviour
         p2GoBack.action.Disable();
         p2Ready.action.Disable();
 
-        p2Skill1.action.Disable();
+        /*p2Skill1.action.Disable();
         p2Skill2.action.Disable();
-        p2Skill3.action.Disable();
+        p2Skill3.action.Disable();*/
     }    
     
     private void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
@@ -319,7 +325,7 @@ public class AudioPlayer : MonoBehaviour
             DisableAudioMapping();
         }
 
-        if ( _scene.name == "Main-GamePlayer_Scene")
+        /*if ( _scene.name == "Main-GamePlayer_Scene")
         {
             BindSkillInput();
         }
@@ -327,7 +333,7 @@ public class AudioPlayer : MonoBehaviour
         else
         {
             UnbindSkillInput();
-        }
+        }*/
     }
 
     //Play sounds
@@ -353,8 +359,44 @@ public class AudioPlayer : MonoBehaviour
 
     public void Public_PlaySkillSFX(SO_SkillStat skillStat)
     {
+        if (skillStat == null)
+        {
+            Debug.LogWarning("SkillStat is null. Cannot play SFX.");
+            return;
+        }
+
         if (_sfxMapping.TryGetValue(skillStat, out AudioClip sfxClip))
         {
+            /*// Get the calling GameObject during runtime (e.g., skill execution context)
+            GameObject skillCaller = skillStat.SkillPrefab; // SkillPrefab might point to the instantiation context
+
+            if (skillCaller == null)
+            {
+                Debug.LogWarning("Skill caller is null. Cannot determine which player triggered the skill.");
+                return;
+            }
+
+            Debug.Log($"Skill triggered by: {skillCaller.name}");
+
+            // Match the caller to player instances
+            if (skillCaller.transform.IsChildOf(p1PrefabInst.transform))
+            {
+                Debug.Log($"Player 1 triggered skill {skillStat.name}, playing audio...");
+                Public_PlayP1SoundEffect(_sfxMapping[skillStat]);
+            }
+            else if (skillCaller.transform.IsChildOf(p2PrefabInst.transform))
+            {
+                Debug.Log($"Player 2 triggered skill {skillStat.name}, playing audio...");
+                Public_PlayP2SoundEffect(_sfxMapping[skillStat]);
+            }
+            else
+            {
+                Debug.LogWarning($"Skill caller does not match registered players for skill: {skillStat.name}. Playing default audio.");
+                Public_PlaySoundEffect(_sfxMapping[skillStat]); // Fallback
+            }*/
+
+
+            Debug.Log($"Playing SFX for skill: {skillStat.name}, AudioClip: {sfxClip.name}");
             Public_PlaySoundEffect(sfxClip);
         }
         else
