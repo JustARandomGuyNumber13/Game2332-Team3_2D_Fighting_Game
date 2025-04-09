@@ -28,7 +28,6 @@ public abstract class Skill : MonoBehaviour
             Debug.Log(GetType().Name, gameObject);
             StartCoroutine(SkillCoroutine());
 
-            //AudioPlayer._instance.Public_PlaySkillSFX(skillStat);
             AudioPlayer._instance.Public_PlaySkillSFX(skillStat, this.gameObject);
         }
     }
