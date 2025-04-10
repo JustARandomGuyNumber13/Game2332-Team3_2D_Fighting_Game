@@ -39,12 +39,8 @@ public class Camera_Manager : MonoBehaviour
 
         _playerMidPoint = (_player1.position + _player2.position) / 2;
         _playerDistance.x = Mathf.Abs(_player1.position.x - _player2.position.x);
-<<<<<<< HEAD
         //_playerDistance.y = Mathf.Abs(_player1.position.y - _player2.position.y);
         _playerDistance.y = Mathf.Max(Mathf.Abs(_player1.position.y - _bottom), Mathf.Abs(_player2.position.y - _bottom));
-=======
-        _playerDistance.y = Mathf.Abs(_player1.position.y - _player2.position.y);
->>>>>>> Aaron-Branch
         UpdateCameraSize();
         UpdateCameraPosition();
     }

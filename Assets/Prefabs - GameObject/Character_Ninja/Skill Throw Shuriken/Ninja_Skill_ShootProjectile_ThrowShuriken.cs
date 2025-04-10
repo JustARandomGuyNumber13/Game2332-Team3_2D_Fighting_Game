@@ -16,17 +16,10 @@ public class Ninja_Skill_ShootProjectile_ThrowShuriken : Skill  // Skill_ShootPr
     {
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
-<<<<<<< HEAD
         _inputHandler.Public_StopMove();
     }
     protected override void TriggerSkill()
     {
-=======
-    }
-    protected override void TriggerSkill()
-    {
-        Debug.Log("Ninja Throw Shuriken", gameObject);
->>>>>>> Aaron-Branch
         _projectilePrefab.LaunchProjectile(this.gameObject);
     }
     protected override void AfterSkill() 

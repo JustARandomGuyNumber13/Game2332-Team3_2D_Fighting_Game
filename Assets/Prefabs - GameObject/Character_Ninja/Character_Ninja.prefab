@@ -396,11 +396,7 @@ MonoBehaviour:
   OnAfterSkillEvent:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< HEAD
   _damageAmount: 50
-=======
-  _damageAmount: 5
->>>>>>> Aaron-Branch
   _attackBoxSize: {x: 1.24, y: 1.86}
   _attackOffset: {x: 1.12, y: -0.22}
 --- !u!114 &7799150831038751822
@@ -410,11 +406,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-<<<<<<< HEAD
   m_Enabled: 0
-=======
-  m_Enabled: 1
->>>>>>> Aaron-Branch
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad54d9c773792c148867454418a9c4d7, type: 3}
   m_Name: 
@@ -451,11 +443,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-<<<<<<< HEAD
   m_Enabled: 0
-=======
-  m_Enabled: 1
->>>>>>> Aaron-Branch
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58376caa85827764eaa80e8208f5b257, type: 3}
   m_Name: 
@@ -490,11 +478,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-<<<<<<< HEAD
   m_Enabled: 0
-=======
-  m_Enabled: 1
->>>>>>> Aaron-Branch
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 366d4df7f7f473e4fb334d0f4b263c35, type: 3}
   m_Name: 
@@ -541,11 +525,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-<<<<<<< HEAD
   m_Enabled: 0
-=======
-  m_Enabled: 1
->>>>>>> Aaron-Branch
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42c4e7cd91b8fd4469d34a0715699c9d, type: 3}
   m_Name: 
@@ -580,11 +560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-<<<<<<< HEAD
   m_Enabled: 0
-=======
-  m_Enabled: 1
->>>>>>> Aaron-Branch
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 899221d944cdc724a84b6903d0884df7, type: 3}
   m_Name: 
@@ -642,11 +618,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-<<<<<<< HEAD
   m_DefaultActionMap: Player2
-=======
-  m_DefaultActionMap: Player1
->>>>>>> Aaron-Branch
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &894462382725253810

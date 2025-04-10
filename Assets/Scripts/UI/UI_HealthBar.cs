@@ -34,6 +34,7 @@ public class UI_HealthBar : MonoBehaviour
         {
             _slider.maxValue = _maxHealth;            
             healthHandler.OnHealthDecreaseEvent.AddListener(UpdateUI_WithoutStage);
+            healthHandler.OnHealthDecreaseOverTimerEvent.AddListener(UpdateUI_WithoutStage);
             healthHandler.OnHealthIncreaseEvent.AddListener(UpdateUI_WithoutStage);
             UpdateUI_WithoutStage(_maxHealth);
         }
@@ -41,6 +42,7 @@ public class UI_HealthBar : MonoBehaviour
         {
             _slider.maxValue = _healthPerStage;
             healthHandler.OnHealthDecreaseEvent.AddListener(UpdateUI_WithStage);
+            healthHandler.OnHealthDecreaseOverTimerEvent.AddListener(UpdateUI_WithStage);
             healthHandler.OnHealthIncreaseEvent.AddListener(UpdateUI_WithStage);
             UpdateUI_WithStage(_maxHealth);
         }

@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Aaron/Assets and Scripts for Tri-Folder game scene/Temp Health Bar Assets.meta
-guid: c1870be07176cea49844f04d00fa923d
+<<<<<<<< HEAD:Assets/Aaron/GameObjects.meta
+guid: 4e3b84671de21fb48bb33adbe39a2a3d
 ========
-guid: 645a41bef7042f64e82c7971524f71e6
->>>>>>>> Aaron-Branch:Assets/Aaron/Assets and Scripts for Tri-Folder game scene/Scripts/Unused.meta
+guid: c1870be07176cea49844f04d00fa923d
+>>>>>>>> New_Main:Assets/Aaron/Assets and Scripts for Tri-Folder game scene/Temp Health Bar Assets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

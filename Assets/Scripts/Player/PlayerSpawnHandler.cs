@@ -30,6 +30,10 @@ public class PlayerSpawnHandler : MonoBehaviour
 
     private void SpawnCharacters()
     {
+        // yield return new waitforseconds();
+        //GameObject player = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab
+        // Animator anim = player.transform.child(0).GetComponent<Animator>();
+        // anim.Trigger("useSkill");
         p1 = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab, p1SpawnPos.position + Vector3.up * spawnPosOffsetY, p1SpawnPos.rotation);
         p1SpawnPos.transform.SetParent(p1.transform);
 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Aaron/Audio/Testing Audio ONLY/Punch Combo B.wav.meta
 guid: 36bfefb942aa77743a1f251bed97b8ae
+========
+guid: 47a98dd32934f044b96c4ff4bb9b619d
+>>>>>>>> New_Main:Assets/Aaron/Audio/Testing Audio ONLY/Parry Fail A.wav.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8

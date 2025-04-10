@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Stand_WalkForward.anim.meta
 guid: 43fc2c9fd47eb1148ac85f4c58be8467
+========
+guid: e2e2d0ccced69d84183df0246e24d3e7
+>>>>>>>> New_Main:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Dash.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

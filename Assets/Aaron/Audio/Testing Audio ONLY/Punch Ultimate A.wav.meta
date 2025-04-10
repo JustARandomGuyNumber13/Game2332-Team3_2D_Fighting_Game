@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Aaron/Audio/Testing Audio ONLY/Punch Ultimate A.wav.meta
-guid: 247050fee36f33b4e8fe45ace474aa02
-========
-guid: 47a98dd32934f044b96c4ff4bb9b619d
->>>>>>>> Aaron-Branch:Assets/Aaron/Audio/Testing Audio ONLY/Parry Fail A.wav.meta
+guid: f8d47f99aec0be14e87256ba46fe3bc1
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8

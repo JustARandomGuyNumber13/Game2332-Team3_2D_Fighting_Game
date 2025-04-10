@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 5e2004ab009987b4dbcedfd714d67fd1
+guid: 9ba44a191273af945aadd10a919f4c7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -614293327128696295
-    second: Ninja Indle Animation Spritesheet_0
+      213: -58605662807631736
+    second: Ninja Falling Animation Spritesheet_0
   - first:
-      213: 923112738784543349
-    second: Ninja Indle Animation Spritesheet_1
+      213: 8755965371014092853
+    second: Ninja Falling Animation Spritesheet_1
   - first:
-      213: 3496261999208921864
-    second: Ninja Indle Animation Spritesheet_2
+      213: -1603560770496784525
+    second: Ninja Falling Animation Spritesheet_2
   - first:
-      213: -4008305935647665349
-    second: Ninja Indle Animation Spritesheet_3
+      213: 4004007721237772663
+    second: Ninja Falling Animation Spritesheet_3
   - first:
-      213: -5662115284165902160
-    second: Ninja Indle Animation Spritesheet_4
+      213: -4595503151106738467
+    second: Ninja Falling Animation Spritesheet_4
   - first:
-      213: 5966687205105756210
-    second: Ninja Indle Animation Spritesheet_5
+      213: 399448263368725516
+    second: Ninja Falling Animation Spritesheet_5
   - first:
-      213: -1722112710996045419
-    second: Ninja Indle Animation Spritesheet_6
+      213: -8810005110914421341
+    second: Ninja Falling Animation Spritesheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,26 +127,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> Aaron-Branch
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      name: Ninja Falling Animation Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 2009
+        width: 1666
+        height: 1967
+========
       name: Ninja Idle Animation Spritesheet_0
       rect:
         serializedVersion: 2
@@ -176,6 +169,7 @@ TextureImporter:
         y: 2000
         width: 2000
         height: 2000
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,13 +178,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      spriteID: 888568ec57acf2ff0800000000000000
+      internalID: -58605662807631736
+========
       spriteID: e057fcfe2291774448848bd3e25f7a08
       internalID: -1845263058
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      name: Ninja Falling Animation Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 2108
+        y: 2009
+        width: 1666
+        height: 1967
+========
       name: Ninja Idle Animation Spritesheet_2
       rect:
         serializedVersion: 2
@@ -198,6 +206,7 @@ TextureImporter:
         y: 2000
         width: 2000
         height: 2000
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,13 +215,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      spriteID: 5389ae42d10738970800000000000000
+      internalID: 8755965371014092853
+========
       spriteID: bd011b68ec4ef12419eead9008222b87
       internalID: 1772794396
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      name: Ninja Falling Animation Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 4108
+        y: 2009
+        width: 1666
+        height: 1967
+========
       name: Ninja Idle Animation Spritesheet_3
       rect:
         serializedVersion: 2
@@ -220,6 +243,7 @@ TextureImporter:
         y: 2000
         width: 2000
         height: 2000
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,13 +252,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      spriteID: 37799caa9f10fb9e0800000000000000
+      internalID: -1603560770496784525
+========
       spriteID: d1ee0e0872b1b074691195502f586ceb
       internalID: -357721246
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      name: Ninja Falling Animation Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 6108
+        y: 2009
+        width: 1666
+        height: 1967
+========
       name: Ninja Idle Animation Spritesheet_4
       rect:
         serializedVersion: 2
@@ -242,6 +280,7 @@ TextureImporter:
         y: 0
         width: 2000
         height: 2000
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,13 +289,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      spriteID: 7797c4eeec7119730800000000000000
+      internalID: 4004007721237772663
+========
       spriteID: 207007e2a175d524c80655ea9ecfd3d8
       internalID: -795961611
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      name: Ninja Falling Animation Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 9
+        width: 1666
+        height: 1967
+========
       name: Ninja Idle Animation Spritesheet_5
       rect:
         serializedVersion: 2
@@ -264,6 +317,7 @@ TextureImporter:
         y: 0
         width: 2000
         height: 2000
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,13 +326,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      spriteID: dd6381a6b3e7930c0800000000000000
+      internalID: -4595503151106738467
+========
       spriteID: b4cd90b0f97ad09468ccf3984642b8dd
       internalID: 1811356538
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      name: Ninja Falling Animation Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2108
+        y: 9
+        width: 1666
+        height: 1967
+========
       name: Ninja Idle Animation Spritesheet_6
       rect:
         serializedVersion: 2
@@ -286,6 +354,7 @@ TextureImporter:
         y: 0
         width: 2000
         height: 2000
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,8 +363,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      spriteID: c045d3444102b8500800000000000000
+      internalID: 399448263368725516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ninja Falling Animation Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 4108
+        y: 9
+        width: 1666
+        height: 1967
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ade19e67039cb580800000000000000
+      internalID: -8810005110914421341
+========
       spriteID: 7626b35d214a3134ebe44b51e6f00658
       internalID: -1214240447
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
       vertices: []
       indices: 
       edges: []
@@ -314,6 +410,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Ninja Falling Animation Spritesheet.png.meta
+      Ninja Falling Animation Spritesheet_0: -58605662807631736
+      Ninja Falling Animation Spritesheet_1: 8755965371014092853
+      Ninja Falling Animation Spritesheet_2: -1603560770496784525
+      Ninja Falling Animation Spritesheet_3: 4004007721237772663
+      Ninja Falling Animation Spritesheet_4: -4595503151106738467
+      Ninja Falling Animation Spritesheet_5: 399448263368725516
+      Ninja Falling Animation Spritesheet_6: -8810005110914421341
+========
       Ninja Idle Animation Spritesheet_0: -1412792046
       Ninja Idle Animation Spritesheet_1: -1845263058
       Ninja Idle Animation Spritesheet_2: 1772794396
@@ -321,6 +426,7 @@ TextureImporter:
       Ninja Idle Animation Spritesheet_4: -795961611
       Ninja Idle Animation Spritesheet_5: 1811356538
       Ninja Idle Animation Spritesheet_6: -1214240447
+>>>>>>>> New_Main:Assets/Sprites/Ninja Animations/Ninja Idle Animation Spritesheet.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

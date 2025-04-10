@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Ninja_SO_SkillStat_Dash
   m_EditorClassIdentifier: 
+  SkillPrefab: {fileID: 0}
   skillSprite: {fileID: -5392625257635239999, guid: 2f62bd9087379214fb7a78fa5b30181e, type: 3}
-  skillName: Ninja Dash
-  skillDescription: 
+  skillName: Dash
+  skillDescription: Ned bursts forward in a quick dash, covering distance instantly
+    before stopping.
   skillDelay: 0
   skillDuration: 0.2
   skillCD: 3

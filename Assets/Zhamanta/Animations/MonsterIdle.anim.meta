@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Fall.anim.meta
-guid: 3b33ce42658df0f42b75f5ecaf90ef11
-========
 guid: ad8e90e5de3b0e64ba3d202499edceb9
->>>>>>>> origin/Zhamanta-Branch:Assets/Zhamanta/Animations/MonsterIdle.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

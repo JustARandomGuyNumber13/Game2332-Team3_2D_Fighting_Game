@@ -45,7 +45,8 @@ public class PlayerHealthHandler : MonoBehaviour
     }
 
     public void Public_DecreaseHealthOverTime(float amount, float duration, float tickDuration)
-    { 
+    {
+        Debug.Log("Coroutine");
         StartCoroutine(DecreaseHealthOverTimeCoroutine(amount, duration, tickDuration));
     }
     private IEnumerator DecreaseHealthOverTimeCoroutine(float amount, float duration, float tickDuration)
@@ -68,11 +69,7 @@ public class PlayerHealthHandler : MonoBehaviour
 
     private void DeathCheck()
     {
-<<<<<<< HEAD
         if (!IsDead && health <= 0)
-=======
-        if (health <= 0)
->>>>>>> Aaron-Branch
         {
             IsDead = true;
             OnDeathEvent?.Invoke();

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eae66be2049d414fb44f5976efe559d, type: 3}
   m_Name: Monster_SO_CharacterStat
   m_EditorClassIdentifier: 
-  characterName: 
-  characterDescription: 
-  characterSprite: {fileID: 0}
-  characterPrefab: {fileID: 894348835929635628, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
+  characterName: Quill
+  characterDescription: "Quill is one tough, spiky monster. With razor-sharp claws
+    and a back full of deadly quills, he\u2019s not someone you want to mess with.
+    He\u2019s rough, tough, and always ready to roll."
+  characterSprite: {fileID: 7400000, guid: ad8e90e5de3b0e64ba3d202499edceb9, type: 2}
+  characterPrefab: {fileID: 894348835929635628, guid: 10bc6156c63f9104db372e81e0080e17, type: 3}
   moveStandingSpeed: 3
   moveCrouchingSpeed: 2
   jumpForce: 9
