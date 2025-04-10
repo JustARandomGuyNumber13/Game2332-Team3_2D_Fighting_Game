@@ -29,7 +29,12 @@ public class PlayerSpawnHandler : MonoBehaviour
         _player2 = Instantiate(characterList.GetCharacterAt(p2Selection.CharacterIndex).characterPrefab, p2SpawnPos.position + Vector3.up * spawnPosOffsetY, p2SpawnPos.rotation);
         p2SpawnPos.transform.SetParent(_player2.transform);
 
-        AudioPlayer._instance.RegisteredPlayers(_player1, _player2);
+        AudioPlayer._instance.RegisteredPlayers(_player1, _player2); //Registering players to use skill audio
+
+        //Register plays to use hurt audio
+        var p1Healthhandler = _player1.GetComponent<PlayerHealthHandler>();
+        var p2Healthhandler = _player2.GetComponent<PlayerHealthHandler>();
+        AudioPlayer._instance.RegisteredHealthEvents(p1Healthhandler, p2Healthhandler);
     }
     private void SetUpCharacters()
     {

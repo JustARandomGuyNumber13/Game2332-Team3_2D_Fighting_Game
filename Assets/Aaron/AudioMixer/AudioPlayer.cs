@@ -25,6 +25,8 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private SkillAudioMapping[] skillAudioMappings;
     [SerializeField] private GameObject p1PrefabInst;
     [SerializeField] private GameObject p2PrefabInst;
+    [SerializeField] private AudioClip p1HurtClip;
+    [SerializeField] private AudioClip p2HurtClip;
 
     //Selection Scene input fields
     [Header("Player 1 Input Actions")]
@@ -107,6 +109,20 @@ public class AudioPlayer : MonoBehaviour
         Debug.Log($"Players registered: Player 1 = {player1.name}, Player 2 = {player2.name}");
     }
 
+    public void RegisteredHealthEvents(PlayerHealthHandler p1Health, PlayerHealthHandler p2Health)
+    {
+        p1Health.OnHealthDecreaseEvent.AddListener(health =>
+        {
+            Debug.Log($"Player 1 took damage");
+            Public_PlayP1SoundEffect(p1HurtClip);
+        });
+
+        p2Health.OnHealthDecreaseEvent.AddListener(health =>
+        {
+            Debug.Log($"Player 2 took damage");
+            Public_PlayP2SoundEffect(p2HurtClip);
+        });
+    }
     
     private void OnEnable()
     {
