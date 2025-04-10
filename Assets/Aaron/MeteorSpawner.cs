@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-public class PoisoningSpawner : Trap
+public class MeteorSpawner : Trap
 {
     [SerializeField] Camera mainCamera;
-    [SerializeField] Poisoning[] clouds;
-    [SerializeField] float cooldown;
+    [SerializeField] private MeteorTrap[] meteors;
+    [SerializeField] private float cooldown;
+    [SerializeField] private float deactivateDelay;
 
     Vector3 camPos;
     float camSize;
@@ -14,7 +15,6 @@ public class PoisoningSpawner : Trap
     {
         camPos = mainCamera.transform.position;
         camSize = mainCamera.orthographicSize * mainCamera.aspect;
-
         StartCoroutine(Cooldown());
     }
     protected override void TrapBehavior()
@@ -24,25 +24,23 @@ public class PoisoningSpawner : Trap
 
     private Vector3 SpawnRandomPoint()
     {
-
         float randomX = Random.Range(spawnZoneMin.x * camSize, spawnZoneMax.x * camSize);
-        float randomY = Random.Range(0, spawnZoneMax.y);
-
-        return new Vector3(randomX, randomY, 0);
+        float spawnPosY = spawnZoneMax.y * camSize; 
+        return new Vector3(randomX, spawnPosY, 0);
     }
 
     IEnumerator Cooldown()
     {
         int currentIndex = 0;
 
-        while (currentIndex < clouds.Length)
+        while (currentIndex < meteors.Length)
         {
-            clouds[currentIndex].Activate();
-            clouds[currentIndex].transform.position = SpawnRandomPoint();
+            meteors[currentIndex].Activate();
+            meteors[currentIndex].transform.position = SpawnRandomPoint();
             currentIndex++;
             yield return new WaitForSeconds(cooldown);
         }
 
-        Deactivate(); 
+        Invoke("Deactivate", deactivateDelay); 
     }
 }

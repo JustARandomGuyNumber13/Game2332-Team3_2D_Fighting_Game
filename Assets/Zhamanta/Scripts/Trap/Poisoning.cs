@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Poisoning : TrapParent
+public class Poisoning : Trap
 {
     [SerializeField] Vector3 targetScale;
     [SerializeField] float speed = 5f;

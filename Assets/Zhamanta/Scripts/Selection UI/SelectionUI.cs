@@ -79,6 +79,7 @@ public class SelectionUI : MonoBehaviour
 
     public bool isReady;
     public UnityEvent OnReadyCheck;
+    [SerializeField] private UnityEvent OnChangeSelection;
 
     void Start()
     {
@@ -136,9 +137,10 @@ public class SelectionUI : MonoBehaviour
             //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
 
             playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
+            OnReadyCheck?.Invoke();
         }
 
-        OnReadyCheck?.Invoke();
+        //OnReadyCheck?.Invoke();
     }
 
     public void Ready(InputAction.CallbackContext obj)
@@ -157,6 +159,7 @@ public class SelectionUI : MonoBehaviour
     {
         if (!isReady)
         {
+            OnChangeSelection?.Invoke();
             switch (currentSelectionMode)
             {
                 case selectionMode.characterSelection:
@@ -204,6 +207,7 @@ public class SelectionUI : MonoBehaviour
     {
         if (!isReady)
         {
+            OnChangeSelection?.Invoke();
             switch (currentSelectionMode)
             {
                 case selectionMode.characterSelection:

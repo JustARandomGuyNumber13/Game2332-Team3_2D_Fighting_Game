@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField] private Vector2 spawnZoneMin;
-    [SerializeField] private Vector2 spawnZoneMax;
+    [SerializeField] protected Vector2 spawnZoneMin;
+    [SerializeField] protected Vector2 spawnZoneMax;
     public bool IsAvailable { get; private set; }
 
     public virtual void Activate()
