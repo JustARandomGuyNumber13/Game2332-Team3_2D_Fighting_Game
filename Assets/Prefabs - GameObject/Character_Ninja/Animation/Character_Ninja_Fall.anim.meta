@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_SwordAttack.anim.meta
-guid: af0385e02d2f08143a3ba31587869a21
-========
 guid: 9574d0ef4a69a504282590a51c0d469f
->>>>>>>> New_Main:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Fall.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

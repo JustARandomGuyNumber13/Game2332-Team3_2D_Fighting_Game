@@ -20,7 +20,6 @@ public class Ninja_Skill_ShootProjectile_ConfusingBomb : Skill  // Skill_ShootPr
     }
     protected override void TriggerSkill()
     {
-        Debug.Log("Ninja Confusion Bomb", gameObject);
         _projectilePrefab.LaunchProjectile(this.gameObject);
     }
     protected override void AfterSkill() 

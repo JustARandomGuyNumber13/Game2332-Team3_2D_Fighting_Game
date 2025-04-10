@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Jump.anim.meta
 guid: 409930589dcfebb47be9125ca63acf6e
-========
-guid: 6ace10bb108c5874bb20d8a9755b34af
->>>>>>>> New_Main:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Crouching.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

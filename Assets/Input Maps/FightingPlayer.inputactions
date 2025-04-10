@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "93a630df-17fc-42f1-9b59-73e6c2e6c465",
                     "expectedControlType": "",
                     "processors": "",
@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "Crouch",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "c3c0da86-c20b-4a36-8387-e1634807241e",
                     "expectedControlType": "",
                     "processors": "",
@@ -226,7 +226,7 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "ac9ac864-f672-4dc6-a25d-f56b805079d6",
                     "expectedControlType": "",
                     "processors": "",
@@ -235,7 +235,7 @@
                 },
                 {
                     "name": "Crouch",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "9f27f10c-9362-45b2-9a6a-2240a4ca77c0",
                     "expectedControlType": "",
                     "processors": "",

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_ThrowAttack.anim.meta
-guid: 6ec0067f445ac10459fe08f915d1b8db
-========
 guid: 2603e3184b54eb243a0d494f57f61c61
->>>>>>>> New_Main:Assets/Prefabs - GameObject/Character_Ninja/Animation/Character_Ninja_Idle.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
