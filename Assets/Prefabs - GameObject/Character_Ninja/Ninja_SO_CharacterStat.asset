@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eae66be2049d414fb44f5976efe559d, type: 3}
   m_Name: Ninja_SO_CharacterStat
   m_EditorClassIdentifier: 
-  characterName: 
-  characterDescription: 
+  characterName: Ned
+  characterDescription: Ned is quick, quiet, and always ready for action. Whether
+    he's tossing shuriken with pinpoint accuracy, swinging his trusty sword, or causing
+    a little mayhem with his bombs, he always finds a way to outsmart his enemies.
   characterSprite: {fileID: 7400000, guid: 2603e3184b54eb243a0d494f57f61c61, type: 2}
   characterPrefab: {fileID: 894348835929635628, guid: b8cf48de53026cd42b7cfc54154c46fd, type: 3}
   moveStandingSpeed: 5
