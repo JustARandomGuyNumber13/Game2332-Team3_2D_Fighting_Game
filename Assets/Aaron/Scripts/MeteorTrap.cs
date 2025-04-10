@@ -3,6 +3,7 @@ using UnityEngine;
 public class MeteorTrap : Trap
 {
     [SerializeField] private GameObject explosionEffect;
+    [SerializeField] private int damage;
 
     protected override void TrapBehavior()
     {
