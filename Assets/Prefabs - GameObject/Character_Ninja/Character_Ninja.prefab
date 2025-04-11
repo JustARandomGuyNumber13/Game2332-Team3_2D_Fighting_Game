@@ -620,6 +620,13 @@ MonoBehaviour:
       m_Calls: []
   OnTriggerSkillEvent:
     m_PersistentCalls:
+      m_Calls: []
+  OnAfterSkillEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _jumpForce: 11.5
+  OnDoubleJumpEvent:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -607621967121678719}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -633,13 +640,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _jumpForce: 11.5
-  OnDoubleJumpEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6919178582193774328
 MonoBehaviour:
   m_ObjectHideFlags: 0
