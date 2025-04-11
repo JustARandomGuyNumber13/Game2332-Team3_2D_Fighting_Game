@@ -26,7 +26,7 @@ public class MeteorTrap : Trap
         OnActivate?. Invoke();
         Vector2 fallDirection = Vector2.right * GetRandomX();
         rb.AddForce(fallDirection, ForceMode2D.Impulse);
-        RotatePlayer(fallDirection);
+        //RotatePlayer(fallDirection);
         Invoke("Deactivate", lifeSpan);
     }
 
@@ -61,11 +61,11 @@ public class MeteorTrap : Trap
 
         Invoke("Deactivate", deactivateDelay);
     }
-    void RotatePlayer(Vector2 direction)
+    /*void RotatePlayer(Vector2 direction)
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.eulerAngles = new Vector3(0, 0, angle);
-    }
+    }*/
 
     private float GetRandomX()
     { 
