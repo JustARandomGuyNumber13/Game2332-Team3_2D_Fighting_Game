@@ -9,6 +9,7 @@ public class MeteorTrap : Trap
     [SerializeField] private float dmgAmount;
     [SerializeField] private float deactivateDelay;
     [SerializeField] private float lifeSpan;
+    [SerializeField] private float gravityScale;
 
     [SerializeField] private UnityEvent OnCollision;
     [SerializeField] private UnityEvent OnActivate;
@@ -28,6 +29,7 @@ public class MeteorTrap : Trap
         rb.AddForce(fallDirection, ForceMode2D.Impulse);
         //RotatePlayer(fallDirection);
         Invoke("Deactivate", lifeSpan);
+        rb.gravityScale = gravityScale;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
