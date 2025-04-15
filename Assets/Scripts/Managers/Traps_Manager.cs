@@ -20,12 +20,12 @@ public class Traps_Manager : MonoBehaviour
     private IEnumerator PhaseChangeCoroutine()
     {
         curSpawnRate = startSpawnRate;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(3);
         if(Game_Manager.IsEndGame) yield break;
         StartCoroutine(SpawnTrapCoroutine());
         StartCoroutine(IncreaseSpawnRateCoroutine());
 
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(180);
         if (Game_Manager.IsEndGame) yield break;
         SpawnDeathWall();
 
@@ -53,13 +53,16 @@ public class Traps_Manager : MonoBehaviour
     private Trap GetRandomTrap()
     {
         int randIndex = Random.Range(0, trapList.Length);
+        Debug.Log(randIndex);
 
         while (!trapList[randIndex].IsAvailable)
         {
             randIndex++;
-            if (randIndex == trapList.Length)
+            if (randIndex >= trapList.Length)
                 randIndex = 0;
         }
+
+        Debug.Log(trapList[randIndex].IsAvailable);
 
         return trapList[randIndex];
     }
