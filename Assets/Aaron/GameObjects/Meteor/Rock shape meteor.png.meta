@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rock shape meteor_0: 4921283104328443389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
