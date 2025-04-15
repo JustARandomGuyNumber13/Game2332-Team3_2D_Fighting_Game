@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kay_Bar_Slider_circle_0: 9210316967723503600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
