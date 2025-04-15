@@ -42,7 +42,6 @@ public class WinScene : MonoBehaviour
             Debug.Log("moving");
             player.transform.position = Vector3.Lerp(player.transform.position, originalPosition + new Vector3(-5, 0, 0), Time.deltaTime * speedPosition);
         }
-
     }
 
     IEnumerator AnimationSequence()
