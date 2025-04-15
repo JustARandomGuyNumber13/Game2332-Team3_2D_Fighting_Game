@@ -898,6 +898,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8611625832512351967, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+    - target: {fileID: 8611625832512351967, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 73ab423b-d9b3-4433-b7e9-5708b128fbc8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2090,6 +2098,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 697304483731040255, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+    - target: {fileID: 697304483731040255, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player1
+      objectReference: {fileID: 0}
     - target: {fileID: 2392894210861560353, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
       propertyPath: m_Name
       value: UIManager (Player 1)
@@ -2543,7 +2559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &348086933
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3534,10 +3550,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
-  _p1ChooseText: {fileID: 2085994196}
+  _p1ConfirmText: {fileID: 2085994196}
   _p1ReadyText: {fileID: 1308007343}
   _p1BackText: {fileID: 356642578}
-  _p2ChooseText: {fileID: 36278552}
+  _p2ConfirmText: {fileID: 36278552}
   _p2ReadyText: {fileID: 1598352186}
   _p2BackText: {fileID: 305111742}
 --- !u!4 &616536595
@@ -8209,7 +8225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1892174787
 MonoBehaviour:
   m_ObjectHideFlags: 0

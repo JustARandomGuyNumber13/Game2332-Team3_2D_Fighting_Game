@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SelectionUINavigator : MonoBehaviour
+/*public class SelectionUINavigator : MonoBehaviour
 {
     [SerializeField]
     private GameObject UIManager;
@@ -10,9 +10,9 @@ public class SelectionUINavigator : MonoBehaviour
     public InputActionReference moveLeft;
     public InputActionReference confirm;
     public InputActionReference goBack;
-    public InputActionReference ready;
+    public InputActionReference ready;*/
 
-    private void OnEnable()
+/*    private void OnEnable()
     {
         SelectionUI selectionUI = UIManager.GetComponent<SelectionUI>();
 
@@ -31,3 +31,4 @@ public class SelectionUINavigator : MonoBehaviour
     }
     
 }
+*/
