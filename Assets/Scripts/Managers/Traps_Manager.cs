@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class Traps_Manager : MonoBehaviour
 {
+    [SerializeField] private float phaseOneDuration;
+    [SerializeField] private float phaseTwoDuration;
+    [SerializeField] private float phaseThreeDuration;
+
     [SerializeField] private Trap[] trapList;
     [SerializeField] private Trap deathWall;
 
@@ -20,16 +24,16 @@ public class Traps_Manager : MonoBehaviour
     private IEnumerator PhaseChangeCoroutine()
     {
         curSpawnRate = startSpawnRate;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(phaseOneDuration);
         if(Game_Manager.IsEndGame) yield break;
         StartCoroutine(SpawnTrapCoroutine());
         StartCoroutine(IncreaseSpawnRateCoroutine());
 
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(phaseTwoDuration);
         if (Game_Manager.IsEndGame) yield break;
         SpawnDeathWall();
 
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(phaseThreeDuration);
         if (Game_Manager.IsEndGame) yield break;
         ActivateDeathWall();
     }
