@@ -25,9 +25,14 @@ public class DeathWallTrap : Trap
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    protected override void TrapBehavior()
     {
         StartCoroutine(MoveDeathWall());
+
+        if (Game_Manager.IsEndGame)
+        {
+            StopAllCoroutines();
+        }
     }
 
 
