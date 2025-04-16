@@ -175,7 +175,7 @@ MonoBehaviour:
   xLaunchForceMin: -3.5
   xLaunchForceMax: 3.5
   explosionRadius: 5
-  dmgAmount: 30
+  dmgAmount: 1
   deactivateDelay: 3
   lifeSpan: 5
   gravityScale: 5
@@ -5070,7 +5070,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.182
+  m_Volume: 0.091
   m_Pitch: 1
   Loop: 0
   Mute: 0

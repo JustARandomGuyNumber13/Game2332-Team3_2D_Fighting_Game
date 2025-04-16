@@ -25,7 +25,7 @@ public class Traps_Manager : MonoBehaviour
         StartCoroutine(SpawnTrapCoroutine());
         StartCoroutine(IncreaseSpawnRateCoroutine());
 
-        yield return new WaitForSeconds(180);
+        yield return new WaitForSeconds(10);
         if (Game_Manager.IsEndGame) yield break;
         SpawnDeathWall();
 
