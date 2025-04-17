@@ -31,11 +31,11 @@ public class WinScene : MonoBehaviour
         rematchButton.SetActive(false);
         menuButton.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name == "Player1Win")
+        if (SceneManager.GetActiveScene().name == Global.player1WinScene)
         {
             player = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab);
         }
-        else if (SceneManager.GetActiveScene().name == "Player2Win")
+        else if (SceneManager.GetActiveScene().name == Global.player2WinScene)
         {
             player = Instantiate(characterList.GetCharacterAt(p2Selection.CharacterIndex).characterPrefab);
         }
