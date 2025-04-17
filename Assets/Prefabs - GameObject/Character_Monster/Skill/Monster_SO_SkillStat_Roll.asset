@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Monster_SO_SkillStat_Roll
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: -2903757803667343341, guid: 05c14b5cde9e2a5449b0faf28f2d2450, type: 3}
-  skillName: 
-  skillDescription: 
+  skillSprite: {fileID: 2723710538360154768, guid: f972b22117a8d0749965f12a021f8b46, type: 3}
+  skillName: Spiked Roll
+  skillDescription: Quill curls into a spiked ball and rolls forward, crashing into
+    anything in his path.  He is inmune during this.
   skillDelay: 0
   skillDuration: 1
   skillCD: 3

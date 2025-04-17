@@ -27,6 +27,8 @@ public static class Global
     public static readonly string mainMenuScene = "Main-MainMenu-Scene";
     public static readonly string skillSelectionScene = "Main-Selection-Scene"; 
     public static readonly string gamePlayScene = "Main-GamePlay-Scene";
+    public static readonly string player1WinScene = "Main-Player1Win-Scene";
+    public static readonly string player2WinScene = "Main-Player2Win-Scene";
     public static readonly string playerOneWinScene;
     public static readonly string playerTwoWinScene;
 

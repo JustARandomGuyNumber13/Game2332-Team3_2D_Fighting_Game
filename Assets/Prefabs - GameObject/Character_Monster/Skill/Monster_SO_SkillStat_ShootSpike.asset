@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Monster_SO_SkillStat_ShootSpike
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: -2658475604768968723, guid: 412d2c7a8ceb1574682d2016827b08f5, type: 3}
-  skillName: 
-  skillDescription: 
+  skillSprite: {fileID: 6945613534497980485, guid: 3429ef9058490d140a45abee75707522, type: 3}
+  skillName: Quill Barrage
+  skillDescription: Quill hurls his sharp spikes forward, launching them with great
+    force toward his enemy.
   skillDelay: 0
   skillDuration: 0.35
   skillCD: 3

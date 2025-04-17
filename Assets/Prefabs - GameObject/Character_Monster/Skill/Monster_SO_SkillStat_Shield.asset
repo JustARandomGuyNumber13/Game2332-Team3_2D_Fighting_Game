@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Monster_SO_SkillStat_Shield
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: 842234751411000168, guid: b33637e846b174646b1cca01b80be9fc, type: 3}
-  skillName: 
-  skillDescription: 
+  skillSprite: {fileID: 2389193319765324094, guid: 0d536e19065fc6d42adf0479dd325937, type: 3}
+  skillName: Shield
+  skillDescription: Quill's spikes form a protective barrier around him. Anyone who
+    comes too close is met with a painful jab.
   skillDelay: 0
   skillDuration: 3
   skillCD: 3
