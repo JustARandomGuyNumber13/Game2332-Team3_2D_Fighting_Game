@@ -13,7 +13,6 @@ using UnityEditor;
 
 public class SelectionUI : MonoBehaviour
 {
-    //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
     public TMP_Text nameText;
@@ -27,11 +26,6 @@ public class SelectionUI : MonoBehaviour
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
-
-    /*[SerializeField]
-    private Image activeSlotHighlight;
-    [SerializeField]
-    private Image selectedSkillHighlight;*/
 
     [SerializeField]
     Image activeSlotHighlight;
@@ -58,15 +52,6 @@ public class SelectionUI : MonoBehaviour
 
     [SerializeField]
     private Image fadeImage;
-    [SerializeField]
-    Color targetColor1;
-    [SerializeField]
-    Color targetColor2;
-    [SerializeField]
-    Color targetColor3;
-    [SerializeField]
-    float fadeSpeed;
-    Color currentTarget;
 
     private int playerSkill1;
     private int playerSkill2;
@@ -83,8 +68,7 @@ public class SelectionUI : MonoBehaviour
 
     void Start()
     {
-        currentTarget = targetColor1;
-        fadeImage.enabled = false;
+        fadeImage.gameObject.SetActive(false);
 
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
@@ -106,10 +90,6 @@ public class SelectionUI : MonoBehaviour
 
         UpdateCharacter(selectedOption);
     }
-    private void Update()
-    {
-        //FadeImageLoop();
-    }
 
     public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
     {
@@ -122,13 +102,19 @@ public class SelectionUI : MonoBehaviour
     {
         isReady = isReady ? false : true;
         readyText.enabled = !readyText.enabled;
-        fadeImage.enabled = !fadeImage.enabled;
+        //fadeImage.enabled = !fadeImage.enabled;
+        if (!fadeImage.gameObject.activeSelf)
+        {
+            fadeImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            fadeImage.gameObject.SetActive(false);
+        }
 
         if (isReady)
         {
-            //FadeImageLoop();
             Debug.Log("Save data");
-            //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
 
             playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
             OnReadyCheck?.Invoke();
@@ -307,13 +293,8 @@ public class SelectionUI : MonoBehaviour
 
     private void SelectableSlotHighlight(int selectedActiveIndex)
     {
-        //Vector2 overallPosition = superParentA.GetComponent<RectTransform>().anchoredPosition;
         Vector2 position = superParentA.GetChild(selectedActiveIndex).GetComponent<RectTransform>().position;
- 
-        //highlight1Position.anchoredPosition = overallPosition;
         highlight1Position.position = position;
-   
-   
     }
 
     private void SelectedSkillHighlight(int selectedSkillIndex)
@@ -321,52 +302,6 @@ public class SelectionUI : MonoBehaviour
         Vector2 position = superParentB.GetChild(selectedSkillIndex).GetComponent<RectTransform>().position;
         highlight2Position.position = position;
     }
-
-    /*private void FadeImageLoop()
-    {
-        var currentColor = fadeImage.color;
-        //var currentTarget = targetColor1;
-
-
-        if (isReady)
-        {
-
-        Debug.Log("Loop Started");
-            if (currentTarget == targetColor1)   
-            {
-                currentColor = Color.Lerp(currentColor, targetColor1, fadeSpeed * Time.deltaTime);
-                fadeImage.color = currentColor;
-                if (currentColor == targetColor1)
-                { 
-                    currentTarget = targetColor2;
-                }
-
-            }
-
-            if (currentTarget == targetColor2)
-            {
-                currentColor = Color.Lerp(currentColor, targetColor2, fadeSpeed * Time.deltaTime);
-                fadeImage.color = currentColor;
-                if (currentColor == targetColor2)
-                {
-                    currentTarget = targetColor3;
-                }
-
-            }
-
-            if (currentTarget == targetColor3)
-                {
-                    currentColor = Color.Lerp(currentColor, targetColor3, fadeSpeed * Time.deltaTime);
-                    fadeImage.color = currentColor;
-                    if (currentColor == targetColor3)
-                    {
-                        currentTarget = targetColor1;
-                    }
-
-                }
-        }
-    }*/
-
 
     //Return skill to original slot
     private void returnToParent(int index)

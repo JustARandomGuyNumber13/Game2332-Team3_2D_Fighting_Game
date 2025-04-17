@@ -96,7 +96,7 @@ public class WinScene : MonoBehaviour
         menuButton.SetActive(true);
     }
 
-    private void FadeImageLoop()
+    /*private void FadeImageLoop()
     {
         var currentColor = fadeImage.color;
         //var currentTarget = targetColor1;
@@ -139,5 +139,5 @@ public class WinScene : MonoBehaviour
 
             }
         }
-    }
+    }*/
 }

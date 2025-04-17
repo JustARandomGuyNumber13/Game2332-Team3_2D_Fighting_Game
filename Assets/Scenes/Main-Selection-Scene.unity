@@ -1206,6 +1206,7 @@ GameObject:
   - component: {fileID: 127162685}
   - component: {fileID: 127162687}
   - component: {fileID: 127162686}
+  - component: {fileID: 127162688}
   m_Layer: 5
   m_Name: fadeImage
   m_TagString: Untagged
@@ -1239,7 +1240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127162684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1270,6 +1271,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127162684}
   m_CullTransparentMesh: 1
+--- !u!114 &127162688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127162684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913af265d016cd242ae26d62d48655e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 127162686}
+  targetColor1: {r: 0.9098039, g: 0.8509804, b: 0.32156864, a: 0.5568628}
+  targetColor2: {r: 0.7882353, g: 0.56078434, b: 0.13725491, a: 0.52156866}
+  targetColor3: {r: 0.69803923, g: 0.69411767, b: 0.14117648, a: 0.47843137}
+  fadeSpeed: 8
 --- !u!1 &194874974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,12 +2617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b0693bb867c9145ae0a1d89d887d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManager: {fileID: 306473781}
-  moveRight: {fileID: 6659662311265590404, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  moveLeft: {fileID: -5714886686677504438, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  confirm: {fileID: 4948525878046653578, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  goBack: {fileID: -2374657669864705253, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  ready: {fileID: -5230940896046336765, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
 --- !u!114 &348086936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4314,6 +4326,7 @@ GameObject:
   - component: {fileID: 1025606683}
   - component: {fileID: 1025606685}
   - component: {fileID: 1025606684}
+  - component: {fileID: 1025606686}
   m_Layer: 5
   m_Name: fadeImage (1)
   m_TagString: Untagged
@@ -4347,7 +4360,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025606682}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4378,6 +4391,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025606682}
   m_CullTransparentMesh: 1
+--- !u!114 &1025606686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025606682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913af265d016cd242ae26d62d48655e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 1025606684}
+  targetColor1: {r: 0.9098039, g: 0.8509804, b: 0.32156864, a: 0.5568628}
+  targetColor2: {r: 0.7882353, g: 0.56078434, b: 0.13725491, a: 0.52156866}
+  targetColor3: {r: 0.69803923, g: 0.69411767, b: 0.14117648, a: 0.47843137}
+  fadeSpeed: 8
 --- !u!1001 &1078902898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8268,12 +8298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b0693bb867c9145ae0a1d89d887d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManager: {fileID: 88653558}
-  moveRight: {fileID: -3313307989381570077, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  moveLeft: {fileID: -634296012980189698, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  confirm: {fileID: 7885695002781212112, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  goBack: {fileID: 4832704747103483549, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
-  ready: {fileID: -6060766887533525659, guid: c83feb7e0f26d7143a2088159c505ccf, type: 3}
 --- !u!222 &1892174789
 CanvasRenderer:
   m_ObjectHideFlags: 0
