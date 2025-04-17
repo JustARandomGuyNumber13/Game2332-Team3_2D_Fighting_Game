@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6431413452647983203}
   - component: {fileID: 118099661396102203}
   - component: {fileID: 8342384691030980550}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Poisonous Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnZoneMin: {x: 0, y: 0}
   spawnZoneMax: {x: 0, y: 0}
+  IsAvailable: 1
   targetScale: {x: 5, y: 5, z: 5}
   speed: 5
   lifeSpan: 5

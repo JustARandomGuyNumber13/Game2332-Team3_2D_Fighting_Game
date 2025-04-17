@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster Quill Attack Spritesheet_0: -4302967144452405517
+      Monster Quill Attack Spritesheet_1: -8003780054189496366
+      Monster Quill Attack Spritesheet_2: -2419949828091560560
+      Monster Quill Attack Spritesheet_3: 1480352908696576554
+      Monster Quill Attack Spritesheet_4: -6439119946695122013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

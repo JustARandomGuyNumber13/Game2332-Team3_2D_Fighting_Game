@@ -10,11 +10,14 @@ public class Traps_Manager : MonoBehaviour
     [SerializeField] private Trap[] trapList;
     [SerializeField] private Trap deathWall;
 
-    [SerializeField] private float startSpawnRate;
-    [SerializeField] private float decreaseRate;
-    [SerializeField] private float rateDecreaseInterval;
-    [SerializeField] private int decreaseCount;
-    private float curSpawnRate;
+    [SerializeField] private float spawnRate;
+    private int curIndex;
+
+    //[SerializeField] private float startSpawnRate;
+    //[SerializeField] private float decreaseRate;
+    //[SerializeField] private float rateDecreaseInterval;
+    //[SerializeField] private int decreaseCount;
+    //private float curSpawnRate;
 
     public void Public_StartGame()
     {
@@ -23,11 +26,11 @@ public class Traps_Manager : MonoBehaviour
 
     private IEnumerator PhaseChangeCoroutine()
     {
-        curSpawnRate = startSpawnRate;
+        //curSpawnRate = startSpawnRate;
         yield return new WaitForSeconds(phaseOneDuration);
         if(Game_Manager.IsEndGame) yield break;
         StartCoroutine(SpawnTrapCoroutine());
-        StartCoroutine(IncreaseSpawnRateCoroutine());
+        //StartCoroutine(IncreaseSpawnRateCoroutine());
 
         yield return new WaitForSeconds(phaseTwoDuration);
         if (Game_Manager.IsEndGame) yield break;
@@ -42,50 +45,45 @@ public class Traps_Manager : MonoBehaviour
         while (!Game_Manager.IsEndGame)
         {
             GetRandomTrap().Activate();
-            yield return new WaitForSeconds(curSpawnRate);
+            yield return new WaitForSeconds(spawnRate);
         }
     }
-    private IEnumerator IncreaseSpawnRateCoroutine()
-    { 
-        while(!Game_Manager.IsEndGame)
-        {
-            yield return new WaitForSeconds(rateDecreaseInterval);
-            if (decreaseCount > 0) curSpawnRate -= decreaseRate;
-        }
-    }
+    //private IEnumerator IncreaseSpawnRateCoroutine()
+    //{ 
+    //    while(!Game_Manager.IsEndGame)
+    //    {
+    //        yield return new WaitForSeconds(rateDecreaseInterval);
+    //        if (decreaseCount > 0) curSpawnRate -= decreaseRate;
+    //    }
+    //}
+
+    //private Trap GetRandomTrap()
+    //{
+    //    int randIndex = Random.Range(0, trapList.Length - 1);
+
+    //    while (!trapList[randIndex].IsAvailable)
+    //    {
+    //        randIndex--;
+    //        //if (randIndex == trapList.Length)
+    //        //    randIndex = 0;
+
+    //        if (randIndex == -1)
+    //            randIndex = trapList.Length - 1;
+    //    }
+
+    //    return trapList[randIndex];
+    //}
 
     private Trap GetRandomTrap()
     {
-        int randIndex = Random.Range(0, trapList.Length - 1);
+        Trap trap = trapList[curIndex];
+        curIndex++;
 
-        //while (!trapList[randIndex].IsAvailable)
-        //{
-        //    randIndex++;
-        //    if (randIndex == trapList.Length)
-        //        randIndex = 0;
-        //}
+        if (curIndex >= trapList.Length)
+            curIndex = 0;
 
-        return trapList[randIndex];
+        return trap;
     }
-
-    //int randI = 0;
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //        {
-    //            randI = Random.Range(0, trapList.Length - 1);
-    //            Debug.Log("Index: " + randI + ", Available: " + trapList[randI].IsAvailable);
-    //        }
-    //    if (Input.GetKeyDown(KeyCode.LeftShift))
-    //    {
-    //        randI++;
-    //        if (randI == trapList.Length)
-    //        {
-    //            randI = 0;
-    //        }
-    //        Debug.Log("Index: " + randI + ", Available: " + trapList[randI].IsAvailable);
-    //    }
-    //}
 
     private void SpawnDeathWall()
     { 

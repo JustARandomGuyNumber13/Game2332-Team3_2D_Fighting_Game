@@ -13,7 +13,10 @@ public class Scene_Manager : MonoBehaviour
     {
         StartCoroutine(GoToSceneCoroutine(delay, Global.gamePlayScene));
     }
-
+    public void UI_GoToMainMenuScene(float delay)
+    {
+        StartCoroutine(GoToSceneCoroutine(delay, Global.mainMenuScene));
+    }
 
     private IEnumerator GoToSceneCoroutine(float delay, string sceneName)
     { 

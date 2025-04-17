@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7610812263836376223}
   - component: {fileID: 1502095578826850885}
   - component: {fileID: -2574312308738226282}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnZoneMin: {x: -0.9, y: 0}
   spawnZoneMax: {x: 0.9, y: 1.3}
+  IsAvailable: 1
   xLaunchForceMin: -3.5
   xLaunchForceMax: 3.5
   explosionRadius: 2
