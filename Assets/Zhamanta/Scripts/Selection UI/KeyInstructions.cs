@@ -33,8 +33,8 @@ public class KeyInstructions : MonoBehaviour
 
     private void SetUpInstruction(TMP_Text confirmText, TMP_Text readyText, TMP_Text backText, InputActionMap map)
     {
-        confirmText.text += "Confirm: " + map.FindAction("SkillTwo").GetBindingDisplayString();
+        confirmText.text += "Confirm: " + map.FindAction("SkillOne").GetBindingDisplayString();
+        backText.text += "Back: " + map.FindAction("SkillTwo").GetBindingDisplayString();
         readyText.text += "Ready: " + map.FindAction("SkillThree").GetBindingDisplayString();
-        backText.text += "Back: " + map.FindAction("SkillOne").GetBindingDisplayString();
     }
 }

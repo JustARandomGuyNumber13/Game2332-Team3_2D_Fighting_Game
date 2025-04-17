@@ -143,8 +143,9 @@ public class SelectionUI : MonoBehaviour
     private void ChangeSelections(float direction)
     {
         if (isReady || (direction == 0)) return;
+        OnChangeSelection?.Invoke();
 
-        switch(currentSelectionMode)
+        switch (currentSelectionMode)
         {
             case selectionMode.characterSelection:
                 ChangeCharacters(direction);
@@ -187,6 +188,7 @@ public class SelectionUI : MonoBehaviour
 
     private void ChooseSkill(float direction)
     {
+        OnChangeSelection?.Invoke();
         selectedSkillIndex += (int) direction;
 
         if (selectedSkillIndex == 5)
@@ -199,7 +201,7 @@ public class SelectionUI : MonoBehaviour
         SelectedSkillHighlight(selectedSkillIndex);
     }
 
-    private void OnSkillTwo() //Confirm
+    private void OnSkillOne() //Confirm
     {
         if (!isReady)
         {
@@ -237,7 +239,7 @@ public class SelectionUI : MonoBehaviour
         }
     }
 
-    private void OnSkillOne() //GoBack
+    private void OnSkillTwo() //GoBack
     {
         if (!isReady)
         {
@@ -278,7 +280,7 @@ public class SelectionUI : MonoBehaviour
 
         SO_CharacterStat characterStat = characterList.GetCharacterAt(selectedOption);
 
-        Debug.Log(characterStat.characterSprite.name);
+        //Debug.Log(characterStat.characterSprite.name);
         artworkSprite.Play(characterStat.characterSprite.name);
         nameText.text = characterStat.characterName;
         characterDescription.text = characterStat.characterDescription;
@@ -313,11 +315,11 @@ public class SelectionUI : MonoBehaviour
 
     private void getSkillIndex()
     {
-        Debug.Log("Test Update");
+        //Debug.Log("Test Update");
         int.TryParse(superParentA.GetChild(0).GetChild(0).name, out playerSkill1);
         int.TryParse(superParentA.GetChild(1).GetChild(0).name, out playerSkill2);
         int.TryParse(superParentA.GetChild(2).GetChild(0).name, out playerSkill3);
-        Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
+        //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
     }
 
     private void Load()

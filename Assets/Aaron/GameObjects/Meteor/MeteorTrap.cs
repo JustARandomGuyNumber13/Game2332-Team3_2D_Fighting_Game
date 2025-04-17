@@ -14,12 +14,14 @@ public class MeteorTrap : Trap
     [SerializeField] private UnityEvent OnCollision;
     [SerializeField] private UnityEvent OnActivate;
     private Rigidbody2D rb;
+    private Collider2D col;
 
     private PlayerHealthHandler p1, p2;
 
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        col = rb.GetComponent<Collider2D>();
     }
 
     protected override void TrapBehavior()
@@ -30,6 +32,7 @@ public class MeteorTrap : Trap
         //RotatePlayer(fallDirection);
         Invoke("Deactivate", lifeSpan);
         rb.gravityScale = gravityScale;
+        col.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,8 +40,11 @@ public class MeteorTrap : Trap
         if (collision.gameObject.layer != Global.groundLayerIndex && collision.gameObject.layer != Global.playerLayerIndex)
             return;
 
-        rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = 0;
+        if (collision.gameObject.layer == Global.groundLayerIndex)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.gravityScale = 0;
+        }
 
         RaycastHit2D[] hitList;
         hitList = Physics2D.CircleCastAll(transform.position, explosionRadius, Vector2.zero, 0, Global.playerLayer);
@@ -58,7 +64,7 @@ public class MeteorTrap : Trap
                 }
             }
 
-        // TODO: Play explosion animation and audio from Unity Event
+        col.enabled = false;
         OnCollision?.Invoke();
 
         Invoke("Deactivate", deactivateDelay);
@@ -68,6 +74,12 @@ public class MeteorTrap : Trap
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.eulerAngles = new Vector3(0, 0, angle);
     }*/
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(transform.position, explosionRadius);
+    }
 
     private float GetRandomX()
     { 
