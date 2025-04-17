@@ -25,8 +25,8 @@ MonoBehaviour:
   groundCheckDistance: 1.5
   defenseValue: 0
   skills:
+  - {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
   - {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}
   - {fileID: 11400000, guid: c1b2a5c9246725a4b88d84037d8cd289, type: 2}
   - {fileID: 11400000, guid: c2b0668b487ba0c41b17e7e468791b5c, type: 2}
   - {fileID: 11400000, guid: df3b46a8391b4674588dbe3143e23c28, type: 2}
-  - {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}

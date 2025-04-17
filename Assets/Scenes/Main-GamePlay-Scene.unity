@@ -194,6 +194,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4112194}
   m_CullTransparentMesh: 1
+--- !u!1 &7019472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7019473}
+  - component: {fileID: 7019474}
+  m_Layer: 0
+  m_Name: Trap Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7019473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2105486039}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7019474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a68a7e029bd92b4f96f61e8382250f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOneDuration: 45
+  phaseTwoDuration: 45
+  phaseThreeDuration: 30
+  trapList: []
+  deathWall: {fileID: 0}
+  startSpawnRate: 30
+  decreaseRate: 5
+  minSpawnRate: 14
+  rateDecreaseInterval: 20
 --- !u!1 &53196940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,6 +4653,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5331235045495899256, guid: c1b5392279cb1994db19822912749caa, type: 3}
+      propertyPath: _audioSettingCanvasPrefab
+      value: 
+      objectReference: {fileID: 1317868938}
     - target: {fileID: 5428809045973853410, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4901,6 +4958,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1317868938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1001026702282906145, guid: c1b5392279cb1994db19822912749caa, type: 3}
+  m_PrefabInstance: {fileID: 1196009850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1321029226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8150,6 +8212,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 463322684}
+  - {fileID: 7019473}
   - {fileID: 1277310350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8411,7 +8474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3999885981312988600, guid: 56d43dfad888e424c954bae71fbf3cec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4380401970793052523, guid: 56d43dfad888e424c954bae71fbf3cec, type: 3}
       propertyPath: m_Pivot.x

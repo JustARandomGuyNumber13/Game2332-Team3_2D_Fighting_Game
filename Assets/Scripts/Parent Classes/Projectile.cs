@@ -1,11 +1,16 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
     [SerializeField] protected Vector2 _spawnOffset;
     [SerializeField] protected float _damageAmount;
     [SerializeField] protected float _launchSpeed;
+    [SerializeField] private float lifeSpan;
+
+    [SerializeField] private UnityEvent OnActivate;
+    [SerializeField] private UnityEvent OnDeactivate;
 
     protected Transform _spawnPosition;
     protected PlayerHealthHandler _otherHealthHandler;
@@ -42,12 +47,13 @@ public class Projectile : MonoBehaviour
 
     protected virtual void DealDamageBehavior(GameObject otherPlayer) 
     {
-        Debug.Log("Hit opponent player " + otherPlayer.name, gameObject);
+        _otherHealthHandler.Public_DecreaseHealth(_damageAmount);
     }
 
     public void DeactivateProjectile()
     {
         _rb.linearVelocity = Vector2.zero;
+        OnDeactivate?.Invoke();
         this.gameObject.SetActive(false);
     }
     public virtual void LaunchProjectile(GameObject shooter)
@@ -57,5 +63,7 @@ public class Projectile : MonoBehaviour
         _shooter = shooter;
         transform.position = _spawnPosition.position + offset;
         _rb.AddForce(Vector2.right * transform.lossyScale.x * _launchSpeed, ForceMode2D.Impulse);
+        OnActivate?.Invoke();
+        if (lifeSpan != 0) Invoke("DeactivateProjectile", lifeSpan);
     }
 }

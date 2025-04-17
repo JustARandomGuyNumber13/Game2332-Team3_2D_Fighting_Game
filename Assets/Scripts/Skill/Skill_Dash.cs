@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Skill_Dash_Template : Skill
+public class Skill_Dash : Skill
 {
     [Header("Skill exclusive variables")]
     [SerializeField] private float _dashSpeed;
+    [SerializeField] private int dashLayer;
 
     private PlayerInputHandler _inputHandler;
     private Rigidbody2D _rb;
@@ -19,7 +20,9 @@ public class Skill_Dash_Template : Skill
     {
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
-        gameObject.layer = Global.ghostLayerIndex;
+        _inputHandler.Public_StopMove();
+        //gameObject.layer = Global.ghostLayerIndex;
+        gameObject.layer = dashLayer;
     }
     protected override void DuringSkill(float timer)
     {

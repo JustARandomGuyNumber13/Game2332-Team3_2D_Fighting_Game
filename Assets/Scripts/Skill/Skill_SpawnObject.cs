@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Skill_ShootProjectile_Template : Skill
+public class Skill_SpawnObject : Skill
 {
     [Header("Skill exclusive variables")]
     [SerializeField] private Projectile _projectilePrefab;
@@ -16,6 +16,7 @@ public class Skill_ShootProjectile_Template : Skill
     {
         _inputHandler.isCanMove = false;
         _inputHandler.isCanUseSkill = false;
+        _inputHandler.Public_StopMove();
     }
     protected override void TriggerSkill() 
     {
