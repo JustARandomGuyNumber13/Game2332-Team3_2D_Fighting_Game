@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ninja_SO_SkillStat_DoubleJump
   m_EditorClassIdentifier: 
   SkillPrefab: {fileID: 0}
-  skillSprite: {fileID: -5392625257635239999, guid: e9e781028931c584b9074076cb848409, type: 3}
+  skillSprite: {fileID: 6309831391888670754, guid: a002110ef1d3e1b4ca6517f75e30a3bb, type: 3}
   skillName: Double Jump
   skillDescription: Ned jumps, then uses his agility to jump again in midair, reaching
     a higher altitude.

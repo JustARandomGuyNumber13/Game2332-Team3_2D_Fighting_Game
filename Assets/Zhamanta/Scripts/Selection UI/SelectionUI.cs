@@ -13,7 +13,6 @@ using UnityEditor;
 
 public class SelectionUI : MonoBehaviour
 {
-    //public CharacterDatabase characterDB;
     public SO_CharactersList characterList;
 
     public TMP_Text nameText;
@@ -27,11 +26,6 @@ public class SelectionUI : MonoBehaviour
    
     public Image[] activeSkillSlot;
     public Image[] selectableSkillSlot;
-
-    /*[SerializeField]
-    private Image activeSlotHighlight;
-    [SerializeField]
-    private Image selectedSkillHighlight;*/
 
     [SerializeField]
     Image activeSlotHighlight;
@@ -58,15 +52,6 @@ public class SelectionUI : MonoBehaviour
 
     [SerializeField]
     private Image fadeImage;
-    [SerializeField]
-    Color targetColor1;
-    [SerializeField]
-    Color targetColor2;
-    [SerializeField]
-    Color targetColor3;
-    [SerializeField]
-    float fadeSpeed;
-    Color currentTarget;
 
     private int playerSkill1;
     private int playerSkill2;
@@ -83,13 +68,7 @@ public class SelectionUI : MonoBehaviour
 
     void Start()
     {
-        /*rectTransformH1 = activeSlotHighlight.GetComponent<RectTransform>();
-        rectTransformH2 = selectedSkillHighlight.GetComponent<RectTransform>();*/
-
-        /*originalH1 = rectTransformH1.anchoredPosition;
-        originalH2 = rectTransformH2.anchoredPosition;*/
-        currentTarget = targetColor1;
-        fadeImage.enabled = false;
+        fadeImage.gameObject.SetActive(false);
 
         activeSlotHighlight.enabled = false;
         selectedSkillHighlight.enabled = false;
@@ -112,11 +91,6 @@ public class SelectionUI : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
-    private void Update()
-    {
-        FadeImageLoop();
-    }
-
     public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
     {
         if (isReady && (otherPlayer.isReady == true))
@@ -128,13 +102,19 @@ public class SelectionUI : MonoBehaviour
     {
         isReady = isReady ? false : true;
         readyText.enabled = !readyText.enabled;
-        fadeImage.enabled = !fadeImage.enabled;
+        //fadeImage.enabled = !fadeImage.enabled;
+        if (!fadeImage.gameObject.activeSelf)
+        {
+            fadeImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            fadeImage.gameObject.SetActive(false);
+        }
 
         if (isReady)
         {
-            FadeImageLoop();
             Debug.Log("Save data");
-            //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
 
             playerSelection.SaveData(selectedOption, playerSkill1, playerSkill2, playerSkill3);
             OnReadyCheck?.Invoke();
@@ -142,8 +122,8 @@ public class SelectionUI : MonoBehaviour
 
         //OnReadyCheck?.Invoke();
     }
-
-    public void Ready(InputAction.CallbackContext obj)
+    
+    private void OnSkillThree()
     {
         if (superParentA.GetChild(0).childCount == 1 && superParentA.GetChild(1).childCount == 1 && superParentA.GetChild(2).childCount == 1)
         {
@@ -155,103 +135,73 @@ public class SelectionUI : MonoBehaviour
             Debug.Log("Cannot be ready. Must have 3 skills selected.");
         }
     }
-    public void MoveRight(InputAction.CallbackContext obj)
+
+    private void OnMove(InputValue value)
     {
-        if (!isReady)
-        {
-            OnChangeSelection?.Invoke();
-            switch (currentSelectionMode)
-            {
-                case selectionMode.characterSelection:
-                    NextOption();
-                    break;
-                case selectionMode.activeSlot: //Changes active slot index and highlighter
-                    selectedActiveIndex++;
-
-                    /*rectTransformH1.anchoredPosition += new Vector2(71f, 0);
-                    if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(213f, 0)))
-                    {
-                        rectTransformH1.anchoredPosition = originalH1;
-                    }*/
-
-                    if (selectedActiveIndex == 3)
-                    {
-                        selectedActiveIndex = 0;
-                    }
-
-                    SelectableSlotHighlight(selectedActiveIndex);
-
-                    break;
-                case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
-                    selectedSkillIndex++;
-                    /*rectTransformH2.anchoredPosition += new Vector2(71f, 0);
-                    *//*if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(355f, 0)))
-                    {
-                        rectTransformH2.anchoredPosition = originalH2;
-                    }*/
-
-                    if (selectedSkillIndex == 5)
-                    {
-                        selectedSkillIndex = 0;
-                    }
-
-                    UpdateSkillDescription();
-                    SelectedSkillHighlight(selectedSkillIndex);
-
-                    break;
-            }
-        }   
+        float direction = value.Get<float>();
+        ChangeSelections(direction);
     }
 
-    public void MoveLeft(InputAction.CallbackContext obj)
+    private void ChangeSelections(float direction)
     {
-        if (!isReady)
+        if (isReady || (direction == 0)) return;
+
+        switch(currentSelectionMode)
         {
-            OnChangeSelection?.Invoke();
-            switch (currentSelectionMode)
-            {
-                case selectionMode.characterSelection:
-                    BackOption();
-                    break;
-                case selectionMode.activeSlot: //Changes active slot index and highlighter
-                    selectedActiveIndex--;
-                    /*rectTransformH1.anchoredPosition += new Vector2(-71f, 0);
-                    if (rectTransformH1.anchoredPosition == (originalH1 + new Vector2(-71f, 0)))
-                    {
-                        rectTransformH1.anchoredPosition = originalH1 + new Vector2(142f, 0);
-                    }*/
-
-                    if (selectedActiveIndex == -1)
-                    {
-                        selectedActiveIndex = 2;
-                    }
-
-                    SelectableSlotHighlight(selectedActiveIndex);
-
-                    break;
-                case selectionMode.selectableSlot: //Changes selectable slot index and highlighter
-                    selectedSkillIndex--;
-                    /*rectTransformH2.anchoredPosition += new Vector2(-71f, 0);
-                    if (rectTransformH2.anchoredPosition == (originalH2 + new Vector2(-71f, 0)))
-                    {
-                        rectTransformH2.anchoredPosition = originalH2 + new Vector2(284f, 0);
-                    }*/
-
-                    if (selectedSkillIndex == -1)
-                    {
-                        selectedSkillIndex = 4;
-                    }
-
-                    SelectedSkillHighlight(selectedSkillIndex);
-                    UpdateSkillDescription();
-
-                    break;
-            }
+            case selectionMode.characterSelection:
+                ChangeCharacters(direction);
+                break;
+            case selectionMode.activeSlot:
+                ChooseSlot(direction);
+                break;
+            case selectionMode.selectableSlot:
+                ChooseSkill(direction);
+                break;
         }
-     
     }
 
-    public void Confirm(InputAction.CallbackContext obj)
+    private void ChangeCharacters(float direction)
+    {
+        selectedOption += (int) direction;
+
+        if (selectedOption >= characterList.size)
+            selectedOption = 0;
+
+        if (selectedOption < 0)
+            selectedOption = characterList.size - 1;
+
+        UpdateCharacter(selectedOption);
+        Save();
+    }
+
+    private void ChooseSlot(float direction)
+    {
+        selectedActiveIndex += (int)direction;
+
+        if (selectedActiveIndex == 3)
+            selectedActiveIndex = 0;
+
+        if (selectedActiveIndex == -1)
+            selectedActiveIndex = 2;
+
+        SelectableSlotHighlight(selectedActiveIndex);
+    }
+
+    private void ChooseSkill(float direction)
+    {
+        selectedSkillIndex += (int) direction;
+
+        if (selectedSkillIndex == 5)
+            selectedSkillIndex = 0;
+
+        if (selectedSkillIndex == -1)
+            selectedSkillIndex = 4;
+
+        UpdateSkillDescription();
+        SelectedSkillHighlight(selectedSkillIndex);
+    }
+
+    private void OnSkillTwo() //Confirm
     {
         if (!isReady)
         {
@@ -289,7 +239,7 @@ public class SelectionUI : MonoBehaviour
         }
     }
 
-    public void GoBack(InputAction.CallbackContext obj)
+    private void OnSkillOne() //GoBack
     {
         if (!isReady)
         {
@@ -312,33 +262,6 @@ public class SelectionUI : MonoBehaviour
         }
     }
 
-    //Changing character
-    public void NextOption()
-    {
-        selectedOption++;
-
-        if (selectedOption >= characterList.size)
-        {
-            selectedOption = 0;
-        }
-
-        UpdateCharacter(selectedOption);
-        Save();
-    }
-
-    public void BackOption() 
-    {
-        selectedOption--;
-
-        if (selectedOption < 0)
-        {
-            selectedOption = characterList.size - 1;
-        }
-
-
-        UpdateCharacter(selectedOption);
-        Save();
-    }
 
     private void UpdateSkillDescription()
     {
@@ -370,13 +293,8 @@ public class SelectionUI : MonoBehaviour
 
     private void SelectableSlotHighlight(int selectedActiveIndex)
     {
-        //Vector2 overallPosition = superParentA.GetComponent<RectTransform>().anchoredPosition;
         Vector2 position = superParentA.GetChild(selectedActiveIndex).GetComponent<RectTransform>().position;
- 
-        //highlight1Position.anchoredPosition = overallPosition;
         highlight1Position.position = position;
-   
-   
     }
 
     private void SelectedSkillHighlight(int selectedSkillIndex)
@@ -384,52 +302,6 @@ public class SelectionUI : MonoBehaviour
         Vector2 position = superParentB.GetChild(selectedSkillIndex).GetComponent<RectTransform>().position;
         highlight2Position.position = position;
     }
-
-    private void FadeImageLoop()
-    {
-        var currentColor = fadeImage.color;
-        //var currentTarget = targetColor1;
-
-
-        if (isReady)
-        {
-
-        Debug.Log("Loop Started");
-            if (currentTarget == targetColor1)   
-            {
-                currentColor = Color.Lerp(currentColor, targetColor1, fadeSpeed * Time.deltaTime);
-                fadeImage.color = currentColor;
-                if (currentColor == targetColor1)
-                { 
-                    currentTarget = targetColor2;
-                }
-
-            }
-
-            if (currentTarget == targetColor2)
-            {
-                currentColor = Color.Lerp(currentColor, targetColor2, fadeSpeed * Time.deltaTime);
-                fadeImage.color = currentColor;
-                if (currentColor == targetColor2)
-                {
-                    currentTarget = targetColor3;
-                }
-
-            }
-
-            if (currentTarget == targetColor3)
-                {
-                    currentColor = Color.Lerp(currentColor, targetColor3, fadeSpeed * Time.deltaTime);
-                    fadeImage.color = currentColor;
-                    if (currentColor == targetColor3)
-                    {
-                        currentTarget = targetColor1;
-                    }
-
-                }
-        }
-    }
-
 
     //Return skill to original slot
     private void returnToParent(int index)
