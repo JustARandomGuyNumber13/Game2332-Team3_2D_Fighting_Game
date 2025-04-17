@@ -56,17 +56,37 @@ public class Traps_Manager : MonoBehaviour
 
     private Trap GetRandomTrap()
     {
-        int randIndex = Random.Range(0, trapList.Length);
+        int randIndex = Random.Range(0, trapList.Length - 1);
 
-        while (!trapList[randIndex].IsAvailable)
-        {
-            randIndex++;
-            if (randIndex == trapList.Length)
-                randIndex = 0;
-        }
+        //while (!trapList[randIndex].IsAvailable)
+        //{
+        //    randIndex++;
+        //    if (randIndex == trapList.Length)
+        //        randIndex = 0;
+        //}
 
         return trapList[randIndex];
     }
+
+    //int randI = 0;
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //        {
+    //            randI = Random.Range(0, trapList.Length - 1);
+    //            Debug.Log("Index: " + randI + ", Available: " + trapList[randI].IsAvailable);
+    //        }
+    //    if (Input.GetKeyDown(KeyCode.LeftShift))
+    //    {
+    //        randI++;
+    //        if (randI == trapList.Length)
+    //        {
+    //            randI = 0;
+    //        }
+    //        Debug.Log("Index: " + randI + ", Available: " + trapList[randI].IsAvailable);
+    //    }
+    //}
+
     private void SpawnDeathWall()
     { 
         deathWall.gameObject.SetActive(true);

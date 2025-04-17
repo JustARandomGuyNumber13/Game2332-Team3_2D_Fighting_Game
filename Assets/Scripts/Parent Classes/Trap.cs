@@ -4,7 +4,9 @@ public class Trap : MonoBehaviour
 {
     [SerializeField] protected Vector2 spawnZoneMin;
     [SerializeField] protected Vector2 spawnZoneMax;
-    public bool IsAvailable{ get; private set; } = true;
+    // public bool IsAvailable{ get; private set; } = true;
+    public bool IsAvailable = true;
+
 
     public virtual void Activate()
     {
@@ -22,6 +24,7 @@ public class Trap : MonoBehaviour
     {
         gameObject.SetActive(false);
         IsAvailable = true;
+        //gameObject.SetActive(false);
     }
     protected virtual void TrapBehavior()
     { 
