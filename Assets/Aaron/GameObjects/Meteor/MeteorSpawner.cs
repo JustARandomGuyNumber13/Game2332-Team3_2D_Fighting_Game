@@ -20,6 +20,11 @@ public class MeteorSpawner : Trap
     protected override void TrapBehavior()
     {
         StartCoroutine(Cooldown());
+
+        if (Game_Manager.IsEndGame)
+        {
+            StopAllCoroutines();
+        }
     }
 
     private Vector3 SpawnRandomPoint()

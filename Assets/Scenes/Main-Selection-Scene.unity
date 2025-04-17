@@ -841,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 1063256002322478743, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
       propertyPath: OnChangeSelection.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 8300000, guid: 9ed82b3406335d9408153617d6540abc, type: 3}
+      objectReference: {fileID: 8300000, guid: cfa978083f61eae4eb43ac55be21de42, type: 3}
     - target: {fileID: 1063256002322478743, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
       propertyPath: OnReadyCheck.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
@@ -6167,7 +6167,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 29ce0911e0b87074990303b6bbab19c2, type: 3}
   m_Resource: {fileID: 8300000, guid: 29ce0911e0b87074990303b6bbab19c2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
