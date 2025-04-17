@@ -16,6 +16,6 @@ MonoBehaviour:
   skillName: 
   skillDescription: 
   skillDelay: 0
-  skillDuration: 6
+  skillDuration: 3
   skillCD: 3
   isPassiveSkill: 0

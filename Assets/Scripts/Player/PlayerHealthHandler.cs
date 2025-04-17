@@ -46,7 +46,7 @@ public class PlayerHealthHandler : MonoBehaviour
 
     public void Public_DecreaseHealthOverTime(float amount, float duration, float tickDuration)
     {
-        Debug.Log("Coroutine");
+        StopAllCoroutines();
         StartCoroutine(DecreaseHealthOverTimeCoroutine(amount, duration, tickDuration));
     }
     private IEnumerator DecreaseHealthOverTimeCoroutine(float amount, float duration, float tickDuration)

@@ -12,8 +12,8 @@ public class Traps_Manager : MonoBehaviour
 
     [SerializeField] private float startSpawnRate;
     [SerializeField] private float decreaseRate;
-    [SerializeField] private float minSpawnRate;
     [SerializeField] private float rateDecreaseInterval;
+    [SerializeField] private int decreaseCount;
     private float curSpawnRate;
 
     public void Public_StartGame()
@@ -50,7 +50,7 @@ public class Traps_Manager : MonoBehaviour
         while(!Game_Manager.IsEndGame)
         {
             yield return new WaitForSeconds(rateDecreaseInterval);
-            if (curSpawnRate > minSpawnRate) curSpawnRate -= decreaseRate;
+            if (decreaseCount > 0) curSpawnRate -= decreaseRate;
         }
     }
 

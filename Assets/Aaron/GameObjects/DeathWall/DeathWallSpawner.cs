@@ -13,4 +13,16 @@ public class DeathWallSpawner : Trap
         camPos = mainCamera.transform.position;
         camSize = mainCamera.orthographicSize * mainCamera.aspect;
     }
+    public override void Activate()
+    {
+        gameObject.SetActive(true);
+        TrapBehavior();
+    }
+    protected override void TrapBehavior()
+    {
+        foreach (DeathWallTrap wall in walls)
+        {
+            wall.Activate();
+        }
+    }
 }
