@@ -1993,11 +1993,11 @@ PrefabInstance:
       objectReference: {fileID: 1113303938}
     - target: {fileID: 5533766747247083235, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CancelInvoke
+      value: Public_EnterAudioSettingCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5533766747247083235, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.MonoBehaviour, UnityEngine
+      value: Setting_Manager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5710781260956234473, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_AnchorMax.y

@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected float _damageAmount;
     [SerializeField] protected float _launchSpeed;
     [SerializeField] private float lifeSpan;
+    [SerializeField] private bool isCanDestroyByProjectile = true;
 
     [SerializeField] private UnityEvent OnActivate;
     [SerializeField] private UnityEvent OnDeactivate;
@@ -34,12 +35,17 @@ public class Projectile : MonoBehaviour
                 if (_otherHealthHandler == null)
                     _otherHealthHandler = collision.GetComponent<PlayerHealthHandler>();
 
-                if(_otherInputHandler == null)
+                if (_otherInputHandler == null)
                     _otherInputHandler = collision.GetComponent<PlayerInputHandler>();
 
                 DealDamageBehavior(collision.gameObject);
                 DeactivateProjectile();
             }
+        }
+        else if (!isCanDestroyByProjectile)
+        {
+            if (Global.projectileLayerIndex == collision.gameObject.layer)
+                return;
         }
         else
             DeactivateProjectile();

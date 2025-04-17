@@ -1319,7 +1319,7 @@ MonoBehaviour:
   p2Selection: {fileID: 11400000, guid: 631834b2c638a9f46acdf68459f7c4e5, type: 2}
   p1SpawnPos: {fileID: 753561897}
   p2SpawnPos: {fileID: 995707366}
-  spawnPosOffsetY: -2
+  spawnPosOffsetY: -2.5
   p1SkillBoxes:
   - {fileID: 3434609315391901698}
   - {fileID: 2036590709}
@@ -2639,7 +2639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &836461046
 AudioSource:
   m_ObjectHideFlags: 0

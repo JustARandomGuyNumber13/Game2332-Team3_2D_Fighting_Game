@@ -57,13 +57,11 @@ public class SelectionUI : MonoBehaviour
     private int playerSkill2;
     private int playerSkill3;
 
-    public UnityEvent<MyCharacterSelection, MyCharacterSelection> OnReady;
-
     [SerializeField]
     SO_PlayerSelection playerSelection;
 
     public bool isReady;
-    public UnityEvent OnReadyCheck;
+    [SerializeField] private UnityEvent OnReadyCheck;
     [SerializeField] private UnityEvent OnChangeSelection;
 
     void Start()
