@@ -359,6 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterList: {fileID: 11400000, guid: 88f2c9d12244c5041bfc499868851bf0, type: 2}
   p1Selection: {fileID: 11400000, guid: 1ae176f1d966b6b46bcc9424f3a6762b, type: 2}
+  p2Selection: {fileID: 11400000, guid: 631834b2c638a9f46acdf68459f7c4e5, type: 2}
   speedScale: 8.84
   speedPosition: 5
   targetScale: {x: 3, y: 3, z: 3}

@@ -3,11 +3,12 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WinScene : MonoBehaviour
 {
     [SerializeField] private SO_CharactersList characterList;
-    [SerializeField] private SO_PlayerSelection p1Selection;
+    [SerializeField] private SO_PlayerSelection p1Selection, p2Selection;
 
     GameObject player;
     Animator anim;
@@ -30,7 +31,15 @@ public class WinScene : MonoBehaviour
         rematchButton.SetActive(false);
         menuButton.SetActive(false);
 
-        player = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab);
+        if (SceneManager.GetActiveScene().name == "Player1Win")
+        {
+            player = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab);
+        }
+        else if (SceneManager.GetActiveScene().name == "Player2Win")
+        {
+            player = Instantiate(characterList.GetCharacterAt(p2Selection.CharacterIndex).characterPrefab);
+        }
+
         player.transform.position = new Vector3(0, 0, 0);
         originalPosition = player.transform.position;
 
