@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster Rolling Spritesheet_0: -5741674578191878557
+      Monster Rolling Spritesheet_1: 3636768104588527398
+      Monster Rolling Spritesheet_2: -155585723906599571
+      Monster Rolling Spritesheet_3: 4209451160862724558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

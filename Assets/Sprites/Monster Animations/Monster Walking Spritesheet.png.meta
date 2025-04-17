@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster Walking Spritesheet_0: 6936522003600789004
+      Monster Walking Spritesheet_1: -4219852802547542411
+      Monster Walking Spritesheet_10: 8222754882607312267
+      Monster Walking Spritesheet_11: -7855352971185855545
+      Monster Walking Spritesheet_2: 2063127107569400166
+      Monster Walking Spritesheet_3: 5838746686128130400
+      Monster Walking Spritesheet_4: -3497259082071418016
+      Monster Walking Spritesheet_5: 6638305857217628265
+      Monster Walking Spritesheet_6: 566097243644390997
+      Monster Walking Spritesheet_7: 7712046307798045745
+      Monster Walking Spritesheet_8: -1364810181518117955
+      Monster Walking Spritesheet_9: 4410044101059847290
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

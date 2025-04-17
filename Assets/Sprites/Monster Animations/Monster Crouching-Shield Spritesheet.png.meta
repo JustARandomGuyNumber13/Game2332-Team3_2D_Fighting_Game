@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster Crouching-Shield Spritesheet_0: -7606569662403434936
+      Monster Crouching-Shield Spritesheet_1: -2078929607510372492
+      Monster Crouching-Shield Spritesheet_2: 2594465502568399614
+      Monster Crouching-Shield Spritesheet_3: -6807914163383294847
+      Monster Crouching-Shield Spritesheet_4: -8697318700871245521
+      Monster Crouching-Shield Spritesheet_5: -7279761248386776747
+      Monster Crouching-Shield Spritesheet_6: 1766331225325112037
+      Monster Crouching-Shield Spritesheet_7: -1092269248021373807
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

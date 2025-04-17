@@ -119,17 +119,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &19220990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2914134112451662523, guid: 0890bd11ce2f33642a56e197ef9876c4, type: 3}
-  m_PrefabInstance: {fileID: 2034344448}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &19220991 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5474037274196962922, guid: 0890bd11ce2f33642a56e197ef9876c4, type: 3}
   m_PrefabInstance: {fileID: 2034344448}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19220990}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 532d7197a3f467145bb26f1d8dc8af97, type: 3}
@@ -1463,13 +1458,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 19220990}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 19220991}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: UI_GoToMainMenuScene
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

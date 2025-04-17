@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster Slash Spritesheet_0: -3250754966138565216
+      Monster Slash Spritesheet_1: -7894760737026161389
+      Monster Slash Spritesheet_2: -585522064524516021
+      Monster Slash Spritesheet_3: -7466602497232038440
+      Monster Slash Spritesheet_4: -7915297563363589745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

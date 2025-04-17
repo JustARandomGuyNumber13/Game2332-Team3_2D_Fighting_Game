@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster Jumping Spritesheet_0: 6686354005586477788
+      Monster Jumping Spritesheet_1: 4649595755367761028
+      Monster Jumping Spritesheet_2: 1195811114884906864
+      Monster Jumping Spritesheet_3: 2521061270501127180
+      Monster Jumping Spritesheet_4: -252209561433810069
+      Monster Jumping Spritesheet_5: 5542321781151370373
+      Monster Jumping Spritesheet_6: 3667887989986826604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
