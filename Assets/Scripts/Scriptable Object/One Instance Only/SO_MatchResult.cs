@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SO_MatchResult", menuName = "Scriptable Objects/SO_MatchResult")]
 public class SO_MatchResult : ScriptableObject
 {
-    private int _playerOneScore, _playerTwoScore;
+    public int _playerOneScore, _playerTwoScore;
 
     public void Public_OnMatchEnd(int winCase)
     {

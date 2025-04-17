@@ -64,7 +64,7 @@ public class Game_Manager : MonoBehaviour
 
     #region ~~ End match ~~
     private void EndMatch()
-    { 
+    {
         IsEndGame = true;
         p1Input.enabled = false;
         p2Input.enabled = false;
@@ -74,17 +74,15 @@ public class Game_Manager : MonoBehaviour
     private IEnumerator CalculateMatchResultCoroutine()
     {
         yield return null;  // Delay 1 frame to let isDead booleans from both players update, check in case both players died at the same time 
-        if (!IsEndGame)
-        {
-            if (p1Health.IsDead || p2Health.IsDead)
-            {
-                if (p1Health.IsDead && p2Health.IsDead)
-                    matchResult.Public_OnMatchEnd(0);
-                else
-                    matchResult.Public_OnMatchEnd(p2Health.IsDead ? 1 : 2);
 
-                ChangeScene();
-            }
+        if (p1Health.IsDead || p2Health.IsDead)
+        {
+            if (p1Health.IsDead && p2Health.IsDead)
+                matchResult.Public_OnMatchEnd(0);
+            else
+                matchResult.Public_OnMatchEnd(p2Health.IsDead ? 1 : 2);
+
+            ChangeScene();
         }
     }
     private void ChangeScene()
