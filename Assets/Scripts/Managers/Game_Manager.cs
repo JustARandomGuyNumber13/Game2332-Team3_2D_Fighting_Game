@@ -90,9 +90,9 @@ public class Game_Manager : MonoBehaviour
     private void ChangeScene()
     {
         if (matchResult.GetPlayerOneScore() == 2)
-            StartCoroutine(ChangeSceneCoroutine(3, Global.playerOneWinScene));
+            StartCoroutine(ChangeSceneCoroutine(3, Global.player1WinScene));
         else if (matchResult.GetPlayerTwoScore() == 2)
-            StartCoroutine(ChangeSceneCoroutine(3, Global.playerTwoWinScene));
+            StartCoroutine(ChangeSceneCoroutine(3, Global.player2WinScene));
         else
             StartCoroutine(ChangeSceneCoroutine(3, Global.gamePlayScene));
     }
