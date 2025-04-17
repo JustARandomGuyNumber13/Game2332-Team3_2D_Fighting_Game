@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Monster_SO_SkillStat_SpikeTrap
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: -5392625257635239999, guid: f014ee8fb90ceb042baf062cec443d71, type: 3}
-  skillName: 
-  skillDescription: 
+  skillSprite: {fileID: 2072861844890246114, guid: 265ad285d3ea4834393f41fcb839e83d, type: 3}
+  skillName: Quill Trap
+  skillDescription: Quill leaves a trail of sharp spikes that remain for a short
+    time. Enemies who step on them are pierced by the spikes.
   skillDelay: 0
   skillDuration: 0.35
   skillCD: 3

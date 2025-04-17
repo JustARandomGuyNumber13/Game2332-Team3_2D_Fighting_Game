@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Monster_SO_SkillStat_Slash
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: 3070833167237525939, guid: 3ca46f8a7ed4ff74b84310f1cfa3e5f2, type: 3}
-  skillName: 
-  skillDescription: 
+  skillSprite: {fileID: -6939695964637348897, guid: 100301538e4d2c54692a4b365c34294c, type: 3}
+  skillName: Traveling Cut
+  skillDescription: Quill slashes upward with his sharp claws, sending a slicing
+    wave that travels toward his enemy.
   skillDelay: 0
   skillDuration: 0.35
   skillCD: 3
