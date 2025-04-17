@@ -23,8 +23,6 @@ public class PlayerInputHandler : MonoBehaviour
     public UnityEvent OnSkillOneEvent;
     public UnityEvent OnSkillTwoEvent;
     public UnityEvent OnSkillThreeEvent;
-    public UnityEvent OnSkillFourEvent;
-    public UnityEvent OnSkillFiveEvent;
     public UnityEvent OnDefendEvent;
 
     [Header("Public Variables")]
@@ -185,16 +183,7 @@ public class PlayerInputHandler : MonoBehaviour
         if(value.Get<float>() == 1 && isCanUseSkill)
             OnSkillThreeEvent?.Invoke();
     }
-    private void OnSkillFour(InputValue value)
-    {
-        if (value.Get<float>() == 1 && isCanUseSkill)
-            OnSkillFourEvent?.Invoke();
-    }
-    private void OnSkillFive(InputValue value)
-    {
-        if (value.Get<float>() == 1 && isCanUseSkill)
-            OnSkillFiveEvent?.Invoke();
-    }
+
 
     private void InspectorCheck()
     {

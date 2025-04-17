@@ -16,17 +16,11 @@ GameObject:
   - component: {fileID: 8550303498455435260}
   - component: {fileID: 1083015098773949598}
   - component: {fileID: 2136780532028163805}
-  - component: {fileID: 7746399103920483354}
-  - component: {fileID: 7799150831038751822}
-  - component: {fileID: 3325863936048131391}
-  - component: {fileID: 2113740404865417900}
-  - component: {fileID: 8249838024990762391}
-  - component: {fileID: 4411445096182034750}
   - component: {fileID: -8737591608761963699}
   - component: {fileID: 6480697217680432854}
   - component: {fileID: 5306987268551238517}
   - component: {fileID: 8182004410262279664}
-  - component: {fileID: 1161150729216158926}
+  - component: {fileID: 7261388264436068912}
   - component: {fileID: 958111540749521570}
   - component: {fileID: 1252112974437130408}
   m_Layer: 6
@@ -301,7 +295,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4411445096182034750}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Skill, Assembly-CSharp
         m_MethodName: ActivateSkill
         m_Mode: 1
@@ -343,7 +337,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4411445096182034750}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Skill, Assembly-CSharp
         m_MethodName: ActivateSkill
         m_Mode: 1
@@ -361,7 +355,7 @@ MonoBehaviour:
   OnBasicAttackEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7746399103920483354}
+      - m_Target: {fileID: 6480697217680432854}
         m_TargetAssemblyTypeName: Skill, Assembly-CSharp
         m_MethodName: ActivateSkill
         m_Mode: 1
@@ -382,12 +376,6 @@ MonoBehaviour:
   OnSkillThreeEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnSkillFourEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSkillFiveEvent:
-    m_PersistentCalls:
-      m_Calls: []
   OnDefendEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -399,223 +387,6 @@ MonoBehaviour:
   isOnGround: 1
   isCanJump: 1
   isReverseInput: 0
---- !u!114 &7746399103920483354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383d2a0cc491def4f886270ee42e48bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillStat: {fileID: 11400000, guid: ad43b6b5e6b6f6b48bb488342d4c5e10, type: 2}
-  OnBeforeSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerSkillEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8737591608761963699}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3bc5bcf8640261b409263dd7a78f15ed, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _damageAmount: 5
-  _attackBoxSize: {x: 1.24, y: 1.86}
-  _attackOffset: {x: 1.12, y: -0.22}
---- !u!114 &7799150831038751822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad54d9c773792c148867454418a9c4d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillStat: {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}
-  OnBeforeSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerSkillEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8737591608761963699}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 341e23669f188f34e871d279d903d68f, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _damageAmount: 10
-  _attackBoxSize: {x: 1.24, y: 1.86}
-  _attackOffset: {x: 1.12, y: -0.22}
---- !u!114 &3325863936048131391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58376caa85827764eaa80e8208f5b257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillStat: {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
-  OnBeforeSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerSkillEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8737591608761963699}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: f6d09c1d4b3260146b00a65e239cd1a4, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _projectilePrefab: {fileID: 0}
---- !u!114 &2113740404865417900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366d4df7f7f473e4fb334d0f4b263c35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillStat: {fileID: 11400000, guid: df3b46a8391b4674588dbe3143e23c28, type: 2}
-  OnBeforeSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerSkillEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8737591608761963699}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 7f3e492c56ebdc344a973db65dd5de06, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _projectilePrefab: {fileID: 0}
---- !u!114 &8249838024990762391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c4e7cd91b8fd4469d34a0715699c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillStat: {fileID: 11400000, guid: c2b0668b487ba0c41b17e7e468791b5c, type: 2}
-  OnBeforeSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerSkillEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8737591608761963699}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 50698d3e2a478c04c80d597d5a39d353, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _dashSpeed: 20
---- !u!114 &4411445096182034750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899221d944cdc724a84b6903d0884df7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillStat: {fileID: 11400000, guid: c1b2a5c9246725a4b88d84037d8cd289, type: 2}
-  OnBeforeSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _jumpForce: 11.5
-  OnDoubleJumpEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8737591608761963699}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 0b0e6182e5bacb1489cf33bf2b7203e9, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!82 &-8737591608761963699
 AudioSource:
   m_ObjectHideFlags: 0
@@ -757,7 +528,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2107f331276af2e4e8c1827d87350624, type: 3}
   m_Name: 
@@ -780,7 +551,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 739f5cc3c652eeb4e969353e89e470bc, type: 3}
   m_Name: 
@@ -821,16 +592,16 @@ MonoBehaviour:
         m_CallState: 2
   _dashSpeed: 10
   dashLayer: 10
---- !u!114 &1161150729216158926
+--- !u!114 &7261388264436068912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eceded1bf8a93b409d722e262ab6782, type: 3}
+  m_Script: {fileID: 11500000, guid: 2107f331276af2e4e8c1827d87350624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillStat: {fileID: 11400000, guid: 0b6a6094c6c63204591a5d2086c1710b, type: 2}
@@ -843,9 +614,7 @@ MonoBehaviour:
   OnAfterSkillEvent:
     m_PersistentCalls:
       m_Calls: []
-  _damageAmount: 30
-  _attackBoxSize: {x: 1.24, y: 1.86}
-  _attackOffset: {x: 1.12, y: -0.22}
+  _projectilePrefab: {fileID: 8862052501629837527}
 --- !u!114 &958111540749521570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,7 +622,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2107f331276af2e4e8c1827d87350624, type: 3}
   m_Name: 
@@ -876,7 +645,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 739f5cc3c652eeb4e969353e89e470bc, type: 3}
   m_Name: 
@@ -1473,6 +1242,181 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7649390810847516561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3618823828484587792}
+  - component: {fileID: 7731178643550777444}
+  - component: {fileID: 1850010553541151667}
+  - component: {fileID: 8346625201843228459}
+  - component: {fileID: 8862052501629837527}
+  m_Layer: 8
+  m_Name: Slash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3618823828484587792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649390810847516561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1509826467453538765}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &7731178643550777444
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649390810847516561}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &1850010553541151667
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649390810847516561}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &8346625201843228459
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649390810847516561}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!114 &8862052501629837527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649390810847516561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9a1ea506571ee4693f51e60ae3417d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnOffset: {x: 0, y: 0}
+  _damageAmount: 15
+  _launchSpeed: 15
+  lifeSpan: 0
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8217589352061697631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,5 +1624,6 @@ Transform:
   - {fileID: 7977259714106347148}
   - {fileID: 4641085224484765909}
   - {fileID: 6404515149380862333}
+  - {fileID: 3618823828484587792}
   m_Father: {fileID: 2973618607220260808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
