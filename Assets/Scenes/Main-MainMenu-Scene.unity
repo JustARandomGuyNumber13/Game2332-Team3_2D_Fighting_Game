@@ -843,8 +843,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1113303938}
-        m_TargetAssemblyTypeName: T_Setting_Manager, Assembly-CSharp
-        m_MethodName: Public_EnterKeyBindingCanvas
+        m_TargetAssemblyTypeName: Setting_Manager, Assembly-CSharp
+        m_MethodName: Public_EnterAudioSettingCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1551,11 +1551,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 237450364604100716, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000022411
+      value: 518
       objectReference: {fileID: 0}
     - target: {fileID: 237450364604100716, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -328
+      value: -345
       objectReference: {fileID: 0}
     - target: {fileID: 830296072067098283, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_fontStyle
@@ -1584,6 +1584,14 @@ PrefabInstance:
     - target: {fileID: 1429462878586944632, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_fontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016143493640847023, guid: c1b5392279cb1994db19822912749caa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1113303938}
+    - target: {fileID: 2016143493640847023, guid: c1b5392279cb1994db19822912749caa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Public_ExitSettingCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2127145054728535659, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1677,6 +1685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3060357110629058885, guid: c1b5392279cb1994db19822912749caa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1113303938}
     - target: {fileID: 3814266995568615559, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 613
