@@ -108,7 +108,7 @@ public class SelectionUI : MonoBehaviour
     }
     private void Update()
     {
-        FadeImageLoop();
+        //FadeImageLoop();
     }
 
     public void OtherPlayerReadyCheck(SelectionUI otherPlayer)
@@ -126,7 +126,7 @@ public class SelectionUI : MonoBehaviour
 
         if (isReady)
         {
-            FadeImageLoop();
+            //FadeImageLoop();
             Debug.Log("Save data");
             //Debug.Log(playerSkill1 + "" + playerSkill2 + "" + playerSkill3);
 
@@ -322,7 +322,7 @@ public class SelectionUI : MonoBehaviour
         highlight2Position.position = position;
     }
 
-    private void FadeImageLoop()
+    /*private void FadeImageLoop()
     {
         var currentColor = fadeImage.color;
         //var currentTarget = targetColor1;
@@ -365,7 +365,7 @@ public class SelectionUI : MonoBehaviour
 
                 }
         }
-    }
+    }*/
 
 
     //Return skill to original slot
