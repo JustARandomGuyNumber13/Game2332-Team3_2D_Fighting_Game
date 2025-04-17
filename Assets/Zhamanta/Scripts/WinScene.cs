@@ -23,18 +23,6 @@ public class WinScene : MonoBehaviour
     [SerializeField] GameObject rematchButton;
     [SerializeField] GameObject menuButton;
 
-    [SerializeField]
-    private Image fadeImage;
-    [SerializeField]
-    Color targetColor1;
-    [SerializeField]
-    Color targetColor2;
-    [SerializeField]
-    Color targetColor3;
-    [SerializeField]
-    float fadeSpeed;
-    Color currentTarget;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -95,49 +83,4 @@ public class WinScene : MonoBehaviour
         rematchButton.SetActive(true);
         menuButton.SetActive(true);
     }
-
-    /*private void FadeImageLoop()
-    {
-        var currentColor = fadeImage.color;
-        //var currentTarget = targetColor1;
-
-
-        if (isReady)
-        {
-
-            Debug.Log("Loop Started");
-            if (currentTarget == targetColor1)
-            {
-                currentColor = Color.Lerp(currentColor, targetColor1, fadeSpeed * Time.deltaTime);
-                fadeImage.color = currentColor;
-                if (currentColor == targetColor1)
-                {
-                    currentTarget = targetColor2;
-                }
-
-            }
-
-            if (currentTarget == targetColor2)
-            {
-                currentColor = Color.Lerp(currentColor, targetColor2, fadeSpeed * Time.deltaTime);
-                fadeImage.color = currentColor;
-                if (currentColor == targetColor2)
-                {
-                    currentTarget = targetColor3;
-                }
-
-            }
-
-            if (currentTarget == targetColor3)
-            {
-                currentColor = Color.Lerp(currentColor, targetColor3, fadeSpeed * Time.deltaTime);
-                fadeImage.color = currentColor;
-                if (currentColor == targetColor3)
-                {
-                    currentTarget = targetColor1;
-                }
-
-            }
-        }
-    }*/
 }

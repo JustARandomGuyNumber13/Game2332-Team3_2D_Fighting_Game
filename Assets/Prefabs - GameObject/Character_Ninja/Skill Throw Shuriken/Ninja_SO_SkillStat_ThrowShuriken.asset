@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ninja_SO_SkillStat_ThrowShuriken
   m_EditorClassIdentifier: 
   SkillPrefab: {fileID: 0}
-  skillSprite: {fileID: -5392625257635239999, guid: 609d2d5f30c26fe4c8d320099bb1786e, type: 3}
+  skillSprite: {fileID: -1818499698104787363, guid: 6badd61cf581ce744977ddb6b6033460, type: 3}
   skillName: Shuriken
   skillDescription: Ned hurls a massive shuriken, spinning it rapidly through the
     air toward his target.
