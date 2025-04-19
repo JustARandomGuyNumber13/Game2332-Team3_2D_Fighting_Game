@@ -22,9 +22,9 @@ public class Projectile : MonoBehaviour
     protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-
         Transform projectileSpawnPos = transform.parent.parent.Find("ProjectileShootPoint");
         _spawnPosition = projectileSpawnPos;
+        gameObject.SetActive(false);
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
@@ -65,10 +65,11 @@ public class Projectile : MonoBehaviour
     public virtual void LaunchProjectile(GameObject shooter)
     {
         this.gameObject.SetActive(true);
-        Vector3 offset = Vector3.right * (_spawnOffset.x * transform.lossyScale.x) + Vector3.up * _spawnOffset.y;
         _shooter = shooter;
+        Vector3 offset = Vector3.right * (_spawnOffset.x * _shooter.transform.lossyScale.x) + Vector3.up * _spawnOffset.y;
         transform.position = _spawnPosition.position + offset;
-        _rb.AddForce(Vector2.right * transform.lossyScale.x * _launchSpeed, ForceMode2D.Impulse);
+        transform.localScale = new Vector3(_shooter.transform.lossyScale.x, 1, 1);
+        _rb.AddForce(Vector2.right * _shooter.transform.lossyScale.x * _launchSpeed, ForceMode2D.Impulse);
         OnActivate?.Invoke();
         if (lifeSpan != 0) Invoke("DeactivateProjectile", lifeSpan);
     }

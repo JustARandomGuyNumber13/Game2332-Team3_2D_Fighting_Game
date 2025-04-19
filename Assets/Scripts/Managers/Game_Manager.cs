@@ -23,6 +23,7 @@ public class Game_Manager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SetUpCoroutine());
+        IsEndGame = false;
     }
     private void Update()
     {

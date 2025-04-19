@@ -124,10 +124,10 @@ TextureImporter:
       name: Monster Falling Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 5252
-        y: 3986
-        width: 7
-        height: 12
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +146,10 @@ TextureImporter:
       name: Monster Falling Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 6100
-        y: 2041
-        width: 1630
-        height: 1949
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Monster Falling Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 99
-        y: 2041
-        width: 1631
-        height: 1934
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: Monster Falling Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 2099
-        y: 2041
-        width: 1631
-        height: 1940
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Monster Falling Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 4099
-        y: 2041
-        width: 1631
-        height: 1944
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: Monster Falling Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 100
-        y: 41
-        width: 1630
-        height: 1944
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Monster Falling Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 2100
-        y: 41
-        width: 1630
-        height: 1940
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,33 +274,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Monster Falling Spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 4099
-        y: 41
-        width: 1631
-        height: 1934
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c0966b4c3539fb40800000000000000
-      internalID: 5474465355124871366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2d75b99b8628d7c4da4d178ef9a970d9
     internalID: 0
     vertices: []
     indices: 
@@ -317,7 +295,6 @@ TextureImporter:
       Monster Falling Spritesheet_4: -6000939329369673874
       Monster Falling Spritesheet_5: -3898656523797322610
       Monster Falling Spritesheet_6: -2677542937545519049
-      Monster Falling Spritesheet_7: 5474465355124871366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

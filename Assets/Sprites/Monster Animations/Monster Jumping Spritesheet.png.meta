@@ -121,10 +121,10 @@ TextureImporter:
       name: Monster Jumping Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 257
-        y: 2098
-        width: 1487
-        height: 1776
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +143,10 @@ TextureImporter:
       name: Monster Jumping Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2257
-        y: 2099
-        width: 1487
-        height: 1780
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: Monster Jumping Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4257
-        y: 2099
-        width: 1487
-        height: 1785
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: Monster Jumping Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6257
-        y: 2099
-        width: 1487
-        height: 1790
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,10 +209,10 @@ TextureImporter:
       name: Monster Jumping Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 257
-        y: 99
-        width: 1487
-        height: 1785
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Monster Jumping Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2257
-        y: 99
-        width: 1487
-        height: 1780
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: Monster Jumping Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4257
-        y: 99
-        width: 1487
-        height: 1775
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 76d7f515ac03378489450a5664d1bbdb
     internalID: 0
     vertices: []
     indices: 

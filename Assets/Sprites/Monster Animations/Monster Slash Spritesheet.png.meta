@@ -115,10 +115,10 @@ TextureImporter:
       name: Monster Slash Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 2072
-        width: 1912
-        height: 1832
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,10 +137,10 @@ TextureImporter:
       name: Monster Slash Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2052
-        y: 2072
-        width: 1707
-        height: 1861
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: Monster Slash Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4047
-        y: 2072
-        width: 1923
-        height: 1897
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Monster Slash Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6047
-        y: 2072
-        width: 1923
-        height: 1898
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: Monster Slash Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 47
-        y: 72
-        width: 1923
-        height: 1897
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e9a292a7dccbcd74cb2589cbd9061ea1
     internalID: 0
     vertices: []
     indices: 

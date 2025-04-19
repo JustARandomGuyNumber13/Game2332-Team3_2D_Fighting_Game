@@ -25,7 +25,6 @@ public abstract class Skill : MonoBehaviour
         if ((!skillStat.isPassiveSkill && _isCanUseSkill) || (skillStat.isPassiveSkill && _isPassiveSkillActive))
         {
             _isCanUseSkill = false;
-            Debug.Log(skillStat.name);
             StartCoroutine(SkillCoroutine());
         }
     }

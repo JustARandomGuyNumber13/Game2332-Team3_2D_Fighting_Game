@@ -10,14 +10,11 @@ public class Traps_Manager : MonoBehaviour
     [SerializeField] private Trap[] trapList;
     [SerializeField] private Trap deathWall;
 
-    [SerializeField] private float spawnRate;
-    private int curIndex;
-
-    //[SerializeField] private float startSpawnRate;
-    //[SerializeField] private float decreaseRate;
-    //[SerializeField] private float rateDecreaseInterval;
-    //[SerializeField] private int decreaseCount;
-    //private float curSpawnRate;
+    [SerializeField] private float startSpawnRate;
+    [SerializeField] private float decreaseRate;
+    [SerializeField] private float rateDecreaseInterval;
+    [SerializeField] private int decreaseCount;
+    private float curSpawnRate;
 
     public void Public_StartGame()
     {
@@ -26,11 +23,12 @@ public class Traps_Manager : MonoBehaviour
 
     private IEnumerator PhaseChangeCoroutine()
     {
-        //curSpawnRate = startSpawnRate;
+        curSpawnRate = startSpawnRate;
+
         yield return new WaitForSeconds(phaseOneDuration);
         if(Game_Manager.IsEndGame) yield break;
         StartCoroutine(SpawnTrapCoroutine());
-        //StartCoroutine(IncreaseSpawnRateCoroutine());
+        StartCoroutine(IncreaseSpawnRateCoroutine());
 
         yield return new WaitForSeconds(phaseTwoDuration);
         if (Game_Manager.IsEndGame) yield break;
@@ -44,45 +42,35 @@ public class Traps_Manager : MonoBehaviour
     {
         while (!Game_Manager.IsEndGame)
         {
-            GetRandomTrap().Activate();
-            yield return new WaitForSeconds(spawnRate);
+            Trap trap = GetRandomTrap();
+                if(trap.IsAvailable) trap.Activate();
+            yield return new WaitForSeconds(curSpawnRate);
         }
     }
-    //private IEnumerator IncreaseSpawnRateCoroutine()
-    //{ 
-    //    while(!Game_Manager.IsEndGame)
-    //    {
-    //        yield return new WaitForSeconds(rateDecreaseInterval);
-    //        if (decreaseCount > 0) curSpawnRate -= decreaseRate;
-    //    }
-    //}
-
-    //private Trap GetRandomTrap()
-    //{
-    //    int randIndex = Random.Range(0, trapList.Length - 1);
-
-    //    while (!trapList[randIndex].IsAvailable)
-    //    {
-    //        randIndex--;
-    //        //if (randIndex == trapList.Length)
-    //        //    randIndex = 0;
-
-    //        if (randIndex == -1)
-    //            randIndex = trapList.Length - 1;
-    //    }
-
-    //    return trapList[randIndex];
-    //}
+    private IEnumerator IncreaseSpawnRateCoroutine()
+    {
+        while (!Game_Manager.IsEndGame)
+        {
+            yield return new WaitForSeconds(rateDecreaseInterval);
+            if (decreaseCount > 0) curSpawnRate -= decreaseRate;
+        }
+    }
 
     private Trap GetRandomTrap()
     {
-        Trap trap = trapList[curIndex];
-        curIndex++;
+        int randIndex = Random.Range(0, trapList.Length - 1);
 
-        if (curIndex >= trapList.Length)
-            curIndex = 0;
+        for(int i = 0; i < trapList.Length; i++)
+        {
+            if(trapList[randIndex].IsAvailable) return trapList[randIndex];
 
-        return trap;
+            if (randIndex == trapList.Length)
+                randIndex = 0;
+
+            randIndex++;
+        }
+
+        return trapList[randIndex];
     }
 
     private void SpawnDeathWall()

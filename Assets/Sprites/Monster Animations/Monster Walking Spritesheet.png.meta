@@ -136,10 +136,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 4072
-        width: 1914
-        height: 1844
+        x: 0
+        y: 4000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,10 +158,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2022
-        y: 4072
-        width: 1928
-        height: 1833
+        x: 2000
+        y: 4000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +180,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4025
-        y: 4072
-        width: 1922
-        height: 1838
+        x: 4000
+        y: 4000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6028
-        y: 4072
-        width: 1916
-        height: 1843
+        x: 6000
+        y: 4000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 27
-        y: 2061
-        width: 1918
-        height: 1853
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2025
-        y: 2037
-        width: 1922
-        height: 1873
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4022
-        y: 2072
-        width: 1928
-        height: 1833
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,10 +290,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 6019
-        y: 2072
-        width: 1934
-        height: 1838
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_8
       rect:
         serializedVersion: 2
-        x: 16
-        y: 72
-        width: 1940
-        height: 1844
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,10 +334,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_9
       rect:
         serializedVersion: 2
-        x: 2013
-        y: 72
-        width: 1946
-        height: 1849
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +356,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_10
       rect:
         serializedVersion: 2
-        x: 4016
-        y: 72
-        width: 1940
-        height: 1843
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: Monster Walking Spritesheet_11
       rect:
         serializedVersion: 2
-        x: 6019
-        y: 72
-        width: 1934
-        height: 1838
+        x: 6000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2359140d95d4e6e46aa1c7710c903f47
     internalID: 0
     vertices: []
     indices: 

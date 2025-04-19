@@ -347,12 +347,6 @@ MonoBehaviour:
   OnSkillThreeEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnSkillFourEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSkillFiveEvent:
-    m_PersistentCalls:
-      m_Calls: []
   OnDefendEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -834,7 +828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4641085224484765909
 Transform:
   m_ObjectHideFlags: 0
@@ -921,6 +915,14 @@ MonoBehaviour:
   _spawnOffset: {x: 0, y: 0}
   _damageAmount: 5
   _launchSpeed: 15
+  lifeSpan: 0
+  isCanDestroyByProjectile: 1
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
   _effectDuration: 3
   _verticalLaunchForce: 5
 --- !u!58 &8699837783744549976
@@ -1005,7 +1007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7835161278014172954
 Transform:
   m_ObjectHideFlags: 0
@@ -1154,6 +1156,14 @@ MonoBehaviour:
   _spawnOffset: {x: 0, y: 0}
   _damageAmount: 10
   _launchSpeed: 15
+  lifeSpan: 0
+  isCanDestroyByProjectile: 1
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4688416576094419831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6404515149380862333
 Transform:
   m_ObjectHideFlags: 0
@@ -1550,6 +1560,14 @@ MonoBehaviour:
   _spawnOffset: {x: 0, y: 0}
   _damageAmount: 30
   _launchSpeed: 15
+  lifeSpan: 0
+  isCanDestroyByProjectile: 1
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8433020143598542859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,8 +1577,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509826467453538765}
+  - component: {fileID: 7096057488749372820}
   m_Layer: 6
-  m_Name: Skills
+  m_Name: Ninja_Skills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,3 +1603,15 @@ Transform:
   - {fileID: 7835161278014172954}
   m_Father: {fileID: 2973618607220260808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7096057488749372820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8433020143598542859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451c1824a494710469eb649b51a0f6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

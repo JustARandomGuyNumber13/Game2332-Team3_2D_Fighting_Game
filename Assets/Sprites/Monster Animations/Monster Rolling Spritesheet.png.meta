@@ -112,10 +112,10 @@ TextureImporter:
       name: Monster Rolling Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 279
-        width: 1591
-        height: 1580
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Monster Rolling Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2331
-        y: 295
-        width: 1567
-        height: 1573
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +156,10 @@ TextureImporter:
       name: Monster Rolling Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4334
-        y: 233
-        width: 1604
-        height: 1439
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: Monster Rolling Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6213
-        y: 132
-        width: 1605
-        height: 1460
+        x: 6000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 90c885bf59d2d2d46b2154a487c2854a
     internalID: 0
     vertices: []
     indices: 

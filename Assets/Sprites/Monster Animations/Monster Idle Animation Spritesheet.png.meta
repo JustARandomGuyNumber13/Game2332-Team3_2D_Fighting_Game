@@ -114,6 +114,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -121,12 +134,12 @@ TextureImporter:
       name: Monster Idle Animation Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 2068
-        width: 1918
-        height: 1852
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,12 +156,12 @@ TextureImporter:
       name: Monster Idle Animation Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2025
-        y: 2068
-        width: 1918
-        height: 1856
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +178,12 @@ TextureImporter:
       name: Monster Idle Animation Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4025
-        y: 2068
-        width: 1918
-        height: 1860
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +200,12 @@ TextureImporter:
       name: Monster Idle Animation Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6025
-        y: 2068
-        width: 1918
-        height: 1864
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +222,12 @@ TextureImporter:
       name: Monster Idle Animation Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 26
-        y: 68
-        width: 1917
-        height: 1860
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,12 +244,12 @@ TextureImporter:
       name: Monster Idle Animation Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2025
-        y: 68
-        width: 1918
-        height: 1852
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,12 +266,12 @@ TextureImporter:
       name: Monster Idle Animation Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4025
-        y: 68
-        width: 1918
-        height: 1844
+        x: 4000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_PlayerSelection_Player_2
   m_EditorClassIdentifier: 
   CharacterIndex: 1
-  SkillOneIndex: 1
-  SkillTwoIndex: 4
-  SkillThreeIndex: 0
+  SkillOneIndex: 4
+  SkillTwoIndex: 3
+  SkillThreeIndex: 2
