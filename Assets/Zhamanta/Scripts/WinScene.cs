@@ -77,17 +77,22 @@ public class WinScene : MonoBehaviour
         text1.enabled = true;
 
         yield return new WaitForSeconds(1.5f);
-        var originalString = "WINNER!";
+        string originalString = "Winner";
 
-        var numRevealed = 0;
-        while (numRevealed < originalString.Length)
+        //var numRevealed = 0;
+        //while (numRevealed < originalString.Length)
+        //{
+        //    ++numRevealed;
+        //    winnerText.text += originalString.Substring(0, numRevealed);
+
+        //    yield return new WaitForSeconds(.3f);
+        //}
+
+        foreach (char letter in originalString)
         {
-            ++numRevealed;
-            winnerText.text = originalString.Substring(0, numRevealed);
-
+            winnerText.text += letter;
             yield return new WaitForSeconds(.3f);
         }
-
         yield return new WaitForSeconds(1.5f);
         rematchButton.SetActive(true);
         menuButton.SetActive(true);
