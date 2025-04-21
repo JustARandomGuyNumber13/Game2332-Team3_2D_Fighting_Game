@@ -44,6 +44,8 @@ public class PlayerInputHandler : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator = transform.GetComponentInChildren<Animator>();
+        //Test.m_debugText.text += gameObject.name + ", is animator null: " + (_animator == null) + "\n";
     }
     private void Start()
     {

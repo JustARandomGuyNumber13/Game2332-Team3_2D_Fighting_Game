@@ -387,6 +387,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -477.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2221795472527498641, guid: 0d8ca4c1854f4a74ca45db1dd7e173ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5331235045495899256}
+    - target: {fileID: 2221795472527498641, guid: 0d8ca4c1854f4a74ca45db1dd7e173ff, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Public_ExitSettingCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 2411890243376634656, guid: 0d8ca4c1854f4a74ca45db1dd7e173ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
