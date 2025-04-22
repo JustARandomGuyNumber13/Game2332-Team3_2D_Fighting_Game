@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Ninja_SO_SkillStat_ConfusingBomb
   m_EditorClassIdentifier: 
-  SkillPrefab: {fileID: 0}
   skillSprite: {fileID: -2613247888821195678, guid: a71141d3f62a4a344aa5e75f4bfe51cf, type: 3}
   skillName: Confusion Bomb
   skillDescription: Ned tosses a bomb that confuses enemies, causing them to reverse
     their movement.
   skillDelay: 0
   skillDuration: 0.5
-  skillCD: 3
+  skillCD: 6
   isPassiveSkill: 0

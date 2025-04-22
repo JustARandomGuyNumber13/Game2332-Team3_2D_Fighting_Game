@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc748f0c67494ba9279f278376455, type: 3}
   m_Name: Ninja_SO_SkillStat_SwordAttack
   m_EditorClassIdentifier: 
-  SkillPrefab: {fileID: 0}
   skillSprite: {fileID: 834524884570337692, guid: 90a6b038f71b90841bfd14f7e868c49d, type: 3}
   skillName: Traveling Slash
   skillDescription: Ned swings his sword in a quick vertical arc, sending a slicing
     wave toward his enemy.
   skillDelay: 0
   skillDuration: 0.2
-  skillCD: 5
+  skillCD: 8
   isPassiveSkill: 0

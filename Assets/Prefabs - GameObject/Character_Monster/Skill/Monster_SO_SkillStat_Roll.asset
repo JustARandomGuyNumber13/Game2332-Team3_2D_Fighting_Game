@@ -18,5 +18,5 @@ MonoBehaviour:
     anything in his path.  He is inmune during this.
   skillDelay: 0
   skillDuration: 1
-  skillCD: 3
+  skillCD: 4
   isPassiveSkill: 0

@@ -17,6 +17,6 @@ MonoBehaviour:
   skillDescription: Quill's spikes form a protective barrier around him. Anyone who
     comes too close is met with a painful jab.
   skillDelay: 0
-  skillDuration: 3
-  skillCD: 3
+  skillDuration: 4
+  skillCD: 7
   isPassiveSkill: 0

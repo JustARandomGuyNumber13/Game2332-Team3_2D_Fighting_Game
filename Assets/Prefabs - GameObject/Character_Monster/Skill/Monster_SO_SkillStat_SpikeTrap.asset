@@ -18,5 +18,5 @@ MonoBehaviour:
     time. Enemies who step on them are pierced by the spikes.
   skillDelay: 0
   skillDuration: 0.35
-  skillCD: 3
+  skillCD: 15
   isPassiveSkill: 0

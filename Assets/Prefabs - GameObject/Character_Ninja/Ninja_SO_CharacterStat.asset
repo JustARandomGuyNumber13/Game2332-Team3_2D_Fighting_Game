@@ -23,7 +23,7 @@ MonoBehaviour:
   jumpForce: 11.5
   maxHealth: 300
   groundCheckDistance: 1.5
-  defenseValue: 0
+  defenseValue: 1
   skills:
   - {fileID: 11400000, guid: 8cde0cac9dc756044a97ffca95e5a9bb, type: 2}
   - {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}

@@ -18,5 +18,5 @@ MonoBehaviour:
     wave that travels toward his enemy.
   skillDelay: 0
   skillDuration: 0.35
-  skillCD: 3
+  skillCD: 8
   isPassiveSkill: 0

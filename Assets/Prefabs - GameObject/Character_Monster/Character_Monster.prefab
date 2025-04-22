@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7cf7e4b65951641a9478e0d3149002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterStat: {fileID: 11400000, guid: 5bf988c43e5a89b459861cae720d5a81, type: 2}
+  _characterStat: {fileID: 11400000, guid: ab66cd0640fcf7148bdfcf118d6227bc, type: 2}
   OnHealthIncreaseEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -21,9 +21,9 @@ MonoBehaviour:
   moveStandingSpeed: 3
   moveCrouchingSpeed: 2
   jumpForce: 9
-  maxHealth: 500
+  maxHealth: 300
   groundCheckDistance: 1.5
-  defenseValue: 0
+  defenseValue: 3
   skills:
   - {fileID: 11400000, guid: b99cf6d7035e97c478a9b590974c95a4, type: 2}
   - {fileID: 11400000, guid: 7dbf581ccc6f7ba469322c8ce5b43e71, type: 2}
