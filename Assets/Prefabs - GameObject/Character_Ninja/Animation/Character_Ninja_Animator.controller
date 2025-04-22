@@ -1082,9 +1082,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: skillIndex
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isOnGround
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: isCrouching
     m_EventTreshold: 0

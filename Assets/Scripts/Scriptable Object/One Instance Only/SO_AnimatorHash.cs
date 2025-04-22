@@ -32,7 +32,6 @@ public class SO_AnimatorHash : ScriptableObject
     public int jump { get; private set; }
     public int yVelocity { get; private set; }
 
-    private void OnValidate() { }
     private void Awake()
     {
         moveDirection = Animator.StringToHash(_moveDirection);
