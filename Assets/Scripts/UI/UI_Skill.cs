@@ -18,7 +18,7 @@ public class UI_Skill : MonoBehaviour
 
     public void Public_SetUp(Skill skill)
     {
-        _cdDuration = skill.skillStat.skillCD;
+        _cdDuration = skill.skillStat.skillCD + skill.skillStat.skillDuration;
         _skillImage.sprite = skill.skillStat.skillSprite;
         if(!skill.skillStat.isPassiveSkill)
             skill.OnTriggerSkillEvent.AddListener(UI_SkillCooldown);
