@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 8249838024990762391}
   - component: {fileID: 4411445096182034750}
   - component: {fileID: 2062883496530339907}
-  - component: {fileID: 7799150831038751822}
   - component: {fileID: 6919178582193774328}
   - component: {fileID: -607621967121678719}
   m_Layer: 6
@@ -404,7 +403,7 @@ MonoBehaviour:
   OnAfterSkillEvent:
     m_PersistentCalls:
       m_Calls: []
-  _damageAmount: 50
+  _damageAmount: 10
   _attackBoxSize: {x: 1.24, y: 1.86}
   _attackOffset: {x: 1.12, y: -0.22}
 --- !u!114 &3325863936048131391
@@ -645,55 +644,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _projectilePrefab: {fileID: 3642066210698485015}
---- !u!114 &7799150831038751822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894348835929635628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad54d9c773792c148867454418a9c4d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillStat: {fileID: 11400000, guid: 596ccb01b5e196648adcee0986ff738c, type: 2}
-  OnBeforeSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerSkillEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1083015098773949598}
-        m_TargetAssemblyTypeName: PlayerAnimationHandler, Assembly-CSharp
-        m_MethodName: Public_SkillAnimation
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -607621967121678719}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: efb4920fd863ea4439ed7058a1ef0a28, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAfterSkillEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _damageAmount: 10
-  _attackBoxSize: {x: 1.24, y: 1.86}
-  _attackOffset: {x: 1.12, y: -0.22}
 --- !u!114 &6919178582193774328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,8 +1117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 10
-  _launchSpeed: 15
+  _damageAmount: 20
+  _launchSpeed: 12
   lifeSpan: 0
   isCanDestroyByProjectile: 1
   OnActivate:
@@ -1746,8 +1696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 30
-  _launchSpeed: 15
+  _damageAmount: 10
+  _launchSpeed: 20
   lifeSpan: 0
   isCanDestroyByProjectile: 1
   OnActivate:

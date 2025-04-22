@@ -532,7 +532,7 @@ MonoBehaviour:
   OnAfterSkillEvent:
     m_PersistentCalls:
       m_Calls: []
-  _damageAmount: 15
+  _damageAmount: 10
   _attackBoxSize: {x: 1.24, y: 1.86}
   _attackOffset: {x: 1.12, y: -0.22}
 --- !u!114 &5306987268551238517
@@ -652,7 +652,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _dashSpeed: 10
+  _dashSpeed: 12
   dashLayer: 10
 --- !u!114 &1252112974437130408
 MonoBehaviour:
@@ -987,9 +987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 1, y: -1.5}
-  _damageAmount: 30
+  _damageAmount: 25
   _launchSpeed: 0
-  lifeSpan: 10
+  lifeSpan: 8
   isCanDestroyByProjectile: 0
   OnActivate:
     m_PersistentCalls:
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 20
+  _damageAmount: 10
   _launchSpeed: 0
   lifeSpan: 0
   isCanDestroyByProjectile: 0
@@ -1920,8 +1920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 15
-  _launchSpeed: 15
+  _damageAmount: 20
+  _launchSpeed: 12
   lifeSpan: 0
   isCanDestroyByProjectile: 1
   OnActivate:
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 15
+  _damageAmount: 10
   _launchSpeed: 15
   lifeSpan: 0
   isCanDestroyByProjectile: 1

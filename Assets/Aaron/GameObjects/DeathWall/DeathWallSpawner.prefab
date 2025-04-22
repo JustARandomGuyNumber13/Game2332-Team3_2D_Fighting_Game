@@ -181,7 +181,7 @@ MonoBehaviour:
   IsAvailable: 1
   dmgAmount: 1
   dmgIncrement: 2
-  moveSpeed: {x: 0.1, y: 5}
+  moveSpeed: {x: 0.1, y: 2}
   moveDistance: 2.5
   pauseDuration: 2
   isMoving: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
   IsAvailable: 1
   dmgAmount: 1
   dmgIncrement: 2
-  moveSpeed: {x: 0.1, y: 5}
+  moveSpeed: {x: 0.1, y: 2}
   moveDistance: 2.5
   pauseDuration: 2
   isMoving: 1

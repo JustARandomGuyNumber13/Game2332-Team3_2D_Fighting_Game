@@ -171,6 +171,6 @@ MonoBehaviour:
   targetScale: {x: 5, y: 5, z: 5}
   speed: 5
   lifeSpan: 5
-  dmgAmount: 5
+  dmgAmount: 10
   dmgDuration: 3
   dmgTickDuration: 1

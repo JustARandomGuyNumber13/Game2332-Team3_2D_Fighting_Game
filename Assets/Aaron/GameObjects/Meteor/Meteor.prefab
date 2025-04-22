@@ -176,7 +176,7 @@ MonoBehaviour:
   xLaunchForceMin: -3.5
   xLaunchForceMax: 3.5
   explosionRadius: 2
-  dmgAmount: 10
+  dmgAmount: 15
   deactivateDelay: 3
   lifeSpan: 5
   gravityScale: 5

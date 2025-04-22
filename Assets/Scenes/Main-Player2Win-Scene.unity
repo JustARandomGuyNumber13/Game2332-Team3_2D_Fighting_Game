@@ -445,7 +445,7 @@ MonoBehaviour:
   p2Selection: {fileID: 11400000, guid: 631834b2c638a9f46acdf68459f7c4e5, type: 2}
   speedScale: 8.84
   speedPosition: 5
-  targetScale: {x: 3, y: 3, z: 3}
+  targetScale: {x: 2, y: 2, z: 2}
   targetPosition: {x: -5, y: 0, z: 0}
   winnerText: {fileID: 2084506237}
   text1: {fileID: 1181949808}

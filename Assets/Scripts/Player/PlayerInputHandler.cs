@@ -98,7 +98,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Jump() 
     {
-        OnJumpEvent?.Invoke(isCanJump);
+        if(isCanUseSkill) OnJumpEvent?.Invoke(isCanJump);
 
         if (isCanMove && isOnGround && isCanUseSkill && isCanJump)
         {
