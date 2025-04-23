@@ -709,7 +709,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      claw_slash_spritesheet_0: 7491584144305064388
+      claw_slash_spritesheet_1: -7527976252616685900
+      claw_slash_spritesheet_10: -5738891582973086498
+      claw_slash_spritesheet_11: -4169864603589438361
+      claw_slash_spritesheet_12: 1259573285433184805
+      claw_slash_spritesheet_13: 7136310252136479770
+      claw_slash_spritesheet_14: 7786027121191782569
+      claw_slash_spritesheet_15: -8075472965130701626
+      claw_slash_spritesheet_16: -2676210705806099068
+      claw_slash_spritesheet_17: 6728727785021848258
+      claw_slash_spritesheet_18: 4849798009626108915
+      claw_slash_spritesheet_19: -7396637536221708308
+      claw_slash_spritesheet_2: -4946909035043585271
+      claw_slash_spritesheet_20: 3352339060309046653
+      claw_slash_spritesheet_21: -1988808723421981134
+      claw_slash_spritesheet_22: -4920198562858889994
+      claw_slash_spritesheet_23: -4361327109653297959
+      claw_slash_spritesheet_3: 6431730775196190208
+      claw_slash_spritesheet_4: 959854385013527360
+      claw_slash_spritesheet_5: 439380026345499231
+      claw_slash_spritesheet_6: -2455381975224402388
+      claw_slash_spritesheet_7: -5099953581259275190
+      claw_slash_spritesheet_8: -5416336903846766855
+      claw_slash_spritesheet_9: -100079433651495055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
