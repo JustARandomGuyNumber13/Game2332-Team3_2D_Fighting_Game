@@ -63,6 +63,7 @@ public class SelectionUI : MonoBehaviour
     public bool isReady;
     [SerializeField] private UnityEvent OnReadyCheck;
     [SerializeField] private UnityEvent OnChangeSelection;
+    [SerializeField] private UnityEvent OnBothPlayerReadyEvent;
 
     void Start()
     {
@@ -93,7 +94,8 @@ public class SelectionUI : MonoBehaviour
     {
         if (isReady && (otherPlayer.isReady == true))
         {
-            SceneManager.LoadScene(Global.gamePlayScene);
+            //SceneManager.LoadScene(Global.gamePlayScene);
+            OnBothPlayerReadyEvent?.Invoke();
         }
     }
     private void SelfReadyCheck()
@@ -232,7 +234,7 @@ public class SelectionUI : MonoBehaviour
                     }
 
                     childB.transform.SetParent(activeSkillSlot[selectedActiveIndex].transform); //if there is a skill in the selectable slot, it will go to the active slot **
-
+                    Back();
 
                     break;
             }
@@ -240,6 +242,11 @@ public class SelectionUI : MonoBehaviour
     }
 
     private void OnSkillTwo() //GoBack
+    {
+        Back();
+    }
+
+    private void Back()
     {
         if (!isReady)
         {
@@ -261,7 +268,6 @@ public class SelectionUI : MonoBehaviour
             }
         }
     }
-
 
     private void UpdateSkillDescription()
     {

@@ -1368,7 +1368,19 @@ MonoBehaviour:
         m_CallState: 2
   OnMatchEndEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 836461046}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_volume
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &522601581 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2645973980892698379, guid: 04a241045c35e7c4d8bc96c2708136db, type: 3}
@@ -2784,7 +2796,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 8382ce42c3498494ba752849a54ab59c, type: 3}
   m_Resource: {fileID: 8300000, guid: 8382ce42c3498494ba752849a54ab59c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4876,7 +4888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2016143493640847023, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2016143493640847023, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5260,7 +5272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7999758368163440901, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7999758368163440901, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
