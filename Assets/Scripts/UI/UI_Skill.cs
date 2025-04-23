@@ -9,13 +9,29 @@ public class UI_Skill : MonoBehaviour
     [SerializeField] private TMP_Text _countDownText;
     [SerializeField] private Image _skillImage;
     [SerializeField] private Image _skillLockImage;
+    private float timer;
+    private bool isCD;
 
     private void Start()
     {
         _countDownText.enabled = false;
         _skillLockImage.enabled = false;
     }
+    private void Update()
+    {
+        if (isCD)
+        {
+            timer -= Time.deltaTime;
+            _countDownText.text = Mathf.Ceil(timer).ToString();
 
+            if (timer <= 0)
+            {
+                isCD = false;
+                _countDownText.enabled = false;
+                _skillLockImage.enabled = false;
+            }
+        }
+    }
     public void Public_SetUp(Skill skill)
     {
         _cdDuration = skill.skillStat.skillCD + skill.skillStat.skillDuration;
@@ -26,23 +42,9 @@ public class UI_Skill : MonoBehaviour
 
     private void UI_SkillCooldown()
     {
-        _countDownText.text = _cdDuration.ToString();
+        timer = _cdDuration;
         _countDownText.enabled = true;
         _skillLockImage.enabled = true;
-        StartCoroutine(UI_SkillCooldownCoroutine());
-    }
-    private IEnumerator UI_SkillCooldownCoroutine()
-    {
-        float timer = _cdDuration;
-
-        while (timer > 0)
-        {
-            yield return new WaitForSeconds(1);
-            timer--;
-            _countDownText.text = timer + "";
-        }
-
-        _countDownText.enabled = false;
-        _skillLockImage.enabled = false;
+        isCD = true;
     }
 }

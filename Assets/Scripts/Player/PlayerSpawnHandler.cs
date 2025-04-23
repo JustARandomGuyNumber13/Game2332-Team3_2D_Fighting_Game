@@ -51,6 +51,9 @@ public class PlayerSpawnHandler : MonoBehaviour
         p2InputMap.defaultActionMap = Global.playerTwoInputMap;
         p2InputMap.enabled = false;
 
+        /* Special assignment */
+        p2.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = -1;
+
         /* Assign player tag */
         p1.tag = Global.playerOneTag;
         p2.tag = Global.playerTwoTag;

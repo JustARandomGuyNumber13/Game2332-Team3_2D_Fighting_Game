@@ -121,10 +121,10 @@ TextureImporter:
       name: sword_attack_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 2748
-        y: 2018
-        width: 676
-        height: 1203
+        x: 0
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +143,10 @@ TextureImporter:
       name: sword_attack_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 5002
-        y: 2245
-        width: 506
-        height: 1352
+        x: 2000
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: sword_attack_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 7048
-        y: 2788
-        width: 413
-        height: 1101
+        x: 4000
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: sword_attack_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 497
-        y: 2018
-        width: 591
-        height: 566
+        x: 6000
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,77 +205,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: sword_attack_spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 813
-        y: 1572
-        width: 560
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 557a7f5da9886e920800000000000000
-      internalID: 3019250798794614613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sword_attack_spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 2509
-        y: 1745
-        width: 677
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dec14fbc521e8bfe0800000000000000
-      internalID: -1172940150478201619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sword_attack_spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 4297
-        y: 1854
-        width: 409
-        height: 132
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 178b2a22422f053f0800000000000000
-      internalID: -913964487342376847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 92c9424198b2448479bdfdda1797f926
     internalID: 0
     vertices: []
     indices: 
@@ -284,7 +218,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sword_attack_spritesheet_0: 1951876170910064675
+      sword_attack_spritesheet_1: 4302289434546054864
+      sword_attack_spritesheet_2: 6050879499692699215
+      sword_attack_spritesheet_3: 2737212010585319590
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

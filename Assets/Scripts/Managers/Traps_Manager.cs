@@ -62,10 +62,10 @@ public class Traps_Manager : MonoBehaviour
 
         for(int i = 0; i < trapList.Length; i++)
         {
-            if(trapList[randIndex].IsAvailable) return trapList[randIndex];
-
             if (randIndex == trapList.Length)
                 randIndex = 0;
+
+            if(trapList[randIndex].IsAvailable) return trapList[randIndex];
 
             randIndex++;
         }

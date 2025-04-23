@@ -109,10 +109,10 @@ TextureImporter:
       name: death_wall_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 73
-        width: 1722
-        height: 1717
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: death_wall_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2075
-        y: 31
-        width: 1776
-        height: 1763
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: death_wall_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4083
+        x: 4000
         y: 0
-        width: 1763
-        height: 1833
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c448137df253e6549ac65b08df4624e9
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      death_wall_spritesheet_0: 7359719541104036166
+      death_wall_spritesheet_1: -2488768500167596308
+      death_wall_spritesheet_2: 2526757912454271705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -172,10 +172,10 @@ TextureImporter:
       name: claw_slash_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 594
-        y: 2035
-        width: 111
-        height: 539
+        x: 0
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: claw_slash_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 866
-        y: 2034
-        width: 106
-        height: 447
+        x: 2000
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: claw_slash_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 2147
-        width: 149
-        height: 489
+        x: 4000
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +238,10 @@ TextureImporter:
       name: claw_slash_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 2647
-        y: 2156
-        width: 125
-        height: 595
+        x: 6000
+        y: 0
+        width: 2000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,451 +256,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 2861
-        y: 2034
-        width: 246
-        height: 933
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04315d64a76125d00800000000000000
-      internalID: 959854385013527360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 3251
-        y: 2220
-        width: 225
-        height: 627
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5aa9b75ecdf81600800000000000000
-      internalID: 439380026345499231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 4607
-        y: 2170
-        width: 135
-        height: 928
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c2e3ada4a1bbcedd0800000000000000
-      internalID: -2455381975224402388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 4870
-        y: 2038
-        width: 267
-        height: 1258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a444f021d335939b0800000000000000
-      internalID: -5099953581259275190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 5204
-        y: 2247
-        width: 217
-        height: 897
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f6df5e684e45d4b0800000000000000
-      internalID: -5416336903846766855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 6647
-        y: 2162
-        width: 247
-        height: 1635
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17f51eb09427c9ef0800000000000000
-      internalID: -100079433651495055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 6867
-        y: 2038
-        width: 417
-        height: 1924
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ed4f860e28c5b50b0800000000000000
-      internalID: -5738891582973086498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 7263
-        y: 2189
-        width: 284
-        height: 1411
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 76493956c3aa126c0800000000000000
-      internalID: -4169864603589438361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 599
-        width: 152
-        height: 1184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52211d6ca37ea7110800000000000000
-      internalID: 1259573285433184805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 1091
-        y: 653
-        width: 215
-        height: 1309
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1cb2915d54490360800000000000000
-      internalID: 7136310252136479770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 1441
-        y: 746
-        width: 152
-        height: 830
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a881322a668d0c60800000000000000
-      internalID: 7786027121191782569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 2792
-        y: 867
-        width: 111
-        height: 914
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c43d18bf182eef80800000000000000
-      internalID: -8075472965130701626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_16
-      rect:
-        serializedVersion: 2
-        x: 3100
-        y: 1099
-        width: 180
-        height: 863
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 48d7450da803cdad0800000000000000
-      internalID: -2676210705806099068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 3431
-        y: 1000
-        width: 137
-        height: 597
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ca3788254e316d50800000000000000
-      internalID: 6728727785021848258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 4827
-        y: 1345
-        width: 78
-        height: 543
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f3292c2891fd4340800000000000000
-      internalID: 4849798009626108915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 5158
-        y: 1391
-        width: 99
-        height: 570
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cef3f21995dd95990800000000000000
-      internalID: -7396637536221708308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 5460
-        y: 1297
-        width: 87
-        height: 501
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d7533682d96e58e20800000000000000
-      internalID: 3352339060309046653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_21
-      rect:
-        serializedVersion: 2
-        x: 6836
-        y: 1474
-        width: 60
-        height: 414
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2361c32d0055664e0800000000000000
-      internalID: -1988808723421981134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_22
-      rect:
-        serializedVersion: 2
-        x: 7158
-        y: 1540
-        width: 77
-        height: 435
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6fc8864b971f7bbb0800000000000000
-      internalID: -4920198562858889994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: claw_slash_spritesheet_23
-      rect:
-        serializedVersion: 2
-        x: 7452
-        y: 1426
-        width: 67
-        height: 382
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d485dfd9147973c0800000000000000
-      internalID: -4361327109653297959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b843a5e9d0eb73a4bbdbbd60982103e9
     internalID: 0
     vertices: []
     indices: 
@@ -709,7 +269,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      claw_slash_spritesheet_0: 7491584144305064388
+      claw_slash_spritesheet_1: -7527976252616685900
+      claw_slash_spritesheet_2: -4946909035043585271
+      claw_slash_spritesheet_3: 6431730775196190208
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

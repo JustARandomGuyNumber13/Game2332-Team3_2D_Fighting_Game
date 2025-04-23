@@ -115,10 +115,10 @@ TextureImporter:
       name: gas_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 141
-        y: 2256
-        width: 1743
-        height: 1387
+        x: 0
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,10 +137,10 @@ TextureImporter:
       name: gas_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2141
-        y: 2171
-        width: 1597
-        height: 1557
+        x: 2000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: gas_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4145
-        y: 2126
-        width: 1735
-        height: 1647
+        x: 4000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: gas_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6225
-        y: 2135
-        width: 1575
-        height: 1629
+        x: 6000
+        y: 2000
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: gas_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 172
-        y: 212
-        width: 1680
-        height: 1475
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4d2315cb5791df043a6115aa2528f09c
     internalID: 0
     vertices: []
     indices: 
@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gas_spritesheet_0: -3783542687947612081
+      gas_spritesheet_1: -8028510758393204639
+      gas_spritesheet_2: -8954887443069646024
+      gas_spritesheet_3: -1243431902226191679
+      gas_spritesheet_4: -2741438906817221433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
