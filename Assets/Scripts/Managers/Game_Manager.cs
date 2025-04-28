@@ -88,11 +88,11 @@ public class Game_Manager : MonoBehaviour
     private void ChangeScene()
     {
         if (matchResult.GetPlayerOneScore() == 2)
-            StartCoroutine(ChangeSceneCoroutine(3, Global.player1WinScene));
+            StartCoroutine(ChangeSceneCoroutine(5, Global.player1WinScene));
         else if (matchResult.GetPlayerTwoScore() == 2)
-            StartCoroutine(ChangeSceneCoroutine(3, Global.player2WinScene));
+            StartCoroutine(ChangeSceneCoroutine(5, Global.player2WinScene));
         else
-            StartCoroutine(ChangeSceneCoroutine(3, Global.gamePlayScene));
+            StartCoroutine(ChangeSceneCoroutine(5, Global.gamePlayScene));
     }
     private IEnumerator ChangeSceneCoroutine(float delay, string scene)
     {

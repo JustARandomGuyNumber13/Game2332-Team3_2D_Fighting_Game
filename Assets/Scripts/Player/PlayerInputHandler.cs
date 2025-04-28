@@ -45,7 +45,6 @@ public class PlayerInputHandler : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = transform.GetComponentInChildren<Animator>();
-        //Test.m_debugText.text += gameObject.name + ", is animator null: " + (_animator == null) + "\n";
     }
     private void Start()
     {
@@ -68,12 +67,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         Helper_GroundCheck();
     }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * _chararacterStat.groundCheckDistance);
-    }
-
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawLine(transform.position, transform.position + Vector3.down * _chararacterStat.groundCheckDistance);
+    //}
 
     private void Move()
     {
@@ -90,11 +88,6 @@ public class PlayerInputHandler : MonoBehaviour
             _rb.linearVelocity = Vector2.right * _moveInput * (isReverseInput ? -1 : 1) * _moveSpeed + Vector2.up * _rb.linearVelocityY;
             OnMoveEvent?.Invoke((int)_moveDirection);
         }
-    }
-    public void Public_StopMove()
-    {
-        _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
-        OnMoveEvent?.Invoke(0);
     }
     private void Jump() 
     {
@@ -186,11 +179,10 @@ public class PlayerInputHandler : MonoBehaviour
             OnSkillThreeEvent?.Invoke();
     }
 
-
-    private void InspectorCheck()
+    public void Public_StopMove()
     {
-        if (transform.localScale.x != 1 && transform.localScale.x != -1)
-            Debug.LogError("x-axis scale must either be 1 or -1 only", gameObject);
+        _rb.linearVelocity = Vector2.up * _rb.linearVelocityY;
+        OnMoveEvent?.Invoke(0);
     }
     public void Public_ReverseMovementInput(float duration)
     {
@@ -201,5 +193,11 @@ public class PlayerInputHandler : MonoBehaviour
         isReverseInput = true;
         yield return new WaitForSeconds(duration);
         isReverseInput = false;
+    }
+
+    private void InspectorCheck()
+    {
+        if (transform.localScale.x != 1 && transform.localScale.x != -1)
+            Debug.LogError("x-axis scale must either be 1 or -1 only", gameObject);
     }
 }

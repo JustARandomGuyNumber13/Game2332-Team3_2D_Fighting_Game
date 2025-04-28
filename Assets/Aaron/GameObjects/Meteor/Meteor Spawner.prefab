@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015946012206000500, guid: c06e197c5bea2fd48abcebbc66b0e38b, type: 3}
       propertyPath: m_GravityScale
-      value: 0.2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015946012206000500, guid: c06e197c5bea2fd48abcebbc66b0e38b, type: 3}
       propertyPath: m_GravityScale
-      value: 0.2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -359,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015946012206000500, guid: c06e197c5bea2fd48abcebbc66b0e38b, type: 3}
       propertyPath: m_GravityScale
-      value: 0.2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015946012206000500, guid: c06e197c5bea2fd48abcebbc66b0e38b, type: 3}
       propertyPath: m_GravityScale
-      value: 0.2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -521,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015946012206000500, guid: c06e197c5bea2fd48abcebbc66b0e38b, type: 3}
       propertyPath: m_GravityScale
-      value: 0.2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

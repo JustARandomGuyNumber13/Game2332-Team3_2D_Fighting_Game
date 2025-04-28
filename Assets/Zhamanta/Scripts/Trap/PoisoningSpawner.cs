@@ -35,7 +35,7 @@ public class PoisoningSpawner : Trap
     {
         int currentIndex = 0;
 
-        while (currentIndex < clouds.Length)
+        while (currentIndex < clouds.Length && !Game_Manager.IsEndGame)
         {
             clouds[currentIndex].Activate();
             clouds[currentIndex].transform.position = SpawnRandomPoint();

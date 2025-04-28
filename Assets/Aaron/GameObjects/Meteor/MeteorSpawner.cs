@@ -20,11 +20,6 @@ public class MeteorSpawner : Trap
     protected override void TrapBehavior()
     {
         StartCoroutine(Cooldown());
-
-        if (Game_Manager.IsEndGame)
-        {
-            StopAllCoroutines();
-        }
     }
 
     private Vector3 SpawnRandomPoint()
@@ -38,7 +33,7 @@ public class MeteorSpawner : Trap
     {
         int currentIndex = 0;
 
-        while (currentIndex < meteors.Length)
+        while (currentIndex < meteors.Length && !Game_Manager.IsEndGame)
         {
             meteors[currentIndex].Activate();
             meteors[currentIndex].transform.position = SpawnRandomPoint();

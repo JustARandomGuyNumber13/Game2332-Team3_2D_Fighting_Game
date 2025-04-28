@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -40,21 +42,20 @@ public class MeteorTrap : Trap
         if (collision.gameObject.layer != Global.groundLayerIndex && collision.gameObject.layer != Global.playerLayerIndex)
             return;
 
-        if (collision.gameObject.layer == Global.groundLayerIndex)
-        {
-            rb.linearVelocity = Vector2.zero;
-            rb.gravityScale = 0;
-        }
+        col.enabled = false;
+        OnCollision?.Invoke();
+        Invoke("Deactivate", deactivateDelay);
 
         RaycastHit2D[] hitList;
         hitList = Physics2D.CircleCastAll(transform.position, explosionRadius, Vector2.zero, 0, Global.playerLayer);
 
         if (hitList.Length != 0)
+        {
             foreach (RaycastHit2D hit in hitList)
             {
                 if (hit.collider.CompareTag(Global.playerOneTag))
-                { 
-                    if(p1 == null) p1 = hit.collider.GetComponent<PlayerHealthHandler>();
+                {
+                    if (p1 == null) p1 = hit.collider.GetComponent<PlayerHealthHandler>();
                     p1.Public_DecreaseHealth(dmgAmount);
                 }
                 if (hit.collider.CompareTag(Global.playerTwoTag))
@@ -63,11 +64,7 @@ public class MeteorTrap : Trap
                     p2.Public_DecreaseHealth(dmgAmount);
                 }
             }
-
-        col.enabled = false;
-        OnCollision?.Invoke();
-
-        Invoke("Deactivate", deactivateDelay);
+        }
     }
     /*void RotatePlayer(Vector2 direction)
     {
