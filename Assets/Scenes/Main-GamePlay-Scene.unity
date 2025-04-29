@@ -5318,6 +5318,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5533766747247083235, guid: c1b5392279cb1994db19822912749caa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 184068388}
+    - target: {fileID: 5533766747247083235, guid: c1b5392279cb1994db19822912749caa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Public_EnterAudioSettingCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 5710781260956234473, guid: c1b5392279cb1994db19822912749caa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
