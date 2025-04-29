@@ -40,7 +40,7 @@ public class Traps_Manager : MonoBehaviour
     }
     private IEnumerator SpawnTrapCoroutine()
     {
-        while (!Game_Manager.IsEndGame)
+        while (!Game_Manager.IsEndGame && trapList.Length != 0)
         {
             Trap trap = GetRandomTrap();
                 if(trap.IsAvailable) trap.Activate();
@@ -70,7 +70,7 @@ public class Traps_Manager : MonoBehaviour
             randIndex++;
         }
 
-        return trapList[randIndex];
+        return trapList[randIndex >= trapList.Length ? 0 : randIndex];
     }
 
     private void SpawnDeathWall()

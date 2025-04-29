@@ -21,7 +21,6 @@ public class DeathWallTrap : Trap
 
     private PlayerHealthHandler p1, p2;
     private bool p1Dmg, p2Dmg;
-    private bool isDmgOnStay;
 
     public override void Activate()
     {
@@ -65,8 +64,8 @@ public class DeathWallTrap : Trap
     {
         while (!Game_Manager.IsEndGame)
         {
-            if(p1Dmg) p1.Public_DecreaseHealth(dmgAmount);
-            if(p2Dmg) p2.Public_DecreaseHealth(dmgAmount);
+            if(p1Dmg) p1.Public_DecreaseHealthIgnoreDefense(dmgAmount);
+            if(p2Dmg) p2.Public_DecreaseHealthIgnoreDefense(dmgAmount);
             yield return new WaitForSeconds(dmgTick);
         }
     }
@@ -79,7 +78,6 @@ public class DeathWallTrap : Trap
             {
                 if (p1 == null)
                     p1 = collision.GetComponent<PlayerHealthHandler>();
-                //p1.Public_DecreaseHealth(dmgAmount);
                 p1Dmg = true;
             }
 
@@ -87,7 +85,6 @@ public class DeathWallTrap : Trap
             {
                 if (p2 == null)
                     p2 = collision.GetComponent<PlayerHealthHandler>();
-                //p2.Public_DecreaseHealth(dmgAmount);
                 p2Dmg = true;
             }
             OnCollision?.Invoke();
@@ -95,7 +92,7 @@ public class DeathWallTrap : Trap
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!isDmgOnStay) return;
+        //if (!isDmgOnStay) return;
 
         if (collision.gameObject.layer == Global.playerLayerIndex)
         {
