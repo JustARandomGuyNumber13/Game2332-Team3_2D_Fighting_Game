@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 
 public class KeyInstructions : MonoBehaviour
 {
-    [SerializeField] InputActionAsset _actionAsset;
+    [SerializeField] InputActionAsset _p1ActionAsset;
+    [SerializeField] InputActionAsset _p2ActionAsset;
 
     [Header("Player 1")]
     [SerializeField] private TMP_Text _p1ConfirmText;
@@ -18,14 +19,8 @@ public class KeyInstructions : MonoBehaviour
 
     private void Start()
     {
-        if (!_actionAsset.name.Equals("FightingPlayer"))
-        {
-            Debug.LogError("Only \"FightingPlayer\" Input Action Asset is allow ");
-            return;
-        }
-
-        InputActionMap _p1InputMap = _actionAsset.FindActionMap("Player1");
-        InputActionMap _p2InputMap = _actionAsset.FindActionMap("Player2");
+        InputActionMap _p1InputMap = _p1ActionAsset.FindActionMap("Player");
+        InputActionMap _p2InputMap = _p2ActionAsset.FindActionMap("Player");
 
         SetUpInstruction(_p1ConfirmText, _p1ReadyText, _p1BackText, _p1InputMap);
         SetUpInstruction(_p2ConfirmText, _p2ReadyText, _p2BackText, _p2InputMap);

@@ -2345,7 +2345,7 @@ PrefabInstance:
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionAsset
       value: 
-      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionMapName
       value: Player2
@@ -2581,8 +2581,7 @@ MonoBehaviour:
   _keyBindingProcessImage: {fileID: 8918759153692993052}
   _keyText: {fileID: 6524356594695822234}
   _keyButton: {fileID: 5320159558263797098}
-  _actionAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
-  _actionMapName: Player2
+  _actionAsset: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
   _keyBindingActionName: Move
   _isNegativeKey: 1
 --- !u!114 &5320159558263797098 stripped
@@ -2738,7 +2737,6 @@ MonoBehaviour:
   _keyText: {fileID: 5963316868317446875}
   _keyButton: {fileID: 4728742465178971179}
   _actionAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
-  _actionMapName: Player1
   _keyBindingActionName: Move
   _isNegativeKey: 1
 --- !u!114 &4728742465178971179 stripped
@@ -2779,7 +2777,7 @@ PrefabInstance:
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionAsset
       value: 
-      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionMapName
       value: Player2
@@ -2901,7 +2899,7 @@ PrefabInstance:
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionAsset
       value: 
-      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionMapName
       value: Player2
@@ -3539,7 +3537,7 @@ PrefabInstance:
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionAsset
       value: 
-      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionMapName
       value: Player2
@@ -4181,7 +4179,6 @@ MonoBehaviour:
   _keyText: {fileID: 115757910205103062}
   _keyButton: {fileID: 1352603930140562726}
   _actionAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
-  _actionMapName: Player1
   _keyBindingActionName: Move
   _isNegativeKey: 0
 --- !u!1001 &6159871712479199188
@@ -4344,8 +4341,7 @@ MonoBehaviour:
   _keyBindingProcessImage: {fileID: 8918759153692993052}
   _keyText: {fileID: 2194092984033863307}
   _keyButton: {fileID: 949363276085971067}
-  _actionAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
-  _actionMapName: Player2
+  _actionAsset: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
   _keyBindingActionName: Move
   _isNegativeKey: 0
 --- !u!1001 &6224164828613060322
@@ -4607,7 +4603,7 @@ PrefabInstance:
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionAsset
       value: 
-      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionMapName
       value: Player2
@@ -4871,7 +4867,7 @@ PrefabInstance:
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionAsset
       value: 
-      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
     - target: {fileID: 2313791934382956843, guid: 649afe42ff547a9468b286af53305481, type: 3}
       propertyPath: _actionMapName
       value: Player2

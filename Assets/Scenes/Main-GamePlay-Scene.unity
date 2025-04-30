@@ -1201,6 +1201,8 @@ MonoBehaviour:
   - {fileID: 1682384672}
   - {fileID: 1070729137}
   - {fileID: 414611377}
+  p1InputAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+  p2InputAsset: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
   OnSetUpEvent:
     m_PersistentCalls:
       m_Calls:

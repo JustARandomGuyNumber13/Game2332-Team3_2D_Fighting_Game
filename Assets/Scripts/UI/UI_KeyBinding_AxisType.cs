@@ -9,36 +9,24 @@ public class UI_KeyBinding_AxisType : MonoBehaviour
     [SerializeField] private TMP_Text _keyText;
     [SerializeField] private Button _keyButton;
     [SerializeField] private InputActionAsset _actionAsset;
-    [SerializeField] private string _actionMapName;
     [SerializeField] private string _keyBindingActionName;
     [SerializeField] private bool _isNegativeKey; // Added: Specify positive or negative
 
     private int _bindingIndex;
-    private InputActionMap _actionMap;
     private InputAction _action;
 
     private void Start()
     {
-        _actionMap = _actionAsset.FindActionMap(_actionMapName);
-        if (_actionMap == null)
-        {
-            Debug.LogError("Input Action Map not exist in this Input Action Asset. \'" + _actionMapName + "\' from " + gameObject.name);
-            Destroy(gameObject);
-            return; // End frame immediately
-        }
-
-        _action = _actionMap.FindAction(_keyBindingActionName);
+        _action = _actionAsset.FindActionMap("Player").FindAction(_keyBindingActionName);
         if (_action == null)
         {
             Debug.LogError("Input Action not exist in this Input Action Map. \'" + _keyBindingActionName + "\' from " + gameObject.name);
-            Destroy(gameObject);
             return; // End frame immediately
         }
 
         if (!_action.bindings[0].isComposite)
         {
             Debug.LogError("This Action is not an Axis type");
-            Destroy(gameObject);
             return; // End frame immediately
         }
 
@@ -46,7 +34,6 @@ public class UI_KeyBinding_AxisType : MonoBehaviour
         if (_bindingIndex == -1)
         {
             Debug.LogError("Action " + _keyBindingActionName + " doesn't contain this binding index. Key length: " + _action.bindings.Count + ",current index: " + _bindingIndex);
-            Destroy(gameObject);
             return; // End frame immediately
         }
 

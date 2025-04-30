@@ -869,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 1063256002322478743, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
       propertyPath: OnBothPlayerReadyEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 306473780}
+      objectReference: {fileID: 0}
     - target: {fileID: 1063256002322478743, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
       propertyPath: OnBothPlayerReadyEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -1073,10 +1073,10 @@ PrefabInstance:
     - target: {fileID: 8611625832512351967, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
       propertyPath: m_Actions
       value: 
-      objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
     - target: {fileID: 8611625832512351967, guid: 95834514af2ac7e47bfd71cd64c11d4e, type: 3}
       propertyPath: m_DefaultActionMap
-      value: 73ab423b-d9b3-4433-b7e9-5708b128fbc8
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1421,11 +1421,11 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: 0}
   m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
   m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -2404,7 +2404,7 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
     - target: {fileID: 697304483731040255, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
       propertyPath: m_DefaultActionMap
-      value: Player1
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2392894210861560353, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
       propertyPath: m_Name
@@ -2641,7 +2641,7 @@ PrefabInstance:
     - target: {fileID: 8333307644843094356, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
       propertyPath: OnBothPlayerReadyEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 306473780}
+      objectReference: {fileID: 0}
     - target: {fileID: 8333307644843094356, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
       propertyPath: OnBothPlayerReadyEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -2794,25 +2794,18 @@ PrefabInstance:
       propertyPath: OnBothPlayerReadyEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 697304483731040255, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2392894210861560353, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
       insertIndex: -1
       addedObject: {fileID: 306473783}
+    - targetCorrespondingSourceObject: {fileID: 2392894210861560353, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 306473786}
   m_SourcePrefab: {fileID: 100100000, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
---- !u!114 &306473780 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 697304483731040255, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
-  m_PrefabInstance: {fileID: 306473779}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306473781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &306473781 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2392894210861560353, guid: 86790dc05e94f2d458eef2b8344f4193, type: 3}
@@ -2926,6 +2919,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &306473786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306473781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &346459842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,7 +4085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5692e1d7cec50428bb8d8342edd0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+  _p1ActionAsset: {fileID: -944628639613478452, guid: d9ec736253d56df48a9a5010347c9311, type: 3}
+  _p2ActionAsset: {fileID: -944628639613478452, guid: df216bf79e6d8b446803e29f3a7da617, type: 3}
   _p1ConfirmText: {fileID: 2085994196}
   _p1ReadyText: {fileID: 1308007343}
   _p1BackText: {fileID: 356642578}

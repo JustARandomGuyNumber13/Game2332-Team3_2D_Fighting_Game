@@ -11,6 +11,7 @@ public class PlayerSpawnHandler : MonoBehaviour
     [SerializeField] private Transform p1SpawnPos, p2SpawnPos;
     [SerializeField] private float spawnPosOffsetY;
     [SerializeField] private UI_Skill[] p1SkillBoxes, p2SkillBoxes;
+    [SerializeField] private InputActionAsset p1InputAsset, p2InputAsset;
 
     [SerializeField] private UnityEvent<GameObject, GameObject> OnSetUpEvent;
     private GameObject p1, p2;
@@ -30,10 +31,6 @@ public class PlayerSpawnHandler : MonoBehaviour
 
     private void SpawnCharacters()
     {
-        // yield return new waitforseconds();
-        //GameObject player = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab
-        // Animator anim = player.transform.child(0).GetComponent<Animator>();
-        // anim.Trigger("useSkill");
         p1 = Instantiate(characterList.GetCharacterAt(p1Selection.CharacterIndex).characterPrefab, p1SpawnPos.position + Vector3.up * spawnPosOffsetY, p1SpawnPos.rotation);
         p1SpawnPos.transform.SetParent(p1.transform);
 
@@ -44,11 +41,11 @@ public class PlayerSpawnHandler : MonoBehaviour
     {
         /* Set up player's Action Maps */
         p1InputMap = p1.GetComponent<PlayerInput>();
-        p1InputMap.defaultActionMap = Global.playerOneInputMap;
+        p1InputMap.actions = p1InputAsset;
         p1InputMap.enabled = false;
 
         p2InputMap = p2.GetComponent<PlayerInput>();
-        p2InputMap.defaultActionMap = Global.playerTwoInputMap;
+        p2InputMap.actions = p2InputAsset;
         p2InputMap.enabled = false;
 
         /* Special assignment */
