@@ -10,6 +10,11 @@ public class Poisoning : Trap
 
     [SerializeField] float dmgAmount, dmgDuration, dmgTickDuration;
 
+    private void OnEnable()
+    {
+        transform.localScale = new Vector3(1, 1, 1);
+    }
+
     void Update()
     {
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * speed);
