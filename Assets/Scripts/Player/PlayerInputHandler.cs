@@ -191,6 +191,7 @@ public class PlayerInputHandler : MonoBehaviour
     private IEnumerator ReverseInputOverTimeCoroutine(float duration)
     {
         isReverseInput = true;
+        _crouchInput = 0;
         yield return new WaitForSeconds(duration);
         _crouchInput = 0;
         isReverseInput = false;
