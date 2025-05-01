@@ -24,13 +24,6 @@ public class Game_Manager : MonoBehaviour
         StartCoroutine(SetUpCoroutine());
         IsEndGame = false;
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
     public void Public_PauseGame()
     {
         Time.timeScale = 0;
