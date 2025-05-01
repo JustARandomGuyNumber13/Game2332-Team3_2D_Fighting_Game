@@ -29,12 +29,4 @@ public class PlayerAnimationHandler : MonoBehaviour
         _animator.SetTrigger(_animatorHash.useSkill);
         _animator.SetInteger(_animatorHash.skillIndex, skillIndex);
     }
-    public void Public_DefendAnimation()
-    {
-        _animator.SetTrigger(_animatorHash.defend);
-    }
-    public void Public_HurtAnimation()
-    {
-        // Implement Hurt animation mechanic
-    }
 }
