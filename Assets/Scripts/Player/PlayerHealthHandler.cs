@@ -46,15 +46,7 @@ public class PlayerHealthHandler : MonoBehaviour
     
     public void Public_DecreaseHealthIgnoreDefense(float amount)
     {
-        float damageAmount = (amount);
-
-        if (_inputHandler.isDefending)
-        {
-            OnDefendEvent?.Invoke();
-            damageAmount *= 0.2f; // This float is adjustable to match balance (Take 20% of damage if is defending)
-        }
-
-        health -= damageAmount;
+        health -= amount;
         OnHealthDecreaseEvent?.Invoke(health);
         DeathCheck();
     }
