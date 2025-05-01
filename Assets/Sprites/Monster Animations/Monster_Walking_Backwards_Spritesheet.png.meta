@@ -136,20 +136,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 4072
-        width: 1914
-        height: 1844
+        x: 25
+        y: 4068
+        width: 1918
+        height: 1852
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f492c2d31c6f2ab10800000000000000
-      internalID: 1991425295066605903
+      spriteID: dec6fa63b812ef8418b220ade101b571
+      internalID: 216569409
       vertices: []
       indices: 
       edges: []
@@ -158,20 +158,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2027
-        y: 4083
-        width: 1918
-        height: 1831
+        x: 2025
+        y: 4080
+        width: 1922
+        height: 1836
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d3f5882feef6cde00800000000000000
-      internalID: 1070853883469258557
+      spriteID: e1dc8305efc2c9e4ab4d11d899d9f219
+      internalID: 568072611
       vertices: []
       indices: 
       edges: []
@@ -180,20 +180,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4025
-        y: 4080
-        width: 1922
-        height: 1830
+        x: 4022
+        y: 4076
+        width: 1925
+        height: 1836
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c6ad0565d52f6faa0800000000000000
-      internalID: -6127443760296961428
+      spriteID: 720bad1797039bc4c90f2123ca2f8d2f
+      internalID: -1992126366
       vertices: []
       indices: 
       edges: []
@@ -202,20 +202,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6022
-        y: 4080
-        width: 1928
-        height: 1825
+        x: 6021
+        y: 4076
+        width: 1930
+        height: 1832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 827cf804915061520800000000000000
-      internalID: 2672329034906453800
+      spriteID: 3e8218ab3d142b74aa84a3f9a7038d17
+      internalID: -1987343380
       vertices: []
       indices: 
       edges: []
@@ -224,20 +224,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 19
-        y: 2080
-        width: 1934
-        height: 1830
+        x: 18
+        y: 2076
+        width: 1937
+        height: 1836
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 28bd87b85b2af0820800000000000000
-      internalID: 2886704786780511106
+      spriteID: 448eaca4d37f35c45a9842dde5b81dc0
+      internalID: -1692674546
       vertices: []
       indices: 
       edges: []
@@ -246,20 +246,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2016
-        y: 2080
-        width: 1940
-        height: 1836
+        x: 2014
+        y: 2076
+        width: 1945
+        height: 1844
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 71c259db8fe902720800000000000000
-      internalID: 2819428157903678487
+      spriteID: 6cff4bbe6884cff4abcb89d2df7c129f
+      internalID: -1376647977
       vertices: []
       indices: 
       edges: []
@@ -268,20 +268,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4013
+        x: 4010
         y: 2072
-        width: 1946
-        height: 1849
+        width: 1949
+        height: 1852
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 56809b2e4be248d80800000000000000
-      internalID: -8249417263003137947
+      spriteID: 2f76f5d7ebea78147b13fa4e6239ceba
+      internalID: -1337614063
       vertices: []
       indices: 
       edges: []
@@ -290,20 +290,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 6016
-        y: 2075
-        width: 1940
-        height: 1840
+        x: 6014
+        y: 2072
+        width: 1945
+        height: 1844
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f9b3f291c774f43c0800000000000000
-      internalID: -4373198114829419617
+      spriteID: 37f3a67e984d8fb4c9abd0221aec5407
+      internalID: -1395475533
       vertices: []
       indices: 
       edges: []
@@ -312,20 +312,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_8
       rect:
         serializedVersion: 2
-        x: 19
-        y: 80
-        width: 1934
-        height: 1830
+        x: 18
+        y: 76
+        width: 1937
+        height: 1836
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 799b0b719c3f41f40800000000000000
-      internalID: 5698447473541953943
+      spriteID: 18369e85bf6bca7469404a3bf0501034
+      internalID: 393859271
       vertices: []
       indices: 
       edges: []
@@ -334,20 +334,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_9
       rect:
         serializedVersion: 2
-        x: 2022
-        y: 80
-        width: 1928
-        height: 1825
+        x: 2021
+        y: 76
+        width: 1930
+        height: 1832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ad00cae882cbb76e0800000000000000
-      internalID: -1838669140472364838
+      spriteID: 09f8ae2e1d7106a468a870099d2753e8
+      internalID: 866835542
       vertices: []
       indices: 
       edges: []
@@ -356,20 +356,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_10
       rect:
         serializedVersion: 2
-        x: 4025
-        y: 80
-        width: 1922
-        height: 1830
+        x: 4022
+        y: 76
+        width: 1925
+        height: 1836
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ec28a1b756c21c580800000000000000
-      internalID: -8808710581791325490
+      spriteID: 776b53856ef2925458a8dd4e10379b70
+      internalID: -1625006563
       vertices: []
       indices: 
       edges: []
@@ -378,20 +378,20 @@ TextureImporter:
       name: Monster_Walking_Backwards_Spritesheet_11
       rect:
         serializedVersion: 2
-        x: 6028
-        y: 80
-        width: 1916
-        height: 1835
+        x: 6025
+        y: 76
+        width: 1922
+        height: 1840
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 71cc35ace16accaf0800000000000000
-      internalID: -374742017804874729
+      spriteID: 8e0057a85d03b8c48bc563db23bc1ea5
+      internalID: 1638365439
       vertices: []
       indices: 
       edges: []
@@ -400,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 471d246f9a9332f49b5a626c5a37a799
     internalID: 0
     vertices: []
     indices: 
@@ -410,18 +410,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Monster_Walking_Backwards_Spritesheet_0: 1991425295066605903
-      Monster_Walking_Backwards_Spritesheet_1: 1070853883469258557
-      Monster_Walking_Backwards_Spritesheet_10: -8808710581791325490
-      Monster_Walking_Backwards_Spritesheet_11: -374742017804874729
-      Monster_Walking_Backwards_Spritesheet_2: -6127443760296961428
-      Monster_Walking_Backwards_Spritesheet_3: 2672329034906453800
-      Monster_Walking_Backwards_Spritesheet_4: 2886704786780511106
-      Monster_Walking_Backwards_Spritesheet_5: 2819428157903678487
-      Monster_Walking_Backwards_Spritesheet_6: -8249417263003137947
-      Monster_Walking_Backwards_Spritesheet_7: -4373198114829419617
-      Monster_Walking_Backwards_Spritesheet_8: 5698447473541953943
-      Monster_Walking_Backwards_Spritesheet_9: -1838669140472364838
+      Monster_Walking_Backwards_Spritesheet_0: 216569409
+      Monster_Walking_Backwards_Spritesheet_1: 568072611
+      Monster_Walking_Backwards_Spritesheet_10: -1625006563
+      Monster_Walking_Backwards_Spritesheet_11: 1638365439
+      Monster_Walking_Backwards_Spritesheet_2: -1992126366
+      Monster_Walking_Backwards_Spritesheet_3: -1987343380
+      Monster_Walking_Backwards_Spritesheet_4: -1692674546
+      Monster_Walking_Backwards_Spritesheet_5: -1376647977
+      Monster_Walking_Backwards_Spritesheet_6: -1337614063
+      Monster_Walking_Backwards_Spritesheet_7: -1395475533
+      Monster_Walking_Backwards_Spritesheet_8: 393859271
+      Monster_Walking_Backwards_Spritesheet_9: 866835542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
