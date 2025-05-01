@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster_Walking_Backwards_Spritesheet_0: 1991425295066605903
+      Monster_Walking_Backwards_Spritesheet_1: 1070853883469258557
+      Monster_Walking_Backwards_Spritesheet_10: -8808710581791325490
+      Monster_Walking_Backwards_Spritesheet_11: -374742017804874729
+      Monster_Walking_Backwards_Spritesheet_2: -6127443760296961428
+      Monster_Walking_Backwards_Spritesheet_3: 2672329034906453800
+      Monster_Walking_Backwards_Spritesheet_4: 2886704786780511106
+      Monster_Walking_Backwards_Spritesheet_5: 2819428157903678487
+      Monster_Walking_Backwards_Spritesheet_6: -8249417263003137947
+      Monster_Walking_Backwards_Spritesheet_7: -4373198114829419617
+      Monster_Walking_Backwards_Spritesheet_8: 5698447473541953943
+      Monster_Walking_Backwards_Spritesheet_9: -1838669140472364838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

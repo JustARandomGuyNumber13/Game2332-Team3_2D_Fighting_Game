@@ -192,6 +192,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         isReverseInput = true;
         yield return new WaitForSeconds(duration);
+        _crouchInput = 0;
         isReverseInput = false;
     }
 

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672c1f3c30bb632449803f280a28f44b, type: 3}
   m_Name: SO_MatchResult
   m_EditorClassIdentifier: 
-  _playerOneScore: 0
-  _playerTwoScore: 0
+  _playerOneScore: -9
+  _playerTwoScore: -10
