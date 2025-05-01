@@ -416,7 +416,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _damageAmount: 10
+  _damageAmount: 15
   _attackBoxSize: {x: 1.24, y: 1.86}
   _attackOffset: {x: 1.12, y: -0.22}
 --- !u!114 &3325863936048131391
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 5
+  _damageAmount: 10
   _launchSpeed: 15
   lifeSpan: 0
   isCanDestroyByProjectile: 1
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 20
+  _damageAmount: 25
   _launchSpeed: 12
   lifeSpan: 0
   isCanDestroyByProjectile: 1
@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0}
-  _damageAmount: 10
+  _damageAmount: 15
   _launchSpeed: 20
   lifeSpan: 0
   isCanDestroyByProjectile: 1
