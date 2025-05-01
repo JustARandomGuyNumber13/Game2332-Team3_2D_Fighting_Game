@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 8d8eb3d92184c2247b24c53f33fb4962
+guid: b60a6ddb6717865479dd9575ed2911bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6936522003600789004
-    second: Monster Walking Spritesheet_0
+      213: -8255871531010362538
+    second: Monster_Walking_Spritesheet_0
   - first:
-      213: -4219852802547542411
-    second: Monster Walking Spritesheet_1
+      213: 8213289620196313769
+    second: Monster_Walking_Spritesheet_1
   - first:
-      213: 2063127107569400166
-    second: Monster Walking Spritesheet_2
+      213: -3222986593399002206
+    second: Monster_Walking_Spritesheet_2
   - first:
-      213: 5838746686128130400
-    second: Monster Walking Spritesheet_3
+      213: -8349575479232107019
+    second: Monster_Walking_Spritesheet_3
   - first:
-      213: -3497259082071418016
-    second: Monster Walking Spritesheet_4
+      213: -1110778137614757361
+    second: Monster_Walking_Spritesheet_4
   - first:
-      213: 6638305857217628265
-    second: Monster Walking Spritesheet_5
+      213: -6232712513405377124
+    second: Monster_Walking_Spritesheet_5
   - first:
-      213: 566097243644390997
-    second: Monster Walking Spritesheet_6
+      213: 4205808650355079194
+    second: Monster_Walking_Spritesheet_6
   - first:
-      213: 7712046307798045745
-    second: Monster Walking Spritesheet_7
+      213: -6546651987945836940
+    second: Monster_Walking_Spritesheet_7
   - first:
-      213: -1364810181518117955
-    second: Monster Walking Spritesheet_8
+      213: 4737040139157390352
+    second: Monster_Walking_Spritesheet_8
   - first:
-      213: 4410044101059847290
-    second: Monster Walking Spritesheet_9
+      213: 6604928572300286209
+    second: Monster_Walking_Spritesheet_9
   - first:
-      213: 8222754882607312267
-    second: Monster Walking Spritesheet_10
+      213: 719313230049978091
+    second: Monster_Walking_Spritesheet_10
   - first:
-      213: -7855352971185855545
-    second: Monster Walking Spritesheet_11
+      213: 3362848503236736330
+    second: Monster_Walking_Spritesheet_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -133,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_0
+      name: Monster_Walking_Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4000
-        width: 2000
-        height: 2000
+        x: 29
+        y: 4072
+        width: 1914
+        height: 1844
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0e4e41d20a734060800000000000000
-      internalID: 6936522003600789004
+      spriteID: 653fdd285904d6d80800000000000000
+      internalID: -8255871531010362538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_1
+      name: Monster_Walking_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 4000
-        width: 2000
-        height: 2000
+        x: 2027
+        y: 4061
+        width: 1918
+        height: 1853
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57697bbdb321075c0800000000000000
-      internalID: -4219852802547542411
+      spriteID: 9aa4439c4677bf170800000000000000
+      internalID: 8213289620196313769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_2
+      name: Monster_Walking_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 4000
-        width: 2000
-        height: 2000
+        x: 4025
+        y: 4037
+        width: 1922
+        height: 1873
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66937256c23b1ac10800000000000000
-      internalID: 2063127107569400166
+      spriteID: 2ab2b98f4c6a543d0800000000000000
+      internalID: -3222986593399002206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_3
+      name: Monster_Walking_Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 4000
-        width: 2000
-        height: 2000
+        x: 6022
+        y: 4072
+        width: 1928
+        height: 1833
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06908201d25670150800000000000000
-      internalID: 5838746686128130400
+      spriteID: 5fdee0fe659502c80800000000000000
+      internalID: -8349575479232107019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_4
+      name: Monster_Walking_Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 19
+        y: 2072
+        width: 1934
+        height: 1838
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06bdf95e46d377fc0800000000000000
-      internalID: -3497259082071418016
+      spriteID: f02d3334b29b590f0800000000000000
+      internalID: -1110778137614757361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_5
+      name: Monster_Walking_Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 2016
+        y: 2072
+        width: 1940
+        height: 1844
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9680ad18100002c50800000000000000
-      internalID: 6638305857217628265
+      spriteID: c95275bcdf4f089a0800000000000000
+      internalID: -6232712513405377124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_6
+      name: Monster_Walking_Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 4013
+        y: 2072
+        width: 1946
+        height: 1849
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55e60cb917e2bd700800000000000000
-      internalID: 566097243644390997
+      spriteID: a18fda52fa80e5a30800000000000000
+      internalID: 4205808650355079194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_7
+      name: Monster_Walking_Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 2000
-        width: 2000
-        height: 2000
+        x: 6016
+        y: 2072
+        width: 1940
+        height: 1843
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1345aabb141b60b60800000000000000
-      internalID: 7712046307798045745
+      spriteID: 47e226ed3be9525a0800000000000000
+      internalID: -6546651987945836940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_8
+      name: Monster_Walking_Spritesheet_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2000
-        height: 2000
+        x: 19
+        y: 72
+        width: 1934
+        height: 1838
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,20 +324,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db3b6c8fe583f0de0800000000000000
-      internalID: -1364810181518117955
+      spriteID: 0144e3d98e85db140800000000000000
+      internalID: 4737040139157390352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_9
+      name: Monster_Walking_Spritesheet_9
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 2000
-        height: 2000
+        x: 2022
+        y: 72
+        width: 1928
+        height: 1833
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,20 +346,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a74aa779ebf933d30800000000000000
-      internalID: 4410044101059847290
+      spriteID: 10959c6ca8b69ab50800000000000000
+      internalID: 6604928572300286209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_10
+      name: Monster_Walking_Spritesheet_10
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 0
-        width: 2000
-        height: 2000
+        x: 4025
+        y: 72
+        width: 1922
+        height: 1838
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8deaeceff71d1270800000000000000
-      internalID: 8222754882607312267
+      spriteID: be62e5752938bf900800000000000000
+      internalID: 719313230049978091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Walking Spritesheet_11
+      name: Monster_Walking_Spritesheet_11
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 0
-        width: 2000
-        height: 2000
+        x: 6028
+        y: 72
+        width: 1916
+        height: 1843
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,8 +390,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c36827971e2cf290800000000000000
-      internalID: -7855352971185855545
+      spriteID: a4531e485ec3bae20800000000000000
+      internalID: 3362848503236736330
       vertices: []
       indices: 
       edges: []
@@ -400,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2359140d95d4e6e46aa1c7710c903f47
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -409,19 +409,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Monster Walking Spritesheet_0: 6936522003600789004
-      Monster Walking Spritesheet_1: -4219852802547542411
-      Monster Walking Spritesheet_10: 8222754882607312267
-      Monster Walking Spritesheet_11: -7855352971185855545
-      Monster Walking Spritesheet_2: 2063127107569400166
-      Monster Walking Spritesheet_3: 5838746686128130400
-      Monster Walking Spritesheet_4: -3497259082071418016
-      Monster Walking Spritesheet_5: 6638305857217628265
-      Monster Walking Spritesheet_6: 566097243644390997
-      Monster Walking Spritesheet_7: 7712046307798045745
-      Monster Walking Spritesheet_8: -1364810181518117955
-      Monster Walking Spritesheet_9: 4410044101059847290
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
