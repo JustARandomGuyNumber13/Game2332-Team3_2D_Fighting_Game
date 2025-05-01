@@ -1454,6 +1454,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4870578141024416730, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502275804297434655, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 7409002210045922084, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: m_Name
       value: Poisonous Trap Spawner (3)
@@ -1461,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 7409002210045922084, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308671348690222462, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 9075907518943701884, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: mainCamera
@@ -2536,6 +2548,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4870578141024416730, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502275804297434655, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 7409002210045922084, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: m_Name
       value: Poisonous Trap Spawner (1)
@@ -2543,6 +2563,10 @@ PrefabInstance:
     - target: {fileID: 7409002210045922084, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308671348690222462, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 9075907518943701884, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: mainCamera
@@ -5732,6 +5756,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7359719541104036166, guid: a25aee16471d72f4bbb5d1dddaf51292, type: 3}
+    - target: {fileID: 2328784407919901901, guid: 064f91581da0b65498d62d03186d6207, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328784407919901901, guid: 064f91581da0b65498d62d03186d6207, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328784407919901901, guid: 064f91581da0b65498d62d03186d6207, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1631125965
+      objectReference: {fileID: 0}
     - target: {fileID: 2677569749707328828, guid: 064f91581da0b65498d62d03186d6207, type: 3}
       propertyPath: m_Size.x
       value: 17
@@ -5772,6 +5808,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7359719541104036166, guid: a25aee16471d72f4bbb5d1dddaf51292, type: 3}
+    - target: {fileID: 7226040109304426818, guid: 064f91581da0b65498d62d03186d6207, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226040109304426818, guid: 064f91581da0b65498d62d03186d6207, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226040109304426818, guid: 064f91581da0b65498d62d03186d6207, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1631125965
+      objectReference: {fileID: 0}
     - target: {fileID: 7985814251866143225, guid: 064f91581da0b65498d62d03186d6207, type: 3}
       propertyPath: m_Size.x
       value: 17
@@ -6609,6 +6657,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4870578141024416730, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502275804297434655, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 7409002210045922084, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: m_Name
       value: Poisonous Trap Spawner (2)
@@ -6616,6 +6672,10 @@ PrefabInstance:
     - target: {fileID: 7409002210045922084, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308671348690222462, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 9075907518943701884, guid: 36bc9d82025fabc4ab9dc98e8362e5dd, type: 3}
       propertyPath: mainCamera
